@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vird — Support</title>
+<meta name="description" content="Support for Vird: linking a notes folder, where cards live, the optional AI feature, restoring Plus.">
+<link rel="canonical" href="https://berkemd.github.io/norea/vird/support.html">
+<meta name="theme-color" content="#fafaf7">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vird">
+<meta property="og:title" content="Vird — Support">
+<meta property="og:url" content="https://berkemd.github.io/norea/vird/support.html">
+<meta property="og:description" content="Support for Vird: linking a notes folder, where cards live, the optional AI feature, restoring Plus.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vird — Support">
+<meta name="twitter:description" content="Support for Vird: linking a notes folder, where cards live, the optional AI feature, restoring Plus.">
+<style>
+:root{--zemin:#fafaf7;--murekkep:#1a1a17;--soluk:#55554e;--cizgi:#e3e1d8;--kart:#f2f0e9;--vurgu:#7a5a2e}
+*{box-sizing:border-box}
+body{background:var(--zemin);color:var(--murekkep);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:680px;margin:0 auto;padding:44px 24px 96px}
+h1{font-size:1.7rem;margin:0 0 6px;letter-spacing:-.02em}
+h2{font-size:1.1rem;color:var(--vurgu);margin:38px 0 10px;border-top:1px solid var(--cizgi);padding-top:24px;letter-spacing:-.01em}
+h3{font-size:.98rem;margin:22px 0 4px}
+p,li{color:var(--soluk);font-size:.95rem}
+a{color:var(--vurgu)}
+.tag{color:var(--soluk);opacity:.8;font-size:.88rem;margin:0 0 30px}
+.nav{margin:36px 0 0;font-size:.9rem;border-top:1px solid var(--cizgi);padding-top:20px}
+.nav a{margin-right:16px}
+.kutu{background:var(--kart);border:1px solid var(--cizgi);border-radius:12px;padding:16px 18px;margin:20px 0}
+.kutu p:last-child{margin-bottom:0}
+.kutu p:first-child{margin-top:0}
+table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.9rem}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--cizgi);vertical-align:top}
+th{color:var(--murekkep);font-weight:600}
+td{color:var(--soluk)}
+code{background:var(--kart);border:1px solid var(--cizgi);border-radius:5px;padding:1px 5px;font-size:.86em}
+.mark{display:block;width:56px;height:56px;margin:0 0 18px}
+footer{margin-top:56px;color:var(--soluk);opacity:.7;font-size:.84rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<svg class="mark" viewBox="0 0 1024 1024" role="img" aria-label="Vird">
+<g fill="#1a1a17"><path d="M 262 256 L 388 256 L 512 712 L 512 768 L 476 768 Z"/>
+<path d="M 636 256 L 762 256 L 548 768 L 512 768 L 512 712 Z"/>
+<rect x="246" y="240" width="158" height="16"/><rect x="620" y="240" width="158" height="16"/></g></svg>
+
+<h1>Vird — Support</h1>
+<p class="tag">Written by the person who maintains it. Replies are not instant,
+but they are from a human.</p>
+
+<div class="kutu"><p><strong>Email:</strong>
+<a href="mailto:brkekahraman@icloud.com?subject=Vird">brkekahraman@icloud.com</a><br>
+Please say which iOS version you are on and what you expected to happen.</p></div>
+
+<h2>Common questions</h2>
+
+<h3>I linked a folder and Vird says it sees no notes.</h3>
+<p>Vird looks for a NEUMA vault: a folder containing <code>vault.json</code>.
+If you picked the parent folder by mistake, re-pick and choose the folder that
+has that file directly inside it.</p>
+
+<h3>Where do my cards live?</h3>
+<p>On the device, in Vird's own storage. With Plus, they are also mirrored as
+plain files into the folder you choose, which iCloud Drive will carry between
+your devices if you put it there. If you delete the app, the mirrored copy
+survives.</p>
+
+<h3>I turned on AI suggestions and nothing happened.</h3>
+<p>Three things have to be true at once: Plus is active, a provider key is
+stored, and the note has a title and an excerpt. If a request fails, Vird falls
+back to the on-device extraction silently rather than showing you an error in
+the middle of a study session — check the badge under the candidate list to see
+which path produced it.</p>
+
+<h3>What exactly leaves my device when AI is on?</h3>
+<p>The note's title and a short excerpt. Not the body, not tags, not the file
+path, not anything from other notes. This is enforced in one place in the code
+and tested; see the Privacy page.</p>
+
+<h3>How do I restore Plus on a new phone?</h3>
+<p>Self → Restore purchases. It uses your App Store account; there is nothing
+to log into.</p>
+
+<h3>A card is wrong or embarrassing.</h3>
+<p>Long-press it in the library and delete. Deleting a card does not touch the
+note it came from.</p>
+
+<h2>Reporting something broken</h2>
+<p>If Vird loses data, please tell me before anything else and include the day
+and roughly the time — the review log is append-only and I can usually work out
+what happened.</p>
+
+<div class="nav"><a href="index.html">Vird</a> <strong style="color:var(--murekkep)">Support</strong> <a href="privacy.html">Privacy</a> <a href="terms.html">Terms</a></div>
+<footer>Norea Studio · <a href="mailto:brkekahraman@icloud.com">brkekahraman@icloud.com</a></footer>
+</div>
+</body>
+</html>

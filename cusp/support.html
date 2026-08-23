@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cusp — Support</title>
+<meta name="description" content="Support for Cusp: Done versus Released, folder access, the Sunday glance, the thread limit, restoring Plus.">
+<link rel="canonical" href="https://berkemd.github.io/norea/cusp/support.html">
+<meta name="theme-color" content="#f8f7f3">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cusp">
+<meta property="og:title" content="Cusp — Support">
+<meta property="og:url" content="https://berkemd.github.io/norea/cusp/support.html">
+<meta property="og:description" content="Support for Cusp: Done versus Released, folder access, the Sunday glance, the thread limit, restoring Plus.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cusp — Support">
+<meta name="twitter:description" content="Support for Cusp: Done versus Released, folder access, the Sunday glance, the thread limit, restoring Plus.">
+<style>
+:root{--zemin:#f8f7f3;--murekkep:#1a1916;--soluk:#4d4c46;--cizgi:#e2dfd6;--kart:#f1efe8;--vurgu:#3a566b}
+*{box-sizing:border-box}
+body{background:var(--zemin);color:var(--murekkep);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0;-webkit-font-smoothing:antialiased}
+.wrap{max-width:680px;margin:0 auto;padding:44px 24px 96px}
+h1{font-size:1.7rem;margin:0 0 6px;letter-spacing:-.02em}
+h2{font-size:1.1rem;color:var(--vurgu);margin:38px 0 10px;border-top:1px solid var(--cizgi);padding-top:24px;letter-spacing:-.01em}
+h3{font-size:.98rem;margin:22px 0 4px}
+p,li{color:var(--soluk);font-size:.95rem}
+a{color:var(--vurgu)}
+.tag{color:var(--soluk);opacity:.8;font-size:.88rem;margin:0 0 30px}
+.nav{margin:36px 0 0;font-size:.9rem;border-top:1px solid var(--cizgi);padding-top:20px}
+.nav a{margin-right:16px}
+.kutu{background:var(--kart);border:1px solid var(--cizgi);border-radius:12px;padding:16px 18px;margin:20px 0}
+.kutu p:last-child{margin-bottom:0}
+.kutu p:first-child{margin-top:0}
+table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.9rem}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--cizgi);vertical-align:top}
+th{color:var(--murekkep);font-weight:600}
+td{color:var(--soluk)}
+code{background:var(--kart);border:1px solid var(--cizgi);border-radius:5px;padding:1px 5px;font-size:.86em}
+.mark{display:block;width:56px;height:56px;margin:0 0 18px}
+footer{margin-top:56px;color:var(--soluk);opacity:.7;font-size:.84rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+<svg class="mark" viewBox="0 0 1024 1024" role="img" aria-label="Cusp">
+<defs>
+<mask id="l"><rect width="1024" height="1024" fill="black"/><circle cx="512" cy="512" r="224" fill="white"/>
+<circle cx="512" cy="512" r="168" fill="black"/><rect x="494" y="0" width="530" height="1024" fill="black"/></mask>
+<mask id="r"><rect width="1024" height="1024" fill="black"/><circle cx="512" cy="504" r="224" fill="white"/>
+<rect x="0" y="0" width="530" height="1024" fill="black"/></mask></defs>
+<g fill="#1a1916"><rect width="1024" height="1024" mask="url(#l)"/><rect width="1024" height="1024" mask="url(#r)"/></g></svg>
+
+<h1>Cusp — Support</h1>
+<p class="tag">One maintainer, real replies.</p>
+
+<div class="kutu"><p><strong>Email:</strong>
+<a href="mailto:brkekahraman@icloud.com?subject=Cusp">brkekahraman@icloud.com</a><br>
+Tell me your iOS version and what you expected to happen.</p></div>
+
+<h2>Common questions</h2>
+
+<h3>What is the difference between Done and Released?</h3>
+<p>Done means you finished it. Released means you decided not to. Keeping them
+apart is the reason the app exists: if abandoning something is only possible by
+deleting it, you never abandon anything, and the list quietly rots.</p>
+
+<h3>Cusp says my folder is unreachable.</h3>
+<p>iOS grants folder access through a bookmark that can expire — after a
+restore, an iCloud sign-out, or if the folder was moved or renamed. Self →
+Cusp folder → Change, and pick it again. Nothing is lost in the meantime;
+mirroring resumes and backfills.</p>
+
+<h3>Does mirroring ever overwrite my own files?</h3>
+<p>Cusp writes only inside a <code>cusp/</code> subfolder it creates, and only
+files it created. The transition log is append-only.</p>
+
+<h3>The Sunday glance is not showing.</h3>
+<p>It appears when there is something to say: at least one thread that has been
+sitting long enough to be worth a look. An empty week shows nothing rather than
+an empty panel.</p>
+
+<h3>I hit 100 threads.</h3>
+<p>Released and Done threads still count, because they are still your record.
+If you would rather not subscribe, deleting old threads frees space — but
+consider that the record is most of the value.</p>
+
+<h3>How do I restore Plus?</h3>
+<p>Self → Restore purchases. It uses your App Store account.</p>
+
+<h3>Can I get my data out?</h3>
+<p>It is already out: the mirrored folder is plain Markdown and JSONL. That is
+the export.</p>
+
+<div class="nav"><a href="index.html">Cusp</a> <strong style="color:var(--murekkep)">Support</strong> <a href="privacy.html">Privacy</a> <a href="terms.html">Terms</a></div>
+<footer>Norea Studio · <a href="mailto:brkekahraman@icloud.com">brkekahraman@icloud.com</a></footer>
+</div>
+</body>
+</html>
