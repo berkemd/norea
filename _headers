@@ -1,0 +1,49 @@
+# =====================================================================
+#  CLOUDFLARE PAGES BAŞLIKLARI — norea.studio
+#
+#  GitHub Pages hiçbir güvenlik başlığı göndermiyor. 29 Ağustos 2026'da
+#  ölçüldü: `Referrer-Policy`, `Permissions-Policy`, `Content-Security-
+#  Policy` ve `X-Content-Type-Options` — dördü de YOK.
+#
+#  BU BİR TUTARSIZLIK, SADECE BİR EKSİK DEĞİL. Assay'in gizlilik sayfası
+#  "hiçbir şey telefonundan çıkmıyor" diyor; o sayfayı sunan sunucu
+#  ziyaretçinin geldiği tam adresi üçüncü taraflara sızdırıyordu. Bir
+#  vaadi yazmak, onu tutmak değildir — ve vaadin taşıyıcısı da vaade
+#  uymak zorunda.
+# =====================================================================
+
+/*
+  # Gelinen adres ÜÇÜNCÜ TARAFA GİTMİYOR. Aynı köken tam adresi görüyor
+  # (kendi sayfalarımız arası gezinme için), dışarıya yalnızca köken.
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # SAYFA KULLANMADIĞI YETKİLERİ AÇIKÇA REDDEDİYOR. Bu siteler durağan
+  # metin; kamera, mikrofon, konum ve ödeme hiç istenmiyor. Reddetmek
+  # bir formalite değil: bir gün bir üçüncü taraf betiği eklenirse
+  # tarayıcı onu bu satır yüzünden durduruyor.
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
+
+  # MIME türü tahmini kapalı.
+  X-Content-Type-Options: nosniff
+
+  # Çerçeveleme yok — sayfa başka bir sitenin içine gömülemiyor.
+  X-Frame-Options: DENY
+
+  # SIKI CSP. Sayfalar tek dosya: gövde içi stil var, betik YOK.
+  # `script-src 'none'` bir gün biri betik eklerse SESSİZCE değil
+  # GÖRÜNÜR biçimde kırılsın diye.
+  Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; img-src 'self' data:; font-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+
+  # HSTS — bir yıl, alt alanlar dahil.
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+
+# HTML kısa önbellek: içerik değişince hemen görünsün.
+/*.html
+  Cache-Control: public, max-age=600, must-revalidate
+
+# Görseller uzun önbellek: ikonlar ve kareler adlarıyla sabit.
+/*.png
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400

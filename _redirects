@@ -1,0 +1,6 @@
+# Eski GitHub Pages yolları — bağlantılar kırılmasın.
+# App Store'da YAYIMLANMIŞ gizlilik ve destek adresleri
+# `berkemd.github.io/norea/...` biçiminde; onlar Apple'ın kaydında
+# duruyor ve değiştirilemeyen sürümler var. Alan adı taşınırken o
+# bağlantıların ölmemesi gerekiyor.
+/norea/*  /:splat  301
