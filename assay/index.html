@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assay — calories with an honest range</title>
+<meta name="description" content="Assay estimates a meal from a photo and shows the range, not a single number. It separates systematic from random error, and plans against the cautious end.">
+<style>body{background:#f8f7f3;color:#1a1916;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0}
+.wrap{max-width:660px;margin:0 auto;padding:64px 24px}
+h1{font-size:1.6rem;margin:0 0 6px}
+h2{font-size:1.05rem;margin:34px 0 6px}
+h3{font-size:.95rem;margin:22px 0 4px;color:#1a1916}
+p,li{color:#4d4c46}
+a{color:#3a566b}
+code{background:#eeece5;padding:1px 5px;border-radius:3px;font-size:.88em}
+.lang{border-top:1px solid #e2dfd6;margin-top:40px;padding-top:10px;font-size:.86rem}
+.lead{font-size:1.02rem;color:#333}
+.note{border-left:3px solid #34d6a8;padding-left:14px;color:#3d3c37}</style></head><body><div class="wrap">
+<h1>Assay</h1>
+<p class="lead">Every other calorie app shows one number. That number is a guess dressed as a fact — and when it is wrong, you stop trusting the app. Assay shows the range.</p>
+
+<h2>What it does differently</h2>
+
+<h3>A range, not a number</h3>
+<p>Every estimate carries a band, and the band is on screen. The oil under the plate is invisible; so is the portion under the rice. That uncertainty cannot be removed, so it is shown instead of hidden.</p>
+
+<h3>Two kinds of uncertainty, kept apart</h3>
+<p>Error that repeats in the same direction at every meal — the model reading oily food low — is <em>systematic</em>, and it accumulates across a day. Portion-reading noise is <em>random</em>, and it partly cancels out. Adding them the same way gets one of the two wrong. Assay adds systematic error linearly and random error in quadrature, and shows you which one dominates your day.</p>
+
+<h3>It says when it cannot tell</h3>
+<p>A classifier that reports its first guess without looking at the second has invented its own certainty. When two candidates are close in energy, the answer still holds and Assay gives it. When they are far apart — a salad and a slice of cake — no single answer is honest, so Assay names both and asks. The threshold is on the <em>energy spread</em>, not on the confidence number.</p>
+
+<h3>The cost in your life, not in calories</h3>
+<p>620 kcal means nothing to anyone. "23–31 minutes of your evening walk" does. If Assay has not measured your pace yet, it says so rather than quietly using a table.</p>
+
+<h3>A date range, not a date</h3>
+<p>"You will hit your goal in 5 weeks" swallows every uncertainty above it. Assay gives the earliest and the latest day, derived from your own daily balance. Beyond a year it says so instead of inventing a date. The 7700 kcal-per-kilogram figure it uses is a convention, not a law, so it carries its own ±12% band into the result.</p>
+
+<h2>What it will not do</h2>
+<ul>
+<li>It will not fake a number it did not measure.</li>
+<li>It will not send your food log anywhere. The app makes no network requests at all — this is checked on every build, not merely promised.</li>
+<li>It will not shame you. There is no streak to break.</li>
+</ul>
+
+<h2>Links</h2>
+<p><a href="privacy.html">Privacy</a> · <a href="support.html">Support</a> · <a href="../">Norea Studio</a></p>
+
+<div class="lang">
+<p><strong>Deutsch</strong> — Jede andere Kalorien-App zeigt eine Zahl. Assay zeigt die Spanne und trennt systematischen von zufälligem Fehler. Wenn zwei Kandidaten energetisch zu weit auseinanderliegen, sagt Assay das, statt zu raten.</p>
+<p><strong>Español</strong> — Las demás apps de calorías muestran un número. Assay muestra el rango y separa el error sistemático del aleatorio. Si dos candidatos difieren demasiado en energía, lo dice en lugar de adivinar.</p>
+<p><strong>Français</strong> — Les autres applications affichent un chiffre. Assay affiche la fourchette et sépare l’erreur systématique de l’erreur aléatoire. Si deux candidats sont trop éloignés en énergie, elle le dit plutôt que de deviner.</p>
+<p><strong>日本語</strong> — 他のカロリーアプリは一つの数値を示します。Assay は範囲を示し、系統誤差と偶然誤差を分けて扱います。候補のエネルギー差が大きいときは、推測せずにそう伝えます。</p>
+<p><strong>Türkçe</strong> — Diğer kalori uygulamaları tek bir sayı gösterir. Assay aralığı gösterir ve sistematik hatayı rastgele hatadan ayırır. İki aday enerjice çok ayrıksa, uydurmak yerine bunu söyler.</p>
+</div>
+</div></body></html>

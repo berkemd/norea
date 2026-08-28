@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assay — Privacy</title>
+<meta name="description" content="Assay collects nothing. Photos are classified on the device and never leave it; the app makes no network requests.">
+<style>body{background:#f8f7f3;color:#1a1916;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0}
+.wrap{max-width:660px;margin:0 auto;padding:64px 24px}
+h1{font-size:1.6rem;margin:0 0 6px}
+h2{font-size:1.05rem;margin:34px 0 6px}
+h3{font-size:.95rem;margin:22px 0 4px;color:#1a1916}
+p,li{color:#4d4c46}
+a{color:#3a566b}
+code{background:#eeece5;padding:1px 5px;border-radius:3px;font-size:.88em}
+.lang{border-top:1px solid #e2dfd6;margin-top:40px;padding-top:10px;font-size:.86rem}
+.lead{font-size:1.02rem;color:#333}
+.note{border-left:3px solid #34d6a8;padding-left:14px;color:#3d3c37}</style></head><body><div class="wrap">
+<h1>Assay — Privacy</h1>
+<p class="lead">Assay collects nothing. There is no account, no analytics, no crash reporting and no server.</p>
+
+<h2>Your photos</h2>
+<p>When you pick a photo, it is classified <strong>on your iPhone</strong> using Apple's on-device image classifier. The photo is not uploaded, not copied into the app's storage, and not shared with anyone. Assay keeps only the resulting estimate — a food name and three numbers — not the image.</p>
+
+<h2>Your food log</h2>
+<p>Your meals, body mass, goal and activity settings are stored in the app's own container on your device. They are not synced, not backed up to a Norea server (there is none), and are removed when you delete the app.</p>
+
+<h2>Network</h2>
+<p class="note">Assay makes no network requests. This is not a promise about intent — it is a property of the binary. The build pipeline fails if <code>URLSession</code>, <code>URLRequest</code>, <code>NWConnection</code> or <code>CFNetwork</code> appears anywhere in the source. Writing a promise is not the same as keeping it, so the promise is measured.</p>
+
+<h2>Permissions</h2>
+<p><strong>Camera</strong> and <strong>Photo Library</strong> are requested only so you can supply a meal photo. Both are optional: you can pick a food from the list by hand and the app works fully.</p>
+
+<h2>Health data</h2>
+<p>Assay does not connect to Apple Health. It cannot read or write anything there. Your daily burn is either a number you enter yourself or a table estimate — and the app tells you which one it is using, with its band.</p>
+
+<h2>Children</h2>
+<p>Assay is not directed at children and collects no data from anyone.</p>
+
+<h2>Contact</h2>
+<p><a href="mailto:brkekahraman@icloud.com">brkekahraman@icloud.com</a></p>
+<p><a href="./">About Assay</a> · <a href="support.html">Support</a></p>
+
+<div class="lang">
+<p><strong>Deutsch</strong> — Assay erhebt nichts. Fotos werden auf dem Gerät klassifiziert und verlassen es nie; die App stellt keine Netzwerkanfragen. Es gibt kein Konto und keinen Server.</p>
+<p><strong>Español</strong> — Assay no recopila nada. Las fotos se clasifican en el dispositivo y nunca salen de él; la app no hace peticiones de red. No hay cuenta ni servidor.</p>
+<p><strong>Français</strong> — Assay ne collecte rien. Les photos sont classées sur l’appareil et n’en sortent jamais ; l’app ne fait aucune requête réseau. Ni compte, ni serveur.</p>
+<p><strong>日本語</strong> — Assay は何も収集しません。写真は端末上で分類され、外部に送信されません。ネットワーク通信は一切行わず、アカウントもサーバーもありません。</p>
+<p><strong>Türkçe</strong> — Assay hiçbir şey toplamıyor. Fotoğraflar cihazda sınıflandırılıyor ve cihazdan hiç çıkmıyor; uygulama hiçbir ağ isteği yapmıyor. Hesap da yok, sunucu da.</p>
+</div>
+</div></body></html>
