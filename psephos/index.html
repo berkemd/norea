@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Psephos — the winner can depend on the rule, and it says so</title>
+<meta name="description" content="Psephos runs five ranked-voting rules on the same ballots at once and reports whether they agree. It draws Condorcet cycles, marks the weakest link, and never breaks a tie. No account, no server, nothing collected.">
+<style>body{background:#f8f7f3;color:#1a1916;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0}
+.wrap{max-width:660px;margin:0 auto;padding:64px 24px}
+h1{font-size:1.6rem;margin:0 0 6px}
+h2{font-size:1.05rem;margin:34px 0 6px}
+h3{font-size:.95rem;margin:22px 0 4px;color:#1a1916}
+p,li{color:#4d4c46}
+a{color:#4a4780}
+code{background:#eeece5;padding:1px 5px;border-radius:3px;font-size:.88em}
+table{border-collapse:collapse;margin:14px 0;font-size:.92rem}
+td,th{border-bottom:1px solid #e2dfd6;padding:6px 14px 6px 0;text-align:left}
+.lang{border-top:1px solid #e2dfd6;margin-top:40px;padding-top:10px;font-size:.86rem}
+.lead{font-size:1.02rem;color:#333}
+.note{border-left:3px solid #5c59a8;padding-left:14px;color:#3d3c37}
+figure{margin:22px 0}
+figcaption{font-size:.86rem;color:#6a695f;margin-top:6px}</style></head><body><div class="wrap">
+<h1>Psephos</h1>
+<p class="lead">Count ranked ballots by first choices and the answer looks clear. Count the same ballots another way — just as reasonable, just as ordinary — and someone else wins. That is not a bug in the counting. It is a fact about voting, and this app is built around it.</p>
+
+<h2>What it does differently</h2>
+
+<h3>Five rules, run at once</h3>
+<p>Plurality, two rounds, instant runoff, Borda count and Condorcet. The same ballots go through all five, and the first line on screen is not a name but a <em>verdict</em>: the rules agree, or the winner depends on which rule you chose. Kenneth Arrow proved in 1951 that no ranked rule satisfies every reasonable fairness condition at once. Psephos does not pick one for you and does not call one correct.</p>
+
+<figure>
+<table>
+<tr><th>Rule</th><th>Winner</th><th>Overturned by</th></tr>
+<tr><td>Plurality</td><td>Alma</td><td>3 ballots</td></tr>
+<tr><td>Two rounds</td><td>Alma</td><td>at least 5</td></tr>
+<tr><td>Instant runoff</td><td>Alma</td><td>at least 5</td></tr>
+<tr><td>Borda count</td><td>Cedar</td><td>at least 5</td></tr>
+<tr><td>Condorcet</td><td>Cedar</td><td>at least 10</td></tr>
+</table>
+<figcaption>100 ballots: 40 rank Alma › Cedar › Boro, 35 Boro › Cedar › Alma, 25 Cedar › Alma › Boro. Every number here is the app’s own output.</figcaption>
+</figure>
+
+<h3>Sometimes there is no winner</h3>
+<p>A majority can prefer A to B, B to C, and C to A — a genuine cycle, first described by Condorcet in 1785. When it appears there is no winner to name, and naming one would hide it. Psephos draws the cycle and marks its <strong>weakest link</strong>: the smallest majority margin around the loop, and therefore the number of votes that would break it. No other app in the category can display a result like this, because they all have to produce a winner.</p>
+
+<h3>How much would have to change</h3>
+<p class="note">Beside every result is the number of ballots that would overturn it. Under plurality that number is exact. Under Condorcet and instant runoff it is a lower bound, and it is written as one — “at least 10”. A number without that distinction claims a certainty nobody measured.</p>
+
+<h3>Ties are not broken</h3>
+<p>Where a rule stops at a tie, Psephos stops with it and says so. Real chambers break ties by lot; a coin toss dressed up as a calculation would produce a winner the ballots did not give.</p>
+
+<h3>Unranked means unranked</h3>
+<p>Rank two of five and the other three are not treated as last. That ballot expresses no preference between them, and counting one would put words in a voter’s mouth.</p>
+
+<h3>Seats, three ways</h3>
+<p>Give it a chamber size and the same first preferences are divided by D’Hondt, Sainte-Laguë and the largest-remainder method. With 40–35–25 over 19 seats, D’Hondt returns 8–7–4 while the other two return 7–7–5: the largest party takes a seat the other rules give to the smallest. Largest remainder is exactly proportional and can lose a party a seat when the chamber <em>grows</em> — the Alabama paradox, from a real dispute over the 1880s United States census.</p>
+
+<h3>On your wrist</h3>
+<p>One line: the verdict, and the winner’s name only when the rules agree. The watch performs no count of its own — the same ballots counted twice on two devices could show two answers, and that would end trust in both.</p>
+
+<h2>Nothing is collected</h2>
+<p>A secret ballot is only secret if nobody gathers it. There is no account, no room, no invite link and no server. There is no field that ties a ballot to a person, and there cannot be. No network code of any kind, no permissions requested, no analytics, no ads. Each of those lines is a build gate that fails the build if it stops being true — see <a href="/psephos/privacy">Privacy</a>.</p>
+
+<h2>What it is for</h2>
+<p>A board election, a hiring shortlist, a book club, a classroom, or the study of a real ballot. It is not affiliated with any electoral body and does not conduct or certify any official election.</p>
+
+<h2>Price</h2>
+<p>Free. No in-app purchases, no subscription. Everything runs on your device, so there is nothing to bill for.</p>
+
+<h2>Availability</h2>
+<p>iPhone, iPad and Apple Watch. English, German, Spanish, French, Japanese and Turkish.</p>
+
+<p class="lead" style="margin-top:34px">A <em>psephos</em> was the pebble an Athenian dropped in a jar. The pebble is the easy part. What you do with the jar is the whole argument.</p>
+
+<div class="lang"><a href="/">norea.studio</a> · <a href="/psephos/privacy">Privacy</a> · <a href="/psephos/support">Support</a></div>
+</div></body></html>

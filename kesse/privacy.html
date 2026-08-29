@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kesse — Privacy</title>
+<meta name="description" content="Kesse connects to no bank, keeps no transactions, requests no permissions and sends nothing anywhere. Each line is enforced by a build gate.">
+<style>body{background:#f8f7f3;color:#1a1916;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0}
+.wrap{max-width:660px;margin:0 auto;padding:64px 24px}
+h1{font-size:1.6rem;margin:0 0 6px}
+h2{font-size:1.05rem;margin:34px 0 6px}
+p,li{color:#4d4c46}
+a{color:#4a6b48}
+code{background:#eeece5;padding:1px 5px;border-radius:3px;font-size:.88em}
+.lang{border-top:1px solid #e2dfd6;margin-top:40px;padding-top:10px;font-size:.86rem}
+.lead{font-size:1.02rem;color:#333}</style></head><body><div class="wrap">
+<h1>Kesse — Privacy</h1>
+<p class="lead">Kesse connects to no bank, keeps no transaction history, asks for no permissions and sends nothing anywhere. What it measures is one number per period, and that needs none of those things. This page says exactly what that means and how each sentence is checked.</p>
+
+<h2>No bank connection, ever</h2>
+<p>Every other app in this category connects to your accounts. That means your transaction history is readable by whoever operates the service, and it is the single largest privacy cost in personal finance software. Kesse cannot connect and will not: there is no network code of any kind in it, and the build fails if <code>FinanceKit</code>, <code>ASWebAuthenticationSession</code>, <code>URLSession</code>, <code>URLRequest</code>, <code>CFNetwork</code>, <code>NWConnection</code>, <code>StoreKit</code> or <code>CLLocationManager</code> appears in the sources.</p>
+
+<h2>What Kesse stores</h2>
+<p>The period totals you typed, the category names you chose, whether you are working in months or weeks, and the amount on hand if you entered one. All of it lives in this app on this device. Deleting the app deletes all of it, because there is nowhere else it exists.</p>
+
+<h2>What it does not store</h2>
+<p>There is no transaction record — no merchant, no time of day, no description — because there is no field for one. This is not an omission to be filled in later. Kesse asks for a period total on purpose: a transaction log you stop keeping is worse than none at all, because you forget it is incomplete and read its total anyway. The build fails if such a field appears in the stored entry type.</p>
+
+<h2>What leaves the device</h2>
+<p>One line, and only if you have a paired Apple Watch with the Kesse watch app open: the verdict, the typical period with its band, the number of periods, and the range your money lasts. The period totals themselves never go. That line travels over Apple’s own device link between your phone and your watch and does not reach the internet. If you have no watch, nothing leaves the device at all.</p>
+
+<h2>What Kesse does not do</h2>
+<ul>
+<li>No bank, card or account connection of any kind.</li>
+<li>No account, no sign-in, no email address, no sync, no server.</li>
+<li>No permissions. iOS will never show you a permission prompt from Kesse.</li>
+<li>No contacts, no camera, no microphone, no location, no photos, no notifications.</li>
+<li>No analytics, no crash reporting, no identifiers, no advertising, no tracking.</li>
+<li>No in-app purchases and no subscription, so no purchase data.</li>
+<li>No export path, because an export path is also an exfiltration path.</li>
+</ul>
+
+<h2>How these sentences are checked</h2>
+<p>Each claim above corresponds to a check that runs on every build and fails the build if the claim stops being true. The source is scanned with comments stripped for the network and finance symbols listed above, separately for <code>CNContact</code>, <code>CNContactStore</code>, <code>ASIdentifierManager</code>, <code>identifierForVendor</code> and <code>ATTrackingManager</code>. The stored entry type is scanned for any field that would turn it into a transaction record. Every permission key that must be absent is checked for absence. A privacy promise nobody measures is worse than none at all, because people rely on it.</p>
+
+<h2>Not financial advice</h2>
+<p>Kesse is a measuring tool. It reports statistics on numbers you typed in and never recommends an action, a product, a provider or an amount. It is not affiliated with any bank, broker or lender, and it is not a regulated financial service.</p>
+
+<h2>Children</h2>
+<p>Kesse contains no user-generated content that anyone else can see, no messaging, no web browsing and no advertising. It has nothing to collect from anyone, of any age. Rated 4+.</p>
+
+<h2>Changes</h2>
+<p>If any of this ever changes, this page changes with the release that changes it, and the corresponding build gate changes too — they cannot drift apart.</p>
+
+<h2>Contact</h2>
+<p>Questions: <a href="mailto:hello@norea.studio">hello@norea.studio</a>.</p>
+
+<div class="lang"><a href="/">norea.studio</a> · <a href="/kesse/">Kesse</a> · <a href="/kesse/support">Support</a></div>
+</div></body></html>

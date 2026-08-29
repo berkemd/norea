@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Psephos — Support</title>
+<meta name="description" content="How to use Psephos: entering ballots, reading the verdict, what a cycle means, and why some numbers are written as lower bounds.">
+<style>body{background:#f8f7f3;color:#1a1916;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0}
+.wrap{max-width:660px;margin:0 auto;padding:64px 24px}
+h1{font-size:1.6rem;margin:0 0 6px}
+h2{font-size:1.05rem;margin:34px 0 6px}
+h3{font-size:.95rem;margin:22px 0 4px}
+p,li{color:#4d4c46}
+a{color:#4a4780}
+code{background:#eeece5;padding:1px 5px;border-radius:3px;font-size:.88em}
+table{border-collapse:collapse;margin:14px 0;font-size:.92rem}
+td,th{border-bottom:1px solid #e2dfd6;padding:6px 14px 6px 0;text-align:left}
+.lang{border-top:1px solid #e2dfd6;margin-top:40px;padding-top:10px;font-size:.86rem}
+.lead{font-size:1.02rem;color:#333}
+.note{border-left:3px solid #5c59a8;padding-left:14px;color:#3d3c37}</style></head><body><div class="wrap">
+<h1>Psephos — Support</h1>
+<p class="lead">Psephos runs five ranked-voting rules on the same ballots and tells you whether they agree. This page covers how to enter a vote, how to read the result, and the questions the result usually raises.</p>
+
+<h2>Getting started</h2>
+<ol>
+<li>On the <strong>Votes</strong> tab, tap <strong>+</strong>.</li>
+<li>Name the vote and type at least three candidate names. Three is the minimum, and not an arbitrary one: with two candidates every reasonable rule agrees, so there would be nothing to compare.</li>
+<li>Tap <strong>Create</strong>, then <strong>Add ballot</strong>.</li>
+<li>Tap candidates in order of preference. Drag to reorder. Tap <strong>Add</strong>.</li>
+<li>If many people gave the same order, set the voter count on that one ballot instead of entering it repeatedly.</li>
+</ol>
+<p>The verdict appears at the top of the vote as soon as there is at least one ballot.</p>
+
+<h2>Reading the verdict</h2>
+<table>
+<tr><th>What it says</th><th>What it means</th></tr>
+<tr><td>All five rules agree</td><td>Plurality, two rounds, instant runoff, Borda and Condorcet all name the same candidate. This is the strongest thing the app can say.</td></tr>
+<tr><td>The winner depends on the rule</td><td>Different rules name different winners from the same ballots. Nothing is broken; see below.</td></tr>
+<tr><td>The majority contradicts itself</td><td>A majority prefers each candidate to the next, all the way around. There is no winner to name.</td></tr>
+<tr><td>Ties leave the rules silent</td><td>At least one rule stops at a tie. Psephos never breaks a tie.</td></tr>
+</table>
+
+<h3>Why the rules can disagree</h3>
+<p>Kenneth Arrow proved in 1951 that with three or more candidates, no ranked voting rule satisfies every reasonable fairness condition at once. Disagreement between rules is therefore not a defect in the counting; it is a fact about the ballots. Psephos shows all five and declines to call one correct.</p>
+
+<h3>What a cycle is</h3>
+<p>A majority can prefer A to B, B to C, and C to A. Condorcet described this in 1785. When it happens there is genuinely no winner, and an app that named one would be hiding the most interesting thing in the data. Psephos draws the cycle and marks its <strong>weakest link</strong> — the smallest majority margin around the loop, which is how many votes would have to change to break it.</p>
+
+<h3>Why some numbers say “at least”</h3>
+<p class="note">Under plurality, the number of ballots needed to overturn the result can be computed exactly. Under Condorcet and instant runoff it cannot, so Psephos reports a lower bound and writes it as one. A number without that distinction would claim a certainty nobody measured.</p>
+
+<h3>Why ties are not broken</h3>
+<p>Real chambers break ties by lot. A coin toss presented as a calculation would produce a winner the ballots did not give. Where a rule stops, Psephos stops with it and says so.</p>
+
+<h3>Unranked candidates</h3>
+<p>Leaving candidates unranked is allowed and it means something: that ballot expresses no preference between them. They are <em>not</em> treated as last. Counting them as last would put words in a voter’s mouth.</p>
+
+<h2>Seats</h2>
+<p>Set a chamber size when creating a vote and the first preferences are also divided by D’Hondt, Sainte-Laguë and the largest-remainder method. D’Hondt favours the largest party; Sainte-Laguë tracks proportion more closely; largest remainder is exactly proportional and can take a seat away from a party when the chamber grows — the Alabama paradox, from a real dispute over the 1880s United States census. Where the last seat is a genuine draw, Psephos says so rather than resolving it.</p>
+
+<h2>Apple Watch</h2>
+<p>The watch shows one line for your most recent vote: the verdict, and the winner’s name only when all five rules agree. It performs no count of its own. Counting the same ballots separately on two devices could produce two answers, and that would end trust in both. If the watch shows nothing, open the vote on iPhone with the watch app running.</p>
+
+<h2>Common questions</h2>
+<h3>Can several people vote from their own phones?</h3>
+<p>No, and this is deliberate. Collecting ballots across devices would need a server, and a server means the ballots can be seen by whoever runs it. Enter the ballots on one device instead.</p>
+<h3>Can I export the results?</h3>
+<p>No. Any export path is also an exfiltration path, and the build fails if one appears.</p>
+<h3>Is my data backed up?</h3>
+<p>Only by your own device backup. There is no cloud sync, so a vote entered on one device does not appear on another.</p>
+<h3>Is this an official election tool?</h3>
+<p>No. Psephos is for understanding voting rules — a board election, a hiring shortlist, a book club, a classroom, or the study of a real ballot. It does not conduct or certify any official election.</p>
+
+<h2>Contact</h2>
+<p>Anything unclear, anything wrong: <a href="mailto:hello@norea.studio">hello@norea.studio</a>. Bug reports that include the ballots you entered are the most useful, and you can paste them in the email — the app will not send them for you.</p>
+
+<div class="lang"><a href="/">norea.studio</a> · <a href="/psephos/">Psephos</a> · <a href="/psephos/privacy">Privacy</a></div>
+</div></body></html>
