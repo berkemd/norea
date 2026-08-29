@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Palimpsest — every layer names its source</title>
+<meta name="description" content="Eight archaeological places, their layers, and the evidence behind every date — including where the evidence runs out. No network, no account, no permissions.">
+<style>body{background:#f8f7f3;color:#1a1916;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0}
+.wrap{max-width:660px;margin:0 auto;padding:64px 24px}
+h1{font-size:1.6rem;margin:0 0 6px}
+h2{font-size:1.05rem;margin:34px 0 6px}
+h3{font-size:.95rem;margin:22px 0 4px;color:#1a1916}
+p,li{color:#4d4c46}
+a{color:#3a566b}
+code{background:#eeece5;padding:1px 5px;border-radius:3px;font-size:.88em}
+.lang{border-top:1px solid #e2dfd6;margin-top:40px;padding-top:10px;font-size:.86rem}
+.lead{font-size:1.02rem;color:#333}
+.note{border-left:3px solid #e0a14a;padding-left:14px;color:#3d3c37}</style></head><body><div class="wrap">
+<h1>Palimpsest</h1>
+<p class="lead">Most archaeology apps show you a reconstruction and let you believe it. Whether Enclosure D at Göbekli Tepe ever had a roof is disputed; drawing it as though the question were settled is not a rendering choice, it is selling an opinion as knowledge. Palimpsest is built so that it cannot do that.</p>
+
+<h2>What it does differently</h2>
+
+<h3>Every layer carries its source</h3>
+<p>A layer with no source cannot be created at all — the initialiser returns nothing, so the rule is enforced by the compiler rather than by discipline. Author, year and a lookup identifier sit under every claim, not in a credits screen.</p>
+
+<h3>Three levels of evidence, on screen</h3>
+<p><em>Measured</em>: an excavation report and a date. <em>Reconstruction</em>: a published interpretation. <em>Disputed</em>: the same evidence read more than one way. The level is drawn as a shape rather than a colour, so it survives colour blindness — and it is the app's content, not its decoration.</p>
+
+<h3>No date is a point</h3>
+<p>Uncertainty cannot be zero here; the type refuses it. 9500 BCE ± 500 is drawn as a band beside 3200 BCE ± 100 on one axis, so which of the two is thinly known is seen rather than read.</p>
+
+<h3>The slider will not lie about time</h3>
+<p>A slider that gives every layer an equal share is easy to navigate but teaches a false scale. A slider proportional to real time teaches the scale but is awkward. Both are defensible, so the choice is yours — and whichever you pick, the real gap in years is written out underneath.</p>
+
+<h3>Computed is not measured</h3>
+<p>Solstice alignments are computed from the obliquity of the ecliptic for that site and that epoch, and the screen says so in as many words. Where a field survey exists it is drawn as a solid line beside the dashed computed one. Where the published claims contradict each other — Göbekli Tepe, Nabta Playa, Çatalhöyük — no angle is stored at all, and the app explains why instead of choosing a side.</p>
+
+<h2>What it will not do</h2>
+<ul>
+<li>It will not draw a disputed reconstruction as though it were settled.</li>
+<li>It will not show a claim without its source.</li>
+<li>It will not ask for a single permission, and it makes no network requests at all — this is checked in the code on every build, not merely promised here.</li>
+</ul>
+
+<div class="note"><p>Eight places in version 1.0: Göbekli Tepe, Stonehenge, Newgrange, Maeshowe, Troy, Çatalhöyük, Nabta Playa and Karnak. iPhone, iPad, Mac and Apple Watch. Six languages. Free, with no advertising.</p></div>
+
+<h2>Links</h2>
+<p><a href="privacy.html">Privacy</a> · <a href="support.html">Support</a> · <a href="../">Norea Studio</a></p>
+
+<div class="lang">
+<p><strong>Deutsch</strong> — Die meisten Archäologie-Apps zeigen eine Rekonstruktion, als wäre sie der Befund. Palimpsest zeigt zu jeder Schicht ihre Quelle und die Stärke des Belegs, und dort, wo sich die veröffentlichten Behauptungen widersprechen, hinterlegt es gar keinen Winkel.</p>
+<p><strong>Español</strong> — La mayoría de las apps de arqueología muestran una reconstrucción como si fuera el hallazgo. Palimpsest muestra la fuente de cada capa y la fuerza de la evidencia; donde las afirmaciones publicadas se contradicen, no guarda ningún ángulo.</p>
+<p><strong>Français</strong> — La plupart des applications d’archéologie présentent une reconstitution comme un fait. Palimpsest indique pour chaque couche sa source et la force de la preuve, et là où les hypothèses publiées se contredisent, il n’enregistre aucun angle.</p>
+<p><strong>日本語</strong> — 多くの考古学アプリは復元図を事実のように見せます。Palimpsest はすべての層に出典と根拠の強さを添え、公表された主張が矛盾する遺跡では角度を一切登録しません。</p>
+<p><strong>Türkçe</strong> — Arkeoloji uygulamalarının çoğu bir canlandırmayı bulguymuş gibi gösterir. Palimpsest her tabakanın kaynağını ve kanıtının gücünü yazar; yayımlanmış iddiaların birbirini tutmadığı yerlerde hiçbir açı saklamaz.</p>
+</div>
+</div></body></html>

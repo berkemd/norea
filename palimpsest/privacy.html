@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Palimpsest — Privacy</title>
+<meta name="description" content="Palimpsest collects nothing, because it makes no network requests at all.">
+<style>body{background:#f8f7f3;color:#1a1916;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0}
+.wrap{max-width:660px;margin:0 auto;padding:64px 24px}
+h1{font-size:1.6rem;margin:0 0 6px}
+h2{font-size:1.05rem;margin:34px 0 6px}
+h3{font-size:.95rem;margin:22px 0 4px;color:#1a1916}
+p,li{color:#4d4c46}
+a{color:#3a566b}
+code{background:#eeece5;padding:1px 5px;border-radius:3px;font-size:.88em}
+.lang{border-top:1px solid #e2dfd6;margin-top:40px;padding-top:10px;font-size:.86rem}
+.lead{font-size:1.02rem;color:#333}
+.note{border-left:3px solid #e0a14a;padding-left:14px;color:#3d3c37}</style></head><body><div class="wrap">
+<h1>Palimpsest — Privacy</h1>
+<p class="lead">Palimpsest collects nothing. Not because we choose not to look, but because there is nowhere for anything to go: the app makes no network requests at all.</p>
+
+<h2>What is collected</h2>
+<p>Nothing. There is no account, no sign-in, no analytics, no crash reporting, no advertising identifier and no third-party SDK of any kind.</p>
+
+<h2>What permissions are requested</h2>
+<p>None. Palimpsest asks for no camera, no photo library, no location, no motion and no health access. Its <code>Info.plist</code> contains no usage-description strings at all, and a build gate fails the build if one is ever added — because adding one would mean this page had become untrue.</p>
+
+<h2>What is stored on your device</h2>
+<p>One setting: whether the time slider uses equal steps or proportional spacing. It is stored on the device and is never transmitted, because there is no transmission.</p>
+
+<h2>How this is verified</h2>
+<p>Every build runs a check across the whole source tree — with comments stripped, so it measures code rather than prose — for <code>URLSession</code>, <code>NWConnection</code>, <code>CFNetwork</code>, <code>URLRequest</code>, <code>StoreKit</code> and <code>CLLocationManager</code>. If any of them appears, the build fails. Writing a promise is not keeping it; this one is measured.</p>
+
+<h2>Children</h2>
+<p>Palimpsest is rated 4+ and is suitable for children. Since it collects nothing and transmits nothing, it collects nothing from children either.</p>
+
+<h2>Changes</h2>
+<p>If a future version ever needed a network connection, this page would change first and the build gate would change with it. That order is deliberate.</p>
+
+<h2>Contact</h2>
+<p>Questions: <a href="mailto:hello@norea.studio">hello@norea.studio</a></p>
+<p><a href="index.html">Palimpsest</a> · <a href="support.html">Support</a> · <a href="../">Norea Studio</a></p>
+</div></body></html>
