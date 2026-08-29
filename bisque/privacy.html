@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bisque — Privacy</title>
+<meta name="description" content="Bisque makes no network request of any kind, collects nothing and asks for no permissions. Every sentence on this page is a build gate.">
+<style>body{background:#faf8f5;color:#1f1a20;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0}
+.wrap{max-width:660px;margin:0 auto;padding:64px 24px}
+h1{font-size:1.6rem;margin:0 0 6px}
+h2{font-size:1.05rem;margin:34px 0 6px}
+h3{font-size:.95rem;margin:22px 0 4px;color:#1f1a20}
+p,li{color:#4e474f}
+a{color:#b05a3c}
+code{background:#f0ebe4;padding:1px 5px;border-radius:3px;font-size:.88em}
+table{border-collapse:collapse;margin:14px 0;font-size:.92rem}
+td,th{border-bottom:1px solid #e5ded6;padding:6px 14px 6px 0;text-align:left}
+.lang{border-top:1px solid #e5ded6;margin-top:40px;padding-top:10px;font-size:.86rem}
+.lead{font-size:1.02rem;color:#332d34}
+.note{border-left:3px solid #b05a3c;padding-left:14px;color:#3f3840}
+figcaption{font-size:.86rem;color:#6d6569;margin-top:6px}</style></head><body><div class="wrap">
+<h1>Bisque — Privacy</h1>
+<p class="lead">Bisque makes no network request of any kind. It collects nothing about your child, asks for no permissions, and has no account, no server and no advertising. This page says exactly what that means and how each sentence is checked.</p>
+
+<h2>Nothing is collected, because nothing is sent</h2>
+<p>There is no network code in the app, so there is no path by which anything could leave the device — not analytics, not crash reports, not an identifier, not a painting. The build fails if <code>URLSession</code>, <code>URLRequest</code>, <code>CFNetwork</code>, <code>NWConnection</code>, <code>Network</code>, <code>StoreKit</code>, <code>CLLocationManager</code>, <code>ASIdentifierManager</code>, <code>identifierForVendor</code> or <code>ATTrackingManager</code> appears in the sources.</p>
+<p>Apple’s Kids Category forbids sending personally identifiable information or device information to third parties. Bisque cannot send anything to anyone.</p>
+
+<h2>No permissions, ever</h2>
+<p>iOS will never show you a permission prompt from Bisque. No camera, no microphone, no photo library, no contacts, no location, no notifications. Every one of those keys is checked for <em>absence</em> on each build. A permission never requested protects a child better than one granted and then behaved well.</p>
+
+<h2>What Bisque stores, and where</h2>
+<p>The figures your child has painted, the textures of those paintings, and a number derived from them that seeds the daily world. All of it is inside the app on this device. Deleting the app deletes all of it, because there is nowhere else it exists. There is no iCloud sync and no backup to us — your own device backup is the only copy.</p>
+
+<h2>No advertising, no purchases, no other apps</h2>
+<p>There are no adverts of any kind, so there is nothing to review for age-appropriateness and no ad network to receive anything. There are no in-app purchases and no subscription, so there is no purchase data. There are no links out of the app except the parents’ section, which sits behind a parental gate — with a spoken prompt in front of it, because a child of this age cannot read the one on the screen.</p>
+
+<h2>Nothing your child makes can be seen by anyone else</h2>
+<p>No chat, no messaging, no sharing, no gallery, no user-generated content that anyone else can see, no web browsing. There is no way for a stranger to reach your child through this app, because there is no channel to reach them through.</p>
+
+<h2>How these sentences are checked</h2>
+<p>Each claim above corresponds to a check that runs on every build and fails the build if the claim stops being true. The source is scanned with comments stripped for the symbols listed above; every permission key that must be absent is checked for absence. A privacy promise nobody measures is worse than none at all, because people rely on it — and here the people relying on it are choosing on someone else’s behalf.</p>
+
+<h2>The “never frightening” claim is checked too</h2>
+<p>The store text says no generated creature can be ugly or frightening. That sentence is backed by a measurement file in the source: 200 000 generated creatures, none breaking any of the written rules, and a generator that ignores those rules having 100% of its output rejected. Both numbers are produced by the app’s own engine and re-measured on every build.</p>
+
+<h2>Age band</h2>
+<p>Ages 5 and under. The app contains no reading, no violence, no scares, no advertising and no purchasing. Rated 4+.</p>
+
+<h2>Changes</h2>
+<p>If any of this ever changes, this page changes with the release that changes it, and the corresponding build gate changes too — they cannot drift apart.</p>
+
+<h2>Contact</h2>
+<p>Questions: <a href="mailto:hello@norea.studio">hello@norea.studio</a>.</p>
+
+<div class="lang"><a href="/">norea.studio</a> · <a href="/bisque/">Bisque</a> · <a href="/bisque/support">Support</a></div>
+</div></body></html>
