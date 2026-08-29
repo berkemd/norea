@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plumb — it measures the hold, not the seconds</title>
+<meta name="description" content="Plumb measures how steady a held pose is, in degrees with a band, and compares your left side with your right. No permissions at all: HealthKit is not linked, and there are no network requests.">
+<style>body{background:#f8f7f3;color:#1a1916;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0}
+.wrap{max-width:660px;margin:0 auto;padding:64px 24px}
+h1{font-size:1.6rem;margin:0 0 6px}
+h2{font-size:1.05rem;margin:34px 0 6px}
+h3{font-size:.95rem;margin:22px 0 4px;color:#1a1916}
+p,li{color:#4d4c46}
+a{color:#3a566b}
+code{background:#eeece5;padding:1px 5px;border-radius:3px;font-size:.88em}
+table{border-collapse:collapse;margin:14px 0;font-size:.92rem}
+td,th{border-bottom:1px solid #e2dfd6;padding:6px 14px 6px 0;text-align:left}
+.lang{border-top:1px solid #e2dfd6;margin-top:40px;padding-top:10px;font-size:.86rem}
+.lead{font-size:1.02rem;color:#333}
+.note{border-left:3px solid #4a8481;padding-left:14px;color:#3d3c37}</style></head><body><div class="wrap">
+<h1>Plumb</h1>
+<p class="lead">Every balance and yoga app counts your seconds. Sixty seconds in tree pose held rock steady and sixty seconds held wobbling are, in every one of them, the same event with the same tick beside it. They are not the same event.</p>
+
+<h2>What it does differently</h2>
+
+<h3>A hold has a width</h3>
+<p>During a hold, Plumb reads the direction of gravity fifty times a second and reports how far the device wandered from the hold’s <em>own</em> average — an angle, in degrees, with the band that measurement actually has. Two holds of identical length come back as <strong>0.84° ± 0.03°</strong> and <strong>3.97° ± 0.11°</strong>, and now they are two different things rather than two identical ticks.</p>
+
+<h3>Your left side against your right</h3>
+<p>This is the part no app in the category does. After three measured holds on each side, Plumb reports the difference with a band built from two separate sources, kept separate because they behave differently:</p>
+<table>
+<tr><th>Holds per side</th><th>Measurement error</th><th>Day-to-day spread</th><th>Total band</th><th>Verdict</th></tr>
+<tr><td>3</td><td>±0.032°</td><td>±0.227°</td><td>±0.258°</td><td>indistinguishable</td></tr>
+<tr><td>6</td><td>±0.022°</td><td>±0.199°</td><td>±0.221°</td><td>one side weaker</td></tr>
+<tr><td>12</td><td>±0.016°</td><td>±0.219°</td><td>±0.234°</td><td>one side weaker</td></tr>
+</table>
+<p>The measurement half shrinks with the square root of how many holds you do. The day-to-day half does not shrink at all — and shrinking it would be the easiest way to make a difference look certain that is not. You are not the same every day, and that is information rather than noise to be averaged away.</p>
+<p>When the total band crosses zero, the two sides are indistinguishable and Plumb says exactly that. For most people, most of the time, it is the true answer. An app that always finds an imbalance is not more useful; it is only less honest.</p>
+
+<h3>It knows when it cannot measure</h3>
+<p>An accelerometer has its own noise, and that noise looks exactly like sway. Plumb reads the noise floor out of your data rather than out of a settings screen: noise is fast and a body is slow, so the angle between consecutive samples gives it away. Because any real fast motion inflates that estimate, it is an <em>upper</em> bound — which means the subtraction is conservative and the reported sway is biased low. This app never says you swayed more than you did.</p>
+<table>
+<tr><th>True sway</th><th>Reported</th><th>Band</th><th>Kind</th></tr>
+<tr><td>0.00°</td><td>at most 0.09°</td><td>—</td><td>a ceiling</td></tr>
+<tr><td>0.15°</td><td>0.17°</td><td>±0.030°</td><td>a number</td></tr>
+<tr><td>0.60°</td><td>0.67°</td><td>±0.020°</td><td>a number</td></tr>
+<tr><td>2.40°</td><td>2.68°</td><td>±0.053°</td><td>a number</td></tr>
+</table>
+<p>Note where the band is widest: not at the largest sway but at the smallest, where the measurement sits closest to the noise it was subtracted from. A measurement is reported as a number only when its band is narrower than itself; below that it becomes a ceiling, because a number whose band covers zero is not a number.</p>
+
+<h3>Drift, without a story attached</h3>
+<p>Swaying around a point and sliding away from it are different failures and deserve different advice, so Plumb fits the whole hold and reports whether you ended away from where you began. Its band comes from how much the slope varies between six blocks of the hold, not from a model of the noise — body sway is strongly autocorrelated, and ordinary least-squares inference called nearly every steady hold a collapse when it was tried.</p>
+<p>It refuses to say <em>why</em> you moved. An unsigned distance from where you began grows for any one-way motion: falling out of a pose and settling into one look identical from here, and the information that would separate them is not in this measurement. An earlier version had a “recovering” state; a failing test showed it was reporting a direction it could not observe, and it was removed rather than tuned.</p>
+
+<h3>What it measures is the phone</h3>
+<p>Not your body. Hold it against your chest or slip it into a waistband and it follows your trunk; leave it on the mat and it will faithfully measure the mat. That sentence is on the screen before your first hold, because a measurement whose subject is unclear is not a measurement — and no other app in this category says what its sensor is actually attached to.</p>
+
+<h3>Eight poses, and only eight</h3>
+<p>Only held poses can be measured this way. In a flowing sequence the deviation from where you started <em>is</em> the movement, so there is nothing to measure; a longer list would only be a less truthful one.</p>
+
+<div class="note"><p>Free. No in-app purchases, no subscription, no account. iPhone, iPad and Apple Watch. Six languages of interface.</p></div>
+
+<h2>What it will not do</h2>
+<ul>
+<li>It will not print a number in place of a ceiling, or a ceiling in place of “I can’t tell”.</li>
+<li>It will not name a reason for drift that its own measurement cannot distinguish.</li>
+<li>It will not keep your raw motion. A hold becomes three numbers and the gravity samples are released.</li>
+<li>It will not ask for HealthKit, the camera, the microphone, your location or your contacts. It asks for nothing at all.</li>
+</ul>
+
+<h2>The privacy lines are gates, not promises</h2>
+<p>Each claim above corresponds to a check that runs on every build and fails it if the claim stops being true: the source is scanned with comments stripped for <code>URLSession</code>, <code>URLRequest</code>, <code>CFNetwork</code>, <code>NWConnection</code>, <code>CLLocationManager</code> and <code>StoreKit</code>, and separately for <code>HealthKit</code>, <code>HKHealthStore</code> and <code>HKWorkout</code>. The measurement class is checked for any persistence call, and the stored record is checked for the absence of a raw-sample field — because a field that exists will eventually be filled. Every permission string that must be absent is checked for absence. A promise nobody measures is worse than no promise, because people rely on it.</p>
+
+<h2>How the numbers here were produced</h2>
+<p>Every figure on this page and in the App Store screenshots comes from the shipping core, run over holds built from a written rule — a first-order autocorrelated slow component standing in for body sway, an uncorrelated fast component standing in for sensor noise, and an optional linear drift — not from a design file. The core carries 51 tests, and a mutation gate breaks each of its 41 defences one at a time to check that a test actually goes red. Four of those defences escaped on the first run and the tests were sharpened until they did not; one guard turned out to be unreachable and was deleted rather than left in place looking measured.</p>
+
+<div class="lang"><a href="/">norea.studio</a> · <a href="/plumb/privacy">Privacy</a> · <a href="/plumb/support">Support</a></div>
+</div></body></html>

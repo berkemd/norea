@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plumb — Support</title>
+<meta name="description" content="How Plumb measures a held pose, why it sometimes gives a ceiling instead of a number, and why it often says the two sides cannot be told apart.">
+<style>body{background:#f8f7f3;color:#1a1916;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0}
+.wrap{max-width:660px;margin:0 auto;padding:64px 24px}
+h1{font-size:1.6rem;margin:0 0 6px}
+h2{font-size:1.05rem;margin:34px 0 6px}
+h3{font-size:.95rem;margin:22px 0 4px}
+p,li{color:#4d4c46}
+a{color:#3a566b}
+code{background:#eeece5;padding:1px 5px;border-radius:3px;font-size:.88em}
+.lang{border-top:1px solid #e2dfd6;margin-top:40px;padding-top:10px;font-size:.86rem}
+.lead{font-size:1.02rem;color:#333}</style></head><body><div class="wrap">
+<h1>Plumb — Support</h1>
+<p class="lead">Most questions about Plumb are versions of the same one: why won’t it just give me a score? Here are the answers.</p>
+
+<h2>Where do I put the phone?</h2>
+<p>Against your chest, or in a waistband, or anywhere it moves with your trunk. What is measured is the <em>phone</em>, not your body: on a mat it will faithfully measure the mat and report a ceiling, because a mat does not sway. Whatever you choose, keep it the same between the left and right side of a pose — a comparison between two different placements is a comparison of two different things.</p>
+
+<h2>Why did I get “at most 0.31°” instead of a number?</h2>
+<p>Because the hold came in under the device’s own noise. An accelerometer has a noise level of its own that looks exactly like sway, and Plumb reads that level out of your data rather than assuming it. When your sway is below it, the honest statement is a ceiling: you were <em>at least</em> that steady, and possibly steadier, and no phone can tell which. This happens most often when the phone is resting on something rather than on you.</p>
+
+<h2>Why does it say the two sides cannot be told apart?</h2>
+<p>Because the band on the difference crosses zero. The band has two halves: the measurement’s own error, which narrows as you record more holds, and how much you vary from day to day, which does not narrow. If the difference between your sides is smaller than that band, no honest reading distinguishes them. For most people, most of the time, this is the true answer — and it is also the answer that no other app in this category is able to give.</p>
+<p>If you want a sharper reading, more holds will narrow the measurement half. They will not narrow the day-to-day half, and nothing will, because it is not error — it is you.</p>
+
+<h2>Why does it need three holds on each side?</h2>
+<p>With two, the spread between holds is a single difference and can come entirely from one bad repetition. Three is the smallest count whose median is distinct from its extremes. Below three per side, Plumb says it cannot compare yet rather than comparing badly.</p>
+
+<h2>It says the hold moved. Was that bad?</h2>
+<p>It means you ended away from where you began — measurably, across the majority of your holds in that pose. Plumb does not say why, and cannot: an unsigned distance from the start grows for any one-way motion, so falling out of a pose and settling into one look identical from here. Treat it as a fact about the hold, not a verdict about you. If you were still finding the position in the first seconds, that will show up here, and it is worth knowing.</p>
+
+<h2>Why only eight poses?</h2>
+<p>Because only held poses can be measured this way. In a flowing sequence, deviation from where you started <em>is</em> the movement; there is no baseline to deviate from and nothing to measure. A list of two hundred poses would be longer and less true.</p>
+
+<h2>Why is there no drift figure on short holds?</h2>
+<p>Drift needs enough data to split the hold into six blocks with a real measurement in each — about five seconds at fifty samples a second. Below that the band on the slope is wider than any slope you could find, so no drift is reported at all.</p>
+
+<h2>The watch app shows “Not connected to iPhone”</h2>
+<p>The watch shows the phone’s verdict; it does not measure on its own, because two devices showing two different numbers would end trust in both. Open Plumb on the phone, keep both devices in range, and the verdict appears.</p>
+
+<h2>Does it use Apple Health?</h2>
+<p>No. HealthKit is not linked at all, and the build fails if it appears in the source. Nothing is written to Health and nothing is read from it.</p>
+
+<h2>Which devices?</h2>
+<p>iPhone and iPad on iOS 17 or later, Apple Watch on watchOS 10 or later. There is no Mac version: the input is an accelerometer attached to a moving body, and a Mac target would be an empty product rather than a smaller one.</p>
+
+<h2>Languages</h2>
+<p>English, German, Spanish, French, Japanese and Turkish.</p>
+
+<h2>Something is wrong, or a number looks off</h2>
+<p>Write to <a href="mailto:hello@norea.studio">hello@norea.studio</a> with what the screen said and what you expected. If a measurement is wrong, that is a defect in the core, and the core is where it will be fixed and tested.</p>
+
+<div class="lang"><a href="/">norea.studio</a> · <a href="/plumb/">Plumb</a> · <a href="/plumb/privacy">Privacy</a></div>
+</div></body></html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plumb — Privacy</title>
+<meta name="description" content="Plumb asks for no permissions at all. HealthKit is not linked, there are no network requests, and raw motion is never stored. Each line is enforced by a build gate.">
+<style>body{background:#f8f7f3;color:#1a1916;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0}
+.wrap{max-width:660px;margin:0 auto;padding:64px 24px}
+h1{font-size:1.6rem;margin:0 0 6px}
+h2{font-size:1.05rem;margin:34px 0 6px}
+p,li{color:#4d4c46}
+a{color:#3a566b}
+code{background:#eeece5;padding:1px 5px;border-radius:3px;font-size:.88em}
+.lang{border-top:1px solid #e2dfd6;margin-top:40px;padding-top:10px;font-size:.86rem}
+.lead{font-size:1.02rem;color:#333}</style></head><body><div class="wrap">
+<h1>Plumb — Privacy</h1>
+<p class="lead">Plumb asks for no permissions at all, collects nothing, and sends nothing anywhere. This page says exactly what that means and how each sentence is checked.</p>
+
+<h2>What Plumb reads</h2>
+<p>The direction of gravity, from the device-motion stream, fifty times a second while a hold is running. That stream needs no permission and carries no identity: it says which way is down, and nothing else. Nothing is read between holds.</p>
+
+<h2>What Plumb stores</h2>
+<p>One setting — the hold length you aim for — and three numbers per hold: the sway, its band, and the drift slope. The gravity samples themselves are released the moment a hold ends and are never written to disk. Keeping the raw series would be keeping a recording of your body, and the record type has no field for one, because a field that exists will eventually be filled.</p>
+
+<h2>What leaves the device</h2>
+<p>One thing, and only if you have a paired Apple Watch with the Plumb watch app open: the verdict for the pose you have measured most. That is a key name, a decision code and at most two numbers, sent over Apple’s own device link between your phone and your watch. It does not reach the internet. If you have no watch, nothing leaves the device at all.</p>
+
+<h2>What Plumb does not do</h2>
+<ul>
+<li>No HealthKit. It is not linked, and the build fails if it appears. Nearly every app in this category asks for it.</li>
+<li>No camera, no microphone, no location, no contacts, no photo access, no calendar.</li>
+<li>No network requests of any kind. There is no server to talk to.</li>
+<li>No analytics, no crash reporting, no identifiers, no advertising, no tracking.</li>
+<li>No account, no sign-in, no email address.</li>
+<li>No in-app purchases and no subscription, so no purchase data.</li>
+<li>No video, and therefore nothing streamed and nothing logged about what you watched.</li>
+</ul>
+
+<h2>The permissions it does not ask for</h2>
+<p>None. iOS will never show you a permission prompt from Plumb, because the measurement comes from the accelerometer and the accelerometer asks for nothing. An app in this category with no permissions is not a smaller app; it is one that decided what it does not need.</p>
+
+<h2>How these sentences are checked</h2>
+<p>Each claim above corresponds to a check that runs on every build and fails the build if the claim stops being true. The source is scanned with comments stripped for <code>URLSession</code>, <code>URLRequest</code>, <code>CFNetwork</code>, <code>NWConnection</code>, <code>CLLocationManager</code> and <code>StoreKit</code>; separately for <code>HealthKit</code>, <code>HKHealthStore</code>, <code>HKWorkout</code> and <code>HKQuantityType</code>. The measurement class is checked for any persistence call, and the stored record for the absence of a raw-sample field. Every permission key that must be absent is checked for absence. A privacy promise nobody measures is worse than none at all, because people rely on it.</p>
+
+<h2>Children</h2>
+<p>Plumb contains no user-generated content, no messaging, no web browsing and no advertising. It has nothing to collect from anyone, of any age.</p>
+
+<h2>Changes</h2>
+<p>If any of this ever changes, this page changes with the release that changes it, and the corresponding build gate changes too — they cannot drift apart.</p>
+
+<h2>Contact</h2>
+<p>Questions: <a href="mailto:hello@norea.studio">hello@norea.studio</a>.</p>
+
+<div class="lang"><a href="/">norea.studio</a> · <a href="/plumb/">Plumb</a> · <a href="/plumb/support">Support</a></div>
+</div></body></html>
