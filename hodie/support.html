@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hodie — Support</title>
+<meta name="description" content="How Hodie decides whether work fits today — and why it sometimes refuses to answer.">
+<style>body{background:#f8f7f3;color:#1a1916;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0}
+.wrap{max-width:660px;margin:0 auto;padding:64px 24px}
+h1{font-size:1.6rem;margin:0 0 6px}
+h2{font-size:1.05rem;margin:34px 0 6px}
+h3{font-size:.95rem;margin:22px 0 4px}
+p,li{color:#4d4c46}
+a{color:#3a566b}
+code{background:#eeece5;padding:1px 5px;border-radius:3px;font-size:.88em}
+.lang{border-top:1px solid #e2dfd6;margin-top:40px;padding-top:10px;font-size:.86rem}
+.lead{font-size:1.02rem;color:#333}</style></head><body><div class="wrap">
+<h1>Hodie — Support</h1>
+<p class="lead">Most questions about Hodie are versions of the same one: why won’t it just tell me yes or no? Here are the answers.</p>
+
+<h2>Why does it say “I can’t tell”?</h2>
+<h3>Your calendar records too few of your days</h3>
+<p>Hodie counts how many of your last 28 days carry any entry at all. If that share is below half, today’s gaps are not evidence of anything — an empty day and an unrecorded day look identical — so no answer about today is available. Putting your real commitments in the calendar for a couple of weeks is what fixes this, and the Coverage screen shows the number climbing.</p>
+<h3>The coverage sits on the line</h3>
+<p>The share is read from a finite number of days, so it comes with a band. When that band straddles the halfway threshold, the calendar is neither readable nor unreadable, and rounding it into a verdict would be inventing certainty. Note that even 57% of days can land here: a majority is not the same as a picture of your life.</p>
+<h3>Not enough past days of this kind</h3>
+<p>The budget is corrected using the median of your recent days <em>of the same kind</em> — weekdays against weekdays, weekends against weekends. Fewer than six such days and there is no median worth using, so no band can be built.</p>
+<h3>The band crosses what you asked for</h3>
+<p>The answer is available on a good day and unavailable on a bad one. Neither yes nor no is true, so Hodie says the third thing. Asking for a shorter stretch usually resolves it, and so does a calendar whose days vary less.</p>
+
+<h2>Why does it say “no room” when I can see hours of free time?</h2>
+<p>Because no single stretch of that free time is long enough. Four scattered twenty-minute gaps are not eighty minutes of work, and a day with four hours free in six pieces cannot hold ninety minutes of anything. The Today screen shows the longest single block next to the total, and the shortest block you consider usable is yours to set in Settings.</p>
+
+<h2>Why is there less free time than my calendar shows?</h2>
+<p>Because your days of this kind usually run fuller than today’s calendar says. That difference is work that exists but was never written down, and it is subtracted. The correction only ever runs one way: a calendar can prove a day is busy, never that it is free. The Today screen shows the amount subtracted, so nothing happens invisibly.</p>
+
+<h2>Why is the band lopsided?</h2>
+<p>The ceiling is what the calendar wrote, and nothing can exceed it — a symmetric band would claim more free time than the calendar contains. So only the floor moves, and it moves with how much your days actually vary. “There is room” means it fits even on a bad day; “there is no room” means it fails even on a perfect one.</p>
+
+<h2>Does Hodie read my meeting titles?</h2>
+<p>No, and not in the sense of reading and discarding them. The title, participants, location, notes and URL of an event are never accessed at all, and a check on every build fails the build if any of them is. Only the start time and the end time are read.</p>
+
+<h2>The watch app shows “Not connected to iPhone”</h2>
+<p>The watch shows the phone’s answer; it does not measure on its own, because the measurement needs your calendar and your settings. Open Hodie on the phone, keep both devices in range, and the answer appears. If the connection drops, the watch says so rather than leaving yesterday’s verdict on screen — a stale answer on a changed day is worse than no answer.</p>
+
+<h2>Can I change the hours it counts?</h2>
+<p>Yes. Settings holds four things: the window of the day, the shortest usable block, and how much work you want to fit. All four are visible; none of them is a hidden rule you are being judged by.</p>
+
+<h2>Which devices?</h2>
+<p>iPhone and iPad on iOS 17 or later, Apple Watch on watchOS 10 or later. There is no Mac version: shipping one would mean opening a build setting and calling it a product, and that is not the same thing.</p>
+
+<h2>Languages</h2>
+<p>English, German, Spanish, French, Japanese and Turkish.</p>
+
+<h2>Something is wrong, or a number looks off</h2>
+<p>Write to <a href="mailto:hello@norea.studio">hello@norea.studio</a> with what the screen said and what you expected. If a measurement is wrong, that is a defect in the core, and the core is where it will be fixed and tested.</p>
+
+<div class="lang"><a href="/">norea.studio</a> · <a href="/hodie/">Hodie</a> · <a href="/hodie/privacy">Privacy</a></div>
+</div></body></html>

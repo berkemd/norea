@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hodie — an empty calendar is not an empty day</title>
+<meta name="description" content="Hodie answers one question about today — does this much work fit? — and counts how much of your life your calendar actually records before it answers. No network, no account, event titles never read.">
+<style>body{background:#f8f7f3;color:#1a1916;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0}
+.wrap{max-width:660px;margin:0 auto;padding:64px 24px}
+h1{font-size:1.6rem;margin:0 0 6px}
+h2{font-size:1.05rem;margin:34px 0 6px}
+h3{font-size:.95rem;margin:22px 0 4px;color:#1a1916}
+p,li{color:#4d4c46}
+a{color:#3a566b}
+code{background:#eeece5;padding:1px 5px;border-radius:3px;font-size:.88em}
+table{border-collapse:collapse;margin:14px 0;font-size:.92rem}
+td,th{border-bottom:1px solid #e2dfd6;padding:6px 14px 6px 0;text-align:left}
+.lang{border-top:1px solid #e2dfd6;margin-top:40px;padding-top:10px;font-size:.86rem}
+.lead{font-size:1.02rem;color:#333}
+.note{border-left:3px solid #c97454;padding-left:14px;color:#3d3c37}</style></head><body><div class="wrap">
+<h1>Hodie</h1>
+<p class="lead">You open the calendar, see white space, and say yes. Then the day fills with everything that was never in the calendar, and the two hours you promised never happen. The white space was never evidence — it looks identical whether the day is free or whether your calendar simply does not record your life.</p>
+
+<h2>What it does differently</h2>
+
+<h3>It counts the calendar before it reads the day</h3>
+<p>Every planner in the category treats a gap as availability. Hodie first asks whether your calendar is worth reading at all: how many of your last 28 days carry <em>any</em> entry. Below half, no arithmetic on today’s gaps means anything, and the app says so rather than drawing you a confident free block.</p>
+<p>The count is a proportion read from a finite number of days, so it carries a sampling band, and the band is what decides — not the midpoint. “About half” is reported as <em>undecided</em>, not rounded into a verdict.</p>
+
+<table>
+<tr><th>Days with an entry</th><th>Share</th><th>Band</th><th>Verdict</th></tr>
+<tr><td>4 / 28</td><td>14.3%</td><td>±6.6%</td><td>too sparse</td></tr>
+<tr><td>10 / 28</td><td>35.7%</td><td>±9.1%</td><td>too sparse</td></tr>
+<tr><td>12 / 28</td><td>42.9%</td><td>±9.4%</td><td>undecided</td></tr>
+<tr><td>14 / 28</td><td>50.0%</td><td>±9.4%</td><td>undecided</td></tr>
+<tr><td>16 / 28</td><td>57.1%</td><td>±9.4%</td><td>undecided</td></tr>
+<tr><td>18 / 28</td><td>64.3%</td><td>±9.1%</td><td>readable</td></tr>
+<tr><td>24 / 28</td><td>85.7%</td><td>±6.6%</td><td>readable</td></tr>
+</table>
+<p>Note that 57.1% is still undecided. A majority of days carrying an entry is not the same as a calendar that can be read as a picture of your life, and the difference is exactly the width of the band.</p>
+
+<h3>The total lies; the longest block tells the truth</h3>
+<p>Four scattered twenty-minute gaps are not eighty minutes of work. Hodie gates every answer on the longest single uninterrupted block <em>first</em>, and only then on totals. A day with five meetings and six gaps — 45, 45, 40, 40, 35, 35 minutes — has four hours free and cannot hold ninety minutes of anything. Every planner that answers from the total gets that day wrong.</p>
+
+<h3>It subtracts the work your calendar never sees</h3>
+<p>Today’s committed minutes are compared with the <em>median</em> of your recent days of the same kind — weekday against weekday, weekend against weekend. If today looks emptier than usual, that difference is almost certainly work that exists but was never written down, and it comes off the free time.</p>
+<p>The correction runs one way only. A calendar can prove a day is busy; it can never prove a day is free. If today’s calendar shows <em>more</em> than the median, that is a recorded load, not a gift, and nothing is added back.</p>
+<p>The median, not the mean: one ten-hour conference day moves a mean and leaves a median where it was. And the spread is measured with median absolute deviation rather than a standard deviation, because in calendar data the outlier days are the rule, and a squared measure builds the band on top of them.</p>
+
+<h3>An honest band, deliberately lopsided</h3>
+<p>Most estimates are drawn symmetrically around a midpoint. This one cannot be: the ceiling is what the calendar <em>wrote</em>, and nothing can exceed it. Only the floor moves, and it moves with how much your days actually vary.</p>
+<table>
+<tr><th>How much your days vary</th><th>On a bad day</th><th>At most</th><th>Verdict for 2 h 30 min</th></tr>
+<tr><td>± 0 min</td><td>3 h</td><td>3 h</td><td>there is room</td></tr>
+<tr><td>± 24 min</td><td>2 h 36 min</td><td>3 h</td><td>there is room</td></tr>
+<tr><td>± 37 min</td><td>2 h 23 min</td><td>3 h</td><td>I can’t tell</td></tr>
+<tr><td>± 1 h 38 min</td><td>1 h 22 min</td><td>3 h</td><td>I can’t tell</td></tr>
+</table>
+<p>Same day, same calendar, same three hours of ceiling throughout. Only the floor changes — and with it, whether an answer is available at all.</p>
+
+<h3>There is a third answer, and you will see it often</h3>
+<p><em>Yes</em> means it fits even on a bad day. <em>No</em> means it does not fit even on a perfect one. Everything between is <em>I can’t tell</em>, with the reason: the calendar records too few of your days, the coverage sits on the line, there is not enough history to build a band, or the band crosses what you asked for. A planner that never says this is not more useful; it is only more confident.</p>
+
+<h3>On the wrist, one word</h3>
+<p>Raise your arm and get the verdict and a single number. No calendar grid, no lists, no settings squeezed onto forty millimetres. The iPhone did the measuring; the watch says what came out of it.</p>
+
+<div class="note"><p>Free. No in-app purchases, no subscription, no account. iPhone, iPad and Apple Watch. Six languages of interface.</p></div>
+
+<h2>What it will not do</h2>
+<ul>
+<li>It will not answer about today until it has checked whether your calendar represents your days.</li>
+<li>It will not answer from a total when no single block is long enough.</li>
+<li>It will not read the title of a meeting — not read it and discard it; never read it.</li>
+<li>It will not make a network request, create an account, or ask for your location, contacts, reminders, microphone or camera. Calendar is the only permission it asks for.</li>
+</ul>
+
+<h2>The privacy lines are gates, not promises</h2>
+<p>Each claim above corresponds to a check that runs on every build and fails it if the claim stops being true. The source is scanned with comments stripped for <code>URLSession</code>, <code>URLRequest</code>, <code>CFNetwork</code>, <code>NWConnection</code>, <code>CLLocationManager</code> and <code>StoreKit</code>; any file that touches <code>EKEvent</code> is additionally scanned for reads of <code>title</code>, <code>notes</code>, <code>location</code>, <code>url</code>, <code>attendees</code> or <code>organizer</code>, and finding one fails the build. The permission strings that are supposed to be absent are checked for absence, and the one that is supposed to be present is checked for presence. A promise nobody measures is worse than no promise, because people rely on it.</p>
+
+<h2>How the numbers here were produced</h2>
+<p>Every figure on this page and in the App Store screenshots comes from the shipping core, run over days built from a written rule — event start-and-duration pairs and a deterministic history pattern — not from a design file. The core carries 45 tests, and a mutation gate breaks each of its 32 defences one at a time to check that a test actually goes red. The asymmetric band was not designed that way: a failing test revealed a symmetric band claiming an upper bound of 400 minutes on a day whose calendar showed only 300, and the structure was rebuilt around what the calendar can and cannot prove.</p>
+
+<div class="lang"><a href="/">norea.studio</a> · <a href="/hodie/privacy">Privacy</a> · <a href="/hodie/support">Support</a></div>
+</div></body></html>
