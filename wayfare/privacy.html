@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wayfare — Privacy</title>
+<meta name="description" content="Wayfare makes no network request of any kind, asks for no permissions and connects to no bank. Every sentence on this page is a build gate.">
+<style>body{background:#f8f7f3;color:#1a1916;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0}
+.wrap{max-width:660px;margin:0 auto;padding:64px 24px}
+h1{font-size:1.6rem;margin:0 0 6px}
+h2{font-size:1.05rem;margin:34px 0 6px}
+p,li{color:#4d4c46}
+a{color:#7a5c23}
+code{background:#eeece5;padding:1px 5px;border-radius:3px;font-size:.88em}
+.lang{border-top:1px solid #e2dfd6;margin-top:40px;padding-top:10px;font-size:.86rem}
+.lead{font-size:1.02rem;color:#333}</style></head><body><div class="wrap">
+<h1>Wayfare — Privacy</h1>
+<p class="lead">Wayfare makes no network request of any kind. Not for exchange rates, not for analytics, not for anything. It connects to no bank, asks for no permissions and sends nothing anywhere. This page says exactly what that means and how each sentence is checked.</p>
+
+<h2>No network, at all</h2>
+<p>Most apps in this category fetch a live exchange rate, and many connect to your accounts. Either one makes where you are going, and when, readable by whoever operates the service. Wayfare cannot do either: there is no network code of any kind in it, and the build fails if <code>URLSession</code>, <code>URLRequest</code>, <code>CFNetwork</code>, <code>NWConnection</code>, <code>Network</code>, <code>StoreKit</code>, <code>CLLocationManager</code>, <code>FinanceKit</code> or <code>ASWebAuthenticationSession</code> appears in the sources.</p>
+<p>The exchange rate comes from you: you note the rate you saw and the date you saw it. With fewer than four notes the app says the rate is not yet in the range, rather than assuming a currency does not move. Paying that cost honestly is what buys the absence of a network.</p>
+
+<h2>What Wayfare stores</h2>
+<p>The trip name, the cost items you entered as ranges, the balance you typed, your deposits with their dates, and the exchange-rate notes you wrote down. All of it is one file inside this app on this device. Deleting the app deletes all of it, because there is nowhere else it exists.</p>
+
+<h2>What it does not store</h2>
+<p>There is no bank account, no card, no transaction record and no location. There is no field for any of them. The balance is a number you type, not a number anything reads.</p>
+
+<h2>What leaves the device</h2>
+<p>One line, and only if you have a paired Apple Watch with the Wayfare watch app: the earliest and latest month, the most likely month, the cost range, how many complete months went into the answer, and whether the exchange rate could be measured. Your cost items, deposits and rate notes never go. That line travels over Apple’s own device link between your phone and your watch and does not reach the internet. If you have no watch, nothing leaves the device at all.</p>
+
+<h2>What Wayfare does not do</h2>
+<ul>
+<li>No network request of any kind, for any purpose.</li>
+<li>No bank, card or account connection.</li>
+<li>No account, no sign-in, no email address, no sync, no server.</li>
+<li>No permissions. iOS will never show you a permission prompt from Wayfare.</li>
+<li>No contacts, no camera, no microphone, no location, no photos, no notifications.</li>
+<li>No analytics, no crash reporting, no identifiers, no advertising, no tracking.</li>
+<li>No in-app purchases and no subscription, so no purchase data.</li>
+<li>No export path, because an export path is also an exfiltration path.</li>
+</ul>
+
+<h2>How these sentences are checked</h2>
+<p>Each claim above corresponds to a check that runs on every build and fails the build if the claim stops being true. The source is scanned with comments stripped for the network and finance symbols listed above, separately for <code>CNContact</code>, <code>CNContactStore</code>, <code>ASIdentifierManager</code>, <code>identifierForVendor</code> and <code>ATTrackingManager</code>. Every permission key that must be absent is checked for absence. A privacy promise nobody measures is worse than none at all, because people rely on it.</p>
+
+<h2>The accuracy claim is checked too</h2>
+<p>The store text says the range holds at least nine times out of ten. That sentence is backed by a measurement file in the source, produced by simulation across 4 to 48 months of history and every level of month-to-month unevenness, and re-measured on data the correction had never seen. The build reads that file and fails if the worst cell falls below 90%. Worst cell today: 90.2%.</p>
+
+<h2>Not financial advice</h2>
+<p>Wayfare is a measuring tool. It reports an interval computed from numbers you typed in and never recommends an action, a product, a provider or an amount. It is not affiliated with any bank, broker or lender, and it is not a regulated financial service.</p>
+
+<h2>Children</h2>
+<p>Wayfare contains no user-generated content that anyone else can see, no messaging, no web browsing and no advertising. It has nothing to collect from anyone, of any age. Rated 4+.</p>
+
+<h2>Changes</h2>
+<p>If any of this ever changes, this page changes with the release that changes it, and the corresponding build gate changes too — they cannot drift apart.</p>
+
+<h2>Contact</h2>
+<p>Questions: <a href="mailto:hello@norea.studio">hello@norea.studio</a>.</p>
+
+<div class="lang"><a href="/">norea.studio</a> · <a href="/wayfare/">Wayfare</a> · <a href="/wayfare/support">Support</a></div>
+</div></body></html>

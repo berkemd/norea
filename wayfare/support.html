@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wayfare — Support</title>
+<meta name="description" content="How to use Wayfare, why it needs four complete months, and why it sometimes refuses to name a latest date.">
+<style>body{background:#f8f7f3;color:#1a1916;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0}
+.wrap{max-width:660px;margin:0 auto;padding:64px 24px}
+h1{font-size:1.6rem;margin:0 0 6px}
+h2{font-size:1.05rem;margin:34px 0 6px}
+h3{font-size:.95rem;margin:22px 0 4px}
+p,li{color:#4d4c46}
+a{color:#7a5c23}
+code{background:#eeece5;padding:1px 5px;border-radius:3px;font-size:.88em}
+table{border-collapse:collapse;margin:14px 0;font-size:.92rem}
+td,th{border-bottom:1px solid #e2dfd6;padding:6px 14px 6px 0;text-align:left}
+.lang{border-top:1px solid #e2dfd6;margin-top:40px;padding-top:10px;font-size:.86rem}
+.lead{font-size:1.02rem;color:#333}
+.note{border-left:3px solid #96702a;padding-left:14px;color:#3d3c37}</style></head><body><div class="wrap">
+<h1>Wayfare — Support</h1>
+<p class="lead">Wayfare answers one question: given what you actually set aside each month, when can you afford this trip? It answers with two dates.</p>
+
+<h2>Getting started</h2>
+<h3>1. Enter the trip as ranges</h3>
+<p>On the <strong>Trip</strong> tab, add each cost as a range — at least this, at most that. If you genuinely know a figure, turn on “I know the exact amount” and enter it once; its range is then zero wide. Also enter what you have saved so far. That number is one you type; Wayfare never connects to a bank.</p>
+<h3>2. Say what moves with what</h3>
+<p>Each item has a “moves with” setting: on its own, number of nights, number of people, or exchange rate. Items that share a driver rise and fall together, and Wayfare adds them as one thing. This is the single biggest difference between the range Wayfare shows and the range other apps show.</p>
+<h3>3. Add deposits as they happen</h3>
+<p>On the <strong>Saving</strong> tab, add each deposit with its date. After four complete months the <strong>Answer</strong> tab fills in.</p>
+
+<h2>Questions</h2>
+
+<h3>Why does it need four complete months?</h3>
+<p>Below four, the spread of your deposits cannot be estimated well enough for the range to mean anything. It was measured: at three months, making the promised range actually hold would require widening it by 1.65× to 4.05×, and a range four times too wide tells you nothing. “I cannot say yet” is the truthful answer, so that is what it says.</p>
+
+<h3>Why doesn’t this month count?</h3>
+<p>Because it is not over. On the 5th of a month, that month’s total is about a sixth of a full one, and counting it would drag your rate down. Only complete calendar months are used.</p>
+
+<h3>Why does a month I skipped show as zero?</h3>
+<p>Because you did skip it. If you saved in January, March and May but not February or April, you are not saving that amount per month. Dropping the empty months would nearly double the rate and would also make the app look far more certain than it is.</p>
+
+<h3>It says there is no latest date. Is that a bug?</h3>
+<p>No — it is the answer. When your monthly deposits vary more than they add up, the rate cannot be told apart from its own variation, and no honest upper bound exists. Most apps print a month anyway. A few steadier months will produce one here.</p>
+
+<h3>Why two dates instead of one?</h3>
+<p>Because one date would be a guess wearing a suit. Both the trip’s cost and your saving rate are uncertain, and the date is a ratio of the two, so it inherits both. The most likely month is shown, faintly, between the bounds.</p>
+
+<h3>Why doesn’t it fetch the exchange rate?</h3>
+<p>Fetching it would require a network connection, and a network connection is the thing that makes an app’s privacy promise unverifiable. Instead you note the rate when you see it, on the <strong>Rate</strong> tab. Four notes are enough for Wayfare to measure how much the rate moves; below four it says so rather than pretending a currency is stable.</p>
+
+<h3>Which currency does it use?</h3>
+<p>Your device’s own region setting. There is nothing to choose and nothing to convert — the foreign-currency code you enter is a label, not a conversion.</p>
+
+<h3>Is it synced across my devices?</h3>
+<p>No. There is no server and no cloud sync. Entries made on one device stay there; your own device backup is the only copy.</p>
+
+<h3>What does the watch show?</h3>
+<p>The same two dates, the most likely month and the cost range. It computes nothing of its own. Your items, deposits and rate notes never leave the phone.</p>
+
+<h3>Is this financial advice?</h3>
+<p>No. Wayfare reports an interval computed from numbers you typed in and never recommends what to do. It is not affiliated with any bank, broker or lender.</p>
+
+<h2>Contact</h2>
+<p>Anything unclear, anything wrong: <a href="mailto:hello@norea.studio">hello@norea.studio</a>.</p>
+
+<div class="lang"><a href="/">norea.studio</a> · <a href="/wayfare/">Wayfare</a> · <a href="/wayfare/privacy">Privacy</a></div>
+</div></body></html>

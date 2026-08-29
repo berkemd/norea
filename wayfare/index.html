@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wayfare — the honest answer to “when” is two dates</title>
+<meta name="description" content="Wayfare tells you the earliest and latest month you can afford a trip, from what you actually set aside. Costs go in as ranges. No network, no bank connection, no permissions.">
+<style>body{background:#f8f7f3;color:#1a1916;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0}
+.wrap{max-width:660px;margin:0 auto;padding:64px 24px}
+h1{font-size:1.6rem;margin:0 0 6px}
+h2{font-size:1.05rem;margin:34px 0 6px}
+h3{font-size:.95rem;margin:22px 0 4px;color:#1a1916}
+p,li{color:#4d4c46}
+a{color:#7a5c23}
+code{background:#eeece5;padding:1px 5px;border-radius:3px;font-size:.88em}
+table{border-collapse:collapse;margin:14px 0;font-size:.92rem}
+td,th{border-bottom:1px solid #e2dfd6;padding:6px 14px 6px 0;text-align:left}
+.lang{border-top:1px solid #e2dfd6;margin-top:40px;padding-top:10px;font-size:.86rem}
+.lead{font-size:1.02rem;color:#333}
+.note{border-left:3px solid #96702a;padding-left:14px;color:#3d3c37}
+figcaption{font-size:.86rem;color:#6a695f;margin-top:6px}</style></head><body><div class="wrap">
+<h1>Wayfare</h1>
+<p class="lead">Every travel-savings app asks you for one number and hands back one date. Both are false. A trip does not cost one number — flights, lodging, food and the exchange rate are each a range, and some of them move together. And the day you can go is not one day: it depends on what you actually manage to set aside, which is rarely what you planned.</p>
+
+<h2>What it does differently</h2>
+
+<h3>Two dates, not one target</h3>
+<p>Wayfare reports an earliest and a latest month, with the most likely month drawn faintly between them. The visual hierarchy is inverted on purpose: in this category the single big number is the headline and the uncertainty is a footnote. Here the two bounds are the headline, because they are the part that is actually known.</p>
+
+<h3>Costs that move together</h3>
+<p>If the trip runs two nights longer, lodging and food and local transport all rise at once. Adding them as though they were unrelated shows a range narrower than the truth. Wayfare asks which items share a cause — the number of nights, the number of people, the exchange rate — and adds those as one thing.</p>
+<p class="note">In an ordinary three-item example the naive sum looks <strong>1.37× narrower</strong> than the honest one. The app shows you that number rather than describing it.</p>
+
+<h3>Sometimes there is no latest date</h3>
+<p>How long until you have enough is a ratio: what is still missing, divided by what you set aside each month. Both are uncertain. When the second is uncertain enough — a few uneven months — the honest answer has no upper end at all. The interval comes from <a href="https://en.wikipedia.org/wiki/Fieller%27s_theorem">Fieller’s theorem</a>, which is built for ratios and can return an unbounded answer. The usual shortcut, the delta method, cannot: it quietly prints a finite month, and it is wrong.</p>
+
+<h3>The promise is measured, not written</h3>
+<p>“Nine times out of ten” is easy to write. The small-sample correction inside Wayfare was not assumed — it was found by simulation, then <em>re-measured on data it had never seen</em>, with a seed and a grid of parameters that were never used in fitting:</p>
+<figure>
+<table>
+<tr><th>Complete months</th><th>Unevenness</th><th>Range held</th></tr>
+<tr><td>4</td><td>0.18</td><td>90.9%</td></tr>
+<tr><td>4</td><td>0.62</td><td>90.8%</td></tr>
+<tr><td>6</td><td>0.38</td><td>90.4%</td></tr>
+<tr><td>12</td><td>0.38</td><td>90.5%</td></tr>
+<tr><td>48</td><td>0.18</td><td>93.7%</td></tr>
+</table>
+<figcaption>100 cells, 60 000 simulated histories each. Worst cell across the whole grid: 90.2%.</figcaption>
+</figure>
+<p class="note">That measurement is a file in the source, and the build fails if the worst cell ever falls below the promise. An earlier version of the correction, fitted to exactly 90%, measured 89.7% on a fresh seed — a promise tuned to the boundary is kept half the time. The target was moved above the boundary and the whole table was re-measured.</p>
+
+<h3>It never downloads a rate</h3>
+<p>You note the rate yourself, whenever you happen to see it. With fewer than four notes Wayfare says the rate is not in the range yet, rather than quietly assuming a currency does not move. That is the entire reason the app needs no network at all — and the reason nothing about where you are going, or when, ever reaches anyone.</p>
+
+<h3>What it asks for</h3>
+<p>Each cost as a range: at least this, at most that. If you truly know a figure, a visa fee say, enter it once and its range is zero wide. Then your deposits, as they happen. There is nothing to connect and nothing to sign in to.</p>
+<p>Only complete calendar months count, and months with nothing in them count as zero. Both rules exist because the alternatives are silently wrong: a half-finished month drags the rate down, and skipping empty months nearly doubles it.</p>
+
+<h3>On your wrist</h3>
+<p>The same two dates the phone worked out. The watch computes nothing of its own — two devices measuring the same trip would give two different answers, and that would end your trust in both.</p>
+
+<h2>No network, at all</h2>
+<p>Wayfare makes no network request of any kind: not for rates, not for analytics, not for anything. No bank connection, no account, no sign-in, no sync, no server, no ads. It asks for no permissions — no contacts, location, notifications or camera. Each of those lines is a build gate that fails the build if it stops being true — see <a href="/wayfare/privacy">Privacy</a>.</p>
+
+<h2>Not financial advice</h2>
+<p>Wayfare reports an interval computed from numbers you typed in, and never recommends an action, a product, a provider or an amount. It is not affiliated with any bank, broker or lender.</p>
+
+<h2>Price</h2>
+<p>Free. No in-app purchases, no subscription. Everything runs on your device, so there is nothing to bill for.</p>
+
+<h2>Availability</h2>
+<p>iPhone, iPad and Apple Watch. English, Turkish, German, French, Spanish and Japanese.</p>
+
+<p class="lead" style="margin-top:34px">To <em>wayfare</em> is to travel, and a <em>wayfarer</em> is someone on the road with a distance still to cover. This one tells you how far off the far end really is.</p>
+
+<div class="lang"><a href="/">norea.studio</a> · <a href="/wayfare/privacy">Privacy</a> · <a href="/wayfare/support">Support</a></div>
+</div></body></html>
