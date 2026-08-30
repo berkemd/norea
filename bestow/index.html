@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bestow — a good gift is proof of attention</title>
+<meta name="description" content="Bestow keeps the small things you notice about people and reminds you while there is still time to act. No catalogue, no affiliate links, no account, no server.">
+<link rel="icon" type="image/png" href="/norea/bestow/favicon.png">
+<link rel="apple-touch-icon" href="/norea/bestow/apple-touch-icon.png">
+<meta name="theme-color" content="#ECEAE3">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bestow — a good gift is proof of attention">
+<meta property="og:description" content="Bestow keeps the small things you notice about people and reminds you while there is still time to act. No catalogue, no affiliate links, no account, no server.">
+<meta property="og:image" content="https://berkemd.github.io/norea/bestow/og.png">
+<meta property="og:url" content="https://berkemd.github.io/norea/bestow/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap">
+<style>
+body{background:#ECEAE3;color:#2B3040;font-family:Lora,Georgia,"Times New Roman",serif;line-height:1.72;margin:0}
+.wrap{max-width:672px;margin:0 auto;padding:60px 24px 96px}
+h1{font-size:1.62rem;margin:0 0 8px;color:#2B3040;font-weight:600;line-height:1.3}
+h2{font-size:1.02rem;margin:40px 0 6px;color:#2B3040;font-weight:600;letter-spacing:.01em}
+h3{font-size:.95rem;margin:24px 0 4px;color:#2B3040;font-weight:600}
+p,li{color:#575C6B}
+strong{color:#2B3040;font-weight:600}
+a{color:#9C2B4A}
+code{background:#E1DDD2;padding:1px 5px;border-radius:3px;font-size:.88em;color:#2B3040}
+table{border-collapse:collapse;margin:16px 0;font-size:.92rem;width:100%}
+td,th{border-bottom:1px solid #D8D4C9;padding:8px 14px 8px 0;text-align:left;vertical-align:top}
+th{color:#2B3040;font-weight:600}
+.lead{font-size:1.06rem;color:#3D4252}
+.note{border-left:3px solid #9C2B4A;padding-left:15px;color:#575C6B}
+.marka{display:block;height:52px;width:auto;margin:0 0 28px}
+.gizli{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.alt{border-top:1px solid #D8D4C9;margin-top:54px;padding-top:16px;font-size:.86rem;color:#7C8190}
+.alt a{color:#575C6B}
+ul,ol{padding-left:20px}
+</style></head><body><div class="wrap">
+<img class="marka" src="/norea/bestow/marka.png" alt="Bestow" width="1266" height="300">
+<h1 class="gizli">Bestow</h1>
+
+<h1>A good gift is not a product. It is proof of attention.</h1>
+<p class="lead">Every gift app stores products: a link, a wishlist row, an
+affiliate tag. But the source of a good gift was never a catalogue. It was the
+sentence someone said in passing.</p>
+
+<h2>The unit is a noticing</h2>
+<p><em>&ldquo;She lets her coffee go cold &mdash; she mentioned a warmer.&rdquo;</em></p>
+<p>Each noticing carries who it is about, how sure you are (guessed, seen,
+said), when you noticed it, and how the thing would have to be got: made,
+ordered, hard to find, or only done together.</p>
+
+<h2>Nothing is invented</h2>
+<p>Every suggestion traces back to at least one noticing <strong>you</strong>
+wrote. There is no catalogue, no &ldquo;popular gifts&rdquo;, no affiliate link
+&mdash; a suggestion that pays a commission is not a suggestion. When you have
+noticed nothing yet, Bestow says so rather than filling the screen.</p>
+
+<h2>Reminders come by how long it takes to get</h2>
+<p>Not by the date. &ldquo;Their birthday is tomorrow&rdquo; is not a reminder,
+it is an accusation. Bestow counts backwards from the acquisition:</p>
+<table>
+<tr><th>how it would be got</th><th>reminder lands</th></tr>
+<tr><td>ordered</td><td>10 days before</td></tr>
+<tr><td>made</td><td>3 weeks before</td></tr>
+<tr><td>planned together</td><td>6 weeks before</td></tr>
+<tr><td>hard to find</td><td>8 weeks before</td></tr>
+</table>
+<p>If the occasion is too close for any of it, Bestow tells you that instead of
+suggesting something that cannot arrive in time.</p>
+
+<h2>What was measured</h2>
+<p>Every rule is checked by a second implementation that shares no constants
+with the one that makes the suggestions.</p>
+<table>
+<tr><th></th><th>Bestow</th><th>naive generator</th></tr>
+<tr><td>situations generated</td><td colspan="2">124,800</td></tr>
+<tr><td>situations with a broken rule</td><td>0.00%</td><td>92.31%</td></tr>
+</table>
+<p class="note">The naive generator knows the budget, the acquisition classes
+and the dates &mdash; everything except the rules. It still breaks one in nine
+situations out of ten.</p>
+
+<h2>What it will not do</h2>
+<ul>
+<li><strong>No catalogue and no affiliate links.</strong></li>
+<li><strong>Your contacts are never read.</strong> Names are typed by hand.
+A gift app has no business reading your address book, and a build gate fails
+the release if the Contacts framework appears at all.</li>
+<li><strong>No account, no server, no sync, no network.</strong></li>
+<li><strong>No subscription.</strong> Something used a few times a year is not
+rented.</li>
+</ul>
+
+<h2>Apple Watch</h2>
+<p>The next occasion, how long is left, and the one noticing behind it. Nothing
+to type &mdash; a note about a person is not something you dictate to your
+wrist in a room with other people in it.</p>
+
+<h2>Free and paid</h2>
+<p><strong>Free:</strong> three people, unlimited noticings, fully working.<br>
+<strong>One-time purchase:</strong> unlimited people, the together-planner, and
+a backup file that goes device to device rather than to a cloud.</p>
+<div class="alt">
+<p>Bestow &middot; Norea Studio &middot;
+<a href="/norea/bestow/">Home</a> &middot;
+<a href="/norea/bestow/privacy.html">Privacy</a> &middot;
+<a href="/norea/bestow/support.html">Support</a><br>
+<a href="mailto:brkekahraman@icloud.com">brkekahraman@icloud.com</a></p>
+</div></div></body></html>

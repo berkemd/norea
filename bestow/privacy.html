@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bestow — Privacy</title>
+<meta name="description" content="Bestow holds notes about other people, so it has no account, no server and no network. Your contacts are never read.">
+<link rel="icon" type="image/png" href="/norea/bestow/favicon.png">
+<link rel="apple-touch-icon" href="/norea/bestow/apple-touch-icon.png">
+<meta name="theme-color" content="#ECEAE3">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bestow — Privacy">
+<meta property="og:description" content="Bestow holds notes about other people, so it has no account, no server and no network. Your contacts are never read.">
+<meta property="og:image" content="https://berkemd.github.io/norea/bestow/og.png">
+<meta property="og:url" content="https://berkemd.github.io/norea/bestow/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap">
+<style>
+body{background:#ECEAE3;color:#2B3040;font-family:Lora,Georgia,"Times New Roman",serif;line-height:1.72;margin:0}
+.wrap{max-width:672px;margin:0 auto;padding:60px 24px 96px}
+h1{font-size:1.62rem;margin:0 0 8px;color:#2B3040;font-weight:600;line-height:1.3}
+h2{font-size:1.02rem;margin:40px 0 6px;color:#2B3040;font-weight:600;letter-spacing:.01em}
+h3{font-size:.95rem;margin:24px 0 4px;color:#2B3040;font-weight:600}
+p,li{color:#575C6B}
+strong{color:#2B3040;font-weight:600}
+a{color:#9C2B4A}
+code{background:#E1DDD2;padding:1px 5px;border-radius:3px;font-size:.88em;color:#2B3040}
+table{border-collapse:collapse;margin:16px 0;font-size:.92rem;width:100%}
+td,th{border-bottom:1px solid #D8D4C9;padding:8px 14px 8px 0;text-align:left;vertical-align:top}
+th{color:#2B3040;font-weight:600}
+.lead{font-size:1.06rem;color:#3D4252}
+.note{border-left:3px solid #9C2B4A;padding-left:15px;color:#575C6B}
+.marka{display:block;height:52px;width:auto;margin:0 0 28px}
+.gizli{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.alt{border-top:1px solid #D8D4C9;margin-top:54px;padding-top:16px;font-size:.86rem;color:#7C8190}
+.alt a{color:#575C6B}
+ul,ol{padding-left:20px}
+</style></head><body><div class="wrap">
+<img class="marka" src="/norea/bestow/marka.png" alt="Bestow" width="1266" height="300">
+<h1 class="gizli">Bestow</h1>
+
+<h1>Privacy</h1>
+<p class="lead">Bestow holds the most personal thing an app can hold: notes
+about other people. So it was built to have nothing to leak.</p>
+
+<h2>Data collected</h2>
+<p><strong>None.</strong> Not analytics, not crash reports, not identifiers,
+not an email address. There is no account system and the app makes no network
+requests of any kind.</p>
+
+<h2>Your contacts</h2>
+<p>Bestow <strong>never reads your address book.</strong> Names are typed by
+hand. This is not a setting you can turn on &mdash; the Contacts framework is
+absent from the app, and the release build fails if it appears.</p>
+
+<h2>What is stored on the device</h2>
+<p>The people you added, the noticings you wrote, the occasions and your budget
+ranges. They are held in a file protected by the device passcode
+(<code>completeFileProtection</code>), which means the file is unreadable while
+the device is locked &mdash; including to anything else running on it.</p>
+<p>If you turn on the optional lock, opening Bestow also asks for Face ID, Touch
+ID or your passcode.</p>
+
+<h2>Reminders</h2>
+<p>Reminders are scheduled locally by iOS. Their text is your own noticing. No
+reminder is sent through a server, because there is no server.</p>
+
+<h2>Purchases</h2>
+<p>The one-time purchase is handled by Apple through StoreKit and verified
+cryptographically on the device. Bestow receives no purchase data.</p>
+
+<h2>Backup</h2>
+<p>The backup is a file you create and place yourself. It never passes through
+us and it is never uploaded anywhere by the app.</p>
+
+<h2>Children</h2>
+<p>Bestow is not directed at children and collects no data from anyone.</p>
+
+<h2>Changes</h2>
+<p>If this policy ever changes, the change will appear here with a date. As long
+as the app has no network code, there is nothing that could be collected.</p>
+
+<h2>Contact</h2>
+<p><a href="mailto:brkekahraman@icloud.com">brkekahraman@icloud.com</a></p>
+<div class="alt">
+<p>Bestow &middot; Norea Studio &middot;
+<a href="/norea/bestow/">Home</a> &middot;
+<a href="/norea/bestow/privacy.html">Privacy</a> &middot;
+<a href="/norea/bestow/support.html">Support</a><br>
+<a href="mailto:brkekahraman@icloud.com">brkekahraman@icloud.com</a></p>
+</div></div></body></html>
