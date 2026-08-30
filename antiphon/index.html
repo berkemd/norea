@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antiphon — a conversation is not a question, it is an arc</title>
+<meta name="description" content="Antiphon composes the shape of a conversation for the people actually at your table. No account, no server, nothing kept.">
+<link rel="icon" type="image/png" href="/norea/antiphon/favicon.png">
+<link rel="apple-touch-icon" href="/norea/antiphon/apple-touch-icon.png">
+<meta name="theme-color" content="#0f2b28">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Antiphon — a conversation is not a question, it is an arc">
+<meta property="og:description" content="Antiphon composes the shape of a conversation for the people actually at your table. No account, no server, nothing kept.">
+<meta property="og:image" content="https://berkemd.github.io/norea/antiphon/og.png">
+<meta property="og:url" content="https://berkemd.github.io/norea/antiphon/">
+<meta name="twitter:card" content="summary_large_image">
+<style>body{background:#0f2b28;color:#f3e8d6;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0}
+.wrap{max-width:680px;margin:0 auto;padding:64px 24px 96px}
+h1{font-size:1.6rem;margin:0 0 6px;color:#f3e8d6}
+h2{font-size:1.06rem;margin:38px 0 6px;color:#f3e8d6}
+h3{font-size:.95rem;margin:22px 0 4px;color:#f3e8d6}
+p,li{color:#9cb3af}
+strong{color:#f3e8d6;font-weight:600}
+a{color:#e09745}
+code{background:#163a36;padding:1px 5px;border-radius:3px;font-size:.88em;color:#cfe0dc}
+table{border-collapse:collapse;margin:14px 0;font-size:.92rem;width:100%}
+td,th{border-bottom:1px solid #1d443f;padding:7px 14px 7px 0;text-align:left;vertical-align:top}
+th{color:#f3e8d6;font-weight:600}
+.lead{font-size:1.06rem;color:#d9e5e2}
+.note{border-left:3px solid #e09745;padding-left:14px;color:#c5d5d1}
+.marka{display:block;height:54px;width:auto;margin:0 0 26px}
+.gizli{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.alt{border-top:1px solid #1d443f;margin-top:52px;padding-top:16px;font-size:.86rem;color:#7d9490}
+.alt a{color:#9cb3af}
+ul{padding-left:20px}
+</style></head><body><div class="wrap">
+<img class="marka" src="/norea/antiphon/marka.png" alt="Antiphon" width="1266" height="300">
+<h1 class="gizli">Antiphon</h1>
+<p class="lead">A conversation is not a question. It is an arc: it opens somewhere
+cheap, warms up, turns once, goes deep, and lands somewhere easy.
+Antiphon builds that arc for the people actually at your table.</p>
+
+<h2>Why not another deck of cards</h2>
+<p>Every deck of conversation cards has the same problem: the cards have
+nothing to do with each other. You draw a shallow one, then a devastating
+one, then a shallow one. There is no shape — and a conversation without a
+shape does not go anywhere.</p>
+<p>Two products were measured before this one was designed. The
+category's most downloaded app ships <strong>2,150 fixed questions in 46
+categories</strong>; a newer competitor ships <strong>180 base cards plus
+three packs of 90</strong>. Both are decks. Neither mentions group size,
+familiarity, the time you have, or how loud the room is — and none of them
+have a rule for how a conversation should <em>end</em>.</p>
+
+<h2>Ten rules, and every one is measured</h2>
+<table>
+<tr><th>1</th><td>The opening is <strong>concrete and cheap</strong>. Nobody is exposed in the first minute.</td></tr>
+<tr><th>2</th><td>The ceiling comes from how well you know each other: strangers 0.35, acquaintances 0.55, friends 0.75, close 1.00.</td></tr>
+<tr><th>3</th><td>The arc <strong>lands</strong>. The last move is always easier than the deepest one. <em>No other app in this category has this rule.</em></td></tr>
+<tr><th>4</th><td>Exactly <strong>one turn</strong>. Five would be an interrogation.</td></tr>
+<tr><th>5</th><td>No two moves in a row share a medium, and long arcs use at least three of the four.</td></tr>
+<tr><th>6</th><td><strong>Everyone speaks</strong> — measured, not "usually".</td></tr>
+<tr><th>7</th><td>Above six people, at least 40% of moves are <strong>pair splits</strong>: pairs run in parallel, a round of six takes four minutes.</td></tr>
+<tr><th>8</th><td>The time budget is kept to ±15%. In practice the measured deviation is <strong>0%</strong>.</td></tr>
+<tr><th>9</th><td>The room constrains: no turn-taking where it cannot be heard, no screens while walking.</td></tr>
+<tr><th>10</th><td><strong>Deep moments go to pairs or to one person</strong>, never around the table. Being asked in turn, in front of eight people, what you have forgiven yourself for is exactly how an evening freezes.</td></tr>
+</table>
+
+<h2>The numbers</h2>
+<table>
+<tr><th>arcs generated across the full parameter space</th><td>213,840</td></tr>
+<tr><th>rule violations</th><td><strong>0</strong></td></tr>
+<tr><th>arcs from a generator that knows everything <em>except the shape</em> that break a rule</th><td><strong>99.95%</strong></td></tr>
+<tr><th>time-budget deviation</th><td>0.0000%</td></tr>
+<tr><th>deliberate defects the test suite has to catch</th><td>67 of 67</td></tr>
+</table>
+<p class="note">That last row matters more than it looks. Tests being green
+does not mean they measure anything. Sixty-seven deliberate, meaningful
+defects are injected into the core one at a time; every one must turn the
+suite red. Nine of them escaped the first time, and nine tests were written
+because of it.</p>
+
+<h2>Bring your own material</h2>
+<p>A word, a photo from your phone, or whatever is playing. The arc is built
+from it — and all of it is processed <strong>on your device</strong>. The
+photo is read by Apple's Vision framework and never leaves; the music is
+measured for tempo and brightness and is never recognised, never recorded,
+never stored.</p>
+
+<h2>No account. No server. No internet.</h2>
+<p>There is nothing to sign up for, nothing that syncs, and nothing that is
+kept. When the evening is over, the app remembers none of it.</p>
+<p>This is not a promise, it is a build gate: the archive fails if
+<code>URLSession</code>, <code>Network</code>, <code>CFNetwork</code>,
+<code>WKWebView</code>, <code>AuthenticationServices</code> or
+<code>CloudKit</code> appear anywhere in the app.</p>
+
+<h2>Price</h2>
+<p><strong>Free: one complete arc a day</strong> — not a preview, not a
+locked version. One purchase, once, unlocks unlimited arcs, your own
+word/photo/music input and every language. No subscription: a thing you use
+at dinner is not rented.</p>
+<div class="alt">
+<p><strong>Antiphon</strong> — <a href="/norea/antiphon/">overview</a> ·
+<a href="/norea/antiphon/support.html">support</a> ·
+<a href="/norea/antiphon/privacy.html">privacy</a> ·
+<a href="/norea/">Norea Studio</a></p>
+<p>An <em>antiphon</em> is a chant sung alternately by two groups. It cannot be sung alone.</p>
+</div>
+</div></body></html>
