@@ -1,98 +1,273 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Neuma — A second mind that never leaves the room</title>
-<meta name="description" content="Neuma keeps your notes, photos, voice memos and links in one private vault on your device. No account, no Neuma server, search on-device, optional iCloud sync.">
-<link rel="canonical" href="https://berkemd.github.io/norea/neuma/index.html">
-<meta name="theme-color" content="#f4f0ea">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Neuma">
-<meta property="og:title" content="Neuma — A second mind that never leaves the room">
-<meta property="og:url" content="https://berkemd.github.io/norea/neuma/index.html">
-<meta property="og:description" content="Neuma keeps your notes, photos, voice memos and links in one private vault on your device. No account, no Neuma server, search on-device, optional iCloud sync.">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Neuma — A second mind that never leaves the room">
-<meta name="twitter:description" content="Neuma keeps your notes, photos, voice memos and links in one private vault on your device. No account, no Neuma server, search on-device, optional iCloud sync.">
-<style>
-:root{--zemin:#f4f0ea;--murekkep:#2a251d;--soluk:#55504a;--cizgi:#e0dad0;--kart:#efe9e0;--vurgu:#c4763a}
-*{box-sizing:border-box}
-body{background:var(--zemin);color:var(--murekkep);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0;-webkit-font-smoothing:antialiased}
-.wrap{max-width:680px;margin:0 auto;padding:44px 24px 96px}
-h1{font-size:1.7rem;margin:0 0 6px;letter-spacing:-.02em}
-h2{font-size:1.1rem;color:var(--vurgu);margin:38px 0 10px;border-top:1px solid var(--cizgi);padding-top:24px;letter-spacing:-.01em}
-h3{font-size:.98rem;margin:22px 0 4px}
-p,li{color:var(--soluk);font-size:.95rem}
-a{color:var(--vurgu)}
-.tag{color:var(--soluk);opacity:.8;font-size:.88rem;margin:0 0 30px}
-.nav{margin:36px 0 0;font-size:.9rem;border-top:1px solid var(--cizgi);padding-top:20px}
-.nav a{margin-right:16px}
-.kutu{background:var(--kart);border:1px solid var(--cizgi);border-radius:12px;padding:16px 18px;margin:20px 0}
-.kutu p:last-child{margin-bottom:0}
-.kutu p:first-child{margin-top:0}
-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.9rem}
-th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--cizgi);vertical-align:top}
-th{color:var(--murekkep);font-weight:600}
-td{color:var(--soluk)}
-code{background:var(--kart);border:1px solid var(--cizgi);border-radius:5px;padding:1px 5px;font-size:.86em}
-.mark{display:block;width:56px;height:56px;margin:0 0 18px}
-footer{margin-top:56px;color:var(--soluk);opacity:.7;font-size:.84rem}
-</style>
-</head>
-<body>
-<div class="wrap">
-<svg class="mark" viewBox="0 0 1024 1024" role="img" aria-label="Neuma">
-<g fill="#2a251d"><path transform="translate(230 784) scale(0.7805 -0.7805) translate(-16 9)" d="M429 -9Q413 -9 402 15L131 603Q128 610 123.5 609.0Q119 608 119 600V86Q119 58 128.5 43.5Q138 29 163 25L176 23Q189 22 189 11Q189 0 174 0H31Q16 0 16 11Q16 22 29 23L42 25Q68 29 78.0 43.5Q88 58 88 86V654Q88 675 81.5 682.0Q75 689 52 693L29 697Q16 700 16 709Q16 720 31 720H138Q163 720 173 698L409 179Q412 173 416.5 174.0Q421 175 421 181V634Q421 666 410.0 678.5Q399 691 382 694L364 697Q351 700 351 709Q351 720 366 720H509Q524 720 524 709Q524 698 511 697L498 695Q472 691 462.0 678.5Q452 666 452 634V23Q452 5 445.5 -2.0Q439 -9 429 -9Z"/></g>
-<circle cx="722" cy="743" r="40" fill="#c4763a"/></svg>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neuma — Private notes. Useful ideas, rediscovered.</title>
+    <meta
+      name="description"
+      content="Capture private notes, find useful ideas again and choose what to share. Local-first notes for iPhone and iPad."
+    />
+    <link
+      rel="canonical"
+      href="https://berkemd.github.io/norea/neuma/index.html"
+    />
+    <meta name="theme-color" content="#f4f0ea" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Neuma" />
+    <meta
+      property="og:title"
+      content="Neuma — Private notes. Useful ideas, rediscovered."
+    />
+    <meta
+      property="og:url"
+      content="https://berkemd.github.io/norea/neuma/index.html"
+    />
+    <meta
+      property="og:description"
+      content="Capture private notes, find useful ideas again and choose what to share. Local-first notes for iPhone and iPad."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Neuma — Private notes. Useful ideas, rediscovered."
+    />
+    <meta
+      name="twitter:description"
+      content="Capture private notes, find useful ideas again and choose what to share. Local-first notes for iPhone and iPad."
+    />
+    <style>
+      :root {
+        --zemin: #f4f0ea;
+        --murekkep: #2a251d;
+        --soluk: #55504a;
+        --cizgi: #e0dad0;
+        --kart: #efe9e0;
+        --vurgu: #c4763a;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background: var(--zemin);
+        color: var(--murekkep);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        line-height: 1.7;
+        margin: 0;
+        -webkit-font-smoothing: antialiased;
+      }
+      .wrap {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 44px 24px 96px;
+      }
+      h1 {
+        font-size: 1.7rem;
+        margin: 0 0 6px;
+        letter-spacing: -0.02em;
+      }
+      h2 {
+        font-size: 1.1rem;
+        color: var(--vurgu);
+        margin: 38px 0 10px;
+        border-top: 1px solid var(--cizgi);
+        padding-top: 24px;
+        letter-spacing: -0.01em;
+      }
+      h3 {
+        font-size: 0.98rem;
+        margin: 22px 0 4px;
+      }
+      p,
+      li {
+        color: var(--soluk);
+        font-size: 0.95rem;
+      }
+      a {
+        color: var(--vurgu);
+      }
+      .tag {
+        color: var(--soluk);
+        opacity: 0.8;
+        font-size: 0.88rem;
+        margin: 0 0 30px;
+      }
+      .nav {
+        margin: 36px 0 0;
+        font-size: 0.9rem;
+        border-top: 1px solid var(--cizgi);
+        padding-top: 20px;
+      }
+      .nav a {
+        margin-right: 16px;
+      }
+      .kutu {
+        background: var(--kart);
+        border: 1px solid var(--cizgi);
+        border-radius: 12px;
+        padding: 16px 18px;
+        margin: 20px 0;
+      }
+      .kutu p:last-child {
+        margin-bottom: 0;
+      }
+      .kutu p:first-child {
+        margin-top: 0;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 18px 0;
+        font-size: 0.9rem;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 9px 10px;
+        border-bottom: 1px solid var(--cizgi);
+        vertical-align: top;
+      }
+      th {
+        color: var(--murekkep);
+        font-weight: 600;
+      }
+      td {
+        color: var(--soluk);
+      }
+      code {
+        background: var(--kart);
+        border: 1px solid var(--cizgi);
+        border-radius: 5px;
+        padding: 1px 5px;
+        font-size: 0.86em;
+      }
+      .mark {
+        display: block;
+        width: 56px;
+        height: 56px;
+        margin: 0 0 18px;
+      }
+      footer {
+        margin-top: 56px;
+        color: var(--soluk);
+        opacity: 0.7;
+        font-size: 0.84rem;
+      }
+      h1 {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        line-height: 1.1;
+        letter-spacing: -0.035em;
+      }
+      .cta {
+        display: inline-block;
+        background: #2a251d;
+        color: #fffaf1;
+        padding: 14px 22px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .cta:focus-visible {
+        outline: 3px solid #a6612a;
+        outline-offset: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <svg class="mark" viewBox="0 0 1024 1024" role="img" aria-label="Neuma">
+        <g fill="#2a251d">
+          <path
+            transform="translate(230 784) scale(0.7805 -0.7805) translate(-16 9)"
+            d="M429 -9Q413 -9 402 15L131 603Q128 610 123.5 609.0Q119 608 119 600V86Q119 58 128.5 43.5Q138 29 163 25L176 23Q189 22 189 11Q189 0 174 0H31Q16 0 16 11Q16 22 29 23L42 25Q68 29 78.0 43.5Q88 58 88 86V654Q88 675 81.5 682.0Q75 689 52 693L29 697Q16 700 16 709Q16 720 31 720H138Q163 720 173 698L409 179Q412 173 416.5 174.0Q421 175 421 181V634Q421 666 410.0 678.5Q399 691 382 694L364 697Q351 700 351 709Q351 720 366 720H509Q524 720 524 709Q524 698 511 697L498 695Q472 691 462.0 678.5Q452 666 452 634V23Q452 5 445.5 -2.0Q439 -9 429 -9Z"
+          />
+        </g>
+        <circle cx="722" cy="743" r="40" fill="#c4763a" />
+      </svg>
 
-<h1>Neuma</h1>
-<p class="tag">A second mind that never leaves the room.</p>
-
-<p>Neuma holds the things you would otherwise lose: the note you typed on a
-train, the photograph of a whiteboard, the voice memo you recorded walking, the
-link somebody sent you. It keeps them in one vault on your device, notices how
-they connect, and gives them back to you in your own words.</p>
-
-<div class="kutu">
-<p><strong>There is no account and there is no Neuma server.</strong> You do
-not sign in, because there is nothing to sign in to. Search runs on the device.
-Nothing is uploaded anywhere unless you turn on iCloud sync, and then it goes
-to <em>your</em> iCloud private database, which I cannot read.</p>
-</div>
-
-<h2>The vault starts empty</h2>
-<p>The first thing in your vault is something you put there. Neuma ships with
-no sample notes and no demo content — an app that opens full of someone else's
-writing is not a second mind, it is a brochure.</p>
-
-<h2>Four things it does</h2>
-<p><strong>Capture</strong> — text, photos, voice memos, and anything shared to
-Neuma from another app.</p>
-<p><strong>Recall</strong> — ask in your own words. The index is local, so the
-question never becomes a search query on somebody's server.</p>
-<p><strong>The weave</strong> — a graph drawn from your own notes, not from a
-sample set. Clusters, links, and the notes that keep pulling others toward
-them.</p>
-<p><strong>Synthesis</strong> — one woven page that shows the thread running
-through what you have been reading and writing lately.</p>
-
-<h2>Neuma Plus</h2>
-<p>Neuma is free, and the free tier already mirrors your 250 most recent items
-between your Apple devices. Plus lifts that cap so the whole vault travels, and
-adds the quiet context agent and signed exports. Nothing beyond the cap is ever
-deleted — it stays on the device that holds it.</p>
-
-<h2>Bring your own model</h2>
-<p>Neuma has no AI of its own and does not resell anyone else's. If you want a
-model in the loop, you paste your own provider key; it is stored in the iOS
-Keychain, and a per-cluster, per-tag consent matrix decides what may ever be
-sent. A single switch turns the whole bridge off.</p>
-
-<p class="son">English · Türkçe · Deutsch · Français · Español · 日本語</p>
-
-<div class="nav"><strong style="color:var(--murekkep)">Neuma</strong> <a href="support.html">Support</a> <a href="privacy.html">Privacy</a> <a href="terms.html">Terms</a></div>
-<footer>Norea Studio · <a href="mailto:brkekahraman@icloud.com">brkekahraman@icloud.com</a></footer>
-</div>
-</body>
+      <h1>Save an idea.<br />Find it when it matters.</h1>
+      <p class="tag">Neuma · Private notes and a place to return to them.</p>
+      <p>
+        Keep thoughts, links, photos and voice memos together on your device.
+        Start without an account. Build a collection that belongs to you.
+      </p>
+      <p>
+        <a class="cta" href="https://apps.apple.com/app/id6803546005"
+          >Get Neuma on the App Store</a
+        >
+      </p>
+      <div class="kutu">
+        <h2>Coming in Neuma 1.3</h2>
+        <p>
+          Go directly from an empty vault to your first note. Recall brings back
+          recent notes, frequent tags and a daily selection of notes that have
+          not been updated for at least a week. Search handles accents and
+          available document text. Preview and edit an excerpt before sharing
+          it.
+        </p>
+      </div>
+      <h2>A small habit with a useful result</h2>
+      <ol>
+        <li>Capture one thought you want to keep.</li>
+        <li>Find it through local words, phrases and tags.</li>
+        <li>Ask yourself what useful next step it suggests.</li>
+        <li>
+          With version 1.3, share an edited excerpt and a Neuma link when you
+          choose.
+        </li>
+      </ol>
+      <h2>Start free</h2>
+      <p>
+        Local notes and search are included. Version 1.3 also includes Recall
+        discovery and excerpt sharing. If you turn on iCloud sync, the free plan
+        mirrors your 250 most recent items. Neuma Plus removes that sync limit.
+        Older local items are not deleted because of the limit.
+      </p>
+      <p>
+        Monthly and annual subscriptions show their current prices in the app.
+        Apple handles purchases, renewal, restoration and cancellation.
+      </p>
+      <h2>Private by default, connected by choice</h2>
+      <p>
+        Neuma requires no account for local notes and search. Optional iCloud
+        sync uses your Apple Account. Other available destinations are
+        configured by you. Content sent to a selected destination is governed by
+        that service's terms.
+      </p>
+      <p>
+        Mind Bridge is off by default. External AI requires your own provider
+        key, permission rules and confirmation of the text to send. A provider
+        may retain that text under its policies. You do not need an external AI
+        account to capture, search or rediscover notes.
+        <a href="privacy.html">Read the privacy policy</a>.
+      </p>
+      <section lang="tr">
+        <h2>Fikrini kaydet. Yeniden kullan.</h2>
+        <p>
+          Neuma, notlarını ve ilham aldığın içerikleri cihazındaki kişisel
+          kasada toplar. Neuma 1.3 ile ilk nota doğrudan geçiş, gerçek notlardan
+          yeniden keşif, daha iyi arama ve paylaşmadan önce düzenlenebilen
+          alıntılar geliyor.
+        </p>
+        <p>
+          Yerel kullanım için hesap gerekmez. Dış hizmetlere bağlantı ve
+          paylaşım senin seçiminle gerçekleşir.
+        </p>
+      </section>
+      <p class="son">
+        English · Türkçe · Deutsch · Français · Español · 日本語
+      </p>
+      <div class="nav">
+        <strong style="color: var(--murekkep)">Neuma</strong>
+        <a href="support.html">Support</a> <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+      <footer>
+        Norea Studio ·
+        <a href="mailto:brkekahraman@icloud.com">brkekahraman@icloud.com</a>
+      </footer>
+    </div>
+  </body>
 </html>
