@@ -1,114 +1,276 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Neuma — Privacy Policy</title>
-<meta name="description" content="Neuma has no account, no server, no telemetry and no analytics. Notes stay on your device, and sync uses your own iCloud private database.">
-<link rel="canonical" href="https://berkemd.github.io/norea/neuma/privacy.html">
-<meta name="theme-color" content="#f4f0ea">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Neuma">
-<meta property="og:title" content="Neuma — Privacy Policy">
-<meta property="og:url" content="https://berkemd.github.io/norea/neuma/privacy.html">
-<meta property="og:description" content="Neuma has no account, no server, no telemetry and no analytics. Notes stay on your device, and sync uses your own iCloud private database.">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Neuma — Privacy Policy">
-<meta name="twitter:description" content="Neuma has no account, no server, no telemetry and no analytics. Notes stay on your device, and sync uses your own iCloud private database.">
-<style>
-:root{--zemin:#f4f0ea;--murekkep:#2a251d;--soluk:#55504a;--cizgi:#e0dad0;--kart:#efe9e0;--vurgu:#c4763a}
-*{box-sizing:border-box}
-body{background:var(--zemin);color:var(--murekkep);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0;-webkit-font-smoothing:antialiased}
-.wrap{max-width:680px;margin:0 auto;padding:44px 24px 96px}
-h1{font-size:1.7rem;margin:0 0 6px;letter-spacing:-.02em}
-h2{font-size:1.1rem;color:var(--vurgu);margin:38px 0 10px;border-top:1px solid var(--cizgi);padding-top:24px;letter-spacing:-.01em}
-h3{font-size:.98rem;margin:22px 0 4px}
-p,li{color:var(--soluk);font-size:.95rem}
-a{color:var(--vurgu)}
-.tag{color:var(--soluk);opacity:.8;font-size:.88rem;margin:0 0 30px}
-.nav{margin:36px 0 0;font-size:.9rem;border-top:1px solid var(--cizgi);padding-top:20px}
-.nav a{margin-right:16px}
-.kutu{background:var(--kart);border:1px solid var(--cizgi);border-radius:12px;padding:16px 18px;margin:20px 0}
-.kutu p:last-child{margin-bottom:0}
-.kutu p:first-child{margin-top:0}
-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.9rem}
-th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--cizgi);vertical-align:top}
-th{color:var(--murekkep);font-weight:600}
-td{color:var(--soluk)}
-code{background:var(--kart);border:1px solid var(--cizgi);border-radius:5px;padding:1px 5px;font-size:.86em}
-.mark{display:block;width:56px;height:56px;margin:0 0 18px}
-footer{margin-top:56px;color:var(--soluk);opacity:.7;font-size:.84rem}
-</style>
-</head>
-<body>
-<div class="wrap">
-<svg class="mark" viewBox="0 0 1024 1024" role="img" aria-label="Neuma">
-<g fill="#2a251d"><path transform="translate(230 784) scale(0.7805 -0.7805) translate(-16 9)" d="M429 -9Q413 -9 402 15L131 603Q128 610 123.5 609.0Q119 608 119 600V86Q119 58 128.5 43.5Q138 29 163 25L176 23Q189 22 189 11Q189 0 174 0H31Q16 0 16 11Q16 22 29 23L42 25Q68 29 78.0 43.5Q88 58 88 86V654Q88 675 81.5 682.0Q75 689 52 693L29 697Q16 700 16 709Q16 720 31 720H138Q163 720 173 698L409 179Q412 173 416.5 174.0Q421 175 421 181V634Q421 666 410.0 678.5Q399 691 382 694L364 697Q351 700 351 709Q351 720 366 720H509Q524 720 524 709Q524 698 511 697L498 695Q472 691 462.0 678.5Q452 666 452 634V23Q452 5 445.5 -2.0Q439 -9 429 -9Z"/></g>
-<circle cx="722" cy="743" r="40" fill="#c4763a"/></svg>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neuma — Privacy Policy</title>
+    <meta
+      name="description"
+      content="Local notes with optional sync and external AI connections. Learn what stays on your device and what you choose to send."
+    />
+    <link
+      rel="canonical"
+      href="https://berkemd.github.io/norea/neuma/privacy.html"
+    />
+    <meta name="theme-color" content="#f4f0ea" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Neuma" />
+    <meta property="og:title" content="Neuma — Privacy Policy" />
+    <meta
+      property="og:url"
+      content="https://berkemd.github.io/norea/neuma/privacy.html"
+    />
+    <meta
+      property="og:description"
+      content="Local notes with optional sync and external AI connections. Learn what stays on your device and what you choose to send."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Neuma — Privacy Policy" />
+    <meta
+      name="twitter:description"
+      content="Local notes with optional sync and external AI connections. Learn what stays on your device and what you choose to send."
+    />
+    <style>
+      :root {
+        --zemin: #f4f0ea;
+        --murekkep: #2a251d;
+        --soluk: #55504a;
+        --cizgi: #e0dad0;
+        --kart: #efe9e0;
+        --vurgu: #c4763a;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background: var(--zemin);
+        color: var(--murekkep);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        line-height: 1.7;
+        margin: 0;
+        -webkit-font-smoothing: antialiased;
+      }
+      .wrap {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 44px 24px 96px;
+      }
+      h1 {
+        font-size: 1.7rem;
+        margin: 0 0 6px;
+        letter-spacing: -0.02em;
+      }
+      h2 {
+        font-size: 1.1rem;
+        color: var(--vurgu);
+        margin: 38px 0 10px;
+        border-top: 1px solid var(--cizgi);
+        padding-top: 24px;
+        letter-spacing: -0.01em;
+      }
+      h3 {
+        font-size: 0.98rem;
+        margin: 22px 0 4px;
+      }
+      p,
+      li {
+        color: var(--soluk);
+        font-size: 0.95rem;
+      }
+      a {
+        color: var(--vurgu);
+      }
+      .tag {
+        color: var(--soluk);
+        opacity: 0.8;
+        font-size: 0.88rem;
+        margin: 0 0 30px;
+      }
+      .nav {
+        margin: 36px 0 0;
+        font-size: 0.9rem;
+        border-top: 1px solid var(--cizgi);
+        padding-top: 20px;
+      }
+      .nav a {
+        margin-right: 16px;
+      }
+      .kutu {
+        background: var(--kart);
+        border: 1px solid var(--cizgi);
+        border-radius: 12px;
+        padding: 16px 18px;
+        margin: 20px 0;
+      }
+      .kutu p:last-child {
+        margin-bottom: 0;
+      }
+      .kutu p:first-child {
+        margin-top: 0;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 18px 0;
+        font-size: 0.9rem;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 9px 10px;
+        border-bottom: 1px solid var(--cizgi);
+        vertical-align: top;
+      }
+      th {
+        color: var(--murekkep);
+        font-weight: 600;
+      }
+      td {
+        color: var(--soluk);
+      }
+      code {
+        background: var(--kart);
+        border: 1px solid var(--cizgi);
+        border-radius: 5px;
+        padding: 1px 5px;
+        font-size: 0.86em;
+      }
+      .mark {
+        display: block;
+        width: 56px;
+        height: 56px;
+        margin: 0 0 18px;
+      }
+      footer {
+        margin-top: 56px;
+        color: var(--soluk);
+        opacity: 0.7;
+        font-size: 0.84rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <svg class="mark" viewBox="0 0 1024 1024" role="img" aria-label="Neuma">
+        <g fill="#2a251d">
+          <path
+            transform="translate(230 784) scale(0.7805 -0.7805) translate(-16 9)"
+            d="M429 -9Q413 -9 402 15L131 603Q128 610 123.5 609.0Q119 608 119 600V86Q119 58 128.5 43.5Q138 29 163 25L176 23Q189 22 189 11Q189 0 174 0H31Q16 0 16 11Q16 22 29 23L42 25Q68 29 78.0 43.5Q88 58 88 86V654Q88 675 81.5 682.0Q75 689 52 693L29 697Q16 700 16 709Q16 720 31 720H138Q163 720 173 698L409 179Q412 173 416.5 174.0Q421 175 421 181V634Q421 666 410.0 678.5Q399 691 382 694L364 697Q351 700 351 709Q351 720 366 720H509Q524 720 524 709Q524 698 511 697L498 695Q472 691 462.0 678.5Q452 666 452 634V23Q452 5 445.5 -2.0Q439 -9 429 -9Z"
+          />
+        </g>
+        <circle cx="722" cy="743" r="40" fill="#c4763a" />
+      </svg>
 
-<h1>Neuma — Privacy Policy</h1>
-<p class="tag">Last updated 23 August 2026.</p>
+      <h1>Neuma — Privacy Policy</h1>
+      <p class="tag">Last updated 5 September 2026.</p>
 
-<div class="kutu">
-<p><strong>Neuma has no account, no server, and no analytics.</strong> There is
-no sign-in, no email address is collected, and the app contains no telemetry
-endpoint.</p>
-</div>
+      <div class="kutu">
+        <p>
+          <strong>Neuma has no account, no server, and no analytics.</strong>
+          There is no sign-in, no email address is collected, and the app
+          contains no telemetry endpoint.
+        </p>
+      </div>
 
-<h2>What Neuma stores, and where</h2>
-<p>Your notes, attachments, voice memos, graph, and settings — in Neuma's
-container on your device. If you enable sync, a copy is written to your own
-iCloud private database under your Apple Account. That database is not readable
-by me; Apple holds it on your behalf.</p>
+      <h2>What Neuma stores, and where</h2>
+      <p>
+        Your notes, attachments, voice memos, graph, and settings — in Neuma's
+        container on your device. If you enable sync, a copy is written to your
+        own iCloud private database under your Apple Account. That database is
+        not readable by me; Apple holds it on your behalf.
+      </p>
 
-<h2>What is sent anywhere</h2>
-<p>Nothing that I receive. Neuma contains no analytics SDK, no crash reporter,
-no advertising identifier, no third-party purchase SDK, and no code that
-contacts a Neuma server, because there is no Neuma server. The only network
-traffic the app can cause is Apple's own — StoreKit for purchases and CloudKit
-for sync — and, if you configure Mind Bridge, a request to the AI provider you
-chose, using your own key.</p>
+      <h2>Optional connections</h2>
+      <p>
+        Local note capture and search do not require an external AI service.
+        Apple processes App Store purchases and optional iCloud synchronization.
+        If you configure another available sync destination, such as your own
+        WebDAV server, the selected destination stores the content you
+        synchronize. Its operator and retention practices depend on the service
+        you choose.
+      </p>
+      <h2>Mind Bridge</h2>
+      <p>
+        Mind Bridge is off by default. You can configure an external AI
+        provider, including OpenAI, Anthropic, Google, xAI or Mistral, using
+        your own key. Keys are stored in the iOS Keychain and sent to the
+        selected provider to authenticate requests.
+      </p>
+      <p>
+        Permission rules govern which note clusters and tags may be used. Before
+        a request containing content is sent, the app shows the destination and
+        text for your confirmation. The payload can include your prompt and
+        permitted note titles and excerpts. Canceling prevents that request. A
+        switch disables the bridge.
+      </p>
+      <p>
+        The selected provider may associate the request with your provider
+        account and retain the content according to its policies. Neuma does not
+        promise zero retention by third parties. Review the provider's terms and
+        avoid sending information you do not want that service to receive. The
+        developer does not operate a proxy that receives these requests.
+      </p>
+      <h2>Sharing in version 1.3</h2>
+      <p>
+        Excerpt sharing opens an editable preview. Only the shown text and
+        visible Neuma App Store link are passed to the system share sheet. It
+        does not automatically include attachments, tags or the rest of your
+        vault. You choose the destination. The receiving service's policies then
+        apply. The original note is unchanged.
+      </p>
+      <h2>What the developer receives</h2>
+      <p>
+        Nothing, unless you email me. Then I have your message and your address.
+      </p>
 
-<h2>Mind Bridge</h2>
-<p>Off by default. When you add a provider key it is stored in the iOS Keychain
-and never leaves the device except as the Authorization header on a request to
-that provider. What may be included in such a request is governed by a consent
-matrix you control per cluster and per tag; a kill switch disables the bridge
-entirely. Your relationship with that provider is yours alone, under their
-terms — Neuma is not in the middle of it.</p>
+      <h2>Purchases</h2>
+      <p>
+        Neuma Plus is sold through the App Store. Apple handles payment; the app
+        reads whether a subscription is active directly from StoreKit on the
+        device. Payment details never reach the app, and Apple's sales reports
+        to me do not identify you.
+      </p>
 
-<h2>What the developer receives</h2>
-<p>Nothing, unless you email me. Then I have your message and your address.</p>
+      <h2>Local data and optional services</h2>
+      <p>
+        Local storage is not a developer-operated account. Optional external
+        services can receive and retain content when you enable and use them,
+        even though the developer does not receive it. App Store privacy
+        information should be read together with these choices and disclosures.
+      </p>
+      <h2>Children</h2>
+      <p>
+        Neuma is not directed at children and collects nothing identifying about
+        anyone.
+      </p>
 
-<h2>Purchases</h2>
-<p>Neuma Plus is sold through the App Store. Apple handles payment; the app
-reads whether a subscription is active directly from StoreKit on the device.
-Payment details never reach the app, and Apple's sales reports to me do not
-identify you.</p>
+      <h2>Your rights</h2>
+      <p>
+        The developer holds no server-side copy of your vault. You can export
+        it: Settings → Export &amp; Import writes the vault in a documented
+        format. Deleting the app removes the on-device copy; removing Neuma's
+        iCloud data in iOS Settings removes that copy. For other destinations or
+        AI providers, use that service's controls and policies to manage
+        retained data.
+      </p>
 
-<h2>Privacy manifest</h2>
-<p>Neuma's <code>PrivacyInfo.xcprivacy</code> declares an empty set of collected
-data types. That is not an oversight — it is the literal truth for this build,
-and the repository has a test that fails if an account system, a telemetry
-endpoint, or a third-party purchase SDK is ever added back without the
-declaration changing with it.</p>
+      <h2>Changes</h2>
+      <p>
+        Changes move the date at the top; the earlier text remains in this
+        site's public history.
+      </p>
 
-<h2>Children</h2>
-<p>Neuma is not directed at children and collects nothing identifying about
-anyone.</p>
-
-<h2>Your rights</h2>
-<p>There is no server-side copy to access, correct, export, or delete. Your
-export already exists: Settings → Export &amp; Import writes the vault in a
-documented format. Deleting the app removes the on-device copy; removing
-Neuma's iCloud data in iOS Settings removes the other.</p>
-
-<h2>Changes</h2>
-<p>Changes move the date at the top; the earlier text remains in this site's
-public history.</p>
-
-<div class="nav"><a href="index.html">Neuma</a> <a href="support.html">Support</a> <strong style="color:var(--murekkep)">Privacy</strong> <a href="terms.html">Terms</a></div>
-<footer>Norea Studio · <a href="mailto:brkekahraman@icloud.com">brkekahraman@icloud.com</a></footer>
-</div>
-</body>
+      <div class="nav">
+        <a href="index.html">Neuma</a> <a href="support.html">Support</a>
+        <strong style="color: var(--murekkep)">Privacy</strong>
+        <a href="terms.html">Terms</a>
+      </div>
+      <footer>
+        Norea Studio ·
+        <a href="mailto:brkekahraman@icloud.com">brkekahraman@icloud.com</a>
+      </footer>
+    </div>
+  </body>
 </html>
