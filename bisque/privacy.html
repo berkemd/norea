@@ -1,75 +1,184 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bisque — Privacy</title>
-<meta name="description" content="Bisque makes no network request of any kind, collects nothing and asks for no permissions. Every sentence on this page is a build gate.">
-<link rel="icon" type="image/png" href="/bisque/favicon.png">
-<link rel="apple-touch-icon" href="/bisque/apple-touch-icon.png">
-<meta name="theme-color" content="#2a222c">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Bisque — Privacy">
-<meta property="og:description" content="Bisque makes no network request of any kind and collects nothing. Every sentence here is a check that runs on each build.">
-<meta property="og:image" content="https://berkemd.github.io/norea/bisque/og.png">
-<meta property="og:url" content="https://berkemd.github.io/norea/bisque/">
-<meta name="twitter:card" content="summary_large_image">
-<style>body{background:#faf8f5;color:#1f1a20;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0}
-.wrap{max-width:660px;margin:0 auto;padding:64px 24px}
-h1{font-size:1.6rem;margin:0 0 6px}
-h2{font-size:1.05rem;margin:34px 0 6px}
-h3{font-size:.95rem;margin:22px 0 4px;color:#1f1a20}
-p,li{color:#4e474f}
-a{color:#b05a3c}
-code{background:#f0ebe4;padding:1px 5px;border-radius:3px;font-size:.88em}
-table{border-collapse:collapse;margin:14px 0;font-size:.92rem}
-td,th{border-bottom:1px solid #e5ded6;padding:6px 14px 6px 0;text-align:left}
-.lang{border-top:1px solid #e5ded6;margin-top:40px;padding-top:10px;font-size:.86rem}
-.lead{font-size:1.02rem;color:#332d34}
-.note{border-left:3px solid #b05a3c;padding-left:14px;color:#3f3840}
-figcaption{font-size:.86rem;color:#6d6569;margin-top:6px}
-/* --- MARKA --------------------------------------------------------
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bisque — Privacy</title>
+    <meta
+      name="description"
+      content="Paint, dress and keep your own ceramic creature. Offline creative play on iPhone and iPad, with an optional Apple Watch companion."
+    />
+    <link rel="icon" href="favicon.png" />
+    <style>
+      body {
+        background: #faf8f5;
+        color: #1f1a20;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        line-height: 1.7;
+        margin: 0;
+      }
+      .wrap {
+        max-width: 660px;
+        margin: 0 auto;
+        padding: 64px 24px;
+      }
+      h1 {
+        font-size: 1.6rem;
+        margin: 0 0 6px;
+      }
+      h2 {
+        font-size: 1.05rem;
+        margin: 34px 0 6px;
+      }
+      h3 {
+        font-size: 0.95rem;
+        margin: 22px 0 4px;
+        color: #1f1a20;
+      }
+      p,
+      li {
+        color: #4e474f;
+      }
+      a {
+        color: #b05a3c;
+      }
+      code {
+        background: #f0ebe4;
+        padding: 1px 5px;
+        border-radius: 3px;
+        font-size: 0.88em;
+      }
+      table {
+        border-collapse: collapse;
+        margin: 14px 0;
+        font-size: 0.92rem;
+      }
+      td,
+      th {
+        border-bottom: 1px solid #e5ded6;
+        padding: 6px 14px 6px 0;
+        text-align: left;
+      }
+      .lang {
+        border-top: 1px solid #e5ded6;
+        margin-top: 40px;
+        padding-top: 10px;
+        font-size: 0.86rem;
+      }
+      .lead {
+        font-size: 1.02rem;
+        color: #332d34;
+      }
+      .note {
+        border-left: 3px solid #b05a3c;
+        padding-left: 14px;
+        color: #3f3840;
+      }
+      figcaption {
+        font-size: 0.86rem;
+        color: #6d6569;
+        margin-top: 6px;
+      }
+      /* --- MARKA --------------------------------------------------------
    Sozcuk markasi bir yazi tipinden secilmedi: yaratigin kendi
    ilkellerinden ve ayni yumusak birlesim islecinden uretildi.
    Kaynak: marka/bisque_soz.json + marka/soz.py                     */
-.marka{display:block;height:52px;width:auto;margin:0 0 22px}
-.marka-alt{display:flex;align-items:center;gap:12px;margin-top:52px;
-  padding-top:18px;border-top:1px solid #e5ded6;font-size:.86rem;color:#6d6569}
-.marka-alt img{height:34px;width:auto}
-h1.gizli{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-</style></head><body><div class="wrap">
-<img class="marka" src="/bisque/marka.png" alt="Bisque" width="1086" height="390">
-<h1 class="gizli">Bisque — Privacy</h1>
-<p class="lead">Bisque makes no network request of any kind. It collects nothing about your child, asks for no permissions, and has no account, no server and no advertising. This page says exactly what that means and how each sentence is checked.</p>
-
-<h2>Nothing is collected, because nothing is sent</h2>
-<p>There is no network code in the app, so there is no path by which anything could leave the device — not analytics, not crash reports, not an identifier, not a painting. The build fails if <code>URLSession</code>, <code>URLRequest</code>, <code>CFNetwork</code>, <code>NWConnection</code>, <code>Network</code>, <code>StoreKit</code>, <code>CLLocationManager</code>, <code>ASIdentifierManager</code>, <code>identifierForVendor</code> or <code>ATTrackingManager</code> appears in the sources.</p>
-<p>Apple’s Kids Category forbids sending personally identifiable information or device information to third parties. Bisque cannot send anything to anyone.</p>
-
-<h2>No permissions, ever</h2>
-<p>iOS will never show you a permission prompt from Bisque. No camera, no microphone, no photo library, no contacts, no location, no notifications. Every one of those keys is checked for <em>absence</em> on each build. A permission never requested protects a child better than one granted and then behaved well.</p>
-
-<h2>What Bisque stores, and where</h2>
-<p>The figures your child has painted, the textures of those paintings, and a number derived from them that seeds the daily world. All of it is inside the app on this device. Deleting the app deletes all of it, because there is nowhere else it exists. There is no iCloud sync and no backup to us — your own device backup is the only copy.</p>
-
-<h2>No advertising, no purchases, no other apps</h2>
-<p>There are no adverts of any kind, so there is nothing to review for age-appropriateness and no ad network to receive anything. There are no in-app purchases and no subscription, so there is no purchase data. There are no links out of the app except the parents’ section, which sits behind a parental gate — with a spoken prompt in front of it, because a child of this age cannot read the one on the screen.</p>
-
-<h2>Nothing your child makes can be seen by anyone else</h2>
-<p>No chat, no messaging, no sharing, no gallery, no user-generated content that anyone else can see, no web browsing. There is no way for a stranger to reach your child through this app, because there is no channel to reach them through.</p>
-
-<h2>How these sentences are checked</h2>
-<p>Each claim above corresponds to a check that runs on every build and fails the build if the claim stops being true. The source is scanned with comments stripped for the symbols listed above; every permission key that must be absent is checked for absence. A privacy promise nobody measures is worse than none at all, because people rely on it — and here the people relying on it are choosing on someone else’s behalf.</p>
-
-<h2>The “never frightening” claim is checked too</h2>
-<p>The store text says no generated creature can be ugly or frightening. That sentence is backed by a measurement file in the source: 200 000 generated creatures, none breaking any of the written rules, and a generator that ignores those rules having 100% of its output rejected. Both numbers are produced by the app’s own engine and re-measured on every build.</p>
-
-<h2>Age band</h2>
-<p>Ages 5 and under. The app contains no reading, no violence, no scares, no advertising and no purchasing. Rated 4+.</p>
-
-<h2>Changes</h2>
-<p>If any of this ever changes, this page changes with the release that changes it, and the corresponding build gate changes too — they cannot drift apart.</p>
-
-<h2>Contact</h2>
-<p>Questions: <a href="mailto:hello@norea.studio">hello@norea.studio</a>.</p>
-
-<div class="lang"><a href="/">norea.studio</a> · <a href="/bisque/">Bisque</a> · <a href="/bisque/support">Support</a></div>
-</div></body></html>
+      .marka {
+        display: block;
+        height: 52px;
+        width: auto;
+        margin: 0 0 22px;
+      }
+      .marka-alt {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 52px;
+        padding-top: 18px;
+        border-top: 1px solid #e5ded6;
+        font-size: 0.86rem;
+        color: #6d6569;
+      }
+      .marka-alt img {
+        height: 34px;
+        width: auto;
+      }
+      h1.gizli {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <img class="marka" src="marka.png" alt="Bisque" />
+      <h1>Bisque privacy</h1>
+      <p class="lead">
+        Bisque is an offline creative toy. We do not collect your artwork,
+        personal information or usage analytics. There are no accounts, ads or
+        third-party analytics SDKs.
+      </p>
+      <h2>What stays on your device</h2>
+      <p>
+        Bisque saves the current painted surface, material texture, clothes,
+        selected tools, orientation, colour history and the generated creature’s
+        seed and original day in its app storage. The random seed creates the
+        creature; it is not a device identifier. Undo keeps up to three recent
+        artwork changes during a session and can be cleared when the device
+        needs memory.
+      </p>
+      <h2>The optional Apple Watch connection</h2>
+      <p>
+        If you use Bisque on an iPhone with a paired Apple Watch, Apple’s
+        WatchConnectivity service transfers the creature’s random seed, original
+        day, three mood values derived from the colours and a painting-progress
+        value. The Watch keeps the latest received update so it can show a
+        simple companion when the phone app is closed. Painted textures and
+        clothes are not sent. None of this data is sent to a Bisque server.
+      </p>
+      <h2>No tracking or requested sensitive permissions</h2>
+      <p>
+        Bisque contains no advertising or analytics services. It does not
+        request camera, microphone, location, contacts, photo-library,
+        notification or tracking access. Its privacy manifest declares app-only
+        UserDefaults storage. No personal information is requested by the app.
+      </p>
+      <h2>Saving, backups and deleting</h2>
+      <p>
+        There is no Bisque account, server backup or artwork sync between your
+        iPhone and iPad. Your operating system may include app data in your own
+        device backup according to your settings. Holding Start over clears the
+        current paint and clothing but retains the creature and preferences; it
+        is not a complete data-deletion command. Remove Bisque and its app data
+        to delete the local artwork and preferences. Remove the Watch app and
+        its data to remove the cached companion. Backups are managed separately
+        in your Apple settings.
+      </p>
+      <h2>Links and support</h2>
+      <p>
+        Privacy and support links are available only after an adult maths
+        challenge. They open the system browser. These public pages are hosted
+        by GitHub Pages; visiting them involves ordinary web requests handled by
+        the browser and hosting provider. If you email us, we receive the
+        information you choose to send and use it to respond. Please do not
+        include sensitive information about a child.
+      </p>
+      <h2>Contact</h2>
+      <p>
+        For privacy questions or a request about support correspondence, email
+        <a href="mailto:hello@norea.studio">hello@norea.studio</a>.
+      </p>
+      <p>Updated 7 September 2026.</p>
+      <nav class="lang" aria-label="Bisque information">
+        <a href="../">Norea</a> · <a href="./">Bisque</a> ·
+        <a href="privacy.html">Privacy</a> · <a href="support.html">Support</a>
+      </nav>
+    </main>
+  </body>
+</html>
