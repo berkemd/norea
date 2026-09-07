@@ -1,89 +1,180 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bisque — a figure waiting for colour</title>
-<meta name="description" content="A plain white figure your child paints, and it wakes up. Every creature, sky and brush is generated on the device. No ads, no purchases, no network, no data collected.">
-<link rel="icon" type="image/png" href="/bisque/favicon.png">
-<link rel="apple-touch-icon" href="/bisque/apple-touch-icon.png">
-<meta name="theme-color" content="#2a222c">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Bisque — a figure waiting for colour">
-<meta property="og:description" content="A plain white figure your child paints, and it wakes up. Every creature, sky and brush is generated on the device.">
-<meta property="og:image" content="https://berkemd.github.io/norea/bisque/og.png">
-<meta property="og:url" content="https://berkemd.github.io/norea/bisque/">
-<meta name="twitter:card" content="summary_large_image">
-<style>body{background:#faf8f5;color:#1f1a20;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0}
-.wrap{max-width:660px;margin:0 auto;padding:64px 24px}
-h1{font-size:1.6rem;margin:0 0 6px}
-h2{font-size:1.05rem;margin:34px 0 6px}
-h3{font-size:.95rem;margin:22px 0 4px;color:#1f1a20}
-p,li{color:#4e474f}
-a{color:#b05a3c}
-code{background:#f0ebe4;padding:1px 5px;border-radius:3px;font-size:.88em}
-table{border-collapse:collapse;margin:14px 0;font-size:.92rem}
-td,th{border-bottom:1px solid #e5ded6;padding:6px 14px 6px 0;text-align:left}
-.lang{border-top:1px solid #e5ded6;margin-top:40px;padding-top:10px;font-size:.86rem}
-.lead{font-size:1.02rem;color:#332d34}
-.note{border-left:3px solid #b05a3c;padding-left:14px;color:#3f3840}
-figcaption{font-size:.86rem;color:#6d6569;margin-top:6px}
-/* --- MARKA --------------------------------------------------------
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bisque — Paint your own ceramic companion</title>
+    <meta
+      name="description"
+      content="Paint, dress and keep your own ceramic creature. Offline creative play on iPhone and iPad, with an optional Apple Watch companion."
+    />
+    <link rel="icon" href="favicon.png" />
+    <style>
+      body {
+        background: #faf8f5;
+        color: #1f1a20;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        line-height: 1.7;
+        margin: 0;
+      }
+      .wrap {
+        max-width: 660px;
+        margin: 0 auto;
+        padding: 64px 24px;
+      }
+      h1 {
+        font-size: 1.6rem;
+        margin: 0 0 6px;
+      }
+      h2 {
+        font-size: 1.05rem;
+        margin: 34px 0 6px;
+      }
+      h3 {
+        font-size: 0.95rem;
+        margin: 22px 0 4px;
+        color: #1f1a20;
+      }
+      p,
+      li {
+        color: #4e474f;
+      }
+      a {
+        color: #b05a3c;
+      }
+      code {
+        background: #f0ebe4;
+        padding: 1px 5px;
+        border-radius: 3px;
+        font-size: 0.88em;
+      }
+      table {
+        border-collapse: collapse;
+        margin: 14px 0;
+        font-size: 0.92rem;
+      }
+      td,
+      th {
+        border-bottom: 1px solid #e5ded6;
+        padding: 6px 14px 6px 0;
+        text-align: left;
+      }
+      .lang {
+        border-top: 1px solid #e5ded6;
+        margin-top: 40px;
+        padding-top: 10px;
+        font-size: 0.86rem;
+      }
+      .lead {
+        font-size: 1.02rem;
+        color: #332d34;
+      }
+      .note {
+        border-left: 3px solid #b05a3c;
+        padding-left: 14px;
+        color: #3f3840;
+      }
+      figcaption {
+        font-size: 0.86rem;
+        color: #6d6569;
+        margin-top: 6px;
+      }
+      /* --- MARKA --------------------------------------------------------
    Sozcuk markasi bir yazi tipinden secilmedi: yaratigin kendi
    ilkellerinden ve ayni yumusak birlesim islecinden uretildi.
    Kaynak: marka/bisque_soz.json + marka/soz.py                     */
-.marka{display:block;height:52px;width:auto;margin:0 0 22px}
-.marka-alt{display:flex;align-items:center;gap:12px;margin-top:52px;
-  padding-top:18px;border-top:1px solid #e5ded6;font-size:.86rem;color:#6d6569}
-.marka-alt img{height:34px;width:auto}
-h1.gizli{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-</style></head><body><div class="wrap">
-<img class="marka" src="/bisque/marka.png" alt="Bisque" width="1086" height="390">
-<h1 class="gizli">Bisque</h1>
-<p class="lead">Bisque opens on a plain white figure. Unglazed, unpainted, nobody yet. Your child paints it, and it wakes up.</p>
-<p>The word is real: <em>bisque</em> is fired clay that has not been glazed — a piece waiting for colour. It is also, historically, the name for a porcelain doll.</p>
-
-<h2>What it does differently</h2>
-
-<h3>Painting, not filling in</h3>
-<p>Almost everything called “3D colouring” is a menu: pick a region, pick a colour, the region changes. Bisque paints onto the surface itself. A crayon catches on the texture and darkens in the creases. Watercolour pools where the form curves and leaves a ring at the edge. Glaze catches the light when the figure turns. Your child will not know why it feels right. That is the point.</p>
-
-<h3>Your child’s colours decide who it is</h3>
-<p>Warm colours give a livelier creature; cool ones, a quieter one. The rule is simple on purpose, because a child has to be able to discover it. In this category the child’s choices are decoration — the outfit is a sticker, the character never changes. Here the choice reaches the result.</p>
-
-<h3>No words, anywhere</h3>
-<p>The creature does not speak. It makes sounds — delight, curiosity, sleepiness — the way a creature in a good animated film does. There is no reading in the app at all. That is not a shortcut: it is what makes the app work identically for a four-year-old and in every language, with no translation to get wrong.</p>
-
-<h3>New things, without downloading any</h3>
-<p>Every day brings a different sky, a different visiting creature, different brushes, a different little place. None of it is downloaded, bought or unlocked. It is generated on the device, seeded by the date and by your child’s own paintings, so two children never get the same day and it does not run out.</p>
-<p class="note">This is the honest answer to “constantly refreshed content”. In this category that phrase means a treadmill of downloadable packs, each one either a purchase or an advert — two things that should not be sold to a child. Generating instead of downloading costs more engineering and no money.</p>
-
-<h3>The hard part was the limit, not the variety</h3>
-<p>A generator that assembles parts at random produces a monster within the hour, and a monster is not an acceptable defect in a toy. So “cute” is not a style here; it is a written set of measurements. Proportions from the infant schema described by Konrad Lorenz. Eyes in the lower half of the face, large but not insectile. No spindly limbs — thin limbs read as spider. No muddy colours, no neon: one looks dirty on a child’s screen, the other is a warning colour.</p>
-<figure>
-<table>
-<tr><th>Measurement</th><th>Result</th></tr>
-<tr><td>Generated creatures checked</td><td>200 000</td></tr>
-<tr><td>Creatures breaking a rule</td><td>0</td></tr>
-<tr><td>A generator ignoring the rules</td><td>100% rejected</td></tr>
-<tr><td>Distinct part combinations produced</td><td>80 of 80</td></tr>
-</table>
-<figcaption>Re-run on every build, from the app’s own engine. The record ships with the source.</figcaption>
-</figure>
-<p>The second number matters as much as the first: a rule set that rejects nothing would also produce a clean first line. The third and fourth exist because constraining is easy and constraining <em>while leaving variety</em> is not — a generator that made the same creature every time would pass the first test too.</p>
-
-<h2>What it will never do</h2>
-<p>No advertising. No in-app purchases. No loot boxes, no timers, no streaks, no stars and no levels — painting has no right answer, and scoring one says otherwise. No accounts, no sign-in, no chat, no sharing; nothing that can reach your child from outside.</p>
-
-<h2>For parents</h2>
-<p>Bisque makes no network request of any kind. Nothing about your child leaves the device, because nothing is collected in the first place. It asks for no permissions: no camera, no microphone, no contacts, no location, no notifications. Each of those sentences is a check that runs on every build and stops the release if it stops being true — see <a href="/bisque/privacy">Privacy</a>.</p>
-<p>Apple’s Kids Category rules are the strictest set the App Store has. For most apps they are a constraint. For this one they describe where it already was.</p>
-
-<h2>Price</h2>
-<p>One purchase. No subscription — a toy is not rented. No in-app purchases of any kind.</p>
-
-<h2>Availability</h2>
-<p>iPhone and iPad, ages 5 and under and just as good above. English, Turkish, German, French, Spanish and Japanese — though the app itself contains no words to translate.</p>
-
-<p class="lead" style="margin-top:34px">There is no Apple Watch version, and that is a decision rather than an omission: a painting surface does not fit on a wrist.</p>
-
-<div class="lang"><a href="/">norea.studio</a> · <a href="/bisque/privacy">Privacy</a> · <a href="/bisque/support">Support</a></div>
-</div></body></html>
+      .marka {
+        display: block;
+        height: 52px;
+        width: auto;
+        margin: 0 0 22px;
+      }
+      .marka-alt {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 52px;
+        padding-top: 18px;
+        border-top: 1px solid #e5ded6;
+        font-size: 0.86rem;
+        color: #6d6569;
+      }
+      .marka-alt img {
+        height: 34px;
+        width: auto;
+      }
+      h1.gizli {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <img class="marka" src="marka.png" alt="Bisque" />
+      <h1>Bisque</h1>
+      <p class="lead">
+        Turn a little ceramic creature into your own colourful companion. Paint
+        directly on its 3D surface, dress it up, and watch its character respond
+        to your colours.
+      </p>
+      <h2>A small studio, ready to play</h2>
+      <p>
+        Choose from 14 colours and four tools: crayon, watercolour, glaze and
+        glitter. Drag across the figure to paint. Drag on the background to turn
+        it and reach another side. Add hats, scarves and other outfits with a
+        tap.
+      </p>
+      <h2>Keep what you create</h2>
+      <p>
+        Your current artwork, clothes and selected tools are saved on this
+        device. Return to the same creation when you reopen Bisque. Undo recent
+        edits, or hold Start over to clear the paint and clothing; a short tap
+        shows a hint without erasing.
+      </p>
+      <h2>Colour becomes character</h2>
+      <p>
+        A simple on-device rule turns the colours used into a playful mood:
+        warmer colours encourage a livelier companion, cooler colours a quieter
+        one. Soft movement and wordless sounds bring the figure to life. This is
+        imaginative play, not an assessment of your child.
+      </p>
+      <h2>A quiet place to make things</h2>
+      <p>
+        The painting area uses pictures instead of written instructions. No ads,
+        accounts, chat, in-app purchases or subscriptions. No scores, streaks or
+        time limits. Painting works offline.
+      </p>
+      <h2>An optional watch companion</h2>
+      <p>
+        On an Apple Watch paired with your iPhone, see a simple animated
+        companion inspired by your creature and its mood. The painted surface
+        and clothes stay on the iPhone; the Watch is a companion, not a painting
+        screen. Open Bisque on the paired iPhone to send an update. Delivery
+        depends on Apple’s device connection.
+      </p>
+      <h2>For grown-ups</h2>
+      <p>
+        Artwork stays on the device, with no Bisque account or cross-device
+        artwork sync. Bisque contains no ads or analytics and requests no
+        camera, microphone or location access. Only creature identity and mood
+        data pass to the paired Watch. Privacy and support links are behind an
+        adult maths challenge and open in your browser.
+      </p>
+      <p>
+        For open-ended creative play on iPhone and iPad, with an optional Apple
+        Watch companion.
+      </p>
+      <nav class="lang" aria-label="Bisque information">
+        <a href="../">Norea</a> · <a href="./">Bisque</a> ·
+        <a href="privacy.html">Privacy</a> · <a href="support.html">Support</a>
+      </nav>
+    </main>
+  </body>
+</html>
