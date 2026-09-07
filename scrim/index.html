@@ -1,82 +1,221 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scrim — the meter that can say it cannot measure</title>
-<meta name="description" content="Stops, horizon and clipping with the band each actually has. When the geometry degenerates, Scrim says so instead of printing a number. No network, no frame stored, camera the only permission.">
-<style>body{background:#f8f7f3;color:#1a1916;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0}
-.wrap{max-width:660px;margin:0 auto;padding:64px 24px}
-h1{font-size:1.6rem;margin:0 0 6px}
-h2{font-size:1.05rem;margin:34px 0 6px}
-h3{font-size:.95rem;margin:22px 0 4px;color:#1a1916}
-p,li{color:#4d4c46}
-a{color:#3a566b}
-code{background:#eeece5;padding:1px 5px;border-radius:3px;font-size:.88em}
-table{border-collapse:collapse;margin:14px 0;font-size:.92rem}
-td,th{border-bottom:1px solid #e2dfd6;padding:6px 14px 6px 0;text-align:left}
-.lang{border-top:1px solid #e2dfd6;margin-top:40px;padding-top:10px;font-size:.86rem}
-.lead{font-size:1.02rem;color:#333}
-.note{border-left:3px solid #6e9bff;padding-left:14px;color:#3d3c37}</style></head><body><div class="wrap">
-<h1>Scrim</h1>
-<p class="lead">Every camera app draws you a histogram and a level. Both look certain, and both are quietly wrong. Scrim measures the same two things and reports what it actually knows — including the places where the answer is that it cannot know.</p>
-
-<h2>What it does differently</h2>
-
-<h3>The histogram is of the preview, not of the scene</h3>
-<p>By the time a frame reaches the preview it has been tone-mapped and quantised to eight bits. A saturated pixel may be one stop over the ceiling or five, and nothing in that preview distinguishes the two. Scrim shows the clipping — which is <em>observed</em> — and refuses to invent the amount, which is not. When the top end is saturated the range stops being a number and becomes a floor: <em>at least 9.4 stops</em>, written with a “≥”, never as a point.</p>
-
-<h3>The band is split by where it comes from</h3>
-<p>Two sources, kept apart because they behave differently. <strong>Quantisation</strong>: preview codes are whole numbers, and near black one code step is worth more than a quarter of a stop — that error does not shrink with more pixels, so it adds linearly. <strong>Sampling</strong>: the percentile is read from a finite number of pixels and wanders a little each frame — that adds in quadrature. Merging them into one comforting number would hide which one you could actually do something about.</p>
-
-<table>
-<tr><th>Preview code</th><th>One code step, in stops</th></tr>
-<tr><td>1</td><td>1.585</td></tr>
-<tr><td>2</td><td>0.737</td></tr>
-<tr><td>5</td><td>0.290</td></tr>
-<tr><td>6</td><td>0.241</td></tr>
-<tr><td>240</td><td>0.014</td></tr>
-</table>
-<p>Below code 5 a single step costs more than a quarter of a stop, so that is where Scrim stops calling the shadows measured. The number is not a preference; it is where the rule lands.</p>
-
-<h3>The level prints tenths of a degree it does not have</h3>
-<p>Roll comes from the horizontal component of the gravity vector, and that component goes to zero as the phone points up or down. The same accelerometer noise therefore means something different in every orientation: the band grows as 1/h. Held upright it is ±0.12°. At 80° of pitch it is ±0.70°. At 88° it is ±3.48° — wider than any tilt the screen could show, which is another way of saying the horizon is not defined there. Past that point Scrim stops printing an angle.</p>
-
-<table>
-<tr><th>Pitch</th><th>Horizon</th><th>Band</th><th>Verdict</th></tr>
-<tr><td>0°</td><td>0.9°</td><td>±0.12°</td><td>tilted</td></tr>
-<tr><td>32°</td><td>0.9°</td><td>±0.14°</td><td>tilted</td></tr>
-<tr><td>64°</td><td>0.9°</td><td>±0.28°</td><td>tilted</td></tr>
-<tr><td>80°</td><td>0.9°</td><td>±0.70°</td><td>undecided</td></tr>
-<tr><td>88°</td><td>0.9°</td><td>±3.48°</td><td>undefined</td></tr>
-</table>
-<p>Same tilt, same phone, same 0.9° throughout. Only the band changes.</p>
-
-<h3>There is a third answer, and you will see it often</h3>
-<p>Between “level” and “tilted” sits <em>undecided</em>: the band straddles the tolerance and neither claim is available. Most camera apps have no way to say this, so they say the other thing instead. Scrim treats it as an answer, not a failure — and on the frame decision the same rule applies: <em>shoot</em>, <em>fix this first</em>, or <em>I can’t measure this</em>.</p>
-
-<h3>Converging verticals, with the assumption in view</h3>
-<p>How much your verticals converge is computed from pitch and your lens. The lens has <em>no default</em>: without a field of view the number cannot exist at all, so Scrim asks rather than guessing. The flat-façade assumption is printed next to the result, because the number is a model output and not a measurement of the building.</p>
-
-<h3>The delivery gap</h3>
-<p>A gain-map photo carries highlights above SDR white. How many of them a viewer sees depends on <em>their</em> screen, not yours — and every HDR indicator in the category measures yours. Scrim shows what an SDR screen, a typical phone and a bright HDR display each keep of a 2.4-stop file, and what each compresses away.</p>
-
-<h3>On the wrist, one decision</h3>
-<p>Phone on a tripod, you in the frame: the watch carries the decision and its band, and nothing else. No histogram, no shutter, no settings. What crosses to the watch is numbers — the decision, the angle, the band, the clipped fraction — never an image.</p>
-
-<div class="note"><p>One purchase. No subscription and no in-app purchases. iPhone, iPad and Apple Watch. Six languages of interface.</p></div>
-
-<h2>What it will not do</h2>
-<ul>
-<li>It will not print a number in place of a range, or a range in place of “I can’t measure this”.</li>
-<li>It will not guess how far past the ceiling a clipped highlight went.</li>
-<li>It will not keep a frame. Preview buffers become a histogram and are released.</li>
-<li>It will not make a network request, ask for your photo library, your location or your microphone, or create an account. Camera is the only permission it asks for.</li>
-</ul>
-
-<h2>The privacy lines are gates, not promises</h2>
-<p>Each claim above corresponds to a check that runs on every build and fails it if the claim stops being true: the source is scanned with comments stripped for <code>URLSession</code>, <code>URLRequest</code>, <code>CFNetwork</code>, <code>NWConnection</code>, <code>CLLocationManager</code> and <code>StoreKit</code>, and for anything that could write an image to disk. The permission strings that are supposed to be absent are checked for absence, and the one that is supposed to be present is checked for presence. A promise nobody measures is worse than no promise, because people rely on it.</p>
-
-<h2>How the numbers here were produced</h2>
-<p>Every figure on this page and in the App Store screenshots comes from the shipping core, run over scenes built from a written rule — a sum of Gaussian lobes in code space, three million pixels — not from a design file. The core carries 58 tests, and a mutation gate breaks each of its 50 defences one at a time to check that a test actually goes red. Three defences were found to be unreachable that way and were deleted rather than left in place looking measured.</p>
-
-<div class="lang"><a href="/">norea.studio</a> · <a href="/scrim/privacy">Privacy</a> · <a href="/scrim/support">Support</a></div>
-</div></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Scrim — Check light and level before your shot</title>
+    <meta
+      name="description"
+      content="Check highlight clipping, preview light range and horizon tilt on iPhone or iPad. See the reading's limits. One purchase, no subscription. Paired Apple Watch companion."
+    />
+    <link rel="canonical" href="https://berkemd.github.io/norea/scrim/" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Scrim — Check light and level before your shot"
+    />
+    <meta
+      property="og:description"
+      content="A clearer decision before the shot: check the highlights, level the horizon, and know when the reading is uncertain."
+    />
+    <meta property="og:url" content="https://berkemd.github.io/norea/scrim/" />
+    <meta name="theme-color" content="#f5f3ed" />
+    <link rel="stylesheet" href="assets/site.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header>
+      <a class="brand" href="./">SCRIM</a>
+      <nav aria-label="Main">
+        <a href="#how">How it works</a><a href="support.html">Support</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero">
+        <div>
+          <div class="eyebrow">Light &amp; level · iPhone + iPad</div>
+          <h1>Know what to adjust.<br />Before the shot.</h1>
+          <p class="intro">
+            Check bright highlights and horizon tilt in your camera preview.
+            Scrim shows the reading, its uncertainty, and when it cannot give a
+            reliable answer.
+          </p>
+          <a class="button" href="https://apps.apple.com/app/id6806308907"
+            >View Scrim on the App Store</a
+          >
+          <p class="small">
+            One purchase. No subscription or in-app purchases.<br />iOS 17+ ·
+            Optional paired Apple Watch, watchOS 10+
+          </p>
+        </div>
+        <aside class="decision" aria-label="What Scrim's decisions mean">
+          <div class="eyebrow">Three decisions, explained</div>
+          <article>
+            <span class="number">01 · SHOOT</span
+            ><strong>The measured checks pass.</strong>
+            <p>
+              A useful check for this frame, not a guarantee of a perfect
+              photograph.
+            </p>
+          </article>
+          <article>
+            <span class="number">02 · FIX THIS FIRST</span
+            ><strong>There is something to adjust.</strong>
+            <p>
+              Check the indicated issue, such as clipped highlights or a tilted
+              horizon.
+            </p>
+          </article>
+          <article>
+            <span class="number">03 · I CAN’T MEASURE THIS</span
+            ><strong>The reading has a limit.</strong>
+            <p>
+              Follow the explanation: hold still, change the phone angle, or
+              wait for a usable reading.
+            </p>
+          </article>
+        </aside>
+      </section>
+      <section class="section" id="how">
+        <div class="eyebrow">A short check in your shooting routine</div>
+        <h2>Frame it. Check it. Then use your camera.</h2>
+        <div class="grid">
+          <article>
+            <span class="step">01 / FRAME</span>
+            <h3>Open Scrim and allow Camera.</h3>
+            <p>
+              Point your iPhone or iPad at the scene. The live preview is the
+              input; Scrim does not take or save the photograph.
+            </p>
+          </article>
+          <article>
+            <span class="step">02 / CHECK</span>
+            <h3>Read the decision and its reason.</h3>
+            <p>
+              Look at the horizon, clipped highlights and readable light range.
+              An uncertainty band means the number is an estimate, not an exact
+              value.
+            </p>
+          </article>
+          <article>
+            <span class="step">03 / ADJUST</span>
+            <h3>Reframe, steady or level.</h3>
+            <p>
+              Check again after an adjustment. Use your camera app for the
+              actual capture and exposure settings.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section class="section">
+        <h2>Useful when the frame needs a closer look.</h2>
+        <div class="grid">
+          <article>
+            <h3>A room with a bright window</h3>
+            <p>
+              See which highlights are already clipped in the preview. Clipping
+              cannot reveal how much detail exists beyond that limit.
+            </p>
+          </article>
+          <article>
+            <h3>A landscape or a tripod setup</h3>
+            <p>
+              Check the horizon with its uncertainty. Your paired Apple Watch
+              can show the phone's decision while Scrim is open and connected.
+            </p>
+          </article>
+          <article>
+            <h3>A building façade</h3>
+            <p>
+              Explore converging verticals using the lens and pitch inputs. The
+              estimate assumes a flat façade; it does not correct your photo.
+            </p>
+          </article>
+        </div>
+        <div class="note">
+          <p>
+            <strong>Preview measurements have limits.</strong> Scrim does not
+            measure calibrated incident lux, set ISO/shutter/aperture, or
+            recover clipped image detail. It complements your camera workflow.
+          </p>
+        </div>
+      </section>
+      <section class="section">
+        <h2>Before you buy</h2>
+        <details>
+          <summary>Is this an exposure calculator for film?</summary>
+          <p>
+            No. Scrim evaluates the phone's processed preview and motion
+            readings. It does not supply calibrated incident-light exposure
+            settings for a film camera. If you need a dedicated light meter
+            reading or automatic shutter/aperture recommendations, this is a
+            different tool.
+          </p>
+        </details>
+        <details>
+          <summary>Does the HDR delivery view inspect my photos?</summary>
+          <p>
+            No. It is a comparison based on a gain ratio you choose and example
+            display capacities. It illustrates how those assumptions change
+            highlight headroom. It does not import a photo, read its gain map,
+            or measure the recipient's display.
+          </p>
+        </details>
+        <details>
+          <summary>Can the Watch measure without the phone?</summary>
+          <p>
+            No. The camera measurement comes from your iPhone. Open Scrim on the
+            phone and keep the paired Watch connected. The Watch shows the
+            decision; it is not a camera preview or shutter remote.
+          </p>
+        </details>
+        <details>
+          <summary>Are my photos uploaded or stored?</summary>
+          <p>
+            Scrim does not save preview frames or upload them. It has no
+            account, ads or analytics. Numeric decisions can be sent to your own
+            paired Apple Watch. See the
+            <a href="privacy.html">privacy policy</a> for details.
+          </p>
+        </details>
+        <details>
+          <summary>What does the purchase include?</summary>
+          <p>
+            The app's light, horizon, verticals and HDR comparison views, plus
+            the paired Watch companion. There is no subscription or additional
+            in-app purchase. The App Store shows your region's current price
+            before purchase.
+          </p>
+        </details>
+        <details>
+          <summary>What if I declined Camera access?</summary>
+          <p>
+            Enable Camera for Scrim in your device's Settings, then reopen
+            Scrim. If the preview or a reading still does not appear, contact
+            support with your device model, OS version and the step that failed.
+          </p>
+        </details>
+      </section>
+      <section class="section">
+        <h2>A small tool for a more considered shot.</h2>
+        <p>
+          Available in English, Turkish, German, French, Spanish and Japanese.
+        </p>
+        <a class="button" href="https://apps.apple.com/app/id6806308907"
+          >See price and compatibility</a
+        >
+        <p class="small">
+          Made by Berke Kahraman ·
+          <a href="support.html">Get help with Scrim</a>
+        </p>
+      </section>
+    </main>
+    <footer>
+      <span>© 2026 Berke Kahraman</span>
+      <nav aria-label="Footer">
+        <a href="../">Portfolio</a><a href="privacy.html">Privacy</a
+        ><a href="support.html">Support</a>
+      </nav>
+    </footer>
+  </body>
+</html>
