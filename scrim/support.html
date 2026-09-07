@@ -1,52 +1,165 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scrim — Support</title>
-<meta name="description" content="How Scrim measures stops, horizon and clipping — and why it sometimes refuses to give you a number.">
-<style>body{background:#f8f7f3;color:#1a1916;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0}
-.wrap{max-width:660px;margin:0 auto;padding:64px 24px}
-h1{font-size:1.6rem;margin:0 0 6px}
-h2{font-size:1.05rem;margin:34px 0 6px}
-h3{font-size:.95rem;margin:22px 0 4px}
-p,li{color:#4d4c46}
-a{color:#3a566b}
-code{background:#eeece5;padding:1px 5px;border-radius:3px;font-size:.88em}
-.lang{border-top:1px solid #e2dfd6;margin-top:40px;padding-top:10px;font-size:.86rem}
-.lead{font-size:1.02rem;color:#333}</style></head><body><div class="wrap">
-<h1>Scrim — Support</h1>
-<p class="lead">Most questions about Scrim are versions of the same one: why won’t it just give me a number? Here are the answers.</p>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scrim — Support</title>
+    <meta
+      name="description"
+      content="How Scrim measures stops, horizon and clipping — and why it sometimes refuses to give you a number."
+    />
+    <style>
+      body {
+        background: #f8f7f3;
+        color: #1a1916;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        line-height: 1.7;
+        margin: 0;
+      }
+      .wrap {
+        max-width: 660px;
+        margin: 0 auto;
+        padding: 64px 24px;
+      }
+      h1 {
+        font-size: 1.6rem;
+        margin: 0 0 6px;
+      }
+      h2 {
+        font-size: 1.05rem;
+        margin: 34px 0 6px;
+      }
+      h3 {
+        font-size: 0.95rem;
+        margin: 22px 0 4px;
+      }
+      p,
+      li {
+        color: #4d4c46;
+      }
+      a {
+        color: #3a566b;
+      }
+      code {
+        background: #eeece5;
+        padding: 1px 5px;
+        border-radius: 3px;
+        font-size: 0.88em;
+      }
+      .lang {
+        border-top: 1px solid #e2dfd6;
+        margin-top: 40px;
+        padding-top: 10px;
+        font-size: 0.86rem;
+      }
+      .lead {
+        font-size: 1.02rem;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>Scrim — Support</h1>
+      <p class="lead">
+        Most questions about Scrim are versions of the same one: why won’t it
+        just give me a number? Here are the answers.
+      </p>
 
-<h2>Why does it say “I can’t measure this”?</h2>
-<h3>Pointing up or down</h3>
-<p>The horizon angle is computed from the horizontal part of the gravity vector, and that part shrinks to nothing as the phone tilts toward the sky or the floor. The same sensor noise then translates into a much larger angular error: ±0.12° upright, ±3.48° at 88° of pitch. When the band grows past 3° there is no angle left to print, so Scrim stops printing one. Bring the phone back toward vertical and the number returns.</p>
-<h3>Too dark</h3>
-<p>If almost the whole frame sits below preview code 5, there is no scene to measure — only quantisation. Scrim says so instead of reporting a range built from rounding error.</p>
-<h3>Undecided</h3>
-<p>Between “level” and “tilted” the band can straddle the tolerance. Neither claim is available, so Scrim shows the third answer. Steadying the phone — a wall, a rail, a tripod — narrows the band and usually resolves it.</p>
+      <h2>Why does it say “I can’t measure this”?</h2>
+      <h3>Pointing up or down</h3>
+      <p>
+        The horizon angle is computed from the horizontal part of the gravity
+        vector, and that part shrinks to nothing as the phone tilts toward the
+        sky or the floor. The same sensor noise then translates into a much
+        larger angular error: ±0.12° upright, ±3.48° at 88° of pitch. When the
+        band grows past 3° there is no angle left to print, so Scrim stops
+        printing one. Bring the phone back toward vertical and the number
+        returns.
+      </p>
+      <h3>Too dark</h3>
+      <p>
+        If almost the whole frame sits below preview code 5, there is no scene
+        to measure — only quantisation. Scrim says so instead of reporting a
+        range built from rounding error.
+      </p>
+      <h3>Undecided</h3>
+      <p>
+        Between “level” and “tilted” the band can straddle the tolerance.
+        Neither claim is available, so Scrim shows the third answer. Steadying
+        the phone — a wall, a rail, a tripod — narrows the band and usually
+        resolves it.
+      </p>
 
-<h2>Why is the range written with “at least”?</h2>
-<p>Because one end is saturated. A pixel sitting at the ceiling might be one stop over or five; the preview keeps no record of the difference. The honest statement is a floor, so Scrim writes a floor. Lower the exposure until the clipping clears and the range becomes a real interval with a band.</p>
+      <h2>Why is the range written with “at least”?</h2>
+      <p>
+        Because one end is saturated. A pixel sitting at the ceiling might be
+        one stop over or five; the preview keeps no record of the difference.
+        The honest statement is a floor, so Scrim writes a floor. Lower the
+        exposure until the clipping clears and the range becomes a real interval
+        with a band.
+      </p>
 
-<h2>Why does the clipping figure not come with a number of stops?</h2>
-<p>Clipping is <em>observed</em> — the fraction of pixels at the ceiling is a measurement. Its <em>size</em> is not observable from the preview. Scrim reports the first and refuses the second. Under 0.2% of pixels it does not call clipping a defect at all: at that level it is a lamp or the sun itself, and pulling exposure down for it buries the rest of the frame.</p>
+      <h2>Why does the clipping figure not come with a number of stops?</h2>
+      <p>
+        Clipping is <em>observed</em> — the fraction of pixels at the ceiling is
+        a measurement. Its <em>size</em> is not observable from the preview.
+        Scrim reports the first and refuses the second. Under 0.2% of pixels it
+        does not call clipping a defect at all: at that level it is a lamp or
+        the sun itself, and pulling exposure down for it buries the rest of the
+        frame.
+      </p>
 
-<h2>Why do I have to choose a lens for converging verticals?</h2>
-<p>Because without a field of view the convergence cannot be computed at all — it is not a refinement, it is the input. A default here would be a made-up number wearing the clothes of a measurement. Pick the option closest to the lens you are using; the assumption Scrim makes about the façade is printed next to the result.</p>
+      <h2>Why do I have to choose a lens for converging verticals?</h2>
+      <p>
+        Because without a field of view the convergence cannot be computed at
+        all — it is not a refinement, it is the input. A default here would be a
+        made-up number wearing the clothes of a measurement. Pick the option
+        closest to the lens you are using; the assumption Scrim makes about the
+        façade is printed next to the result.
+      </p>
 
-<h2>The watch app shows “Not connected to iPhone”</h2>
-<p>The watch shows the phone’s decision; it does not measure on its own, because the light measurement needs the phone’s camera. Open Scrim on the phone, keep both devices in range, and the decision appears. If the connection drops, the watch says so rather than leaving the last decision on screen — a stale verdict on a changed frame is the one thing worse than no verdict.</p>
+      <h2>The watch app shows “Not connected to iPhone”</h2>
+      <p>
+        The watch shows the phone’s decision; it does not measure on its own,
+        because the light measurement needs the phone’s camera. Open Scrim on
+        the phone, keep both devices in range, and the decision appears. If the
+        connection drops, the watch says so rather than leaving the last
+        decision on screen — a stale verdict on a changed frame is the one thing
+        worse than no verdict.
+      </p>
 
-<h2>Does Scrim take photos?</h2>
-<p>No. It measures the live frame and leaves capture to the system camera. It has no photo library access and stores no images.</p>
+      <h2>Does Scrim take photos?</h2>
+      <p>
+        No. It measures the live frame and leaves capture to the system camera.
+        It has no photo library access and stores no images.
+      </p>
 
-<h2>Which devices?</h2>
-<p>iPhone and iPad on iOS 17 or later, Apple Watch on watchOS 10 or later. There is no Mac version: Scrim’s inputs are a camera preview and an accelerometer, and a Mac target would be an empty product rather than a smaller one.</p>
+      <h2>Which devices?</h2>
+      <p>
+        iPhone and iPad on iOS 17 or later, Apple Watch on watchOS 10 or later.
+        There is no Mac version: Scrim’s inputs are a camera preview and an
+        accelerometer, and a Mac target would be an empty product rather than a
+        smaller one.
+      </p>
 
-<h2>Languages</h2>
-<p>English, German, Spanish, French, Japanese and Turkish.</p>
+      <h2>Languages</h2>
+      <p>English, German, Spanish, French, Japanese and Turkish.</p>
 
-<h2>Something is wrong, or a number looks off</h2>
-<p>Write to <a href="mailto:hello@norea.studio">hello@norea.studio</a> with what the screen said and what you expected. If a measurement is wrong, that is a defect in the core, and the core is where it will be fixed and tested.</p>
+      <h2>Something is wrong, or a number looks off</h2>
+      <p>
+        Write to <a href="mailto:hello@norea.studio">hello@norea.studio</a> with
+        what the screen said and what you expected. If a measurement is wrong,
+        that is a defect in the core, and the core is where it will be fixed and
+        tested.
+      </p>
 
-<div class="lang"><a href="/">norea.studio</a> · <a href="/scrim/">Scrim</a> · <a href="/scrim/privacy">Privacy</a></div>
-</div></body></html>
+      <div class="lang">
+        <a href="../">norea.studio</a> · <a href="./">Scrim</a> ·
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </div>
+  </body>
+</html>
