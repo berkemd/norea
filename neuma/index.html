@@ -110,6 +110,11 @@
         padding: 16px 18px;
         margin: 20px 0;
       }
+      .kutu h2:first-child {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: 0;
+      }
       .kutu p:last-child {
         margin-bottom: 0;
       }
@@ -169,6 +174,23 @@
         text-decoration: none;
         font-weight: 600;
       }
+      details {
+        border-bottom: 1px solid var(--cizgi);
+        padding: 16px 0;
+      }
+      summary {
+        cursor: pointer;
+        font-weight: 600;
+        padding: 8px 0;
+      }
+      summary:focus-visible,
+      a:focus-visible {
+        outline: 3px solid #a6612a;
+        outline-offset: 4px;
+      }
+      :target {
+        scroll-margin-top: 24px;
+      }
       .cta:focus-visible {
         outline: 3px solid #a6612a;
         outline-offset: 4px;
@@ -194,41 +216,89 @@
         Start without an account. Build a collection that belongs to you.
       </p>
       <p>
-        <a class="cta" href="https://apps.apple.com/app/id6803546005"
-          >Get Neuma on the App Store</a
+        <a
+          class="cta"
+          href="https://apps.apple.com/app/apple-store/id6803546005?pt=127358997&amp;ct=neuma_web_20260908&amp;mt=8"
+          >Start free on iPhone or iPad</a
         >
       </p>
+      <p>
+        Local capture, search and Recall are free. Optional Plus subscription.
+      </p>
+      <p>
+        <a href="#plus">What does Plus add?</a> ·
+        <a href="#turkce" lang="tr">Türkçe</a>
+      </p>
       <div class="kutu">
-        <h2>Coming in Neuma 1.3</h2>
+        <h2>Available now in Neuma 1.4</h2>
         <p>
-          Go directly from an empty vault to your first note. Recall brings back
-          recent notes, frequent tags and a daily selection of notes that have
-          not been updated for at least a week. Search handles accents and
-          available document text. Preview and edit an excerpt before sharing
-          it.
+          Collect notes, links, photos and voice memos. Group your ideas by
+          topic, connect related notes and share a mind map. Optional Plus
+          automation suggests connections and topic placement, explains each
+          match and lets you undo it.
         </p>
       </div>
-      <h2>A small habit with a useful result</h2>
+      <h2>From a saved idea to something you can use</h2>
+      <p>
+        For example, bring your notes for an article, a course or a personal
+        project together:
+      </p>
       <ol>
-        <li>Capture one thought you want to keep.</li>
-        <li>Find it through local words, phrases and tags.</li>
-        <li>Ask yourself what useful next step it suggests.</li>
         <li>
-          With version 1.3, share an edited excerpt and a Neuma link when you
-          choose.
+          <strong>Save the starting point.</strong> Write a thought, paste a
+          source link or add a photo.
+        </li>
+        <li>
+          <strong>Make the connection.</strong> Put related notes in a topic and
+          link the ideas you want to explore.
+        </li>
+        <li>
+          <strong>Return with a purpose.</strong> Search your words and tags,
+          revisit a note through Recall, or share a selected mind map or edited
+          excerpt.
         </li>
       </ol>
-      <h2>Start free</h2>
       <p>
-        Local notes and search are included. Version 1.3 also includes Recall
-        discovery and excerpt sharing. If you turn on iCloud sync, the free plan
-        mirrors your 250 most recent items. Neuma Plus removes that sync limit.
-        Older local items are not deleted because of the limit.
+        You choose the notes to share. Review the output first; the source notes
+        stay in your vault.
       </p>
-      <p>
-        Monthly and annual subscriptions show their current prices in the app.
-        Apple handles purchases, renewal, restoration and cancellation.
-      </p>
+      <h2 id="plus">Start with your notes. Add automation when it helps.</h2>
+      <div class="kutu">
+        <h3>Included free</h3>
+        <p>
+          Local capture, search, Recall and excerpt sharing. If you enable
+          iCloud sync, the free plan mirrors your 250 most recent items. Older
+          local items are not deleted because of that sync limit.
+        </p>
+        <h3>Neuma Plus</h3>
+        <p>
+          Turn on automatic connections and topic placement for new notes, with
+          note analysis enabled. Matching uses text and tags on your device;
+          inspect the reason and undo an automatic change. Plus also removes the
+          250-item sync limit.
+        </p>
+        <p>
+          Monthly and annual auto-renewing subscriptions. See your local price
+          and any eligibility in the app before purchasing. No purchase is
+          needed to start a local collection.
+        </p>
+      </div>
+      <details>
+        <summary>Do I need an AI account or a paid model?</summary>
+        <p>
+          No. Local capture, search, Recall and Plus text-and-tag matching need
+          no external AI account. Optional Mind Bridge is a separate connection
+          you configure yourself.
+        </p>
+      </details>
+      <details>
+        <summary>How do I restore or cancel Plus?</summary>
+        <p>
+          Open Settings → Neuma Plus → Restore purchases with the Apple Account
+          that purchased it. Manage or cancel your subscription in your Apple
+          Account settings. Cancel before the renewal date shown by Apple.
+        </p>
+      </details>
       <h2>Private by default, connected by choice</h2>
       <p>
         Neuma requires no account for local notes and search. Optional iCloud
@@ -243,17 +313,34 @@
         account to capture, search or rediscover notes.
         <a href="privacy.html">Read the privacy policy</a>.
       </p>
-      <section lang="tr">
-        <h2>Fikrini kaydet. Yeniden kullan.</h2>
+      <section lang="tr" id="turkce">
+        <h2>Fikrini kaydet. İhtiyacın olduğunda yeniden bul.</h2>
         <p>
-          Neuma, notlarını ve ilham aldığın içerikleri cihazındaki kişisel
-          kasada toplar. Neuma 1.3 ile ilk nota doğrudan geçiş, gerçek notlardan
-          yeniden keşif, daha iyi arama ve paylaşmadan önce düzenlenebilen
-          alıntılar geliyor.
+          Neuma 1.4 yayında. Not, bağlantı, fotoğraf ve sesli notlarını
+          cihazındaki kişisel kasada topla. Notlarını konulara ayır, notlar
+          arasında bağlantı kur ve seçtiğin notların zihin haritasını paylaş.
         </p>
         <p>
-          Yerel kullanım için hesap gerekmez. Dış hizmetlere bağlantı ve
-          paylaşım senin seçiminle gerçekleşir.
+          <strong>Ücretsiz:</strong> Yerel kayıt, arama, Recall ile yeniden
+          keşif, alıntı paylaşımı. iCloud eşitlemesini açarsan en son 250 öğe
+          eşitlenir; bu sınır eski yerel notlarını silmez.
+        </p>
+        <p>
+          <strong>Plus:</strong> Not analizi açıkken yeni notlar için cihazında
+          otomatik bağlantı ve konu yerleştirme. Eşleşmenin nedenini gör ve
+          otomatik değişiklikleri geri al. Plus, 250 öğelik eşitleme sınırını da
+          kaldırır.
+        </p>
+        <p>
+          Yerel başlangıç için hesap veya AI servisi gerekmez. Aylık ve yıllık
+          aboneliklerin güncel fiyatını uygulamada görürsün.
+        </p>
+        <p>
+          <a
+            class="cta"
+            href="https://apps.apple.com/app/apple-store/id6803546005?pt=127358997&amp;ct=neuma_web_20260908&amp;mt=8"
+            >iPhone veya iPad’de ücretsiz başla</a
+          >
         </p>
       </section>
       <p class="son">
