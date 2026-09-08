@@ -1,0 +1,4 @@
+# Working with APIs
+Idempotence is the property that repeating an operation has the same effect as performing it once.
+Caching is storing a reusable copy of data to avoid fetching or computing it again.
+Latency is the delay between starting an operation and receiving its response.
