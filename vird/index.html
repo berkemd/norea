@@ -1,97 +1,386 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vird — Turn your notes into recall</title>
-<meta name="description" content="Vird turns notes you have already written into question-and-answer cards and shows them back at widening intervals. No account, no server, nothing uploaded.">
-<link rel="canonical" href="https://berkemd.github.io/norea/vird/index.html">
-<meta name="theme-color" content="#fafaf7">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Vird">
-<meta property="og:title" content="Vird — Turn your notes into recall">
-<meta property="og:url" content="https://berkemd.github.io/norea/vird/index.html">
-<meta property="og:description" content="Vird turns notes you have already written into question-and-answer cards and shows them back at widening intervals. No account, no server, nothing uploaded.">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vird — Turn your notes into recall">
-<meta name="twitter:description" content="Vird turns notes you have already written into question-and-answer cards and shows them back at widening intervals. No account, no server, nothing uploaded.">
-<style>
-:root{--zemin:#fafaf7;--murekkep:#1a1a17;--soluk:#55554e;--cizgi:#e3e1d8;--kart:#f2f0e9;--vurgu:#7a5a2e}
-*{box-sizing:border-box}
-body{background:var(--zemin);color:var(--murekkep);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0;-webkit-font-smoothing:antialiased}
-.wrap{max-width:680px;margin:0 auto;padding:44px 24px 96px}
-h1{font-size:1.7rem;margin:0 0 6px;letter-spacing:-.02em}
-h2{font-size:1.1rem;color:var(--vurgu);margin:38px 0 10px;border-top:1px solid var(--cizgi);padding-top:24px;letter-spacing:-.01em}
-h3{font-size:.98rem;margin:22px 0 4px}
-p,li{color:var(--soluk);font-size:.95rem}
-a{color:var(--vurgu)}
-.tag{color:var(--soluk);opacity:.8;font-size:.88rem;margin:0 0 30px}
-.nav{margin:36px 0 0;font-size:.9rem;border-top:1px solid var(--cizgi);padding-top:20px}
-.nav a{margin-right:16px}
-.kutu{background:var(--kart);border:1px solid var(--cizgi);border-radius:12px;padding:16px 18px;margin:20px 0}
-.kutu p:last-child{margin-bottom:0}
-.kutu p:first-child{margin-top:0}
-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.9rem}
-th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--cizgi);vertical-align:top}
-th{color:var(--murekkep);font-weight:600}
-td{color:var(--soluk)}
-code{background:var(--kart);border:1px solid var(--cizgi);border-radius:5px;padding:1px 5px;font-size:.86em}
-.mark{display:block;width:56px;height:56px;margin:0 0 18px}
-footer{margin-top:56px;color:var(--soluk);opacity:.7;font-size:.84rem}
-</style>
-</head>
-<body>
-<div class="wrap">
-<svg class="mark" viewBox="0 0 1024 1024" role="img" aria-label="Vird">
-<g fill="#1a1a17"><path d="M 262 256 L 388 256 L 512 712 L 512 768 L 476 768 Z"/>
-<path d="M 636 256 L 762 256 L 548 768 L 512 768 L 512 712 Z"/>
-<rect x="246" y="240" width="158" height="16"/><rect x="620" y="240" width="158" height="16"/></g></svg>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vird — Turn your notes into recall</title>
+    <meta
+      name="description"
+      content="Turn your notes into review cards. Try a real example, download three starter cards, and see what is free. App Store release pending."
+    />
+    <link
+      rel="canonical"
+      href="https://berkemd.github.io/norea/vird/index.html"
+    />
+    <meta name="theme-color" content="#fafaf7" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Vird" />
+    <meta property="og:title" content="Vird — Turn your notes into recall" />
+    <meta
+      property="og:url"
+      content="https://berkemd.github.io/norea/vird/index.html"
+    />
+    <meta
+      property="og:description"
+      content="Turn your notes into review cards. Try a real example, download three starter cards, and see what is free. App Store release pending."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Vird — Turn your notes into recall" />
+    <meta
+      name="twitter:description"
+      content="Turn your notes into review cards. Try a real example, download three starter cards, and see what is free. App Store release pending."
+    />
+    <style>
+      :root {
+        --zemin: #fafaf7;
+        --murekkep: #1a1a17;
+        --soluk: #55554e;
+        --cizgi: #e3e1d8;
+        --kart: #f2f0e9;
+        --vurgu: #7a5a2e;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background: var(--zemin);
+        color: var(--murekkep);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        line-height: 1.7;
+        margin: 0;
+        -webkit-font-smoothing: antialiased;
+      }
+      .wrap {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 44px 24px 96px;
+      }
+      h1 {
+        font-size: 1.7rem;
+        margin: 0 0 6px;
+        letter-spacing: -0.02em;
+      }
+      h2 {
+        font-size: 1.1rem;
+        color: var(--vurgu);
+        margin: 38px 0 10px;
+        border-top: 1px solid var(--cizgi);
+        padding-top: 24px;
+        letter-spacing: -0.01em;
+      }
+      h3 {
+        font-size: 0.98rem;
+        margin: 22px 0 4px;
+      }
+      p,
+      li {
+        color: var(--soluk);
+        font-size: 0.95rem;
+      }
+      a {
+        color: var(--vurgu);
+      }
+      .tag {
+        color: var(--soluk);
+        opacity: 0.8;
+        font-size: 0.88rem;
+        margin: 0 0 30px;
+      }
+      .nav {
+        margin: 36px 0 0;
+        font-size: 0.9rem;
+        border-top: 1px solid var(--cizgi);
+        padding-top: 20px;
+      }
+      .nav a {
+        margin-right: 16px;
+      }
+      .kutu {
+        background: var(--kart);
+        border: 1px solid var(--cizgi);
+        border-radius: 12px;
+        padding: 16px 18px;
+        margin: 20px 0;
+      }
+      .kutu p:last-child {
+        margin-bottom: 0;
+      }
+      .kutu p:first-child {
+        margin-top: 0;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 18px 0;
+        font-size: 0.9rem;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 9px 10px;
+        border-bottom: 1px solid var(--cizgi);
+        vertical-align: top;
+      }
+      th {
+        color: var(--murekkep);
+        font-weight: 600;
+      }
+      td {
+        color: var(--soluk);
+      }
+      code {
+        background: var(--kart);
+        border: 1px solid var(--cizgi);
+        border-radius: 5px;
+        padding: 1px 5px;
+        font-size: 0.86em;
+      }
+      .mark {
+        display: block;
+        width: 56px;
+        height: 56px;
+        margin: 0 0 18px;
+      }
+      footer {
+        margin-top: 56px;
+        color: var(--soluk);
+        opacity: 0.7;
+        font-size: 0.84rem;
+      }
+      h1 {
+        font-size: clamp(2rem, 5vw, 3.3rem);
+        line-height: 1.15;
+      }
+      .cta {
+        display: inline-block;
+        background: #343a29;
+        color: #fff;
+        padding: 14px 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      a:focus-visible,
+      summary:focus-visible {
+        outline: 3px solid #7a5a2e;
+        outline-offset: 4px;
+      }
+      .status {
+        border-left: 3px solid #7a5a2e;
+        padding: 8px 14px;
+        background: var(--kart);
+      }
+      details {
+        border-bottom: 1px solid var(--cizgi);
+        padding: 14px 0;
+      }
+      summary {
+        cursor: pointer;
+        font-weight: 600;
+        padding: 8px 0;
+      }
+      pre {
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        font: inherit;
+        background: var(--kart);
+        padding: 18px;
+        border-radius: 10px;
+      }
+      .demo-card p {
+        padding: 8px 12px;
+        border-left: 3px solid var(--vurgu);
+      }
+      :target {
+        scroll-margin-top: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <svg class="mark" viewBox="0 0 1024 1024" role="img" aria-label="Vird">
+        <g fill="#1a1a17">
+          <path d="M 262 256 L 388 256 L 512 712 L 512 768 L 476 768 Z" />
+          <path d="M 636 256 L 762 256 L 548 768 L 512 768 L 512 712 Z" />
+          <rect x="246" y="240" width="158" height="16" />
+          <rect x="620" y="240" width="158" height="16" />
+        </g>
+      </svg>
 
-<h1>Vird</h1>
-<p class="tag">A calm place for the things you want to remember.</p>
-
-<p>You already write things down. Vird is what happens next: it turns a note
-you have already written into a small number of question-and-answer cards, and
-then shows them back to you at widening intervals — a day, three days, a week,
-a month — so the ones you keep getting right stop asking for your time and the
-ones you keep missing come back sooner.</p>
-
-<div class="kutu">
-<p><strong>Vird does not want your notes.</strong> Point it at the folder your
-notes already live in. It <em>reads</em> that folder. It never writes to it,
-never moves anything, and never uploads it.</p>
-</div>
-
-<h2>What it actually does</h2>
-<table>
-<tr><th>Cards from your own words</th><td>Vird reads a note and proposes cards
-from what is in it — explicit questions you already wrote, emphasised terms,
-paragraph pairs. On device. No network involved.</td></tr>
-<tr><th>Spacing that adapts</th><td>An SM-2-family schedule. Cards you recall
-easily drift further apart; cards you fumble come back tomorrow.</td></tr>
-<tr><th>Your library, plainly</th><td>Cards are yours. Import from CSV or an
-Anki-format deck; export the same way. Nothing is locked in.</td></tr>
-<tr><th>Optional AI, on your key</th><td>If you turn it on and supply your own
-provider key, Vird can suggest sharper cards. Only a note's <em>title and a
-short excerpt</em> are sent — never the body.</td></tr>
-</table>
-
-<h2>Free and Plus</h2>
-<table>
-<tr><th>Free</th><td>The full review engine, a capped library, import and
-export. Not a trial — it does not expire.</td></tr>
-<tr><th>Vird Plus</th><td>Removes the cap, enables the optional AI suggestions,
-and mirrors your library to a folder you choose.</td></tr>
-</table>
-<p>Purchases are handled by the App Store. There is no Vird account, because
-there is nowhere to have one.</p>
-
-<h2>Requires</h2>
-<p>iPhone or iPad, iOS 17 or later. English, Türkçe, Deutsch, Français,
-Español, 日本語.</p>
-
-<div class="nav"><strong style="color:var(--murekkep)">Vird</strong> <a href="support.html">Support</a> <a href="privacy.html">Privacy</a> <a href="terms.html">Terms</a></div>
-<footer>Norea Studio · <a href="mailto:brkekahraman@icloud.com">brkekahraman@icloud.com</a></footer>
-</div>
-</body>
+      <h1>Your notes, ready<br />to remember.</h1>
+      <p class="tag">
+        Paste a note. Check the cards. Come back when they are due.
+      </p>
+      <p class="status" id="release-status">
+        <strong>App Store release pending.</strong> Vird 1.1 is awaiting review.
+        Explore the example below now; app availability depends on Apple's
+        approval and your region.
+      </p>
+      <p>
+        Turn definitions and question–answer pairs in your own writing into
+        review cards. Local extraction needs no account or AI service. Review
+        the suggestions and save the ones you want to learn.
+      </p>
+      <p>
+        <a class="cta" href="#example">Try the three-card example</a> ·
+        <a href="#turkce" lang="tr">Türkçe</a>
+      </p>
+      <h2 id="example">A note becomes three questions</h2>
+      <p>
+        This example was generated by Vird's local card extractor. It is a web
+        demonstration, not an app screenshot or a guarantee that every note will
+        produce cards.
+      </p>
+      <pre>
+# Working with APIs
+Idempotence is the property that repeating an operation has the same effect as performing it once.
+Caching is storing a reusable copy of data to avoid fetching or computing it again.
+Latency is the delay between starting an operation and receiving its response.</pre>
+      <p>Think of the answer, then open each question to check it.</p>
+      <details class="demo-card">
+        <summary>What is idempotence?</summary>
+        <p>
+          the property that repeating an operation has the same effect as
+          performing it once
+        </p>
+      </details>
+      <details class="demo-card">
+        <summary>What is caching?</summary>
+        <p>
+          storing a reusable copy of data to avoid fetching or computing it
+          again
+        </p>
+      </details>
+      <details class="demo-card">
+        <summary>What is latency?</summary>
+        <p>
+          the delay between starting an operation and receiving its response
+        </p>
+      </details>
+      <p>
+        <a class="cta" href="assets/vird-start.csv" download
+          >Download the 3 starter cards · CSV</a
+        >
+      </p>
+      <p>
+        <a href="assets/example-note.txt" download>Download the example note</a
+        >. These files contain only the example above. This page does not
+        collect your notes.
+      </p>
+      <h2>When Vird becomes available</h2>
+      <ol>
+        <li>
+          <strong>Start small.</strong> On the New tab, paste a short note to
+          generate suggestions, or use CSV import to choose the starter file.
+        </li>
+        <li>
+          <strong>Check before saving.</strong> Keep cards with a clear question
+          and a useful answer. Local extraction skips text that does not fit its
+          rules; you can write cards manually.
+        </li>
+        <li>
+          <strong>Review what is due.</strong> Try to recall the answer before
+          revealing it, then rate your recall. The schedule uses that rating to
+          plan the next review.
+        </li>
+      </ol>
+      <h2>Free first. Plus when your library grows.</h2>
+      <table>
+        <tr>
+          <th>Free</th>
+          <td>
+            Up to 250 cards, review scheduling, CSV import, JSON export and
+            local folder mirroring. The free plan does not expire.
+          </td>
+        </tr>
+        <tr>
+          <th>Plus</th>
+          <td>
+            Removes the 250-card limit and enables optional AI suggestions. AI
+            requires your own provider key; any provider charges are separate.
+          </td>
+        </tr>
+      </table>
+      <p>
+        Monthly and annual auto-renewing subscriptions show the local price
+        before purchase. Local card extraction does not require Plus or an
+        external AI provider.
+      </p>
+      <details>
+        <summary>Can I import an Anki deck?</summary>
+        <p>
+          Vird accepts supported CSV or tab-separated text with front and back
+          columns. It does not import Anki .apkg packages. Native export is
+          JSON, not an Anki package. Check imported cards before using them.
+        </p>
+      </details>
+      <details>
+        <summary>Where do the cards live?</summary>
+        <p>
+          Your library is stored on the device. On iOS, optional local mirroring
+          writes Markdown and JSONL to the app's Documents/vird folder, visible
+          in Files. This is separate from cloud sync; this page does not promise
+          automatic iCloud synchronization.
+        </p>
+      </details>
+      <details>
+        <summary>Does optional AI upload my whole note?</summary>
+        <p>
+          Local extraction uses no remote model. If you configure and enable the
+          optional external AI feature, the selected note's title and a short
+          excerpt are sent to that provider. Review the provider's privacy and
+          pricing terms first.
+        </p>
+      </details>
+      <p>
+        <a
+          href="https://apps.apple.com/app/apple-store/id6804340332?pt=127358997&amp;ct=vird_launch_202609&amp;mt=8"
+          >Check App Store availability</a
+        >
+        · iPhone and iPad, iOS 17 or later.
+      </p>
+      <section lang="tr" id="turkce">
+        <h2>Notlarını tekrar edebileceğin kartlara dönüştür.</h2>
+        <p>
+          <strong>Vird 1.1 Apple incelemesinde; henüz yayında değil.</strong>
+          Yukarıdaki örnekte bir nottan üretilen üç soruyu açıp cevaplarını
+          görebilir, CSV dosyasını indirebilirsin.
+        </p>
+        <p>
+          Uygulama yayımlandığında kısa bir not yapıştır, üretilen kartları
+          gözden geçir ve öğrenmek istediklerini kaydet. Tekrar zamanı
+          geldiğinde cevabı hatırlamayı dene ve kendini değerlendir.
+        </p>
+        <p>
+          <strong>Ücretsiz:</strong> 250 karta kadar kütüphane, tekrar planlama,
+          CSV içe aktarma, JSON dışa aktarma ve yerel klasör yansıtma. Süre
+          sınırı yok.
+        </p>
+        <p>
+          <strong>Plus:</strong> Kart sınırını kaldırır ve isteğe bağlı harici
+          AI önerilerini açar. AI için kendi servis anahtarın gerekir; servis
+          ücretleri abonelikten ayrıdır. Yerel kart çıkarımı AI hesabı
+          gerektirmez.
+        </p>
+        <p>
+          Anki .apkg içe aktarımı desteklenmez. Yerel klasör yansıtma, otomatik
+          iCloud eşitleme vaadi değildir.
+        </p>
+      </section>
+      <p class="tag">
+        App languages: English · Türkçe · Deutsch · Français · Español · 日本語
+      </p>
+      <div class="nav">
+        <strong style="color: var(--murekkep)">Vird</strong>
+        <a href="support.html">Support</a> <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+      <footer>
+        Norea Studio ·
+        <a href="mailto:brkekahraman@icloud.com">brkekahraman@icloud.com</a>
+      </footer>
+    </div>
+  </body>
 </html>
