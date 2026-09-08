@@ -1,180 +1,317 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bisque — Paint your own ceramic companion</title>
+    <meta name="theme-color" content="#faf6ee" />
+    <title>Bisque — A little creature. Your own colours.</title>
     <meta
       name="description"
-      content="Paint, dress and keep your own ceramic creature. Offline creative play on iPhone and iPad, with an optional Apple Watch companion."
+      content="Paint and dress your own 3D ceramic creature. A quiet creative space for iPhone and iPad. One purchase, no ads or subscriptions."
+    />
+    <link rel="canonical" href="https://berkemd.github.io/norea/bisque/" />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://berkemd.github.io/norea/bisque/"
+    />
+    <link
+      rel="alternate"
+      hreflang="tr"
+      href="https://berkemd.github.io/norea/bisque/tr/"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://berkemd.github.io/norea/bisque/"
     />
     <link rel="icon" href="favicon.png" />
-    <style>
-      body {
-        background: #faf8f5;
-        color: #1f1a20;
-        font-family:
-          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-          Arial, sans-serif;
-        line-height: 1.7;
-        margin: 0;
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta
+      property="og:title"
+      content="Bisque — A little creature. Your own colours."
+    />
+    <meta
+      property="og:description"
+      content="Paint and dress your own 3D ceramic creature. A quiet creative space for iPhone and iPad. One purchase, no ads or subscriptions."
+    />
+    <meta property="og:url" content="https://berkemd.github.io/norea/bisque/" />
+    <meta
+      property="og:image"
+      content="https://berkemd.github.io/norea/bisque/assets/app-icon.png"
+    />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="1024" />
+    <meta property="og:image:alt" content="Bisque" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="stylesheet" href="assets/site.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Bisque: Pottery Painting",
+        "url": "https://berkemd.github.io/norea/bisque/",
+        "downloadUrl": "https://apps.apple.com/app/apple-store/id6806661928?pt=127358997&ct=bisque_launch_20260909_en&mt=8",
+        "operatingSystem": "iOS, iPadOS",
+        "applicationCategory": "GameApplication",
+        "isAccessibleForFree": false,
+        "inLanguage": ["en", "tr", "de", "fr", "es", "ja"],
+        "description": "Paint and dress your own 3D ceramic creature. A quiet creative space for iPhone and iPad. One purchase, no ads or subscriptions."
       }
-      .wrap {
-        max-width: 660px;
-        margin: 0 auto;
-        padding: 64px 24px;
-      }
-      h1 {
-        font-size: 1.6rem;
-        margin: 0 0 6px;
-      }
-      h2 {
-        font-size: 1.05rem;
-        margin: 34px 0 6px;
-      }
-      h3 {
-        font-size: 0.95rem;
-        margin: 22px 0 4px;
-        color: #1f1a20;
-      }
-      p,
-      li {
-        color: #4e474f;
-      }
-      a {
-        color: #b05a3c;
-      }
-      code {
-        background: #f0ebe4;
-        padding: 1px 5px;
-        border-radius: 3px;
-        font-size: 0.88em;
-      }
-      table {
-        border-collapse: collapse;
-        margin: 14px 0;
-        font-size: 0.92rem;
-      }
-      td,
-      th {
-        border-bottom: 1px solid #e5ded6;
-        padding: 6px 14px 6px 0;
-        text-align: left;
-      }
-      .lang {
-        border-top: 1px solid #e5ded6;
-        margin-top: 40px;
-        padding-top: 10px;
-        font-size: 0.86rem;
-      }
-      .lead {
-        font-size: 1.02rem;
-        color: #332d34;
-      }
-      .note {
-        border-left: 3px solid #b05a3c;
-        padding-left: 14px;
-        color: #3f3840;
-      }
-      figcaption {
-        font-size: 0.86rem;
-        color: #6d6569;
-        margin-top: 6px;
-      }
-      /* --- MARKA --------------------------------------------------------
-   Sozcuk markasi bir yazi tipinden secilmedi: yaratigin kendi
-   ilkellerinden ve ayni yumusak birlesim islecinden uretildi.
-   Kaynak: marka/bisque_soz.json + marka/soz.py                     */
-      .marka {
-        display: block;
-        height: 52px;
-        width: auto;
-        margin: 0 0 22px;
-      }
-      .marka-alt {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-top: 52px;
-        padding-top: 18px;
-        border-top: 1px solid #e5ded6;
-        font-size: 0.86rem;
-        color: #6d6569;
-      }
-      .marka-alt img {
-        height: 34px;
-        width: auto;
-      }
-      h1.gizli {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-        clip: rect(0 0 0 0);
-        white-space: nowrap;
-      }
-    </style>
+    </script>
+    <script defer src="assets/share.js"></script>
   </head>
   <body>
-    <main class="wrap">
-      <img class="marka" src="marka.png" alt="Bisque" />
-      <h1>Bisque</h1>
-      <p class="lead">
-        Turn a little ceramic creature into your own colourful companion. Paint
-        directly on its 3D surface, dress it up, and watch its character respond
-        to your colours.
-      </p>
-      <h2>A small studio, ready to play</h2>
-      <p>
-        Choose from 14 colours and four tools: crayon, watercolour, glaze and
-        glitter. Drag across the figure to paint. Drag on the background to turn
-        it and reach another side. Add hats, scarves and other outfits with a
-        tap.
-      </p>
-      <h2>Keep what you create</h2>
-      <p>
-        Your current artwork, clothes and selected tools are saved on this
-        device. Return to the same creation when you reopen Bisque. Undo recent
-        edits, or hold Start over to clear the paint and clothing; a short tap
-        shows a hint without erasing.
-      </p>
-      <h2>Colour becomes character</h2>
-      <p>
-        A simple on-device rule turns the colours used into a playful mood:
-        warmer colours encourage a livelier companion, cooler colours a quieter
-        one. Soft movement and wordless sounds bring the figure to life. This is
-        imaginative play, not an assessment of your child.
-      </p>
-      <h2>A quiet place to make things</h2>
-      <p>
-        The painting area uses pictures instead of written instructions. No ads,
-        accounts, chat, in-app purchases or subscriptions. No scores, streaks or
-        time limits. Painting works offline.
-      </p>
-      <h2>An optional watch companion</h2>
-      <p>
-        On an Apple Watch paired with your iPhone, see a simple animated
-        companion inspired by your creature and its mood. The painted surface
-        and clothes stay on the iPhone; the Watch is a companion, not a painting
-        screen. Open Bisque on the paired iPhone to send an update. Delivery
-        depends on Apple’s device connection.
-      </p>
-      <h2>For grown-ups</h2>
-      <p>
-        Artwork stays on the device, with no Bisque account or cross-device
-        artwork sync. Bisque contains no ads or analytics and requests no
-        camera, microphone or location access. Only creature identity and mood
-        data pass to the paired Watch. Privacy and support links are behind an
-        adult maths challenge and open in your browser.
-      </p>
-      <p>
-        For open-ended creative play on iPhone and iPad, with an optional Apple
-        Watch companion.
-      </p>
-      <nav class="lang" aria-label="Bisque information">
-        <a href="../">Norea</a> · <a href="./">Bisque</a> ·
-        <a href="privacy.html">Privacy</a> · <a href="support.html">Support</a>
-      </nav>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="shell">
+      <header class="header">
+        <a class="brand" href="./" aria-label="Bisque"
+          ><img src="assets/app-icon.webp" width="42" height="42" alt="" /><span
+            >bisque</span
+          ></a
+        >
+        <nav class="nav" aria-label="Navigation">
+          <a href="#how">How it works</a><a href="#parents">For grown-ups</a>
+          <div class="language" aria-label="Language">
+            <a href="./" lang="en" hreflang="en" aria-current="page">EN</a
+            ><span aria-hidden="true">/</span
+            ><a href="tr/" lang="tr" hreflang="tr">TR</a>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <main id="main">
+      <div class="shell">
+        <section class="hero" aria-labelledby="hero-title">
+          <div>
+            <p class="eyebrow">
+              A little painting studio for iPhone &amp; iPad
+            </p>
+            <h1 id="hero-title">
+              A little creature.<br /><span>Your own colours.</span>
+            </h1>
+            <p class="intro">
+              Pick a colour. Make a mark. Add a little hat. Turn a ceramic
+              creature into a companion that looks like nobody else&#x27;s.
+            </p>
+            <a
+              class="cta"
+              href="https://apps.apple.com/app/apple-store/id6806661928?pt=127358997&amp;ct=bisque_launch_20260909_en&amp;mt=8"
+              >Get Bisque on the App Store
+              <svg
+                width="17"
+                height="17"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                aria-hidden="true"
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" /></svg
+            ></a>
+            <p class="purchase">
+              Paid app · One purchase · No in-app purchases
+            </p>
+            <p class="platforms">
+              iPhone &amp; iPad. Apple Watch companion included.
+            </p>
+          </div>
+          <figure class="hero-visual">
+            <img
+              class="phone"
+              src="assets/bisque-iphone.webp"
+              width="1320"
+              height="2868"
+              alt="Bisque on iPhone: a ceramic creature with a blue hat and a blue brushstroke, above the painting tools and colour palette."
+              fetchpriority="high"
+            />
+            <figcaption>Actual Bisque app screen</figcaption>
+          </figure>
+        </section>
+        <div class="facts">
+          <div class="fact">
+            <strong>14</strong><span>colours to explore</span>
+          </div>
+          <div class="fact">
+            <strong>4</strong><span>ways to make a mark</span>
+          </div>
+          <div class="fact">
+            <strong>6</strong><span>little outfits to try</span>
+          </div>
+        </div>
+        <section class="section" id="how" aria-labelledby="how-title">
+          <h2 id="how-title">From the first brushstroke, it&#x27;s yours.</h2>
+          <div class="steps">
+            <article>
+              <span class="step-number">01</span>
+              <h3>Choose your colour</h3>
+              <p>
+                Try crayon, watercolour, glaze or glitter. Paint directly on the
+                creature&#x27;s 3D surface.
+              </p>
+            </article>
+            <article>
+              <span class="step-number">02</span>
+              <h3>Find another side</h3>
+              <p>
+                Drag on the background to turn your creature. Add a hat, scarf
+                or another outfit with a tap.
+              </p>
+            </article>
+            <article>
+              <span class="step-number">03</span>
+              <h3>Come back to your creation</h3>
+              <p>
+                Your current painting and clothes stay on this device. Undo
+                recent marks, or start again when you&#x27;re ready.
+              </p>
+            </article>
+          </div>
+        </section>
+      </div>
+      <section class="quiet" aria-labelledby="quiet-title">
+        <div class="shell quiet-grid">
+          <figure class="tablet-wrap">
+            <img
+              class="tablet"
+              src="assets/bisque-ipad.webp"
+              width="2064"
+              height="2752"
+              loading="lazy"
+              alt="Bisque on iPad with a green hat, painted creature and all 14 colours visible in the palette."
+            />
+            <figcaption>Actual Bisque app screen</figcaption>
+          </figure>
+          <div class="quiet-copy">
+            <p class="eyebrow">Room to play, at your pace</p>
+            <h2 id="quiet-title">Time to colour. Room to imagine.</h2>
+            <p>
+              No ads, subscriptions, chat, accounts or time limits. Painting
+              works offline. Colours give your creature a playful mood, with
+              soft movement and wordless sounds.
+            </p>
+            <p class="small-note">
+              Mood is part of the make-believe. Bisque does not assess a
+              child&#x27;s emotions or development.
+            </p>
+          </div>
+        </div>
+      </section>
+      <div class="shell">
+        <section
+          class="section parents"
+          id="parents"
+          aria-labelledby="parents-title"
+        >
+          <h2 id="parents-title">A few things for grown-ups</h2>
+          <div>
+            <details>
+              <summary>What does the purchase include?</summary>
+              <p>
+                All 14 colours, four painting tools and six outfits are
+                included. There are no in-app purchases or subscriptions. Check
+                the App Store for the current price in your region.
+              </p>
+            </details>
+            <details>
+              <summary>Where does the artwork go?</summary>
+              <p>
+                The current creation is saved on this device. There is no
+                account, online gallery or cross-device artwork sync. Starting
+                over replaces the current creation; it does not create a
+                collection.
+              </p>
+            </details>
+            <details>
+              <summary>Do we need an Apple Watch?</summary>
+              <p>
+                No. Paint and dress your creature on iPhone or iPad. An optional
+                Watch app shows a simple companion based on the creature&#x27;s
+                identity and mood from a paired iPhone. Paint and clothing do
+                not transfer to the Watch. Open Bisque on the paired iPhone to
+                send an update; delivery depends on the device connection.
+              </p>
+            </details>
+            <details>
+              <summary>What about privacy and external links?</summary>
+              <p>
+                Bisque has no ads or analytics and requests no camera,
+                microphone or location access. The app&#x27;s support and
+                privacy links sit behind an adult maths challenge. This website
+                is for grown-ups choosing the app.
+              </p>
+            </details>
+          </div>
+        </section>
+        <section class="closing" aria-labelledby="closing-title">
+          <img
+            src="assets/app-icon.webp"
+            width="68"
+            height="68"
+            alt="Bisque"
+            loading="lazy"
+          />
+          <h2 id="closing-title">A small moment of making.</h2>
+          <p>Your colours. Your pace. Your little companion.</p>
+          <a
+            class="cta"
+            href="https://apps.apple.com/app/apple-store/id6806661928?pt=127358997&amp;ct=bisque_launch_20260909_en&amp;mt=8"
+            >Get Bisque on the App Store
+            <svg
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              aria-hidden="true"
+            >
+              <path d="M5 12h14M13 6l6 6-6 6" /></svg
+          ></a>
+          <p class="purchase">Paid app · One purchase · No in-app purchases</p>
+          <button
+            type="button"
+            class="share"
+            hidden
+            data-share
+            data-title="Bisque — Paint your own ceramic companion"
+            data-text="A quiet 3D painting space for iPhone and iPad. One purchase, no ads or subscriptions."
+            data-copied="Link copied."
+            data-fallback="Copy this link to share Bisque:"
+          >
+            Share Bisque
+          </button>
+          <button type="button" class="share" hidden data-copy-link>
+            Copy link
+          </button>
+          <p
+            class="share-status"
+            data-share-status
+            aria-live="polite"
+            role="status"
+          ></p>
+          <div class="share-fallback" data-share-fallback>
+            <label for="share-link">Bisque page link</label
+            ><input
+              id="share-link"
+              type="url"
+              readonly
+              value="https://berkemd.github.io/norea/bisque/"
+            />
+          </div>
+        </section>
+        <p class="languages">
+          The app speaks English, Turkish, German, French, Spanish and Japanese.
+        </p>
+      </div>
     </main>
+    <footer class="shell footer">
+      <a href="../">Norea Studio</a>
+      <nav aria-label="Support links">
+        <a href="privacy.html">Privacy</a><a href="support.html">Support</a>
+      </nav>
+    </footer>
   </body>
 </html>
