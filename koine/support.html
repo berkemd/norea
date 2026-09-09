@@ -1,50 +1,182 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Koine — Support</title>
-<meta name="description" content="Support for Koine: coverage, the uncertainty band, thresholds, proper names and the corpus.">
-<style>body{background:#f8f7f3;color:#1a1916;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0}
-.wrap{max-width:660px;margin:0 auto;padding:64px 24px}
-h1{font-size:1.6rem;margin:0 0 6px}
-h2{font-size:1.05rem;margin:34px 0 6px}
-h3{font-size:.95rem;margin:22px 0 4px;color:#1a1916}
-p,li{color:#4d4c46}
-a{color:#3a566b}
-code{background:#eeece5;padding:1px 5px;border-radius:3px;font-size:.88em}
-table{border-collapse:collapse;margin:14px 0;font-size:.92rem}
-td,th{border-bottom:1px solid #e2dfd6;padding:6px 14px 6px 0;text-align:left}
-.lang{border-top:1px solid #e2dfd6;margin-top:40px;padding-top:10px;font-size:.86rem}
-.lead{font-size:1.02rem;color:#333}
-.note{border-left:3px solid #6e9bff;padding-left:14px;color:#3d3c37}</style></head><body><div class="wrap">
-<h1>Koine — Support</h1>
-<p class="lead">Questions: <a href="mailto:hello@norea.studio">hello@norea.studio</a></p>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Koine — Support</title>
+    <meta
+      name="description"
+      content="How to read, check word meanings, save progress and return to reviews in Koine. Help with local save and load errors."
+    />
+    <style>
+      body {
+        background: #f8f7f3;
+        color: #1a1916;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        line-height: 1.7;
+        margin: 0;
+      }
+      .wrap {
+        max-width: 660px;
+        margin: 0 auto;
+        padding: 64px 24px;
+      }
+      h1 {
+        font-size: 1.6rem;
+        margin: 0 0 6px;
+      }
+      h2 {
+        font-size: 1.05rem;
+        margin: 34px 0 6px;
+      }
+      h3 {
+        font-size: 0.95rem;
+        margin: 22px 0 4px;
+        color: #1a1916;
+      }
+      p,
+      li {
+        color: #4d4c46;
+      }
+      a {
+        color: #3a566b;
+      }
+      code {
+        background: #eeece5;
+        padding: 1px 5px;
+        border-radius: 3px;
+        font-size: 0.88em;
+      }
+      table {
+        border-collapse: collapse;
+        margin: 14px 0;
+        font-size: 0.92rem;
+      }
+      td,
+      th {
+        border-bottom: 1px solid #e2dfd6;
+        padding: 6px 14px 6px 0;
+        text-align: left;
+      }
+      .lang {
+        border-top: 1px solid #e2dfd6;
+        margin-top: 40px;
+        padding-top: 10px;
+        font-size: 0.86rem;
+      }
+      .lead {
+        font-size: 1.02rem;
+        color: #333;
+      }
+      .note {
+        border-left: 3px solid #6e9bff;
+        padding-left: 14px;
+        color: #3d3c37;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>Koine — Support</h1>
+      <p class="lead">
+        Questions: <a href="mailto:hello@norea.studio">hello@norea.studio</a>
+      </p>
 
-<h2>Why is my coverage a range instead of a number?</h2>
-<p>Because it is one. Your recall of any given word is an estimate from a handful of answers and a model of forgetting, and both carry uncertainty. Reporting a single percentage would be reporting a confidence we never measured.</p>
+      <h2>Where do I start?</h2>
+      <p>
+        Choose a reading from Everyday life, Out and about or Little stories on
+        the home screen. The starting library has 6 Spanish readings, 24 words
+        in context and 12 comprehension questions. Word meanings and questions
+        are in English; the interface is available in six languages.
+      </p>
 
-<h2>Why did my coverage go down when I did not forget anything?</h2>
-<p>Time passed. A word answered correctly once is not the same as a word answered correctly once six weeks ago. Koine recomputes from the dates rather than leaving a word in a "learned" column forever, so coverage falls as recall decays and rises again when you review.</p>
+      <h2>Does Koine grade my English answer?</h2>
+      <p>
+        No. For a word check, write the meaning in English, reveal the supplied
+        meaning and compare it with your answer. Any English wording is fine.
+        You choose whether you remembered the meaning, need more practice or did
+        not know it. Koine records that self-check; it does not grade free text,
+        spelling or grammar and uses no AI grading service.
+      </p>
+      <p>
+        The multiple-choice comprehension questions work differently: Koine
+        checks your selected choice against a fixed answer and shows an
+        explanation.
+      </p>
 
-<h2>What is the difference between the two parts of the band?</h2>
-<p>The <em>random</em> part is the noise of estimating from few answers; it narrows every time you answer, and it partly cancels out across thousands of words. The <em>systematic</em> part comes from not knowing your own forgetting curve; it points the same way for every word, so it accumulates, and more questions will not shrink it. Only elapsed time gives us anything to measure. Koine tells you which one is currently larger, because the two ask for different things: more questions, or more time.</p>
+      <h2>How do I save and resume a reading?</h2>
+      <p>
+        Your place is saved as you move through a lesson. A word check is saved
+        when you choose a result or tap <strong>Save and continue</strong>.
+        Confirmed question answers and lesson completion are saved too. Open the
+        same lesson again to continue from its saved position.
+      </p>
 
-<h2>Why does it say it "cannot tell yet"?</h2>
-<p>Because your band crosses the threshold. If the low end of the range is below 95% and the high end is above it, then whether you are over the line is genuinely unknown, and rounding the midpoint would invent a verdict. When the whole band clears the threshold, Koine says so plainly.</p>
+      <h2>Why is nothing due for review?</h2>
+      <p>
+        A word must have been checked in a reading before it can appear in
+        review. Reviews become eligible after at least 24 hours and depend on
+        elapsed time and your previous results. A correctly remembered word may
+        not be due the next day. The home screen shows the words currently ready
+        to check again.
+      </p>
 
-<h2>Should I count proper names?</h2>
-<p>That is your call, and the switch is on the main screen. Names are 2.89% of this corpus, and reading one does not require learning it — you recognise it. But we never measured whether <em>you</em> recognise a given name, so counting them is an assumption. Koine will not make it silently on your behalf.</p>
+      <h2>What if a save fails?</h2>
+      <p>
+        The step does not advance until saving succeeds. Keep the lesson open
+        and use the retry action shown in the app; your answer remains available
+        to retry. Koine does not overwrite saved history with a partial or empty
+        record. Do not uninstall the app or erase its data to retry a failed
+        save.
+      </p>
 
-<h2>What is the corpus, and why does it matter?</h2>
-<p>3,209,861 tokens of everyday Spanish sentences from the Tatoeba project. It is not news prose, and that changes the answer: the same vocabulary covers a different share of a newspaper than of everyday speech. A frequency list is not the language — it is one measured sample of one kind of text, and Koine shows which.</p>
+      <h2>What if saved progress cannot be opened?</h2>
+      <p>
+        Use the retry or reload action shown by Koine. The app keeps an
+        unreadable or unsupported saved file rather than replacing it with an
+        empty history. If the problem continues, contact support with the error
+        message. There is no need to send your typed answers.
+      </p>
 
-<h2>Why does 96.1% appear as a ceiling?</h2>
-<p>Our list holds 46,335 forms, which together are 96.08% of the corpus. Proper names are another 2.89%. The remaining 1.03% is roughly 33,000 forms that occur once — mostly typos and one-off inflections in a volunteer corpus. They are not learnable vocabulary, so they are not in the list, but their share is shown rather than hidden.</p>
+      <h2>Where is the proper-name setting?</h2>
+      <p>
+        From the reading home screen, open
+        <strong>Word coverage and sources</strong>. The proper-name setting is
+        on that coverage screen. Counting names as recognisable is an assumption
+        you control; Koine has not tested whether you recognise each name.
+      </p>
 
-<h2>When will other languages arrive?</h2>
-<p>When their corpora are measured with the same care and the licence is clean. Shipping a language whose frequency list we had not measured would be the exact thing this app exists not to do.</p>
+      <h2>What does the coverage range mean?</h2>
+      <p>
+        It estimates how much of the displayed Spanish corpus your word evidence
+        covers. The range reflects uncertainty and changes as evidence ages or
+        you check words again. It is not a reading level or a test of grammar,
+        idioms or general comprehension. The view includes the corpus source and
+        attribution.
+      </p>
 
-<h2>Does it work offline?</h2>
-<p>It only works offline, in the sense that it never goes online. The whole corpus is compiled into the app before it ships.</p>
+      <h2>Is Koine free, and does it work offline?</h2>
+      <p>
+        Yes. The app is free and its readings, meanings and questions are
+        included in the download. No account, advertising, analytics or app
+        network connection is required.
+      </p>
 
-<p><a href="index.html">Koine</a> · <a href="privacy.html">Privacy</a> · <a href="../">Norea Studio</a></p>
-</div></body></html>
+      <h2>Are my answers synced or backed up?</h2>
+      <p>
+        Koine has no account or app-server sync service. It saves answers and
+        progress in local app storage. iOS may include that data in system
+        backups, depending on your Apple and device settings. See the
+        <a href="privacy.html">privacy page</a> for the data stored and how app
+        deletion differs from backup management.
+      </p>
+
+      <p>
+        <a href="index.html">Koine</a> · <a href="privacy.html">Privacy</a> ·
+        <a href="../">Norea Studio</a>
+      </p>
+    </div>
+  </body>
+</html>
