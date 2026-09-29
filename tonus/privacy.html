@@ -119,7 +119,7 @@
         プライバシーポリシー
       </h1>
       <p class="lang">
-        <em>Last updated / Son güncelleme: 28 August 2026</em><br />
+        <em>Last updated / Son güncelleme: 29 September 2026</em><br />
         All four versions say the same thing; if they ever differ, the English
         text is the reference. / Dört sürüm aynı şeyi söyler; bir farklılık
         olursa İngilizce metin esas alınır. / Alle vier Fassungen sagen
@@ -136,22 +136,39 @@
           >
         </p>
         <p>
-          It reads health data from Apple Health on your own device, computes
-          everything there, and writes the result nowhere except that device.
+          It reads health data from Apple Health on your own device and
+          computes everything there. From version 2.0 it writes one thing back
+          to Apple Health on that device: the minutes of a breathing session you
+          start.
         </p>
       </div>
       <h3>What Tonus reads</h3>
       <p>
         With your permission, and only after you grant it in Apple's own Health
         permission sheet: heart rate variability (SDNN), resting heart rate,
-        respiratory rate.
+        heart rate, respiratory rate, sleep, workouts, steps, walking and
+        running distance, flights climbed, swimming strokes, date of birth and
+        biological sex (used only for the heart-rate range), and — from
+        version 2.0 — mindful minutes.
       </p>
       <p>
-        Tonus requests <strong>read access only</strong>. It has no write
-        permission and cannot add, change or delete anything in your Health
-        data. You can withdraw any part of this at any time in Settings →
+        Up to version 1.x Tonus requested <strong>read access only</strong>.
+        From version 2.0 the Apple Watch app asks for <strong>one write
+        permission</strong>: each breathing session you start is saved as
+        Mindful Minutes, with the breathing pattern and the measured
+        heart–breath swing in the entry's details. During a session the watch
+        runs a Mind &amp; Body workout only to read your heart rate; that
+        workout is discarded, not saved. Tonus never changes or deletes
+        anything in your Health data. You can withdraw any part of this at any time in Settings →
         Privacy &amp; Security → Health → Tonus; the app then reports the
         missing signal instead of guessing.
+      </p>
+      <h3>Breathing experiment (version 2.0)</h3>
+      <p>
+        If you start a personal breathing experiment, the evening draw (breathe
+        or rest) and its random seed are kept in the app's own container on
+        your iPhone, and the result is computed there from your Health data.
+        Nothing is sent anywhere.
       </p>
       <h3>Where it goes</h3>
       <p>
@@ -196,21 +213,38 @@
           >
         </p>
         <p>
-          Apple Sağlık'tan cihazında okur, her şeyi orada hesaplar ve sonucu o
-          cihazın dışında hiçbir yere yazmaz.
+          Apple Sağlık'tan cihazında okur ve her şeyi orada hesaplar. 2.0
+          sürümünden itibaren o cihazdaki Apple Sağlık'a tek bir şey yazar:
+          başlattığın nefes seansının süresini.
         </p>
       </div>
       <h3>Tonus neyi okur</h3>
       <p>
         İzin verdiğinde ve yalnızca Apple'ın kendi izin ekranında onayladıktan
-        sonra: kalp hızı değişkenliği (SDNN), dinlenme nabzı, solunum sayısı.
+        sonra: kalp hızı değişkenliği (SDNN), dinlenme nabzı, nabız, solunum
+        sayısı, uyku, antrenmanlar, adım, yürüme ve koşu mesafesi, çıkılan kat,
+        yüzme kulaçları, doğum tarihi ve biyolojik cinsiyet (yalnız nabız
+        aralığı için) ve — 2.0'dan itibaren — farkındalık dakikaları.
       </p>
       <p>
-        Tonus <strong>yalnız okuma</strong> izni ister. Yazma izni yoktur;
-        Sağlık verine hiçbir şey ekleyemez, değiştiremez, silemez. İstediğin an
+        1.x sürümlerine kadar Tonus <strong>yalnız okuma</strong> izni istedi.
+        2.0'dan itibaren Apple Watch uygulaması <strong>tek bir yazma
+        izni</strong> ister: başlattığın her nefes seansı Farkındalık
+        Dakikaları olarak kaydedilir; kaydın ayrıntısında nefes deseni ve
+        ölçülen kalp–nefes salınımı durur. Seans sırasında saat, yalnızca
+        nabzını okumak için bir Zihin ve Beden antrenmanı açar; bu antrenman
+        kaydedilmez, atılır. Tonus Sağlık verinde hiçbir şeyi değiştirmez ya da
+        silmez. İstediğin an
         Ayarlar → Gizlilik ve Güvenlik → Sağlık → Tonus'tan herhangi bir izni
         geri alabilirsin; uygulama o sinyali tahmin etmez, eksik olduğunu
         söyler.
+      </p>
+      <h3>Nefes deneyi (2.0 sürümü)</h3>
+      <p>
+        Kişisel nefes deneyi başlatırsan akşam kurası (nefes ya da dinlen) ve
+        kuranın rastgele tohumu iPhone'undaki uygulamanın kendi kabında durur;
+        sonuç orada, Sağlık verinden hesaplanır. Hiçbir şey bir yere
+        gönderilmez.
       </p>
       <h3>Veri nereye gidiyor</h3>
       <p>
@@ -254,22 +288,39 @@
           >
         </p>
         <p>
-          Die App liest Gesundheitsdaten aus Apple Health auf deinem Gerät,
-          rechnet dort und schreibt das Ergebnis nirgendwo anders hin.
+          Die App liest Gesundheitsdaten aus Apple Health auf deinem Gerät und
+          rechnet dort. Ab Version 2.0 schreibt sie genau eine Sache in Apple
+          Health auf diesem Gerät zurück: die Dauer einer Atemübung, die du
+          startest.
         </p>
       </div>
       <h3>Was Tonus liest</h3>
       <p>
         Mit deiner Erlaubnis und erst nachdem du sie in Apples eigenem
         Health-Dialog erteilt hast: Herzfrequenzvariabilität (SDNN), Ruhepuls,
-        Atemfrequenz.
+        Herzfrequenz, Atemfrequenz, Schlaf, Trainings, Schritte, Geh- und
+        Laufdistanz, erklommene Etagen, Schwimmzüge, Geburtsdatum und
+        biologisches Geschlecht (nur für den Pulsbereich) und — ab Version 2.0
+        — Achtsamkeitsminuten.
       </p>
       <p>
-        Tonus verlangt <strong>ausschließlich Lesezugriff</strong>. Es besitzt
-        kein Schreibrecht und kann in deinen Health-Daten nichts hinzufügen,
-        ändern oder löschen. Du kannst jede Freigabe jederzeit unter
+        Bis Version 1.x verlangte Tonus <strong>ausschließlich
+        Lesezugriff</strong>. Ab Version 2.0 fragt die Apple-Watch-App nach
+        <strong>einem Schreibrecht</strong>: Jede Atemübung, die du startest,
+        wird als Achtsamkeitsminuten gespeichert, mit dem Atemmuster und der
+        gemessenen Herz-Atem-Schwingung in den Details des Eintrags. Während
+        der Übung startet die Uhr ein Geist-und-Körper-Training nur, um deinen
+        Puls zu lesen; dieses Training wird verworfen, nicht gespeichert. Tonus
+        ändert oder löscht nie etwas in deinen Health-Daten. Du kannst jede Freigabe jederzeit unter
         Einstellungen → Datenschutz &amp; Sicherheit → Health → Tonus
         zurücknehmen; die App meldet dann das fehlende Signal, statt zu raten.
+      </p>
+      <h3>Atemexperiment (Version 2.0)</h3>
+      <p>
+        Wenn du ein persönliches Atemexperiment startest, liegen die abendliche
+        Auslosung (atmen oder ruhen) und ihr Zufallsstartwert im eigenen
+        Container der App auf deinem iPhone; das Ergebnis wird dort aus deinen
+        Health-Daten berechnet. Nichts wird irgendwohin gesendet.
       </p>
       <h3>Wohin die Daten gehen</h3>
       <p>
@@ -316,19 +367,25 @@
         </p>
         <p>
           お使いの端末上で Apple
-          ヘルスケアから読み取り、その場で計算し、結果を端末の外へは一切書き出しません。
+          ヘルスケアから読み取り、その場で計算します。バージョン2.0から、その端末の
+          Apple ヘルスケアに1つだけ書き込みます：あなたが始めた呼吸セッションの時間です。
         </p>
       </div>
       <h3>Tonus が読み取るもの</h3>
       <p>
         あなたの許可があり、Apple
-        自身の許可画面で許可した後にのみ、次を読み取ります。心拍変動（SDNN）、安静時心拍、呼吸数。
+        自身の許可画面で許可した後にのみ、次を読み取ります。心拍変動（SDNN）、安静時心拍、心拍数、呼吸数、睡眠、ワークアウト、歩数、ウォーキング＋ランニングの距離、上った階数、水泳のストローク、生年月日と生物学的性別（心拍数の範囲にのみ使用）、そしてバージョン2.0からはマインドフルネスの時間。
       </p>
       <p>
         Tonus
-        が求めるのは<strong>読み取り権限のみ</strong>です。書き込み権限はなく、ヘルスケアのデータを追加・変更・削除できません。設定
+        はバージョン1.xまで<strong>読み取り権限のみ</strong>を求めていました。バージョン2.0から、Apple Watch アプリは<strong>1つの書き込み権限</strong>を求めます：あなたが始めた呼吸セッションを「マインドフルネスの時間」として保存し、記録の詳細に呼吸パターンと測定した心拍と呼吸の揺れを含めます。セッション中、ウォッチは心拍数を読み取るためだけに「マインド＆ボディ」ワークアウトを実行しますが、そのワークアウトは保存されず破棄されます。Tonus がヘルスケアのデータを変更・削除することはありません。設定
         → プライバシーとセキュリティ → ヘルスケア → Tonus
         からいつでも取り消せます。取り消された信号について、アプリは推測せず「ない」と伝えます。
+      </p>
+      <h3>呼吸の実験（バージョン2.0）</h3>
+      <p>
+        個人の呼吸実験を始めると、毎晩のくじ（呼吸する／休む）とその乱数の種は iPhone
+        上のアプリ専用領域に保存され、結果はそこでヘルスケアのデータから計算されます。どこにも送信されません。
       </p>
       <h3>データの行き先</h3>
       <p>
