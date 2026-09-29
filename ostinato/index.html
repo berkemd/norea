@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ostinato — a day is not a block, it is a partition</title>
-<meta name="description" content="Ostinato writes the shape of your working day: warm-up, peaks, recovery, descent — around the meetings you already have. No account, no server.">
+<title>Ostinato — Plan your day around your alertness</title>
+<meta name="description" content="Your hardest work in your sharpest hours. Ostinato predicts today's alertness from how you slept and your body clock, and plans your tasks around it.">
 <link rel="icon" type="image/png" href="/norea/ostinato/favicon.png">
 <link rel="apple-touch-icon" href="/norea/ostinato/apple-touch-icon.png">
 <meta name="theme-color" content="#232019">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Ostinato — a day is not a block, it is a partition">
-<meta property="og:description" content="Ostinato writes the shape of your working day: warm-up, peaks, recovery, descent — around the meetings you already have. No account, no server.">
+<meta property="og:title" content="Ostinato — Plan your day around your alertness">
+<meta property="og:description" content="Your hardest work in your sharpest hours. Ostinato predicts today's alertness from how you slept and your body clock, and plans your tasks around it.">
 <meta property="og:image" content="https://berkemd.github.io/norea/ostinato/og.png">
 <meta property="og:url" content="https://berkemd.github.io/norea/ostinato/">
 <meta name="twitter:card" content="summary_large_image">
@@ -20,10 +20,6 @@ h3{font-size:.95rem;margin:22px 0 4px;color:#efe7d9}
 p,li{color:#a49a86}
 strong{color:#efe7d9;font-weight:600}
 a{color:#c26a45}
-code{background:#2e2a20;padding:1px 5px;border-radius:3px;font-size:.88em;color:#d8cfbc}
-table{border-collapse:collapse;margin:14px 0;font-size:.92rem;width:100%}
-td,th{border-bottom:1px solid #3a3428;padding:7px 14px 7px 0;text-align:left;vertical-align:top}
-th{color:#efe7d9;font-weight:600}
 .lead{font-size:1.06rem;color:#cdc3ae}
 .note{border-left:3px solid #c26a45;padding-left:14px;color:#bdb3a0}
 .marka{display:block;height:54px;width:auto;margin:0 0 26px}
@@ -34,52 +30,42 @@ ul{padding-left:20px}
 </style></head><body><div class="wrap">
 <img class="marka" src="/norea/ostinato/marka.png" alt="Ostinato" width="1266" height="300">
 <h1 class="gizli">Ostinato</h1>
-<h1>A day is not a block. It is a partition.</h1>
-<p class="lead">Focus timers repeat one block all day. Ostinato writes the whole
-day — warm-up, deep blocks, recovery, surface work, descent — around the
-meetings you already have.</p>
+<h1>Your hardest work, in your sharpest hours.</h1>
+<p class="lead">Ostinato predicts today's alertness from how you slept, your
+body clock and your calendar — and plans your own tasks around it.</p>
 
-<h2>What was measured</h2>
-<p>Seven focus timers were compared. Five adapt to nothing; two adapt only if
-you configure them by hand. And what they measure is sessions, streaks and
-trees — none of which is evidence that the day worked.</p>
-<p>Ostinato's rules are checked by a second implementation that shares no
-constants with the one that writes the day. Across <strong>36,000 days</strong>
-no partition broke a rule; a fixed cycle that knows your work type, the block
-ranges and your calendar — everything except the shape of a day — broke one in
-almost all of them.</p>
+<h2>A real model, not a guess</h2>
+<p>Sleep pressure, your circadian rhythm and the fog after waking, with the
+parameters of a published validation study (Ingre et al. 2014), expressed on
+the Karolinska Sleepiness Scale. Your chronotype comes from your sleep on work
+days and free days, as in the Munich ChronoType Questionnaire.</p>
 
-<table>
-<tr><th></th><th>Ostinato</th><th>fixed cycle</th></tr>
-<tr><td>capacity left at end of day</td><td>0.769</td><td>0.678</td></tr>
-<tr><td>deep minutes in the first half of a long day</td><td>62.5%</td><td>54.5%</td></tr>
-</table>
-<p class="note">A fixed cycle <strong>spends</strong> your capacity. Ostinato
-protects it, because it puts recovery where recovery belongs rather than every
-25 minutes regardless.</p>
+<h2>Planned, then checked</h2>
+<p>Demanding work goes where you are sharpest and never where you are predicted
+to be sleepy. Every focus block is followed by a break; the day opens with a
+warm-up and closes with a wind-down. An independent checker verifies every plan
+against these rules.</p>
 
-<h2>Your curve</h2>
-<p>After each block, one tap: went well · was weak · didn't happen. That is the
-only thing Ostinato measures. It builds your own decline curve on the device,
-and after about ten blocks the day is written from you rather than from a
-stated average.</p>
+<h2>It learns you</h2>
+<p>One-tap check-ins teach it when your rhythm really runs; finished blocks
+teach it how long your work really takes.</p>
 
-<h2>What it will not do</h2>
+<h2>Everywhere you look</h2>
 <ul>
-<li><strong>No streaks, trees, badges or leaderboards.</strong> Abandoning a bad
-day is sometimes the right call.</li>
-<li><strong>No blocking of sites or apps.</strong></li>
-<li><strong>No account, no server, no sync, no network.</strong></li>
-<li><strong>No reading of your calendar's contents.</strong> Only the times you
-are busy — titles, guests, notes and locations are never touched, and a build
-gate enforces it.</li>
-<li><strong>No subscription.</strong></li>
+<li>Live Activity on the Lock Screen and in the Dynamic Island.</li>
+<li>Apple Watch: what now, how long, what next.</li>
+<li>Home and Lock Screen widgets, Siri and Shortcuts, a morning note with your sharpest two hours.</li>
 </ul>
 
-<h2>Apple Watch</h2>
-<p>The current block, how long is left, and a tap on the wrist when it changes.
-Nothing to read. The watch regenerates the partition from a deterministic seed
-rather than downloading it, so it stays right if the connection drops.</p>
+<h2>Private by design</h2>
+<p>No account, no server, no analytics. Calendar: busy times only. Apple Health:
+sleep only, read only. Everything stays on your devices.</p>
+
+<h2>Free, with one optional purchase</h2>
+<p>Free forever for your three most important tasks a day. Ostinato Unlimited is
+a one-time purchase — no subscription.</p>
+<p>In English, Turkish, Spanish, German, French, Italian, Brazilian Portuguese,
+Japanese, Korean and Simplified Chinese.</p>
 <div class="alt">
 <p>Ostinato · Norea Studio ·
 <a href="/norea/ostinato/">Home</a> ·
