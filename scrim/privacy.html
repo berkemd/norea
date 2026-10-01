@@ -6,7 +6,7 @@
     <title>Scrim — Privacy</title>
     <meta
       name="description"
-      content="Scrim collects nothing. No network, no stored frames, no photo library, no location, no account. Each line is enforced by a build gate."
+      content="How Scrim processes camera frames on device, stores local preferences and review-request timing, and shares readings with your paired Apple Watch."
     />
     <style>
       body {
@@ -59,89 +59,91 @@
   <body>
     <div class="wrap">
       <h1>Scrim — Privacy</h1>
+      <p>Updated 1 October 2026</p>
       <p class="lead">
-        Scrim collects nothing, stores nothing about you, and sends nothing
-        anywhere. This page says exactly what that means and how each sentence
-        is checked.
+        Scrim processes camera and motion measurements on your device. It has no
+        account, advertising or analytics service. It stores local settings and
+        review-request timing, and can share measurement results with your
+        paired Apple Watch. App Store purchases and reviews use Apple’s
+        services.
       </p>
 
-      <h2>What Scrim reads</h2>
+      <h2>Camera and motion</h2>
       <p>
-        The live camera preview and the device’s gravity vector. The preview
-        frame is converted into a 256-bin brightness histogram and then
-        released; no frame is written to disk, kept in memory beyond the current
-        measurement, or shown to anything but you. The gravity vector comes from
-        CoreMotion and says nothing about where you are.
+        Scrim reads the live camera preview and the device’s gravity vector.
+        Preview frames are processed into a brightness histogram on the device;
+        Scrim does not save or upload the frames. Motion readings come from
+        CoreMotion, not location services. Scrim does not access your photo
+        library, microphone, location, contacts or calendar.
       </p>
 
-      <h2>What Scrim stores</h2>
+      <h2>Local storage</h2>
       <p>
-        Three settings, on this device, in the standard user-defaults store:
-        your accelerometer-noise figure, the half field of view you selected for
-        the converging-verticals model, and the display headroom you chose to
-        compare against. Nothing else — no photos, no measurements, no history.
+        Scrim keeps measurement preferences in the device’s standard settings
+        store: the accelerometer-noise assumption, selected lens half field of
+        view and comparison display headroom. It does not keep a photo or
+        measurement history.
+      </p>
+      <p>
+        To space out requests for an App Store review, Scrim also stores a local
+        usage count, up to 30 distinct usage dates, and the date and app version
+        of its last review request. This records when Scrim asked the system to
+        request a review, not whether a prompt appeared or what rating you gave.
+        These records are not uploaded by Scrim.
       </p>
 
-      <h2>What leaves the device</h2>
+      <h2>Your paired Apple Watch</h2>
       <p>
-        One thing, and only if you have a paired Apple Watch with the Scrim
-        watch app open: the frame decision. That is a small set of numbers — the
-        verdict, the horizon angle, its band, and the clipped fraction — sent
-        over Apple’s own device link between your phone and your watch. No image
-        is ever sent, and nothing reaches Anthropic, Apple, us, or any server.
-        If you have no watch, nothing leaves the device at all.
+        When the paired Watch app is connected, Scrim can send measurement
+        results and framing guidance through Apple’s WatchConnectivity service.
+        This includes the decision and reason, horizon angle and uncertainty,
+        clipped fraction, suggested correction and reading-validity information.
+        Timing information helps the Watch discard old readings. Camera images
+        and brightness histograms are not included in these messages.
       </p>
 
-      <h2>What Scrim does not do</h2>
-      <ul>
-        <li>No network requests of any kind. There is no server to talk to.</li>
-        <li>
-          No analytics, no crash reporting, no identifiers, no advertising, no
-          tracking.
-        </li>
-        <li>No account, no sign-in, no email address.</li>
-        <li>
-          No photo library access. Scrim measures the live frame; it never reads
-          your photos.
-        </li>
-        <li>No microphone, no location, no contacts, no calendar.</li>
-        <li>No in-app purchases, so no purchase data.</li>
-      </ul>
-
-      <h2>The one permission</h2>
+      <h2>App Store purchases and reviews</h2>
       <p>
-        Camera. Without it there is no frame to measure. iOS asks you once and
-        you can withdraw it at any time in Settings; Scrim then simply has
-        nothing to measure and says so.
+        The released version 1.3 includes a separate in-app unlock for the
+        Verticals and HDR delivery planning views. Purchases, restoration and
+        purchase verification use Apple’s StoreKit. The App Store shows product
+        availability and prices; Scrim does not receive your payment-card
+        details.
+      </p>
+      <p>
+        Version 1.4 is being prepared to include the planning views in the paid
+        download, without a second in-app unlock. This change is not yet
+        available in the released version 1.3. Neither version uses a
+        subscription.
+      </p>
+      <p>
+        Scrim may also ask for an App Store review through Apple’s system
+        prompt. Apple controls whether that prompt appears and handles any
+        review you submit. These Apple services are separate from Scrim’s
+        on-device camera processing and follow Apple’s data-handling policies.
       </p>
 
-      <h2>How these sentences are checked</h2>
+      <h2>Your choices</h2>
       <p>
-        Each claim above corresponds to a check that runs on every build and
-        fails the build if the claim stops being true. The source is scanned
-        with comments stripped for <code>URLSession</code>,
-        <code>URLRequest</code>, <code>CFNetwork</code>,
-        <code>NWConnection</code>, <code>CLLocationManager</code> and
-        <code>StoreKit</code>, and for image-writing calls such as
-        <code>CGImageDestination</code>, <code>AVAssetWriter</code> and
-        <code>PHPhotoLibrary</code>. The permission keys that must be absent are
-        checked for absence; the camera key that must be present is checked for
-        presence. A privacy promise nobody measures is worse than none at all,
-        because people rely on it.
+        Camera access is requested by iOS. You can change it in Settings at any
+        time. Without access, Scrim cannot provide camera-based measurements.
+        The app has no sign-in or advertising identifiers and includes no
+        analytics or third-party crash-reporting SDK.
       </p>
 
-      <h2>Children</h2>
+      <h2>This website and support</h2>
       <p>
-        Scrim is rated 4+ and contains no user-generated content, no messaging,
-        no web browsing and no advertising. It has nothing to collect from
-        anyone, of any age.
+        This website is hosted on GitHub Pages. Visiting it or following an App
+        Store link uses those services, separately from the app’s measurements.
+        If you email support, your address and the information you include are
+        part of that email, handled through the email services involved.
       </p>
 
       <h2>Changes</h2>
       <p>
-        If any of this ever changes, this page changes with the release that
-        changes it, and the corresponding build gate changes too — they cannot
-        drift apart.
+        This page will be updated when Scrim’s data use changes.
+        Version-specific notes above distinguish the released app from an update
+        still in preparation.
       </p>
 
       <h2>Contact</h2>
