@@ -1,57 +1,164 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kesse — Privacy</title>
-<meta name="description" content="Kesse connects to no bank, keeps no transactions, requests no permissions and sends nothing anywhere. Each line is enforced by a build gate.">
-<style>body{background:#f8f7f3;color:#1a1916;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0}
-.wrap{max-width:660px;margin:0 auto;padding:64px 24px}
-h1{font-size:1.6rem;margin:0 0 6px}
-h2{font-size:1.05rem;margin:34px 0 6px}
-p,li{color:#4d4c46}
-a{color:#4a6b48}
-code{background:#eeece5;padding:1px 5px;border-radius:3px;font-size:.88em}
-.lang{border-top:1px solid #e2dfd6;margin-top:40px;padding-top:10px;font-size:.86rem}
-.lead{font-size:1.02rem;color:#333}</style></head><body><div class="wrap">
-<h1>Kesse — Privacy</h1>
-<p class="lead">Kesse connects to no bank, keeps no transaction history, asks for no permissions and sends nothing anywhere. What it measures is one number per period, and that needs none of those things. This page says exactly what that means and how each sentence is checked.</p>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kesse — Privacy</title>
+    <meta
+      name="description"
+      content="What Kesse stores locally, what the paired Apple Watch receives, and how device backups and support email differ from app data collection."
+    />
+    <style>
+      body {
+        background: #f8f7f3;
+        color: #1a1916;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        line-height: 1.7;
+        margin: 0;
+      }
+      .wrap {
+        max-width: 660px;
+        margin: 0 auto;
+        padding: 64px 24px;
+      }
+      h1 {
+        font-size: 1.6rem;
+        margin: 0 0 6px;
+      }
+      h2 {
+        font-size: 1.05rem;
+        margin: 34px 0 6px;
+      }
+      p,
+      li {
+        color: #4d4c46;
+      }
+      a {
+        color: #4a6b48;
+      }
+      code {
+        background: #eeece5;
+        padding: 1px 5px;
+        border-radius: 3px;
+        font-size: 0.88em;
+      }
+      .lang {
+        border-top: 1px solid #e2dfd6;
+        margin-top: 40px;
+        padding-top: 10px;
+        font-size: 0.86rem;
+      }
+      .lead {
+        font-size: 1.02rem;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <h1>Kesse — Privacy</h1>
+      <p class="lead">
+        Kesse calculates on your iPhone or iPad using the spending totals, goal,
+        budget and savings entries you provide. No bank connection or account is
+        needed. A paired Apple Watch receives a spending summary.
+      </p>
+      <p>Updated 4 October 2026.</p>
 
-<h2>No bank connection, ever</h2>
-<p>Every other app in this category connects to your accounts. That means your transaction history is readable by whoever operates the service, and it is the single largest privacy cost in personal finance software. Kesse cannot connect and will not: there is no network code of any kind in it, and the build fails if <code>FinanceKit</code>, <code>ASWebAuthenticationSession</code>, <code>URLSession</code>, <code>URLRequest</code>, <code>CFNetwork</code>, <code>NWConnection</code>, <code>StoreKit</code> or <code>CLLocationManager</code> appears in the sources.</p>
+      <h2>What is stored on your device</h2>
+      <ul>
+        <li>
+          Your spending totals, categories, period length, ledger currency,
+          completion confirmations and optional balance.
+        </li>
+        <li>
+          Your goal name, currency, target amount and date, starting savings,
+          monthly income and expenses, dated step statuses and recorded savings.
+        </li>
+        <li>
+          Your app preferences and the calendar settings used with your records.
+        </li>
+      </ul>
+      <p>
+        Entries excluded from analysis remain stored. Records carried over from
+        earlier versions may also retain a local recovery copy. Kesse does not
+        import bank transactions, and your goal and spending ledger remain
+        separate.
+      </p>
 
-<h2>What Kesse stores</h2>
-<p>The period totals you typed, the category names you chose, whether you are working in months or weeks, and the amount on hand if you entered one. All of it lives in this app on this device. Deleting the app deletes all of it, because there is nowhere else it exists.</p>
+      <h2>What the app sends to Apple Watch</h2>
+      <p>
+        A paired Apple Watch receives the spending comparison, median,
+        descriptive spread and optional balance scenario from your iPhone, along
+        with the information needed to display that summary, such as its
+        currency and update time.
+      </p>
+      <p>
+        Individual period entries, category records and your goal plan are not
+        included. Kesse uses Apple's WatchConnectivity device connection for
+        this transfer, without a developer-operated server. The Watch can
+        display a previously received summary until a newer one arrives.
+      </p>
 
-<h2>What it does not store</h2>
-<p>There is no transaction record — no merchant, no time of day, no description — because there is no field for one. This is not an omission to be filled in later. Kesse asks for a period total on purpose: a transaction log you stop keeping is worse than none at all, because you forget it is incomplete and read its total anyway. The build fails if such a field appears in the stored entry type.</p>
+      <h2>Accounts, collection and permissions</h2>
+      <p>
+        Kesse has no account or sign-in, bank connection, developer-operated
+        server, cloud AI, analytics or advertising. It does not request access
+        to your contacts, camera, microphone, location or photos. There are no
+        in-app purchases or subscriptions.
+      </p>
+      <p>
+        Kesse does not provide cloud sync between separate iPhones or iPads. The
+        companion summary transfer to your paired Apple Watch is different from
+        syncing the complete ledger or goal plan.
+      </p>
 
-<h2>What leaves the device</h2>
-<p>One line, and only if you have a paired Apple Watch with the Kesse watch app open: the verdict, the typical period with its band, the number of periods, and the range your money lasts. The period totals themselves never go. That line travels over Apple’s own device link between your phone and your watch and does not reach the internet. If you have no watch, nothing leaves the device at all.</p>
+      <h2>Backups and deletion</h2>
+      <p>
+        Local app data may be included in device or computer backups according
+        to your Apple device and backup settings. Kesse does not operate those
+        backup services or control copies already held in them. Local storage
+        does not mean there can be no backup copy.
+      </p>
+      <p>
+        You can edit or delete spending entries and remove a goal in the app.
+        Removing the app deletes its local app data, but does not by itself
+        erase existing backups or guarantee removal of a summary already
+        transferred to the Watch. Manage those copies through your device and
+        backup settings. There is no developer server copy of your ledger or
+        goal to retrieve.
+      </p>
 
-<h2>What Kesse does not do</h2>
-<ul>
-<li>No bank, card or account connection of any kind.</li>
-<li>No account, no sign-in, no email address, no sync, no server.</li>
-<li>No permissions. iOS will never show you a permission prompt from Kesse.</li>
-<li>No contacts, no camera, no microphone, no location, no photos, no notifications.</li>
-<li>No analytics, no crash reporting, no identifiers, no advertising, no tracking.</li>
-<li>No in-app purchases and no subscription, so no purchase data.</li>
-<li>No export path, because an export path is also an exfiltration path.</li>
-</ul>
+      <h2>Support and this website</h2>
+      <p>
+        If you choose to email support, the message and any attachments you
+        include pass through your email provider. That is separate from Kesse's
+        local calculations. This public website is hosted on GitHub Pages;
+        visiting it is also separate from using the app offline.
+      </p>
 
-<h2>How these sentences are checked</h2>
-<p>Each claim above corresponds to a check that runs on every build and fails the build if the claim stops being true. The source is scanned with comments stripped for the network and finance symbols listed above, separately for <code>CNContact</code>, <code>CNContactStore</code>, <code>ASIdentifierManager</code>, <code>identifierForVendor</code> and <code>ATTrackingManager</code>. The stored entry type is scanned for any field that would turn it into a transaction record. Every permission key that must be absent is checked for absence. A privacy promise nobody measures is worse than none at all, because people rely on it.</p>
+      <h2>Planning, not financial advice</h2>
+      <p>
+        Calculations use your own entries. Kesse does not move money or
+        recommend financial products. Goal dates and balance durations are
+        conditional scenarios. Spending summaries describe eligible, confirmed
+        records.
+      </p>
 
-<h2>Not financial advice</h2>
-<p>Kesse is a measuring tool. It reports statistics on numbers you typed in and never recommends an action, a product, a provider or an amount. It is not affiliated with any bank, broker or lender, and it is not a regulated financial service.</p>
-
-<h2>Children</h2>
-<p>Kesse contains no user-generated content that anyone else can see, no messaging, no web browsing and no advertising. It has nothing to collect from anyone, of any age. Rated 4+.</p>
-
-<h2>Changes</h2>
-<p>If any of this ever changes, this page changes with the release that changes it, and the corresponding build gate changes too — they cannot drift apart.</p>
-
-<h2>Contact</h2>
-<p>Questions: <a href="mailto:hello@norea.studio">hello@norea.studio</a>.</p>
-
-<div class="lang"><a href="/">norea.studio</a> · <a href="/kesse/">Kesse</a> · <a href="/kesse/support">Support</a></div>
-</div></body></html>
+      <h2>Changes and contact</h2>
+      <p>
+        This page describes the current app's storage and data flow. It will be
+        updated when those practices change.
+      </p>
+      <p>
+        Privacy questions:
+        <a href="mailto:hello@norea.studio">hello@norea.studio</a>.
+      </p>
+      <div class="lang">
+        <a href="../">norea.studio</a> · <a href="index.html">Kesse</a> ·
+        <a href="privacy.html">Privacy</a> · <a href="support.html">Support</a>
+      </div>
+    </main>
+  </body>
+</html>
