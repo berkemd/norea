@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Prepare a work-example summary with exactly the details you choose. A free Eidos worksheet, processed in your browser without an account."
+    />
+    <title>Work-example worksheet — Eidos</title>
+    <link rel="stylesheet" href="worksheet.css" />
+    <script type="module" src="worksheet.js"></script>
+  </head>
+  <body>
+    <main class="wrap">
+      <nav aria-label="Main">
+        <a href="index.html">Eidos</a><a href="support.html">Support</a
+        ><a href="privacy.html">Privacy</a>
+      </nav>
+      <header>
+        <p class="eyebrow">A free working tool</p>
+        <h1>Make your work easier to explain.</h1>
+        <p class="lead">
+          Start with one or two examples. Write what you did, then choose
+          exactly what belongs in your summary.
+        </p>
+        <p>
+          Your draft stays in this page’s memory. This worksheet does not save
+          drafts. Copy what you need before refreshing or closing the page. Use
+          non-confidential examples.
+        </p>
+      </header>
+      <noscript
+        ><p class="notice">
+          This interactive worksheet needs JavaScript. You can
+          <a href="work-example-template.txt" download
+            >download the text worksheet</a
+          >
+          and use your own editor instead.
+        </p></noscript
+      >
+      <form id="worksheet" autocomplete="off" hidden>
+        <p><a href="#preview-heading">Preview summary</a></p>
+        <section class="purpose" aria-labelledby="purpose-heading">
+          <h2 id="purpose-heading">Who is this for?</h2>
+          <label for="purpose"
+            >Purpose or audience <span class="hint">(optional)</span></label
+          >
+          <input
+            id="purpose"
+            type="text"
+            placeholder="A project discussion, client proposal or review"
+            aria-describedby="purpose-help"
+          />
+          <p id="purpose-help" class="hint">
+            A reminder for you. It stays out of the summary unless you include
+            it.
+          </p>
+          <label class="check"
+            ><input id="include-purpose" type="checkbox" /> Include the
+            purpose</label
+          >
+        </section>
+        <div class="layout">
+          <section aria-label="Your examples">
+            <div id="examples"></div>
+            <div class="clear-area">
+              <button id="clear" type="button" class="secondary">
+                Clear worksheet
+              </button>
+              <p class="hint">
+                Clears every draft field and selection on this page. It cannot
+                remove anything you already copied or sent elsewhere.
+              </p>
+            </div>
+          </section>
+          <section class="preview-panel" aria-labelledby="preview-heading">
+            <h2 id="preview-heading" tabindex="-1">Your summary</h2>
+            <p class="hint">
+              <a href="#example-card-0">Edit example 1</a> ·
+              <a href="#example-card-1">Edit example 2</a>
+            </p>
+            <p id="preview-state">
+              Choose an example and at least one filled field to make a summary.
+            </p>
+            <label class="field-label" for="preview">Exact text to copy</label>
+            <textarea
+              id="preview"
+              readonly
+              rows="16"
+              spellcheck="false"
+              aria-describedby="preview-state"
+            ></textarea>
+            <div class="actions">
+              <button id="copy" type="button" disabled>Copy summary</button
+              ><button
+                id="select-preview"
+                type="button"
+                class="secondary"
+                disabled
+              >
+                Select text
+              </button>
+            </div>
+            <p
+              id="copy-status"
+              role="status"
+              aria-live="polite"
+              aria-atomic="true"
+            ></p>
+            <p class="hint">
+              You decide where to paste it. Copies you send cannot be recalled.
+              These are your own descriptions, not independently verified
+              credentials.
+            </p>
+          </section>
+        </div>
+      </form>
+      <footer>
+        <h2>Was this easier than your usual method?</h2>
+        <p>
+          Notice which step helped, where you got stuck, and whether you would
+          need another summary.
+          <a href="support.html">Optional feedback and support</a>. Your draft
+          is not added to a feedback message.
+        </p>
+        <p class="hint">
+          This is a web worksheet, separate from the Eidos app and its beta. It
+          does not attach documents, certify skills or contact employers.
+          Opening this website requires normal hosting requests; typing and
+          copying your draft do not send it to us. Browser session restoration,
+          your clipboard and copies outside this page are under your control.
+        </p>
+        <a href="work-example-template.txt" download
+          >Download the plain-text template</a
+        >
+      </footer>
+    </main>
+  </body>
+</html>
