@@ -6,7 +6,7 @@
     <title>Tonus — Privacy Policy</title>
     <meta
       name="description"
-      content="Tonus collects nothing: no account, no server, no analytics. Everything is computed on your own device."
+      content="On-device health processing, with optional regional weather requests to Apple WeatherKit from version 2.1."
     />
     <link
       rel="canonical"
@@ -22,7 +22,7 @@
     />
     <meta
       property="og:description"
-      content="Tonus collects nothing: no account, no server, no analytics. Everything is computed on your own device."
+      content="On-device health processing, with optional regional weather requests to Apple WeatherKit from version 2.1."
     />
     <meta name="twitter:card" content="summary" />
     <style>
@@ -119,7 +119,7 @@
         プライバシーポリシー
       </h1>
       <p class="lang">
-        <em>Last updated / Son güncelleme: 29 September 2026</em><br />
+        <em>Last updated / Son güncelleme: 15 October 2026</em><br />
         All four versions say the same thing; if they ever differ, the English
         text is the reference. / Dört sürüm aynı şeyi söyler; bir farklılık
         olursa İngilizce metin esas alınır. / Alle vier Fassungen sagen
@@ -131,15 +131,15 @@
       <div class="sum">
         <p>
           <strong
-            >Tonus collects nothing. There is no account, no sign-in, no server,
-            no analytics and no advertising identifier.</strong
+            >Health calculations stay on your device. Tonus has no account,
+            sign-in, analytics or advertising identifier. Version 2.1 adds
+            optional weather requests to Apple WeatherKit.</strong
           >
         </p>
         <p>
-          It reads health data from Apple Health on your own device and
-          computes everything there. From version 2.0 it writes one thing back
-          to Apple Health on that device: the minutes of a breathing session you
-          start.
+          It reads health data from Apple Health on your own device and computes
+          everything there. From version 2.0 it writes one thing back to Apple
+          Health on that device: the minutes of a breathing session you start.
         </p>
       </div>
       <h3>What Tonus reads</h3>
@@ -148,34 +148,43 @@
         permission sheet: heart rate variability (SDNN), resting heart rate,
         heart rate, respiratory rate, sleep, workouts, steps, walking and
         running distance, flights climbed, swimming strokes, date of birth and
-        biological sex (used only for the heart-rate range), and — from
-        version 2.0 — mindful minutes.
+        biological sex (used only for the heart-rate range), and — from version
+        2.0 — mindful minutes.
+      </p>
+      <p>
+        In version 2.1, an optional cardio-fitness flow requests permission to
+        read existing VO₂ max and workout records from Apple Health. Tonus does
+        not measure VO₂ max itself. Plans, routine records, meal notes and your
+        selected region are kept in the app’s local storage.
       </p>
       <p>
         Up to version 1.x Tonus requested <strong>read access only</strong>.
-        From version 2.0 the Apple Watch app asks for <strong>one write
-        permission</strong>: each breathing session you start is saved as
-        Mindful Minutes, with the breathing pattern and the measured
+        From version 2.0 the Apple Watch app asks for
+        <strong>one write permission</strong>: each breathing session you start
+        is saved as Mindful Minutes, with the breathing pattern and the measured
         heart–breath swing in the entry's details. During a session the watch
         runs a Mind &amp; Body workout only to read your heart rate; that
-        workout is discarded, not saved. Tonus never changes or deletes
-        anything in your Health data. You can withdraw any part of this at any time in Settings →
-        Privacy &amp; Security → Health → Tonus; the app then reports the
-        missing signal instead of guessing.
+        workout is discarded, not saved. Tonus never changes or deletes anything
+        in your Health data. You can withdraw any part of this at any time in
+        Settings → Privacy &amp; Security → Health → Tonus; the app then reports
+        the missing signal instead of guessing.
       </p>
       <h3>Breathing experiment (version 2.0)</h3>
       <p>
         If you start a personal breathing experiment, the evening draw (breathe
-        or rest) and its random seed are kept in the app's own container on
-        your iPhone, and the result is computed there from your Health data.
-        Nothing is sent anywhere.
+        or rest) and its random seed are kept in the app's own container on your
+        iPhone, and the result is computed there from your Health data. Nothing
+        is sent anywhere.
       </p>
       <h3>Where it goes</h3>
       <p>
-        Nowhere. All computation happens on your iPhone and Apple Watch. Tonus
-        contains no networking code for sending your health data, no third-party
-        SDK, no crash reporter and no analytics library. Your baselines and
-        pinned settings are stored in the app's own container on the device.
+        Your health readings, baselines, plans and journal entries are processed
+        on your device. When you explicitly request or refresh a forecast, the
+        coordinates of the region you selected are sent to Apple WeatherKit.
+        Health readings and journal contents are not included in that weather
+        request. Tonus does not automatically read your device location; you
+        select a city centre or enter coordinates. Selecting a region alone does
+        not request a forecast. You can use Tonus without requesting weather.
       </p>
       <h3>What we can see</h3>
       <p>
@@ -199,17 +208,18 @@
       </p>
       <h3>Changes</h3>
       <p>
-        If this policy ever changes, the new version appears at this address
-        with a new date. Because there is no collection to expand, any change
-        would be a narrowing.
+        Updates to this policy are published at this address with a new date.
+        The version 2.1 weather option is described separately from on-device
+        health processing.
       </p>
 
       <h2 id="tr">Türkçe</h2>
       <div class="sum">
         <p>
           <strong
-            >Tonus hiçbir veri toplamaz. Hesap yok, oturum açma yok, sunucu yok,
-            analitik yok, reklam kimliği yok.</strong
+            >Sağlık hesaplamaları cihazında kalır. Tonus’ta hesap, oturum açma,
+            analitik veya reklam kimliği yoktur. 2.1 sürümü, Apple WeatherKit’e
+            isteğe bağlı hava sorguları ekler.</strong
           >
         </p>
         <p>
@@ -227,17 +237,22 @@
         aralığı için) ve — 2.0'dan itibaren — farkındalık dakikaları.
       </p>
       <p>
+        2.1 sürümünde isteğe bağlı kardiyo kondisyonu akışı, Apple Sağlık’taki
+        mevcut VO₂ max ve antrenman kayıtlarını okumak için izin ister. Tonus
+        VO₂ max ölçümü yapmaz. Planlar, rutin kayıtları, öğün notları ve
+        seçtiğin bölge uygulamanın yerel deposunda tutulur.
+      </p>
+      <p>
         1.x sürümlerine kadar Tonus <strong>yalnız okuma</strong> izni istedi.
-        2.0'dan itibaren Apple Watch uygulaması <strong>tek bir yazma
-        izni</strong> ister: başlattığın her nefes seansı Farkındalık
-        Dakikaları olarak kaydedilir; kaydın ayrıntısında nefes deseni ve
-        ölçülen kalp–nefes salınımı durur. Seans sırasında saat, yalnızca
-        nabzını okumak için bir Zihin ve Beden antrenmanı açar; bu antrenman
-        kaydedilmez, atılır. Tonus Sağlık verinde hiçbir şeyi değiştirmez ya da
-        silmez. İstediğin an
-        Ayarlar → Gizlilik ve Güvenlik → Sağlık → Tonus'tan herhangi bir izni
-        geri alabilirsin; uygulama o sinyali tahmin etmez, eksik olduğunu
-        söyler.
+        2.0'dan itibaren Apple Watch uygulaması
+        <strong>tek bir yazma izni</strong> ister: başlattığın her nefes seansı
+        Farkındalık Dakikaları olarak kaydedilir; kaydın ayrıntısında nefes
+        deseni ve ölçülen kalp–nefes salınımı durur. Seans sırasında saat,
+        yalnızca nabzını okumak için bir Zihin ve Beden antrenmanı açar; bu
+        antrenman kaydedilmez, atılır. Tonus Sağlık verinde hiçbir şeyi
+        değiştirmez ya da silmez. İstediğin an Ayarlar → Gizlilik ve Güvenlik →
+        Sağlık → Tonus'tan herhangi bir izni geri alabilirsin; uygulama o
+        sinyali tahmin etmez, eksik olduğunu söyler.
       </p>
       <h3>Nefes deneyi (2.0 sürümü)</h3>
       <p>
@@ -248,10 +263,13 @@
       </p>
       <h3>Veri nereye gidiyor</h3>
       <p>
-        Hiçbir yere. Bütün hesap iPhone'unda ve Apple Watch'unda yapılır.
-        Uygulamanın içinde sağlık verini gönderecek bir ağ kodu, üçüncü taraf
-        bir SDK, çökme raporlayıcı ya da analitik kitaplığı yoktur. Taban
-        çizgilerin ve sabitlemelerin cihazdaki kendi kabında durur.
+        Sağlık ölçümlerin, tabanların, planların ve günlük kayıtların cihazında
+        işlenir. Hava tahminini açıkça getirmeni veya yenilemeni isteyen düğmeye
+        bastığında, seçtiğin bölgenin koordinatları Apple WeatherKit’e
+        gönderilir. Sağlık ölçümleri ve günlük içeriği bu hava isteğine
+        eklenmez. Tonus cihazının konumunu otomatik okumaz; şehir merkezi seçer
+        veya koordinat girersin. Yalnız bölge seçmek hava sorgusu başlatmaz.
+        Hava tahmini istemeden Tonus’u kullanabilirsin.
       </p>
       <h3>Biz ne görüyoruz</h3>
       <p>
@@ -275,16 +293,19 @@
       </p>
       <h3>Değişiklik</h3>
       <p>
-        Bu politika değişirse yeni sürümü bu adreste yeni tarihiyle görünür.
-        Toplanan bir şey olmadığı için her değişiklik ancak daraltma olabilir.
+        Bu politikanın güncellemeleri yeni tarihleriyle bu adreste yayımlanır.
+        2.1 sürümünün isteğe bağlı hava sorgusu, cihaz içi sağlık işlemesinden
+        ayrı açıklanmıştır.
       </p>
 
       <h2 id="de">Deutsch</h2>
       <div class="sum">
         <p>
           <strong
-            >Tonus erhebt keine Daten. Kein Konto, keine Anmeldung, kein Server,
-            keine Analytik, keine Werbe-ID.</strong
+            >Gesundheitsberechnungen bleiben auf deinem Gerät. Tonus hat kein
+            Konto, keine Anmeldung, keine Analytik und keine Werbekennung.
+            Version 2.1 ergänzt optionale Wetteranfragen an Apple
+            WeatherKit.</strong
           >
         </p>
         <p>
@@ -300,18 +321,26 @@
         Health-Dialog erteilt hast: Herzfrequenzvariabilität (SDNN), Ruhepuls,
         Herzfrequenz, Atemfrequenz, Schlaf, Trainings, Schritte, Geh- und
         Laufdistanz, erklommene Etagen, Schwimmzüge, Geburtsdatum und
-        biologisches Geschlecht (nur für den Pulsbereich) und — ab Version 2.0
-        — Achtsamkeitsminuten.
+        biologisches Geschlecht (nur für den Pulsbereich) und — ab Version 2.0 —
+        Achtsamkeitsminuten.
       </p>
       <p>
-        Bis Version 1.x verlangte Tonus <strong>ausschließlich
-        Lesezugriff</strong>. Ab Version 2.0 fragt die Apple-Watch-App nach
-        <strong>einem Schreibrecht</strong>: Jede Atemübung, die du startest,
-        wird als Achtsamkeitsminuten gespeichert, mit dem Atemmuster und der
-        gemessenen Herz-Atem-Schwingung in den Details des Eintrags. Während
-        der Übung startet die Uhr ein Geist-und-Körper-Training nur, um deinen
-        Puls zu lesen; dieses Training wird verworfen, nicht gespeichert. Tonus
-        ändert oder löscht nie etwas in deinen Health-Daten. Du kannst jede Freigabe jederzeit unter
+        In Version 2.1 bittet eine optionale Funktion zur kardiorespiratorischen
+        Fitness um Erlaubnis, vorhandene VO₂max- und Trainingsdaten aus Apple
+        Health zu lesen. Tonus misst VO₂max nicht selbst. Pläne, Routinen,
+        Mahlzeitennotizen und die ausgewählte Region werden lokal in der App
+        gespeichert.
+      </p>
+      <p>
+        Bis Version 1.x verlangte Tonus
+        <strong>ausschließlich Lesezugriff</strong>. Ab Version 2.0 fragt die
+        Apple-Watch-App nach <strong>einem Schreibrecht</strong>: Jede
+        Atemübung, die du startest, wird als Achtsamkeitsminuten gespeichert,
+        mit dem Atemmuster und der gemessenen Herz-Atem-Schwingung in den
+        Details des Eintrags. Während der Übung startet die Uhr ein
+        Geist-und-Körper-Training nur, um deinen Puls zu lesen; dieses Training
+        wird verworfen, nicht gespeichert. Tonus ändert oder löscht nie etwas in
+        deinen Health-Daten. Du kannst jede Freigabe jederzeit unter
         Einstellungen → Datenschutz &amp; Sicherheit → Health → Tonus
         zurücknehmen; die App meldet dann das fehlende Signal, statt zu raten.
       </p>
@@ -324,10 +353,14 @@
       </p>
       <h3>Wohin die Daten gehen</h3>
       <p>
-        Nirgendwohin. Alles wird auf iPhone und Apple Watch berechnet. Die App
-        enthält keinen Netzwerkcode zum Versenden deiner Gesundheitsdaten, kein
-        Drittanbieter-SDK, keinen Crash-Reporter und keine Analytik. Basislinien
-        und Anheftungen liegen im eigenen Container der App auf dem Gerät.
+        Deine Gesundheitsmesswerte, Basislinien, Pläne und Tagebucheinträge
+        werden auf deinem Gerät verarbeitet. Wenn du eine Vorhersage
+        ausdrücklich abrufst oder aktualisierst, werden die Koordinaten deiner
+        ausgewählten Region an Apple WeatherKit gesendet. Gesundheitsmesswerte
+        und Tagebuchinhalte sind nicht Teil dieser Wetteranfrage. Tonus liest
+        den Gerätestandort nicht automatisch aus; du wählst ein Stadtzentrum
+        oder gibst Koordinaten ein. Die Auswahl einer Region allein löst keine
+        Wetteranfrage aus. Du kannst Tonus ohne Wetterabfragen nutzen.
       </p>
       <h3>Was wir sehen</h3>
       <p>
@@ -351,47 +384,59 @@
       </p>
       <h3>Änderungen</h3>
       <p>
-        Ändert sich diese Erklärung, erscheint die neue Fassung mit neuem Datum
-        an dieser Adresse. Da nichts erhoben wird, kann jede Änderung nur eine
-        Einschränkung sein.
+        Aktualisierungen dieser Erklärung werden unter dieser Adresse mit einem
+        neuen Datum veröffentlicht. Die Wetteroption von Version 2.1 wird
+        getrennt von der lokalen Verarbeitung der Gesundheitsdaten beschrieben.
       </p>
 
       <h2 id="ja">日本語</h2>
       <div class="sum">
         <p>
           <strong
-            >Tonus
-            はデータを一切収集しません。アカウントも、サインインも、サーバーも、解析も、広告
-            ID もありません。</strong
+            >健康データの計算は端末内で行います。Tonusにはアカウント、サインイン、解析機能、広告IDはありません。バージョン2.1では、任意でApple
+            WeatherKitに天気を問い合わせる機能を追加します。</strong
           >
         </p>
         <p>
           お使いの端末上で Apple
           ヘルスケアから読み取り、その場で計算します。バージョン2.0から、その端末の
-          Apple ヘルスケアに1つだけ書き込みます：あなたが始めた呼吸セッションの時間です。
+          Apple
+          ヘルスケアに1つだけ書き込みます：あなたが始めた呼吸セッションの時間です。
         </p>
       </div>
       <h3>Tonus が読み取るもの</h3>
       <p>
         あなたの許可があり、Apple
-        自身の許可画面で許可した後にのみ、次を読み取ります。心拍変動（SDNN）、安静時心拍、心拍数、呼吸数、睡眠、ワークアウト、歩数、ウォーキング＋ランニングの距離、上った階数、水泳のストローク、生年月日と生物学的性別（心拍数の範囲にのみ使用）、そしてバージョン2.0からはマインドフルネスの時間。
+        自身の許可画面で許可した後にのみ、次を読み取ります。心拍変動（SDNN）、安静時心拍、心拍数、呼吸数、睡眠、ワークアウト、歩数、
+        ウォーキング＋ランニングの距離、上った階数、水泳のストローク、生年月日と生物学的性別（心拍数の範囲にのみ使用）、そしてバージョン2.0からはマインドフルネスの時
+        間。
+      </p>
+      <p>
+        バージョン2.1の任意の心肺機能表示では、AppleヘルスケアにあるVO₂
+        maxとワークアウトの記録を読み取る許可を求めます。Tonus自体がVO₂
+        maxを測定するわけではありません。計画、習慣の記録、食事メモ、選択した地域はアプリ内のローカル領域に保存します。
       </p>
       <p>
         Tonus
-        はバージョン1.xまで<strong>読み取り権限のみ</strong>を求めていました。バージョン2.0から、Apple Watch アプリは<strong>1つの書き込み権限</strong>を求めます：あなたが始めた呼吸セッションを「マインドフルネスの時間」として保存し、記録の詳細に呼吸パターンと測定した心拍と呼吸の揺れを含めます。セッション中、ウォッチは心拍数を読み取るためだけに「マインド＆ボディ」ワークアウトを実行しますが、そのワークアウトは保存されず破棄されます。Tonus がヘルスケアのデータを変更・削除することはありません。設定
-        → プライバシーとセキュリティ → ヘルスケア → Tonus
+        はバージョン1.xまで<strong>読み取り権限のみ</strong>を求めていました。バージョン2.0から、Apple
+        Watch
+        アプリは<strong>1つの書き込み権限</strong>を求めます：あなたが始めた呼吸セッションを「マインドフルネスの時間」として保存し、記録の詳細に呼吸パターンと測定した心拍と呼吸の揺れを含めます。セッション中、ウォッチは心拍数を読み取るためだけに「マインド＆ボディ」ワークアウトを実行しますが、そのワークアウトは保存されず破棄されます。Tonus
+        がヘルスケアのデータを変更・削除することはありません。設定 →
+        プライバシーとセキュリティ → ヘルスケア → Tonus
         からいつでも取り消せます。取り消された信号について、アプリは推測せず「ない」と伝えます。
       </p>
       <h3>呼吸の実験（バージョン2.0）</h3>
       <p>
-        個人の呼吸実験を始めると、毎晩のくじ（呼吸する／休む）とその乱数の種は iPhone
+        個人の呼吸実験を始めると、毎晩のくじ（呼吸する／休む）とその乱数の種は
+        iPhone
         上のアプリ専用領域に保存され、結果はそこでヘルスケアのデータから計算されます。どこにも送信されません。
       </p>
       <h3>データの行き先</h3>
       <p>
-        どこにも行きません。計算はすべて iPhone と Apple Watch
-        の中で行われます。健康データを送信するネットワークコード、サードパーティ
-        SDK、クラッシュレポーター、解析ライブラリのいずれも含みません。基準値と固定設定は端末上のアプリ専用領域に保存されます。
+        健康の測定記録、基準値、計画、日記は端末内で処理します。天気予報の取得または更新を明示的に選ぶと、選択した地域の座標をApple
+        WeatherKitに送信しま
+        す。この天気の問い合わせに健康の測定記録や日記の内容は含まれません。Tonusが端末の現在地を自動的に読み取ることはありません。都市の中心地点を選ぶか、座標を入
+        力します。地域を選ぶだけでは天気を問い合わせません。天気を取得せずにTonusを利用することもできます。
       </p>
       <h3>開発者が見えるもの</h3>
       <p>
@@ -411,7 +456,7 @@
       </p>
       <h3>変更</h3>
       <p>
-        この方針が変わる場合、新しい版が新しい日付でこのアドレスに掲載されます。収集しているものがないため、変更はいずれも縮小にしかなりません。
+        この方針の更新は、新しい日付とともにこのアドレスに掲載します。バージョン2.1の任意の天気取得については、端末内での健康データ処理とは分けて説明しています。
       </p>
 
       <p class="foot">
