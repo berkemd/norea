@@ -61,10 +61,15 @@
       <h1>Kesse — Privacy</h1>
       <p class="lead">
         Kesse calculates on your iPhone or iPad using the spending totals, goal,
-        budget and savings entries you provide. No bank connection or account is
-        needed. A paired Apple Watch receives a spending summary.
+        budget and savings entries you provide. No bank connection or Kesse
+        account is needed. A paired Apple Watch receives a spending summary.
       </p>
       <p>Updated 4 October 2026.</p>
+      <p>
+        <strong>Version scope:</strong> This page describes version 1.0 and, in
+        sections marked <strong>1.1 preview</strong>, additions being tested.
+        Those additions are not available in version 1.0.
+      </p>
 
       <h2>What is stored on your device</h2>
       <ul>
@@ -87,6 +92,16 @@
         separate.
       </p>
 
+      <h2 id="planning-preview">1.1 preview — additional local records</h2>
+      <p>
+        Dated actions add a name, date, planned contribution, outcome and any
+        recorded contribution to your goal. Named plan options are stored
+        separately in the app's private storage on this device. Each option
+        includes its name, associated goal, monthly budget, target date and
+        creation date. Loading or saving an option does not change confirmed
+        savings; applying it requires your confirmation.
+      </p>
+
       <h2>What the app sends to Apple Watch</h2>
       <p>
         A paired Apple Watch receives the spending comparison, median,
@@ -103,15 +118,34 @@
 
       <h2>Accounts, collection and permissions</h2>
       <p>
-        Kesse has no account or sign-in, bank connection, developer-operated
-        server, cloud AI, analytics or advertising. It does not request access
-        to your contacts, camera, microphone, location or photos. There are no
-        in-app purchases or subscriptions.
+        Kesse does not require an app account or sign-in and has no bank
+        connection, developer-operated server, cloud AI, analytics or
+        advertising. It does not request access to your contacts, camera,
+        microphone, location or photos. Version 1.0 has no in-app purchases or
+        subscriptions.
       </p>
       <p>
         Kesse does not provide cloud sync between separate iPhones or iPads. The
         companion summary transfer to your paired Apple Watch is different from
         syncing the complete ledger or goal plan.
+      </p>
+
+      <h2>1.1 preview — optional purchases and sharing</h2>
+      <p>
+        Saving named plan options uses an optional one-time purchase through
+        Apple. Previewing, applying and sharing options remain free. Core
+        calculations work offline, but purchasing and restoring may require
+        internet access and your Apple Account. The app reads Apple-verified
+        purchase records to determine access to saving options. Kesse does not
+        operate a purchase server or a user account service.
+      </p>
+      <p>
+        Sharing is optional. When you choose Share and a destination, the text
+        summary includes the goal and option names, recorded savings, available
+        monthly budget, current and alternative projected dates, and
+        assumptions. The app or service you choose handles the summary you send.
+        This is separate from the paired Watch's spending summary; it does not
+        automatically upload your ledger or action history.
       </p>
 
       <h2>Backups and deletion</h2>
@@ -128,6 +162,14 @@
         transferred to the Watch. Manage those copies through your device and
         backup settings. There is no developer server copy of your ledger or
         goal to retrieve.
+      </p>
+      <p>
+        <strong>1.1 preview:</strong> You can remove individual saved options.
+        Removing a goal also attempts to remove its saved options. If the
+        separate option archive cannot be read or cleaned up, it is retained and
+        the app reports that cleanup failed; the goal can still be removed.
+        Removing a goal therefore does not guarantee removal of an unreadable
+        option archive or existing device backups.
       </p>
 
       <h2>Support and this website</h2>
@@ -148,8 +190,9 @@
 
       <h2>Changes and contact</h2>
       <p>
-        This page describes the current app's storage and data flow. It will be
-        updated when those practices change.
+        The version 1.0 sections describe its storage and data flow. The 1.1
+        preview sections will be reviewed again before those features become
+        available.
       </p>
       <p>
         Privacy questions:
