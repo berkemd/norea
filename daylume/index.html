@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="apple-itunes-app" content="app-id=6796813768" />
+    <title>Golden Hour Calculator — golden hour and blue hour times today | Daylume</title>
+    <meta name="description" content="Free golden hour calculator: today's morning and evening golden hour, blue hour, sunrise and sunset for 100+ cities. Runs in your browser, no location access. By Daylume for Apple Watch." />
+    <link rel="canonical" href="https://berkemd.github.io/norea/daylume/" />
+    <meta name="theme-color" content="#14110d" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Golden Hour Calculator — golden and blue hour today" />
+    <meta property="og:description" content="Morning and evening golden hour, blue hour, sunrise and sunset for any date. No location access, nothing stored." />
+    <meta property="og:url" content="https://berkemd.github.io/norea/daylume/" />
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"WebApplication","name":"Golden Hour Calculator","url":"https://berkemd.github.io/norea/daylume/","applicationCategory":"PhotographyApplication","operatingSystem":"Any (web browser)","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Morning and evening golden hour, blue hour, sunrise and sunset times for any date and 100+ cities."}
+    </script>
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"What is golden hour?","acceptedAnswer":{"@type":"Answer","text":"Golden hour is the time when the Sun is low in the sky, between about 6 degrees above and 4 degrees below the horizon. Light is warm, soft and directional, which photographers prefer for portraits and landscapes. It happens shortly after sunrise and before sunset."}},
+        {"@type":"Question","name":"What is blue hour?","acceptedAnswer":{"@type":"Answer","text":"Blue hour is the twilight when the Sun is between 4 and 6 degrees below the horizon. The sky turns deep blue and city lights balance with the sky. It comes just before golden hour in the morning and just after it in the evening."}},
+        {"@type":"Question","name":"How long does golden hour last?","acceptedAnswer":{"@type":"Answer","text":"It depends on latitude and season. Near the equator it can be 20 to 30 minutes; at higher latitudes, and in winter, it lasts much longer, and in the far north the Sun may stay inside the golden band all day."}},
+        {"@type":"Question","name":"Does this calculator use my location?","acceptedAnswer":{"@type":"Answer","text":"No. You choose a city. The calculation runs in your browser; no location, cookie or network request is used."}}]}
+    </script>
+    <style>
+      :root { color-scheme: light dark; --paper:#fbf8f2; --ink:#1d1a15; --muted:#5d564b; --line:#e3dccf; --gold:#b86b00; --card:#f3eee4; }
+      @media (prefers-color-scheme: dark) { :root { --paper:#14110d; --ink:#f3ede2; --muted:#b6ad9e; --line:#3a332a; --gold:#ffb340; --card:#1f1a14; } }
+      * { box-sizing: border-box; }
+      body { margin:0; background:var(--paper); color:var(--ink); font:1rem/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+      .wrap { max-width:780px; margin:0 auto; padding:28px 18px 64px; }
+      a { color:var(--gold); text-underline-offset:.18em; }
+      .eyebrow { color:var(--gold); font-weight:600; font-size:.9rem; margin:0; }
+      h1 { font-size:clamp(1.9rem,5vw,2.8rem); line-height:1.12; letter-spacing:-.03em; margin:8px 0 12px; }
+      h2 { font-size:1.3rem; margin:36px 0 8px; }
+      .card { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px; margin:20px 0; }
+      label { display:block; font-size:.9rem; color:var(--muted); margin-bottom:4px; }
+      select, input { font:inherit; color:inherit; background:var(--paper); border:1px solid var(--line); border-radius:10px; padding:10px 12px; width:100%; }
+      .row { display:grid; grid-template-columns:2fr 1fr; gap:12px; }
+      table { width:100%; border-collapse:collapse; margin-top:14px; }
+      th, td { text-align:left; padding:10px 4px; border-bottom:1px solid var(--line); }
+      th { font-weight:500; color:var(--muted); }
+      td { font-variant-numeric:tabular-nums; font-weight:600; }
+      .where { font-size:.85rem; color:var(--muted); margin:10px 0 0; }
+      .cta { display:inline-block; background:var(--ink); color:var(--paper); text-decoration:none; border-radius:12px; padding:12px 18px; font-weight:600; }
+      .muted { color:var(--muted); font-size:.9rem; }
+      @media (max-width:520px) { .row { grid-template-columns:1fr; } }
+    </style>
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <main class="wrap">
+      <p class="eyebrow">Free tool · by Daylume</p>
+      <h1>Golden hour calculator</h1>
+      <p>Morning and evening golden hour, blue hour, sunrise and sunset for any date. Pick a city — nothing about you is used, stored or sent.</p>
+
+      <div class="card" id="calc" hidden>
+        <div class="row">
+          <div><label for="city">City</label><select id="city"></select></div>
+          <div><label for="date">Date</label><input id="date" type="date" /></div>
+        </div>
+        <table aria-live="polite"><tbody id="out"></tbody></table>
+        <p class="where" id="where"></p>
+        <p class="muted" id="note" hidden>On this date the Sun does not rise or does not set here (polar day or night), so some times do not exist.</p>
+      </div>
+      <noscript><p class="card">This calculator needs JavaScript. The Daylume app for Apple Watch shows the same times offline.</p></noscript>
+
+      <div class="card">
+        <h2 style="margin-top:0">Golden hour on your wrist</h2>
+        <p>Daylume puts these times on Apple Watch: a countdown to the next golden or blue hour, a live compass with where the Sun and Moon sit on the horizon, the Moon's phase, and a photo plan for your next shoot. It computes everything on the watch, so it works offline on a hike.</p>
+        <p><a class="cta" href="https://apps.apple.com/app/id6796813768">Get Daylume on the App Store</a></p>
+        <p class="muted">Free download for Apple Watch. Optional Daylume Pro subscription for the compass and Moon screens.</p>
+      </div>
+
+      <h2>What is golden hour?</h2>
+      <p>Golden hour is the time when the Sun is low — between about 6° above and 4° below the horizon. Sunlight crosses more atmosphere, so it turns warm and soft, shadows grow long and faces are lit from the side instead of from above. Photographers plan portraits, landscapes and architecture around it.</p>
+      <h2>What is blue hour?</h2>
+      <p>Blue hour is the deeper twilight when the Sun is 4° to 6° below the horizon. The sky turns an even, saturated blue and street lights balance with the sky, which is why it suits cityscapes and long exposures. In the morning it comes before golden hour; in the evening, after it.</p>
+      <h2>How long does golden hour last?</h2>
+      <p>Near the equator the Sun drops steeply, so golden hour can be 20–30 minutes. At higher latitudes, and in winter, the Sun moves at a shallow angle and golden hour stretches much longer; in the far north in midwinter the Sun may never rise above 6°, so the whole short day is golden.</p>
+      <h2>Tips for shooting in golden hour</h2>
+      <ul>
+        <li>Arrive 20 minutes before the window opens; the best light often comes in the last few minutes before sunset.</li>
+        <li>Put the Sun behind or beside your subject for rim light; expose for the face, not the sky.</li>
+        <li>Stay after sunset — blue hour starts right after golden hour ends.</li>
+        <li>Check which direction the Sun sets; a compass that shows the Sun's azimuth saves a wasted trip.</li>
+      </ul>
+      <h2>How the times are calculated</h2>
+      <p class="muted">Solar position from the NOAA / Meeus formulas, the same thresholds as the Daylume app: blue hour −6° to −4°, golden hour −4° to +6°, sunrise and sunset at −0.833° (refraction and the Sun's radius). Times are for the city centre at sea level and are typically within a minute; hills and buildings change what you actually see.</p>
+      <p class="muted"><a href="../index.html">More from our studio</a></p>
+    </main>
+  </body>
+</html>
