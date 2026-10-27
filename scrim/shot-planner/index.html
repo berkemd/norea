@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>
+      Product Photography Shot List Planner — Free, Printable | Scrim
+    </title>
+    <meta
+      name="description"
+      content="Build a product photography shot list with hero, detail, scale and packaging shots. Record a repeatable setup, print your checklist and reuse it next shoot. Free, no account."
+    />
+    <link
+      rel="canonical"
+      href="https://berkemd.github.io/norea/scrim/shot-planner/"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="A repeatable product shoot starts with a shot plan"
+    />
+    <meta
+      property="og:description"
+      content="A free product photography checklist with reusable camera, light and framing notes."
+    />
+    <meta
+      property="og:url"
+      content="https://berkemd.github.io/norea/scrim/shot-planner/"
+    />
+    <meta name="theme-color" content="#f5f3ed" />
+    <link rel="stylesheet" href="planner.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to planner</a>
+    <header>
+      <a class="brand" href="../">SCRIM</a>
+      <nav aria-label="Main">
+        <a href="#how">How to repeat a shoot</a
+        ><a href="../support.html">Support</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="intro">
+        <p class="eyebrow">FREE TOOL · NO ACCOUNT</p>
+        <h1>Product photography<br />shot list planner.</h1>
+        <p class="lead">
+          Cover the shots you need. Record the setup you want to repeat. Take a
+          clear checklist to your next catalogue shoot.
+        </p>
+        <p>
+          Works with your own camera. This planner does not take or measure
+          photos. Your entries stay in this page; nothing is uploaded or saved
+          automatically. Export a file before closing.
+        </p>
+      </section>
+      <noscript
+        ><p class="notice">
+          Enable JavaScript to build and export a plan. The repeat-shoot guide
+          below also works without JavaScript.
+        </p></noscript
+      >
+      <div class="workspace">
+        <form id="planner" novalidate>
+          <h2>1. Build the shot list</h2>
+          <label for="title">Shoot name</label
+          ><input
+            id="title"
+            name="title"
+            maxlength="100"
+            required
+            placeholder="October ceramics catalogue"
+          />
+          <label for="products">Products — one name or SKU per line</label
+          ><textarea
+            id="products"
+            rows="4"
+            maxlength="1620"
+            required
+            aria-describedby="product-help"
+            placeholder="Blue mug, 250 ml&#10;Sand bowl, medium"
+          ></textarea>
+          <p id="product-help" class="hint">
+            1–20 different products. Up to 80 characters per name.
+          </p>
+          <fieldset>
+            <legend>Shots needed for each product</legend>
+            <div class="choices">
+              <label
+                ><input type="checkbox" name="shot" value="hero" checked />
+                Hero</label
+              ><label
+                ><input type="checkbox" name="shot" value="detail" checked />
+                Detail</label
+              ><label
+                ><input type="checkbox" name="shot" value="scale" />
+                Scale</label
+              ><label
+                ><input type="checkbox" name="shot" value="packaging" />
+                Packaging</label
+              >
+            </div>
+          </fieldset>
+          <h2>2. Leave a setup you can rebuild</h2>
+          <p class="hint">
+            Optional notes. Use your actual settings and measurements; no
+            exposure values are guessed.
+          </p>
+          <label for="camera">Camera &amp; lens</label
+          ><input
+            id="camera"
+            maxlength="200"
+            placeholder="Camera model, lens, focal length"
+          />
+          <label for="position">Camera position &amp; distance</label
+          ><input
+            id="position"
+            maxlength="200"
+            placeholder="Tripod height, angle, distance to product"
+          />
+          <label for="light">Light position &amp; modifier</label
+          ><input
+            id="light"
+            maxlength="200"
+            placeholder="Window or lamp position; diffuser; reflector"
+          />
+          <label for="background">Background &amp; product marks</label
+          ><input
+            id="background"
+            maxlength="200"
+            placeholder="Backdrop, table height, placement marks"
+          />
+          <label for="whiteBalance">White balance reference</label
+          ><input
+            id="whiteBalance"
+            maxlength="200"
+            placeholder="Recorded camera setting or reference used"
+          />
+          <label for="exposure">Exposure notes</label
+          ><input
+            id="exposure"
+            maxlength="200"
+            placeholder="Your tested settings; note any limits"
+          />
+          <label for="crop">Delivery crop &amp; size</label
+          ><input
+            id="crop"
+            maxlength="200"
+            placeholder="Square shop listing; leave space above handle"
+          />
+          <label for="notes">Shoot notes</label
+          ><textarea
+            id="notes"
+            rows="3"
+            maxlength="600"
+            placeholder="Reflections to watch; views still needed"
+          ></textarea>
+          <div class="actions">
+            <button type="submit">Build plan</button
+            ><button type="button" id="example" class="secondary">
+              Try an example
+            </button>
+          </div>
+          <p class="hint">
+            Building a changed plan resets its completion marks. Export your
+            current plan first if you need to keep them.
+          </p>
+          <hr />
+          <h2>Return to a previous shoot</h2>
+          <label for="import">Open a saved shot plan (.json)</label
+          ><input id="import" type="file" accept=".json,application/json" />
+          <div id="import-preview" hidden>
+            <p id="import-description"></p>
+            <button id="apply-import" type="button">
+              Replace with this plan</button
+            ><button id="cancel-import" type="button" class="secondary">
+              Cancel import
+            </button>
+          </div>
+        </form>
+        <section class="output" aria-labelledby="plan-heading">
+          <h2 id="plan-heading" tabindex="-1">Your shoot plan</h2>
+          <p id="empty">
+            Add your products or try the example. Your numbered shot checklist
+            will appear here.
+          </p>
+          <div id="result" hidden>
+            <h3 id="result-title"></h3>
+            <dl id="setup-list"></dl>
+            <p id="result-notes"></p>
+            <p id="progress" aria-live="polite"></p>
+            <ol id="shots"></ol>
+            <div class="actions no-print">
+              <button id="export" type="button">Export reusable file</button
+              ><button id="copy" type="button" class="secondary">
+                Copy checklist</button
+              ><button id="print" type="button" class="secondary">
+                Print / Save PDF
+              </button>
+            </div>
+            <p class="hint no-print">
+              Export includes your setup, products, notes and completion marks.
+              Only share it with people you choose.
+            </p>
+          </div>
+        </section>
+      </div>
+      <p id="status" role="status" aria-live="polite" tabindex="-1"></p>
+      <section id="how" class="guide">
+        <h2>How to repeat a product photo shoot</h2>
+        <div class="guide-grid">
+          <article>
+            <h3>Plan the views</h3>
+            <p>
+              A hero shot shows the whole item. Detail shots explain texture and
+              finish. Scale and packaging views answer different buying
+              questions. Choose the views your listing needs, rather than adding
+              duplicates.
+            </p>
+          </article>
+          <article>
+            <h3>Record the setup</h3>
+            <p>
+              Note the camera height and distance, product position, background
+              and light placement. Keep an actual reference image in your own
+              files. A text plan is a reminder, not a substitute for that image.
+            </p>
+          </article>
+          <article>
+            <h3>Check before the batch</h3>
+            <p>
+              Make a test image with your camera. Compare framing, reflections,
+              colour and crop with your reference. Daylight can change between
+              sessions; matching the notes alone does not guarantee a visual
+              match.
+            </p>
+          </article>
+          <article>
+            <h3>Reuse the plan</h3>
+            <p>
+              Export the JSON file, keep it with your reference image, then open
+              it here next time. Clear the completion marks to start a new batch
+              while retaining the same shot list and setup.
+            </p>
+          </article>
+        </div>
+        <button type="button" id="new-batch" class="secondary" disabled>
+          Clear completion marks for a new batch
+        </button>
+      </section>
+      <section class="app-card">
+        <p class="eyebrow">NEXT: CHECK THE FRAME</p>
+        <h2>Take the plan to your camera.</h2>
+        <p>
+          Scrim for iPhone and iPad checks highlight clipping and horizon tilt
+          in a live preview. It does not capture the photo or set your camera’s
+          exposure. The free app keeps one scene; optional Pro adds saved-scene
+          workflows. This web plan does not import into the app.
+        </p>
+        <a
+          class="button"
+          id="app-link"
+          href="https://apps.apple.com/app/apple-store/id6806308907?pt=127358997&amp;ct=scrim_shotplan_202610&amp;mt=8"
+          >View Scrim on the App Store</a
+        >
+        <p class="hint">
+          Free download. Optional in-app subscription; view local terms in the
+          store.
+        </p>
+      </section>
+    </main>
+    <footer>
+      Made by <a href="../../">Norea</a> ·
+      <a href="../privacy.html">App privacy</a> · This tool uses no analytics,
+      cookies or photo uploads.
+    </footer>
+    <script type="module" src="planner.mjs"></script>
+  </body>
+</html>
