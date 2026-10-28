@@ -59,11 +59,16 @@
   <body>
     <div class="wrap">
       <h1>Scrim — Privacy</h1>
-      <p>Updated 19 October 2026 (version 1.5)</p>
+      <p>
+        Updated 28 October 2026. Studio notes apply to version 1.6.0 or later;
+        check your installed version. Version 1.5.5 does not include Studio.
+      </p>
       <p class="lead">
-        Scrim processes camera and motion measurements on your device. It has no
-        account, advertising or analytics service. It stores local settings, review-request timing and the scenes you choose to save, and can share measurement results with your
-        paired Apple Watch. App Store purchases and reviews use Apple’s
+        Scrim processes camera and motion measurements on your device. Studio
+        also processes the photo you select. Scrim has no account, advertising
+        or analytics service. It stores local settings, review-request timing,
+        saved scenes and Studio projects. Measurement results can be shared with
+        your paired Apple Watch. App Store purchases and reviews use Apple’s
         services.
       </p>
 
@@ -71,16 +76,51 @@
       <p>
         Scrim reads the live camera preview and the device’s gravity vector.
         Preview frames are processed into a brightness histogram on the device;
-        Scrim does not upload frames. A frame is stored only when you choose “Save scene”: one reduced reference image (JPEG) is kept in Scrim’s own storage on this device, never in your photo library. Motion readings come from
-        CoreMotion, not location services. Scrim does not access your photo
-        library, microphone, location, contacts or calendar.
+        Scrim does not upload frames. A frame is stored only when you choose
+        “Save scene”: one reduced reference image (JPEG) is kept in Scrim’s own
+        storage on this device, never in your photo library. Motion readings
+        come from CoreMotion, not location services. Live camera measurement
+        does not read photos from your library. Studio imports only the photo
+        you select, as described below. Scrim does not access your microphone,
+        location, contacts or calendar.
+      </p>
+
+      <h2>Studio photos and exports</h2>
+      <p>
+        Studio imports the image you select with the system Photos or Files
+        picker. The system may download a selected iCloud file. Editing takes
+        place on this device. Studio keeps a private copy of the selected
+        original, edit recipes and created files in the app’s storage. Originals
+        are not overwritten. Scrim does not upload these photos. Device backups
+        may include these private app files.
+      </p>
+      <p>
+        Stored originals retain their metadata, which may include location, EXIF
+        or XMP information. New SDR JPEG and PNG exports are encoded from
+        rendered pixels without copying source location or private metadata.
+        This does not remove metadata from the stored original. You choose which
+        created file to share through the system share sheet. When recovery is
+        available for a retained unfinished import, you may also save or share
+        an exact copy of its original after a metadata warning. That copy may
+        contain location, EXIF or other private metadata. Recovery does not
+        sanitize the original. Successful exports and retained project files
+        remain in private app storage; uninstalling the app removes app storage,
+        while separately shared copies and device backups follow their own
+        retention.
       </p>
 
       <h2>Local storage</h2>
       <p>
         Scrim keeps measurement preferences in the device’s standard settings
         store: the accelerometer-noise assumption, selected lens half field of
-        view and comparison display headroom. When you save a scene, Scrim also stores its name, optional project and notes, the date, and the measured values (horizon and tilt angles, preview brightness, clipped fraction, ISO, shutter time, aperture, white-balance temperature and zoom). Scenes stay on this device (and in your device backup); you can delete any scene in the Scenes tab, and deleting the app removes them. If you share a scene sheet (Scrim Pro), its text and reference image go only to the destination you pick in the iOS share sheet.
+        view and comparison display headroom. When you save a scene, Scrim also
+        stores its name, optional project and notes, the date, and the measured
+        values (horizon and tilt angles, preview brightness, clipped fraction,
+        ISO, shutter time, aperture, white-balance temperature and zoom). Scenes
+        stay on this device (and in your device backup); you can delete any
+        scene in the Scenes tab, and deleting the app removes them. If you share
+        a scene sheet (Scrim Pro), its text and reference image go only to the
+        destination you pick in the iOS share sheet.
       </p>
       <p>
         To space out requests for an App Store review, Scrim also stores a local
@@ -103,12 +143,17 @@
       <h2>App Store purchases and reviews</h2>
       <p>
         From version 1.5, Scrim is free to download. Frame and Light stay free.
-        Scenes, Verticals and Delivery are part of Scrim Pro, an auto-renewing
-        subscription sold through the App Store. People who bought Scrim before
-        version 1.5 keep Verticals and Delivery; Scrim checks this with Apple’s
-        on-device App Store receipt (the app version you first downloaded).
-        Purchases, restoration and verification use Apple’s StoreKit. Scrim does
-        not receive your payment-card details or your Apple Account identity.
+        Scenes, Verticals and Delivery are part of Scrim Pro. Available purchase
+        options and terms are shown by the App Store before confirmation. In
+        version 1.6.0 or later, the Studio sample is free to try; importing,
+        editing and exporting personal photos requires Pro or a previous
+        permanent tools purchase. Existing projects and saved outputs remain
+        accessible when editing access is unavailable. People who bought Scrim
+        before version 1.5 keep Verticals and Delivery; Scrim checks this with
+        Apple’s on-device App Store receipt (the app version you first
+        downloaded). Purchases, restoration and verification use Apple’s
+        StoreKit. Scrim does not receive your payment-card details or your Apple
+        Account identity.
       </p>
       <p>
         Earlier versions: 1.3 offered a one-time in-app unlock, and 1.4 included
