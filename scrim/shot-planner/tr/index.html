@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>
+      Ürün Fotoğrafı Çekim Listesi — Ücretsiz ve Yazdırılabilir | Scrim
+    </title>
+    <meta
+      name="description"
+      content="Ürün fotoğrafları için ana görünüm, ayrıntı, boyut ve ambalaj çekimlerini planla. Kurulumu kaydet, listeyi yazdır ve sonraki çekimde kullan. Ücretsiz; hesap gerekmez."
+    />
+    <link
+      rel="canonical"
+      href="https://berkemd.github.io/norea/scrim/shot-planner/tr/"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Tekrarlanabilir ürün çekimi bir planla başlar"
+    />
+    <meta
+      property="og:description"
+      content="Kamera, ışık ve kadraj notlarını yeniden kullanabileceğin ücretsiz ürün fotoğrafı çekim listesi."
+    />
+    <meta
+      property="og:url"
+      content="https://berkemd.github.io/norea/scrim/shot-planner/tr/"
+    />
+    <meta name="theme-color" content="#f5f3ed" />
+    <link rel="stylesheet" href="../planner.css" />
+
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://berkemd.github.io/norea/scrim/shot-planner/"
+    />
+    <link
+      rel="alternate"
+      hreflang="tr"
+      href="https://berkemd.github.io/norea/scrim/shot-planner/tr/"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://berkemd.github.io/norea/scrim/shot-planner/"
+    />
+  </head>
+  <body>
+    <a class="skip" href="#main">Planlayıcıya geç</a>
+    <header>
+      <a class="brand" href="../../tr/">SCRIM</a>
+      <nav aria-label="Ana menü">
+        <a lang="en" hreflang="en" href="../">English</a>
+        <a href="#how">Aynı çekimi tekrarla</a
+        ><a href="../../support.html">Destek (İngilizce)</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="intro">
+        <p class="eyebrow">ÜCRETSİZ ARAÇ · HESAP GEREKMEZ</p>
+        <h1>Ürün fotoğrafı<br />çekim planlayıcısı.</h1>
+        <p class="lead">
+          Gereken çekimleri belirle. Tekrarlamak istediğin kurulumu kaydet.
+          Sonraki katalog çekimine açık bir kontrol listesiyle git.
+        </p>
+        <p>
+          Kendi kameranla kullan. Bu planlayıcı fotoğraf çekmez veya ölçmez.
+          Girdilerin bu sayfada kalır; hiçbir şey yüklenmez veya otomatik
+          kaydedilmez. Kapatmadan önce dosyanı dışa aktar.
+        </p>
+      </section>
+      <noscript
+        ><p class="notice">
+          Plan oluşturmak ve dışa aktarmak için JavaScript’i etkinleştir.
+          Aşağıdaki tekrar çekim rehberi JavaScript olmadan da okunabilir.
+        </p></noscript
+      >
+      <div class="workspace">
+        <form id="planner" novalidate>
+          <h2>1. Çekim listesini oluştur</h2>
+          <label for="title">Çekim adı</label
+          ><input
+            id="title"
+            name="title"
+            maxlength="100"
+            required
+            placeholder="Ekim seramik kataloğu"
+          />
+          <label for="products"
+            >Ürünler — her satıra bir ad veya stok kodu</label
+          ><textarea
+            id="products"
+            rows="4"
+            maxlength="1620"
+            required
+            aria-describedby="product-help"
+            placeholder="Mavi kupa, 250 ml
+Kum rengi kase, orta"
+          ></textarea>
+          <p id="product-help" class="hint">
+            1–20 farklı ürün. Her ad en fazla 80 karakter.
+          </p>
+          <fieldset>
+            <legend>Her ürün için gereken çekimler</legend>
+            <div class="choices">
+              <label
+                ><input type="checkbox" name="shot" value="hero" checked />Ana
+                görünüm</label
+              ><label
+                ><input
+                  type="checkbox"
+                  name="shot"
+                  value="detail"
+                  checked
+                />Ayrıntı</label
+              ><label
+                ><input type="checkbox" name="shot" value="scale" />Boyut
+                karşılaştırması</label
+              ><label
+                ><input
+                  type="checkbox"
+                  name="shot"
+                  value="packaging"
+                />Ambalaj</label
+              >
+            </div>
+          </fieldset>
+          <details class="setup-notes" id="setup-notes">
+            <summary>
+              Sonraki çekim için kurulum notu ekle (isteğe bağlı)
+            </summary>
+            <p class="hint">
+              Notlar isteğe bağlıdır. Gerçek ayar ve ölçümlerini kullan; pozlama
+              değerleri tahmin edilmez.
+            </p>
+            <label for="camera">Kamera ve objektif</label
+            ><input
+              id="camera"
+              maxlength="200"
+              placeholder="Kamera modeli, objektif, odak uzaklığı"
+            />
+            <label for="position">Kamera konumu ve mesafe</label
+            ><input
+              id="position"
+              maxlength="200"
+              placeholder="Tripod yüksekliği, açı, ürüne uzaklık"
+            />
+            <label for="light">Işığın konumu ve ışık şekillendirici</label
+            ><input
+              id="light"
+              maxlength="200"
+              placeholder="Pencere veya lamba konumu; difüzör; reflektör"
+            />
+            <label for="background">Arka plan ve ürün yerleşim işaretleri</label
+            ><input
+              id="background"
+              maxlength="200"
+              placeholder="Arka fon, masa yüksekliği, yerleşim işaretleri"
+            />
+            <label for="whiteBalance">Beyaz dengesi referansı</label
+            ><input
+              id="whiteBalance"
+              maxlength="200"
+              placeholder="Kayıtlı kamera ayarı veya kullanılan referans"
+            />
+            <label for="exposure">Pozlama notları</label
+            ><input
+              id="exposure"
+              maxlength="200"
+              placeholder="Denediğin ayarlar; varsa sınırları not et"
+            />
+            <label for="crop">Teslim kırpması ve boyutu</label
+            ><input
+              id="crop"
+              maxlength="200"
+              placeholder="Kare mağaza ilanı; kulbun üstünde boşluk bırak"
+            />
+            <label for="notes">Çekim notları</label
+            ><textarea
+              id="notes"
+              rows="3"
+              maxlength="600"
+              placeholder="Dikkat edilecek yansımalar; eksik görünümler"
+            ></textarea>
+          </details>
+          <div class="actions">
+            <button type="submit">Planı oluştur</button
+            ><button type="button" id="example" class="secondary">
+              Örneği dene
+            </button>
+          </div>
+          <p class="hint">
+            Değişen bir planı oluşturmak tamamlanma işaretlerini sıfırlar.
+            İşaretleri korumak istiyorsan önce mevcut planını dışa aktar.
+          </p>
+          <hr />
+          <h2>Önceki çekime dön</h2>
+          <label for="import">Kaydedilmiş çekim planını aç (.json)</label
+          ><input id="import" type="file" accept=".json,application/json" />
+          <div id="import-preview" hidden>
+            <p id="import-description"></p>
+            <button id="apply-import" type="button">Bu planla değiştir</button
+            ><button id="cancel-import" type="button" class="secondary">
+              İçe aktarmayı iptal et
+            </button>
+          </div>
+        </form>
+        <section class="output" aria-labelledby="plan-heading">
+          <h2 id="plan-heading" tabindex="-1">Çekim planın</h2>
+          <p id="empty">
+            Ürünlerini ekle veya örneği dene. Numaralı çekim listen burada
+            görünecek.
+          </p>
+          <div id="result" hidden>
+            <h3 id="result-title"></h3>
+            <aside class="no-print" aria-labelledby="frame-next-heading">
+              <h3 id="frame-next-heading">
+                Sıradaki adım: çekimden önce kadrajı kontrol et
+              </h3>
+              <p>
+                Bu listeyi açık tut. Scrim, iPhone veya iPad’de canlı
+                önizlemedeki patlayan parlak alanları ve ufuk eğimini kontrol
+                edebilir. Bu web planı uygulamaya aktarılamaz.
+              </p>
+              <a
+                class="button"
+                id="result-app-link"
+                href="https://apps.apple.com/app/apple-store/id6806308907?pt=127358997&amp;ct=scrim_shotplan_202610&amp;mt=8"
+                >Kadrajı Scrim ile kontrol et</a
+              >
+              <p class="hint">
+                İndirmesi ücretsizdir. Uygulama içi abonelik isteğe bağlıdır;
+                yerel koşulları App Store’da gör. Sayfadan ayrılmadan önce
+                aşağıdan planını dışa aktar.
+              </p>
+            </aside>
+            <dl id="setup-list"></dl>
+            <p id="result-notes"></p>
+            <p id="progress" aria-live="polite"></p>
+            <ol id="shots"></ol>
+            <div class="actions no-print">
+              <button id="export" type="button">
+                Yeniden kullanılabilir dosyayı indir</button
+              ><button id="copy" type="button" class="secondary">
+                Listeyi kopyala</button
+              ><button id="print" type="button" class="secondary">
+                Yazdır / PDF kaydet
+              </button>
+            </div>
+            <p class="hint no-print">
+              Dışa aktarılan dosya kurulumunu, ürünlerini, notlarını ve
+              tamamlanma işaretlerini içerir. Yalnızca seçtiğin kişilerle
+              paylaş.
+            </p>
+          </div>
+        </section>
+      </div>
+      <p id="status" role="status" aria-live="polite" tabindex="-1"></p>
+      <section id="how" class="guide">
+        <h2>Ürün fotoğrafı çekimini nasıl tekrarlarsın?</h2>
+        <div class="guide-grid">
+          <article>
+            <h3>Görünümleri planla</h3>
+            <p>
+              Ana görünüm ürünün tamamını gösterir. Ayrıntı çekimleri dokuyu ve
+              yüzeyi açıklar. Boyut karşılaştırması ve ambalaj çekimleri farklı
+              satın alma sorularını yanıtlar. Aynı kareyi çoğaltmak yerine
+              ilanın için gerekli görünümleri seç.
+            </p>
+          </article>
+          <article>
+            <h3>Kurulumu kaydet</h3>
+            <p>
+              Kamera yüksekliğini ve mesafesini, ürünün yerini, arka planı ve
+              ışığın konumunu not et. Gerçek bir referans fotoğrafını kendi
+              dosyalarında sakla. Metin planı hatırlatıcıdır; o fotoğrafın
+              yerini tutmaz.
+            </p>
+          </article>
+          <article>
+            <h3>Seriye başlamadan kontrol et</h3>
+            <p>
+              Kameranla bir deneme fotoğrafı çek. Kadrajı, yansımaları, rengi ve
+              kırpmayı referansınla karşılaştır. Gün ışığı çekimler arasında
+              değişebilir; yalnızca notları eşleştirmek aynı görünümü garanti
+              etmez.
+            </p>
+          </article>
+          <article>
+            <h3>Planı yeniden kullan</h3>
+            <p>
+              JSON dosyasını indir, referans fotoğrafınla birlikte sakla ve
+              sonraki çekimde burada aç. Aynı çekim listesini ve kurulumu
+              koruyarak yeni bir seriye başlamak için tamamlanma işaretlerini
+              temizle.
+            </p>
+          </article>
+        </div>
+        <button type="button" id="new-batch" class="secondary" disabled>
+          Yeni seri için tamamlanma işaretlerini temizle
+        </button>
+      </section>
+      <section class="app-card">
+        <p class="eyebrow">SIRADAKİ ADIM: KADRAJI KONTROL ET</p>
+        <h2>Planı kameranın yanına al.</h2>
+        <p>
+          Scrim’in iPhone ve iPad’deki canlı ölçüm görünümü, patlayan parlak
+          alanları ve ufuk eğimini kontrol eder. Bu görünüm fotoğrafı çekmez
+          veya kameranın pozlamasını ayarlamaz. Ücretsiz uygulama bir sahne
+          saklar; isteğe bağlı Pro, kayıtlı sahne iş akışları ekler. Bu web
+          planı uygulamaya aktarılamaz.
+        </p>
+        <a
+          class="button"
+          id="app-link"
+          href="https://apps.apple.com/app/apple-store/id6806308907?pt=127358997&amp;ct=scrim_shotplan_202610&amp;mt=8"
+          >Scrim’i App Store’da gör</a
+        >
+        <p class="hint">
+          İndirmesi ücretsizdir. Uygulama içi abonelik isteğe bağlıdır; yerel
+          koşulları mağazada gör.
+        </p>
+      </section>
+    </main>
+    <footer>
+      Geliştiren:<a href="../../../">Norea</a>·<a href="../../privacy.html"
+        >Uygulama gizliliği (İngilizce)</a
+      >· Bu araç analiz hizmeti, çerez veya fotoğraf yükleme kullanmaz.
+    </footer>
+    <script type="module" src="../planner.mjs"></script>
+  </body>
+</html>

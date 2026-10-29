@@ -1,17 +1,19 @@
-import {
-  validate,
-  parsePlan,
+import { validate, parsePlan, FIELDS, LABELS } from "./model.mjs";
+import { createLocale } from "./locale.mjs";
+const {
+  t,
   cards,
   summary,
-  FIELDS,
-  LABELS,
-} from "./model.mjs";
+  progress: progressText,
+  notes: notesText,
+  importDescription,
+} = createLocale(document.documentElement.lang);
 const $ = (id) => document.getElementById(id);
 let plan = null;
 let pending = null;
 let revision = 0;
 function status(message, error = false) {
-  $("status").textContent = message;
+  $("status").textContent = t(message);
   $("status").classList.toggle("error", error);
 }
 function readForm() {
@@ -42,8 +44,10 @@ function fill(p) {
   $("notes").value = p.notes;
 }
 function progress() {
-  $("progress").textContent =
-    `${plan.completed.length} of ${cards(plan).length} shots marked complete.`;
+  $("progress").textContent = progressText(
+    plan.completed.length,
+    cards(plan).length,
+  );
 }
 function render() {
   $("empty").hidden = true;
@@ -54,13 +58,11 @@ function render() {
   FIELDS.forEach((k, i) => {
     const dt = document.createElement("dt");
     const dd = document.createElement("dd");
-    dt.textContent = LABELS[i];
-    dd.textContent = plan.setup[k] || "Not recorded";
+    dt.textContent = t(LABELS[i]);
+    dd.textContent = plan.setup[k] || t("Not recorded");
     $("setup-list").append(dt, dd);
   });
-  $("result-notes").textContent = plan.notes
-    ? `Shoot notes: ${plan.notes}`
-    : "";
+  $("result-notes").textContent = plan.notes ? notesText(plan.notes) : "";
   $("shots").replaceChildren();
   cards(plan).forEach((c) => {
     const li = document.createElement("li");
@@ -99,10 +101,10 @@ $("planner").addEventListener("submit", (e) => {
   try {
     accept(
       readForm(),
-      "Plan built. Export a file to keep it for your next shoot.",
+      t("Plan built. Export a file to keep it for your next shoot."),
     );
   } catch (error) {
-    status(error.message, true);
+    status(t(error.message), true);
     $("status").focus();
   }
 });
@@ -110,31 +112,33 @@ $("example").addEventListener("click", () => {
   if (
     (plan || $("products").value || $("title").value) &&
     !confirm(
-      "Replace the current entries with an example? Export your existing plan first if needed.",
+      t(
+        "Replace the current entries with an example? Export your existing plan first if needed.",
+      ),
     )
   )
     return;
   const p = {
     version: 1,
-    title: "Ceramics catalogue — example",
-    products: ["Blue mug, 250 ml", "Sand bowl, medium"],
+    title: t("Ceramics catalogue — example"),
+    products: [t("Blue mug, 250 ml"), t("Sand bowl, medium")],
     shots: ["hero", "detail", "scale"],
     setup: {
-      camera: "Your camera and lens",
-      position: "Record measured tripod height and distance",
-      light: "Record window direction and reflector placement",
-      background: "Neutral backdrop; mark product centre",
-      whiteBalance: "Record the setting used for the reference image",
-      exposure: "Record your tested camera settings",
-      crop: "Square listing; leave space around the item",
+      camera: t("Your camera and lens"),
+      position: t("Record measured tripod height and distance"),
+      light: t("Record window direction and reflector placement"),
+      background: t("Neutral backdrop; mark product centre"),
+      whiteBalance: t("Record the setting used for the reference image"),
+      exposure: t("Record your tested camera settings"),
+      crop: t("Square listing; leave space around the item"),
     },
-    notes: "Example only. Replace these notes with your actual setup.",
+    notes: t("Example only. Replace these notes with your actual setup."),
     completed: [],
   };
   fill(p);
   accept(
     validate(p),
-    "Example loaded. Replace it with your own products and settings.",
+    t("Example loaded. Replace it with your own products and settings."),
   );
 });
 $("import").addEventListener("change", async () => {
@@ -145,21 +149,24 @@ $("import").addEventListener("change", async () => {
   const currentRevision = revision;
   try {
     if (file.size > 32768)
-      throw Error("Choose a shot plan file smaller than 32 KB.");
+      throw Error(t("Choose a shot plan file smaller than 32 KB."));
     const candidate = parsePlan(await file.text());
     if (revision !== currentRevision)
       throw Error(
-        "The plan changed while the file was opening. Choose the file again.",
+        t(
+          "The plan changed while the file was opening. Choose the file again.",
+        ),
       );
     pending = candidate;
-    $("import-description").textContent =
-      `Open “${candidate.title}”: ${candidate.products.length} products, ${cards(candidate).length} shots. Your current entries will be replaced only when you confirm.`;
+    $("import-description").textContent = importDescription(candidate);
     $("import-preview").hidden = false;
     status(
-      "Saved plan checked. Confirm below the file field to replace your entries.",
+      t(
+        "Saved plan checked. Confirm below the file field to replace your entries.",
+      ),
     );
   } catch (error) {
-    status(`${error.message} Current entries are unchanged.`, true);
+    status(`${t(error.message)} ${t("Current entries are unchanged.")}`, true);
   } finally {
     $("import").value = "";
   }
@@ -170,12 +177,12 @@ $("apply-import").addEventListener("click", () => {
   pending = null;
   $("import-preview").hidden = true;
   fill(p);
-  accept(p, "Saved plan opened, including its completion marks.");
+  accept(p, t("Saved plan opened, including its completion marks."));
 });
 $("cancel-import").addEventListener("click", () => {
   pending = null;
   $("import-preview").hidden = true;
-  status("Import cancelled. Current entries are unchanged.");
+  status(t("Import cancelled. Current entries are unchanged."));
 });
 $("planner").addEventListener("input", () => {
   revision++;
@@ -185,18 +192,18 @@ $("planner").addEventListener("input", () => {
   }
   if (plan)
     status(
-      "Entries changed. Build the plan again before exporting these edits.",
+      t("Entries changed. Build the plan again before exporting these edits."),
     );
 });
 function requireCurrent() {
-  if (!plan) throw Error("Build a plan first.");
+  if (!plan) throw Error(t("Build a plan first."));
   const form = readForm();
   if (
     JSON.stringify({ ...form, completed: plan.completed }) !==
     JSON.stringify(plan)
   )
     throw Error(
-      "Entries changed. Build the plan again before exporting these edits.",
+      t("Entries changed. Build the plan again before exporting these edits."),
     );
 }
 $("export").addEventListener("click", () => {
@@ -215,20 +222,23 @@ $("export").addEventListener("click", () => {
     a.remove();
     setTimeout(() => URL.revokeObjectURL(url), 60000);
     status(
-      "Download prepared. Keep the JSON file with your reference image for next time.",
+      t(
+        "Download prepared. Keep the JSON file with your reference image for next time.",
+      ),
     );
   } catch (e) {
-    status(e.message, true);
+    status(t(e.message), true);
   }
 });
 $("copy").addEventListener("click", async () => {
   try {
     requireCurrent();
     await navigator.clipboard.writeText(summary(plan));
-    status("Checklist copied. Paste it into your own notes or message.");
+    status(t("Checklist copied. Paste it into your own notes or message."));
   } catch (e) {
     status(
-      e.message || "Copy failed. Export the file or print your plan instead.",
+      e.message ||
+        t("Copy failed. Export the file or print your plan instead."),
       true,
     );
   }
@@ -238,7 +248,7 @@ $("print").addEventListener("click", () => {
     requireCurrent();
     window.print();
   } catch (e) {
-    status(e.message, true);
+    status(t(e.message), true);
   }
 });
 $("new-batch").addEventListener("click", () => {
@@ -246,7 +256,7 @@ $("new-batch").addEventListener("click", () => {
   plan.completed = [];
   revision++;
   render();
-  status("Completion marks cleared. The shot list and setup are unchanged.");
+  status(t("Completion marks cleared. The shot list and setup are unchanged."));
 });
 window.addEventListener("beforeunload", (e) => {
   if (plan || $("products").value || $("title").value) {
