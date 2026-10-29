@@ -100,60 +100,62 @@
               >
             </div>
           </fieldset>
-          <h2>2. Leave a setup you can rebuild</h2>
-          <p class="hint">
-            Optional notes. Use your actual settings and measurements; no
-            exposure values are guessed.
-          </p>
-          <label for="camera">Camera &amp; lens</label
-          ><input
-            id="camera"
-            maxlength="200"
-            placeholder="Camera model, lens, focal length"
-          />
-          <label for="position">Camera position &amp; distance</label
-          ><input
-            id="position"
-            maxlength="200"
-            placeholder="Tripod height, angle, distance to product"
-          />
-          <label for="light">Light position &amp; modifier</label
-          ><input
-            id="light"
-            maxlength="200"
-            placeholder="Window or lamp position; diffuser; reflector"
-          />
-          <label for="background">Background &amp; product marks</label
-          ><input
-            id="background"
-            maxlength="200"
-            placeholder="Backdrop, table height, placement marks"
-          />
-          <label for="whiteBalance">White balance reference</label
-          ><input
-            id="whiteBalance"
-            maxlength="200"
-            placeholder="Recorded camera setting or reference used"
-          />
-          <label for="exposure">Exposure notes</label
-          ><input
-            id="exposure"
-            maxlength="200"
-            placeholder="Your tested settings; note any limits"
-          />
-          <label for="crop">Delivery crop &amp; size</label
-          ><input
-            id="crop"
-            maxlength="200"
-            placeholder="Square shop listing; leave space above handle"
-          />
-          <label for="notes">Shoot notes</label
-          ><textarea
-            id="notes"
-            rows="3"
-            maxlength="600"
-            placeholder="Reflections to watch; views still needed"
-          ></textarea>
+          <details class="setup-notes" id="setup-notes">
+            <summary>Add setup notes for your next shoot (optional)</summary>
+            <p class="hint">
+              Optional notes. Use your actual settings and measurements; no
+              exposure values are guessed.
+            </p>
+            <label for="camera">Camera &amp; lens</label
+            ><input
+              id="camera"
+              maxlength="200"
+              placeholder="Camera model, lens, focal length"
+            />
+            <label for="position">Camera position &amp; distance</label
+            ><input
+              id="position"
+              maxlength="200"
+              placeholder="Tripod height, angle, distance to product"
+            />
+            <label for="light">Light position &amp; modifier</label
+            ><input
+              id="light"
+              maxlength="200"
+              placeholder="Window or lamp position; diffuser; reflector"
+            />
+            <label for="background">Background &amp; product marks</label
+            ><input
+              id="background"
+              maxlength="200"
+              placeholder="Backdrop, table height, placement marks"
+            />
+            <label for="whiteBalance">White balance reference</label
+            ><input
+              id="whiteBalance"
+              maxlength="200"
+              placeholder="Recorded camera setting or reference used"
+            />
+            <label for="exposure">Exposure notes</label
+            ><input
+              id="exposure"
+              maxlength="200"
+              placeholder="Your tested settings; note any limits"
+            />
+            <label for="crop">Delivery crop &amp; size</label
+            ><input
+              id="crop"
+              maxlength="200"
+              placeholder="Square shop listing; leave space above handle"
+            />
+            <label for="notes">Shoot notes</label
+            ><textarea
+              id="notes"
+              rows="3"
+              maxlength="600"
+              placeholder="Reflections to watch; views still needed"
+            ></textarea>
+          </details>
           <div class="actions">
             <button type="submit">Build plan</button
             ><button type="button" id="example" class="secondary">
