@@ -1,56 +1,191 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hodie — Privacy</title>
-<meta name="description" content="Hodie reads a start time and an end time. Titles, participants, locations and notes are never read. No network, no account, no analytics. Each line is enforced by a build gate.">
-<style>body{background:#f8f7f3;color:#1a1916;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0}
-.wrap{max-width:660px;margin:0 auto;padding:64px 24px}
-h1{font-size:1.6rem;margin:0 0 6px}
-h2{font-size:1.05rem;margin:34px 0 6px}
-p,li{color:#4d4c46}
-a{color:#3a566b}
-code{background:#eeece5;padding:1px 5px;border-radius:3px;font-size:.88em}
-.lang{border-top:1px solid #e2dfd6;margin-top:40px;padding-top:10px;font-size:.86rem}
-.lead{font-size:1.02rem;color:#333}</style></head><body><div class="wrap">
-<h1>Hodie — Privacy</h1>
-<p class="lead">Hodie collects nothing, stores nothing about your calendar, and sends nothing anywhere. This page says exactly what that means and how each sentence is checked.</p>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hodie — Privacy</title>
+    <meta
+      name="description"
+      content="Hodie 2.0 privacy: local planning and drafts, optional time-only calendar import, a timestamped paired Watch summary, and Apple StoreKit purchases."
+    />
+    <style>
+      body {
+        background: #f8f7f3;
+        color: #1a1916;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        line-height: 1.7;
+        margin: 0;
+      }
+      .wrap {
+        max-width: 660px;
+        margin: 0 auto;
+        padding: 64px 24px;
+      }
+      h1 {
+        font-size: 1.6rem;
+        margin: 0 0 6px;
+      }
+      h2 {
+        font-size: 1.05rem;
+        margin: 34px 0 6px;
+      }
+      p,
+      li {
+        color: #4d4c46;
+      }
+      a {
+        color: #3a566b;
+      }
+      code {
+        background: #eeece5;
+        padding: 1px 5px;
+        border-radius: 3px;
+        font-size: 0.88em;
+      }
+      .lang {
+        border-top: 1px solid #e2dfd6;
+        margin-top: 40px;
+        padding-top: 10px;
+        font-size: 0.86rem;
+      }
+      .lead {
+        font-size: 1.02rem;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <main>
+        <h1>Hodie — Privacy</h1>
+        <p class="lead">
+          No Hodie account, advertising or analytics. Planning inputs stay on
+          your device. Optional calendar import and the paired Watch summary are
+          described separately below.
+        </p>
+        <p>
+          <strong>Version scope:</strong> This policy describes the Hodie 2.0
+          update being prepared for review, dated 31 October 2026. It does not
+          announce availability. Earlier installed versions may have different
+          features; check your installed version and the controls it provides.
+        </p>
 
-<h2>What Hodie reads</h2>
-<p>The start time and the end time of your calendar events, over today and the preceding 28 days. From those it derives three things: today’s busy intervals, how many minutes each past day carried, and how many entries each past day held. Nothing else about an event is read.</p>
-<p>The title is not read. Neither are the participants, the location, the notes, the URL, the organiser, or the name of the calendar the event lives in. This is not “read and discarded” — those fields are never accessed, and a build gate scans every file that touches an event for exactly those reads. Data that was never collected cannot leak.</p>
-<p>All-day events are skipped entirely. A birthday or a public holiday is not nine hours of work, and counting it as such would turn every one of those days into a day with no room.</p>
+        <h2>Manual planning and saved records</h2>
+        <p>
+          You can enter a time window, a task duration, transition time and busy
+          intervals manually. You decide whether your commitments are fully
+          recorded; an empty calendar is not treated as proof of a free day.
+          Calculations run on the device.
+        </p>
+        <p>
+          Saving a manual draft is an explicit action. The draft stores the
+          entered times and durations in a separate local file. Reopening it
+          requires a fresh confirmation that the commitments are complete. The
+          stored confirmation is not reused as a current decision. Existing
+          settings and practice records are kept separately; the update does not
+          erase them or reinterpret a previous minimum-block setting as
+          transition time.
+        </p>
+        <p>
+          You can explicitly delete a saved manual draft in Hodie. This does not
+          erase other records or the inputs currently on screen. Local files may
+          be included in backups according to your Apple device settings; Hodie
+          does not operate a cloud backup service.
+        </p>
 
-<h2>What Hodie stores</h2>
-<p>Four settings, on this device, in the standard user-defaults store: the shortest block you consider usable, how much work you want to fit, and the start and end of the window you count as your day. No events, no measurements, no history — the calendar is read fresh each time and released.</p>
+        <h2>Optional calendar access</h2>
+        <p>
+          Calendar import is optional. You can decline or revoke access in iOS
+          Settings and continue planning manually. Hodie requests access only
+          when you choose to import calendar times.
+        </p>
+        <p>
+          Within your selected window, at most 48 hours, the import uses event
+          start/end times and availability/canceled status. Titles,
+          participants, locations, notes, URLs and calendar names are not
+          accessed by the import code. Hodie does not create, move, edit or
+          delete calendar events.
+        </p>
+        <p>
+          Events explicitly marked free or canceled are excluded. Busy all-day
+          events can occupy the selected window. Overlapping busy times are
+          counted once, including events that started before the window.
+          Calendar import is not a complete record of your responsibilities:
+          travel, care and other missing commitments still need your input.
+        </p>
+        <p>
+          Imported ranges are kept in the current planning screen. If you
+          explicitly save that plan as a manual draft, its time ranges are
+          included without event titles or identifiers. Reopening the draft does
+          not restore a live calendar connection. Detected calendar changes, a
+          changed time window or returning to the app require re-importing or
+          removing imported ranges before using them for a new decision.
+        </p>
 
-<h2>What leaves the device</h2>
-<p>One thing, and only if you have a paired Apple Watch with the Hodie watch app open: today’s answer. That is a small set of numbers — the verdict, its reason, and the budget — sent over Apple’s own device link between your phone and your watch. Nothing about any event crosses, and nothing reaches Apple, us, or any server. If you have no watch, nothing leaves the device at all.</p>
+        <h2>Paired Apple Watch</h2>
+        <p>
+          A short calculation summary can be transferred through Apple
+          WatchConnectivity to your paired Apple Watch: the conditional answer,
+          a bounded reason, requested duration and summary time metrics. It
+          includes a calculation time and a short validity period. Event titles,
+          participants, locations, notes and individual busy intervals are not
+          included.
+        </p>
+        <p>
+          The Watch shows when the calculation was made. A background device
+          transfer can arrive without a live interactive connection; the
+          displayed answer is a recent phone calculation, not proof of the
+          calendar’s current state. Expired or undated answers are not
+          displayed. Changing the phone inputs invalidates the previous summary.
+        </p>
 
-<h2>What Hodie does not do</h2>
-<ul>
-<li>No network requests of any kind. There is no server to talk to.</li>
-<li>No analytics, no crash reporting, no identifiers, no advertising, no tracking.</li>
-<li>No account, no sign-in, no email address.</li>
-<li>No location and no contacts. Neither framework is linked.</li>
-<li>No reminders, no photo library, no microphone, no camera.</li>
-<li>No in-app purchases and no subscription, so no purchase data.</li>
-<li>No writing to your calendar. Hodie never creates, moves or deletes an event.</li>
-</ul>
+        <h2>Purchases and Apple services</h2>
+        <p>
+          Hodie uses Apple StoreKit for the purchase options shown in the
+          installed app and for restoring eligible purchases. Apple processes
+          payment and account information under its own policies. Hodie does not
+          receive payment-card details and has no purchase-validation server of
+          its own. Existing purchase and restore rights are not changed by this
+          planning update.
+        </p>
+        <p>
+          Hodie has no own server, analytics SDK, advertising identifiers or
+          sign-in. This does not mean the operating system makes no connections:
+          Apple’s StoreKit, paired-device communication, backups and diagnostics
+          follow your Apple settings and Apple’s policies.
+        </p>
 
-<h2>The one permission</h2>
-<p>Calendar. Without it there is nothing to measure. iOS asks you once and you can withdraw it at any time in Settings; Hodie then simply has nothing to measure and says so.</p>
+        <h2>Access and controls</h2>
+        <p>
+          The planning update does not request location, contacts, reminders,
+          photo-library, microphone or camera access. Calendar access is
+          optional and read-only in Hodie’s implementation. You can continue
+          without it.
+        </p>
+        <p>
+          Build checks and targeted tests help verify these boundaries. They do
+          not constitute a guarantee that software can never contain a defect.
+          If behavior differs from this description, contact us with the
+          installed version; please avoid sending calendar contents or other
+          sensitive records.
+        </p>
 
-<h2>How these sentences are checked</h2>
-<p>Each claim above corresponds to a check that runs on every build and fails the build if the claim stops being true. The source is scanned with comments stripped for <code>URLSession</code>, <code>URLRequest</code>, <code>CFNetwork</code>, <code>NWConnection</code>, <code>CLLocationManager</code> and <code>StoreKit</code>. Separately, any file that mentions <code>EKEvent</code> is scanned for reads of <code>title</code>, <code>notes</code>, <code>location</code>, <code>url</code>, <code>attendees</code>, <code>organizer</code> or the structured-location and identifier fields, and finding one fails the build. The permission keys that must be absent are checked for absence; the calendar key that must be present is checked for presence. A privacy promise nobody measures is worse than none at all, because people rely on it.</p>
+        <h2>Contact and changes</h2>
+        <p>
+          If you choose to email support, your message and any information you
+          include are received at
+          <a href="mailto:hello@norea.studio">hello@norea.studio</a>. Do not
+          include payment-card details or private event contents. This policy
+          will be updated when relevant product behavior changes.
+        </p>
+      </main>
 
-<h2>Children</h2>
-<p>Hodie is rated 4+ and contains no user-generated content, no messaging, no web browsing and no advertising. It has nothing to collect from anyone, of any age.</p>
-
-<h2>Changes</h2>
-<p>If any of this ever changes, this page changes with the release that changes it, and the corresponding build gate changes too — they cannot drift apart.</p>
-
-<h2>Contact</h2>
-<p>Questions: <a href="mailto:hello@norea.studio">hello@norea.studio</a>.</p>
-
-<div class="lang"><a href="/">norea.studio</a> · <a href="/hodie/">Hodie</a> · <a href="/hodie/support">Support</a></div>
-</div></body></html>
+      <div class="lang">
+        <a href="/">norea.studio</a> · <a href="/hodie/">Hodie</a> ·
+        <a href="/hodie/support">Support</a>
+      </div>
+    </div>
+  </body>
+</html>
