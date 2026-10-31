@@ -152,7 +152,7 @@
     </style>
   </head>
   <body>
-    <div class="wrap">
+    <main class="wrap">
       <svg class="mark" viewBox="0 0 1024 1024" role="img" aria-label="Eidos">
         <g fill="none" stroke="#65396F" stroke-opacity=".34" stroke-width="16">
           <circle cx="512" cy="398" r="380" />
@@ -170,7 +170,9 @@
 
       <h1>Eidos — Privacy Policy</h1>
       <p class="tag">
-        Last updated 24 October 2026. Separate sections cover the browser worksheet and the Eidos app (version 1.1 and later).
+        Last updated 31 October 2026. Separate sections cover the browser
+        worksheet, the released Eidos app, and a planned update clearly marked
+        below.
       </p>
 
       <h2>The browser worksheet</h2>
@@ -199,26 +201,65 @@
       <div class="kutu">
         <p>
           <strong
-            >The Eidos app has no account, no server and no analytics. It makes no network requests of its own and requests no device permission. The only outside service involved is Apple's App Store, if you choose to buy Eidos Pro.</strong
+            >The Eidos app has no account, no server and no analytics. It makes
+            no network requests of its own and requests no device permission.
+            The only outside service involved is Apple's App Store, if you
+            choose to buy Eidos Pro.</strong
           >
         </p>
       </div>
 
       <h2>What Eidos stores, and where</h2>
       <p>
-        Everything you enter stays in the app's own storage on your device:
-        your work topics, examples, your contribution and notes, links,
-        dates, the purpose you set for a summary, interview answers and the
-        legacy model settings. PDFs you attach are chosen with the system
-        file picker and copied into the app's container; Eidos never reads
-        other files. Each time you share a summary, Eidos keeps a private
-        history of when it happened, how many examples and which fields were
-        included — never who received it.
+        Everything you enter stays in the app's own storage on your device: your
+        work topics, examples, your contribution and notes, links, dates, the
+        purpose you set for a summary, interview answers and the legacy model
+        settings. PDFs you attach are chosen with the system file picker and
+        copied into the app's container; Eidos never reads other files. Each
+        time you share a summary, Eidos keeps a private history of when it
+        happened, how many examples and which fields were included — never who
+        received it.
       </p>
+
+      <h2 id="planned-update">
+        Planned update: private drafts and saved outputs
+      </h2>
+      <p>
+        The following features are being prepared and are not yet included in
+        the App Store release. This section describes their local data use; it
+        does not announce their availability.
+      </p>
+      <ul>
+        <li>
+          A sharing draft stores a private name, references to the examples you
+          selected, field choices, timestamps and revisions in the app's local
+          database. The private draft name is not part of the shared text.
+        </li>
+        <li>
+          Saving an output version keeps the exact preview text you explicitly
+          selected, together with its draft and selection references and date.
+          Updating an example, changing language or improving interface wording
+          does not silently rewrite that saved text. A separate current preview
+          lets you review differences before preparing another draft.
+        </li>
+        <li>
+          The app keeps local activity for each saved output, such as when a
+          share sheet was opened, completed or dismissed. It does not store a
+          recipient or establish delivery or a read receipt.
+        </li>
+        <li>
+          Deleting a draft or an included example also removes its retained
+          output versions from the app's local record. Erase targets your local
+          work record, including drafts, saved outputs and activity. If saving
+          fails, use the displayed retry action before closing the app. External
+          copies and device backups remain outside this action's control.
+        </li>
+      </ul>
 
       <h2>Device permissions</h2>
       <p>
-        None are requested. Attaching a PDF uses the system file picker, which needs no permission. Eidos contains no usage-description strings for
+        None are requested. Attaching a PDF uses the system file picker, which
+        needs no permission. Eidos contains no usage-description strings for
         camera, microphone, location, contacts, photos, health, or tracking,
         because it uses none of those. There is no advertising identifier and no
         App Tracking Transparency prompt, because there is nothing to track.
@@ -237,7 +278,9 @@
 
       <h2>What is sent anywhere</h2>
       <p>
-        Nothing, except what you share yourself: a summary leaves the app only when you send it through the iOS share sheet, to the app and person you choose. Eidos contains no analytics SDK, no crash reporter, no
+        Nothing, except what you share yourself: a summary leaves the app only
+        when you send it through the iOS share sheet, to the app and person you
+        choose. Eidos contains no analytics SDK, no crash reporter, no
         advertising identifier, and no code that contacts Norea Studio or any
         third party. The composition and judging that the app performs run
         on-device and deterministically; no model provider is contacted and no
@@ -251,14 +294,22 @@
 
       <h2>Purchases</h2>
       <p>
-        Eidos Pro is an optional auto-renewing subscription (monthly or
-        yearly). Apple processes the payment through your Apple Account;
-        Norea Studio never sees your payment details, name or Apple ID. The
-        app only learns, from Apple's signed transaction data checked on the
-        device, whether Pro is active. Apple provides developers with sales
-        reports that do not identify you. Manage or cancel the subscription
-        in your Apple Account settings. If Pro ends, nothing you saved is
-        hidden, locked or deleted.
+        Eidos Pro is an optional auto-renewing subscription (monthly or yearly).
+        Apple processes the payment through your Apple Account; Norea Studio
+        never sees your payment details, name or Apple ID. The app only learns,
+        from Apple's signed transaction data checked on the device, whether Pro
+        is active. Apple provides developers with sales reports that do not
+        identify you. Manage or cancel the subscription in your Apple Account
+        settings. If Pro ends, nothing you saved is hidden, locked or deleted.
+      </p>
+
+      <p>
+        Where Apple makes it available, Eidos Pro can also be offered as a
+        one-time Lifetime purchase. The offer and price come from the App Store.
+        Restore Purchases checks existing eligible purchases; erasing local work
+        does not cancel a subscription or erase Apple's purchase history. If Pro
+        is no longer active, existing work remains readable, editable and
+        shareable; free limits apply when adding new items.
       </p>
 
       <h2>Personas</h2>
@@ -303,6 +354,6 @@
         Norea Studio ·
         <a href="mailto:brkekahraman@icloud.com">brkekahraman@icloud.com</a>
       </footer>
-    </div>
+    </main>
   </body>
 </html>
