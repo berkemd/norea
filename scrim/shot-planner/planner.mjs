@@ -216,10 +216,18 @@ $("planner").addEventListener("input", () => {
 function requireCurrent() {
   if (!plan) throw Error(t("Build a plan first."));
   const form = readForm();
-  if (
-    JSON.stringify({ ...form, shots: [...form.shots].sort(), completed: plan.completed }) !==
-    JSON.stringify({ ...plan, shots: [...plan.shots].sort() })
-  )
+  const visiblePlan = {
+    ...plan,
+    // A textarea presents CRLF and CR as LF after an import.
+    notes: plan.notes.replace(/\r\n?/g, "\n"),
+    shots: [...plan.shots].sort(),
+  };
+  const visibleForm = {
+    ...form,
+    shots: [...form.shots].sort(),
+    completed: plan.completed,
+  };
+  if (JSON.stringify(visibleForm) !== JSON.stringify(visiblePlan))
     throw Error(
       t("Entries changed. Build the plan again before exporting these edits."),
     );
