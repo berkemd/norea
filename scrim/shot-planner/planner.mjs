@@ -281,7 +281,8 @@ $("print").addEventListener("click", () => {
   }
 });
 $("new-batch").addEventListener("click", () => {
-  if (!plan) return;
+  if (!plan?.completed.length) return;
+  if (!confirm(t("Clear all completion marks for a new batch?"))) return;
   plan.completed = [];
   revision++;
   render();
