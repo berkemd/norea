@@ -282,9 +282,28 @@
             </p>
           </article>
         </div>
-        <button type="button" id="new-batch" class="secondary" disabled>
+        <button
+          type="button"
+          id="new-batch"
+          class="secondary"
+          aria-controls="new-batch-confirmation"
+          aria-expanded="false"
+          disabled
+        >
           Clear completion marks for a new batch
         </button>
+        <div
+          id="new-batch-confirmation"
+          role="group"
+          aria-labelledby="new-batch-question"
+          hidden
+        >
+          <p id="new-batch-question">Clear all completion marks for a new batch?</p>
+          <div class="actions">
+            <button type="button" id="keep-batch-marks" class="secondary">Keep marks</button>
+            <button type="button" id="clear-batch-marks">Clear marks</button>
+          </div>
+        </div>
       </section>
       <section class="app-card">
         <p class="eyebrow">NEXT: CHECK THE FRAME</p>

@@ -169,8 +169,6 @@ const TR = {
     "Liste kopyalandı. Kendi notlarına veya mesajına yapıştır.",
   "Copy failed. Export the file or print your plan instead.":
     "Kopyalanamadı. Bunun yerine dosyayı indir veya planı yazdır.",
-  "Clear all completion marks for a new batch?":
-    "Yeni parti için tüm tamamlanma işaretleri temizlensin mi?",
   "Completion marks cleared. The shot list and setup are unchanged.":
     "Tamamlanma işaretleri temizlendi. Çekim listesi ve kurulum değişmedi.",
   "Use a Scrim shot plan version 1 file.":
