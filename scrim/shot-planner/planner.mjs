@@ -217,8 +217,8 @@ function requireCurrent() {
   if (!plan) throw Error(t("Build a plan first."));
   const form = readForm();
   if (
-    JSON.stringify({ ...form, completed: plan.completed }) !==
-    JSON.stringify(plan)
+    JSON.stringify({ ...form, shots: [...form.shots].sort(), completed: plan.completed }) !==
+    JSON.stringify({ ...plan, shots: [...plan.shots].sort() })
   )
     throw Error(
       t("Entries changed. Build the plan again before exporting these edits."),
