@@ -12,6 +12,19 @@ const $ = (id) => document.getElementById(id);
 let plan = null;
 let pending = null;
 let revision = 0;
+let importSequence = 0;
+
+function hasDraft() {
+  return (
+    plan !== null ||
+    ["title", "products", "notes", ...FIELDS].some(
+      (id) => $(id).value !== $(id).defaultValue,
+    ) ||
+    [...document.querySelectorAll("[name=shot]")].some(
+      (shot) => shot.checked !== shot.defaultChecked,
+    )
+  );
+}
 function status(message, error = false) {
   $("status").textContent = t(message);
   $("status").classList.toggle("error", error);
@@ -110,7 +123,7 @@ $("planner").addEventListener("submit", (e) => {
 });
 $("example").addEventListener("click", () => {
   if (
-    (plan || $("products").value || $("title").value) &&
+    hasDraft() &&
     !confirm(
       t(
         "Replace the current entries with an example? Export your existing plan first if needed.",
@@ -142,6 +155,7 @@ $("example").addEventListener("click", () => {
   );
 });
 $("import").addEventListener("change", async () => {
+  const sequence = ++importSequence;
   const file = $("import").files[0];
   pending = null;
   $("import-preview").hidden = true;
@@ -150,7 +164,9 @@ $("import").addEventListener("change", async () => {
   try {
     if (file.size > 32768)
       throw Error(t("Choose a shot plan file smaller than 32 KB."));
-    const candidate = parsePlan(await file.text());
+    const text = await file.text();
+    if (sequence !== importSequence) return;
+    const candidate = parsePlan(text);
     if (revision !== currentRevision)
       throw Error(
         t(
@@ -166,9 +182,11 @@ $("import").addEventListener("change", async () => {
       ),
     );
   } catch (error) {
-    status(`${t(error.message)} ${t("Current entries are unchanged.")}`, true);
+    if (sequence === importSequence) {
+      status(`${t(error.message)} ${t("Current entries are unchanged.")}`, true);
+    }
   } finally {
-    $("import").value = "";
+    if (sequence === importSequence) $("import").value = "";
   }
 });
 $("apply-import").addEventListener("click", () => {
@@ -260,7 +278,7 @@ $("new-batch").addEventListener("click", () => {
   status(t("Completion marks cleared. The shot list and setup are unchanged."));
 });
 window.addEventListener("beforeunload", (e) => {
-  if (plan || $("products").value || $("title").value) {
+  if (hasDraft()) {
     e.preventDefault();
     e.returnValue = "";
   }
