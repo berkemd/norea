@@ -117,8 +117,9 @@ function accept(p, message) {
 $("planner").addEventListener("submit", (e) => {
   e.preventDefault();
   try {
+    const form = readForm();
     accept(
-      readForm(),
+      plan && matchesForm(form, plan) ? plan : form,
       t("Plan built. Export a file to keep it for your next shoot."),
     );
   } catch (error) {
@@ -218,21 +219,23 @@ $("planner").addEventListener("input", () => {
       t("Entries changed. Build the plan again before exporting these edits."),
     );
 });
-function requireCurrent() {
-  if (!plan) throw Error(t("Build a plan first."));
-  const form = readForm();
+function matchesForm(form, saved) {
   const visiblePlan = {
-    ...plan,
+    ...saved,
     // A textarea presents CRLF and CR as LF after an import.
-    notes: plan.notes.replace(/\r\n?/g, "\n"),
-    shots: [...plan.shots].sort(),
+    notes: saved.notes.replace(/\r\n?/g, "\n"),
+    shots: [...saved.shots].sort(),
   };
   const visibleForm = {
     ...form,
     shots: [...form.shots].sort(),
-    completed: plan.completed,
+    completed: saved.completed,
   };
-  if (JSON.stringify(visibleForm) !== JSON.stringify(visiblePlan))
+  return JSON.stringify(visibleForm) === JSON.stringify(visiblePlan);
+}
+function requireCurrent() {
+  if (!plan) throw Error(t("Build a plan first."));
+  if (!matchesForm(readForm(), plan))
     throw Error(
       t("Entries changed. Build the plan again before exporting these edits."),
     );
