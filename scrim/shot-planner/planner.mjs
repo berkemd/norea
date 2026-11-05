@@ -103,6 +103,8 @@ function render() {
   progress();
 }
 function accept(p, message) {
+  pending = null;
+  $("import-preview").hidden = true;
   plan = p;
   revision++;
   render();
