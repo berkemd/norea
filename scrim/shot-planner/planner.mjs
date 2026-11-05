@@ -58,6 +58,7 @@ function fill(p) {
   $("notes").value = p.notes;
 }
 function progress() {
+  $("new-batch").disabled = plan.completed.length === 0;
   $("progress").textContent = progressText(
     plan.completed.length,
     cards(plan).length,
@@ -66,7 +67,6 @@ function progress() {
 function render() {
   $("empty").hidden = true;
   $("result").hidden = false;
-  $("new-batch").disabled = false;
   $("result-title").textContent = plan.title;
   $("setup-list").replaceChildren();
   FIELDS.forEach((k, i) => {
@@ -98,12 +98,14 @@ function render() {
         ? [...plan.completed, c.id]
         : plan.completed.filter((x) => x !== c.id);
       revision++;
+      showBatchConfirmation(false);
       progress();
     });
   });
   progress();
 }
 function accept(p, message) {
+  showBatchConfirmation(false);
   pending = null;
   $("import-preview").hidden = true;
   plan = p;
@@ -285,12 +287,26 @@ $("print").addEventListener("click", () => {
     status(t(e.message), true);
   }
 });
+function showBatchConfirmation(visible) {
+  $("new-batch-confirmation").hidden = !visible;
+  $("new-batch").setAttribute("aria-expanded", String(visible));
+}
 $("new-batch").addEventListener("click", () => {
   if (!plan?.completed.length) return;
-  if (!confirm(t("Clear all completion marks for a new batch?"))) return;
+  showBatchConfirmation(true);
+  $("keep-batch-marks").focus();
+});
+$("keep-batch-marks").addEventListener("click", () => {
+  showBatchConfirmation(false);
+  $("new-batch").focus();
+});
+$("clear-batch-marks").addEventListener("click", () => {
+  if ($("new-batch-confirmation").hidden || !plan?.completed.length) return;
+  showBatchConfirmation(false);
   plan.completed = [];
   revision++;
   render();
+  $("plan-heading").focus();
   status(t("Completion marks cleared. The shot list and setup are unchanged."));
 });
 window.addEventListener("beforeunload", (e) => {

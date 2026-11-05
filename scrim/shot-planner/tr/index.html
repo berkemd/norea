@@ -297,9 +297,28 @@ Kum rengi kase, orta"
             </p>
           </article>
         </div>
-        <button type="button" id="new-batch" class="secondary" disabled>
+        <button
+          type="button"
+          id="new-batch"
+          class="secondary"
+          aria-controls="new-batch-confirmation"
+          aria-expanded="false"
+          disabled
+        >
           Yeni seri için tamamlanma işaretlerini temizle
         </button>
+        <div
+          id="new-batch-confirmation"
+          role="group"
+          aria-labelledby="new-batch-question"
+          hidden
+        >
+          <p id="new-batch-question">Yeni seri için tüm tamamlanma işaretleri temizlensin mi?</p>
+          <div class="actions">
+            <button type="button" id="keep-batch-marks" class="secondary">İşaretleri koru</button>
+            <button type="button" id="clear-batch-marks">İşaretleri temizle</button>
+          </div>
+        </div>
       </section>
       <section class="app-card">
         <p class="eyebrow">SIRADAKİ ADIM: KADRAJI KONTROL ET</p>
