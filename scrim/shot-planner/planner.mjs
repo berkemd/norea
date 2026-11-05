@@ -233,14 +233,15 @@ $("export").addEventListener("click", () => {
 $("copy").addEventListener("click", async () => {
   try {
     requireCurrent();
+  } catch (error) {
+    status(t(error.message), true);
+    return;
+  }
+  try {
     await navigator.clipboard.writeText(summary(plan));
     status(t("Checklist copied. Paste it into your own notes or message."));
-  } catch (e) {
-    status(
-      e.message ||
-        t("Copy failed. Export the file or print your plan instead."),
-      true,
-    );
+  } catch {
+    status(t("Copy failed. Export the file or print your plan instead."), true);
   }
 });
 $("print").addEventListener("click", () => {
