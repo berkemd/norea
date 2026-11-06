@@ -179,7 +179,7 @@ $("import").addEventListener("change", async () => {
           "The plan changed while the file was opening. Choose the file again.",
         ),
       );
-    pending = candidate;
+    pending = { plan: candidate, revision: currentRevision };
     $("import-description").textContent = importDescription(candidate);
     $("import-preview").hidden = false;
     status(
@@ -197,9 +197,17 @@ $("import").addEventListener("change", async () => {
 });
 $("apply-import").addEventListener("click", () => {
   if (!pending) return;
-  const p = pending;
+  const { plan: p, revision: reviewedRevision } = pending;
   pending = null;
   $("import-preview").hidden = true;
+  if (reviewedRevision !== revision) {
+    status(
+      t("The plan changed while the file was opening. Choose the file again."),
+      true,
+    );
+    $("import").focus();
+    return;
+  }
   fill(p);
   accept(p, t("Saved plan opened, including its completion marks."));
 });
