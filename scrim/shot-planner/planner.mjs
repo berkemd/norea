@@ -215,6 +215,7 @@ $("cancel-import").addEventListener("click", () => {
   pending = null;
   $("import-preview").hidden = true;
   status(t("Import cancelled. Current entries are unchanged."));
+  $("import").focus();
 });
 $("planner").addEventListener("input", () => {
   revision++;
