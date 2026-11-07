@@ -13,7 +13,7 @@ let plan = null;
 let pending = null;
 let revision = 0;
 let importSequence = 0;
-let copySequence = 0;
+let feedbackSequence = 0;
 
 function hasDraft() {
   return (
@@ -27,6 +27,7 @@ function hasDraft() {
   );
 }
 function status(message, error = false) {
+  feedbackSequence++;
   $("status").textContent = t(message);
   $("status").classList.toggle("error", error);
 }
@@ -319,7 +320,7 @@ $("export").addEventListener("click", () => {
   }
 });
 $("copy").addEventListener("click", async () => {
-  const attempt = ++copySequence;
+  const attempt = ++feedbackSequence;
   const planRevision = revision;
   try {
     requireCurrent();
@@ -329,10 +330,10 @@ $("copy").addEventListener("click", async () => {
   }
   try {
     await navigator.clipboard.writeText(summary(plan));
-    if (attempt !== copySequence || planRevision !== revision) return;
+    if (attempt !== feedbackSequence || planRevision !== revision) return;
     status(t("Checklist copied. Paste it into your own notes or message."));
   } catch {
-    if (attempt !== copySequence || planRevision !== revision) return;
+    if (attempt !== feedbackSequence || planRevision !== revision) return;
     status(t("Copy failed. Export the file or print your plan instead."), true);
   }
 });
