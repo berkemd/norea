@@ -187,6 +187,8 @@ const TR = {
     "Çekim notları metin olmalı ve 600 karakteri geçmemeli.",
   "The completed shots do not match this plan.":
     "Tamamlanan çekimler bu planla eşleşmiyor.",
+  "This shot plan is not valid UTF-8.":
+    "Bu çekim planı geçerli UTF-8 biçiminde değil.",
   "This file is not valid JSON. Your current plan is unchanged.":
     "Bu dosya geçerli JSON değil. Mevcut planın değişmedi.",
 };
