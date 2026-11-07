@@ -199,6 +199,9 @@ hr {
   border-top: 1px solid var(--line);
   margin: 32px 0;
 }
+#print-warning {
+  display: none;
+}
 #status {
   min-height: 1.6em;
   white-space: pre-wrap;
@@ -326,6 +329,12 @@ footer {
   #status,
   .skip {
     display: none !important;
+  }
+  .print-plan-unavailable .output {
+    display: none;
+  }
+  .print-plan-unavailable #print-warning {
+    display: block;
   }
   .workspace {
     display: block;

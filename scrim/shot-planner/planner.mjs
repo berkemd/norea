@@ -321,6 +321,16 @@ $("clear-batch-marks").addEventListener("click", () => {
   $("plan-heading").focus();
   status(t("Completion marks cleared. The shot list and setup are unchanged."));
 });
+window.addEventListener("beforeprint", () => {
+  let warning = "";
+  try {
+    requireCurrent();
+  } catch (error) {
+    warning = error.message;
+  }
+  $("print-warning").textContent = warning;
+  document.body.classList.toggle("print-plan-unavailable", warning !== "");
+});
 window.addEventListener("beforeunload", (e) => {
   if (hasDraft()) {
     e.preventDefault();
