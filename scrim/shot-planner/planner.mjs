@@ -126,7 +126,14 @@ $("planner").addEventListener("submit", (e) => {
       matchesForm(form, { ...plan, title: form.title, notes: form.notes })
     ) {
       // Renaming or editing notes does not change the shots or setup.
-      next = { ...form, completed: plan.completed };
+      next = {
+        ...form,
+        title:
+          form.title === inputText(plan.title).trim() ? plan.title : form.title,
+        setup: plan.setup,
+        notes: form.notes === textareaText(plan.notes) ? plan.notes : form.notes,
+        completed: plan.completed,
+      };
     }
     accept(next, t("Plan built. Export a file to keep it for your next shoot."));
   } catch (error) {
@@ -235,11 +242,21 @@ $("planner").addEventListener("input", () => {
       t("Entries changed. Build the plan again before exporting these edits."),
     );
 });
+function inputText(value) {
+  return value.replace(/[\r\n]/g, "");
+}
+function textareaText(value) {
+  return value.replace(/\r\n?/g, "\n");
+}
 function matchesForm(form, saved) {
   const visiblePlan = {
     ...saved,
-    // A textarea presents CRLF and CR as LF after an import.
-    notes: saved.notes.replace(/\r\n?/g, "\n"),
+    // Compare what the form can display, keeping original imported text intact.
+    title: inputText(saved.title).trim(),
+    setup: Object.fromEntries(
+      FIELDS.map((key) => [key, inputText(saved.setup[key])]),
+    ),
+    notes: textareaText(saved.notes),
     shots: [...saved.shots].sort(),
   };
   const visibleForm = {
