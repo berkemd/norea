@@ -226,13 +226,16 @@ Kum rengi kase, orta"
               <a
                 class="button"
                 id="result-app-link"
+                target="_blank"
+                rel="noopener"
+                aria-describedby="result-app-link-hint"
                 href="https://apps.apple.com/app/apple-store/id6806308907?pt=127358997&amp;ct=scrim_shotplan_202610&amp;mt=8"
                 >Kadrajı Scrim ile kontrol et</a
               >
-              <p class="hint">
-                İndirmesi ücretsizdir. Uygulama içi abonelik isteğe bağlıdır;
-                yerel koşulları App Store’da gör. Sayfadan ayrılmadan önce
-                aşağıdan planını dışa aktar.
+              <p class="hint" id="result-app-link-hint">
+                Bağlantı ayrı açılır. İndirmesi ücretsizdir. Uygulama içi
+                abonelik isteğe bağlıdır; yerel koşulları App Store’da gör.
+                Sayfadan ayrılmadan önce aşağıdan planını dışa aktar.
               </p>
             </aside>
             <dl id="setup-list"></dl>
@@ -314,10 +317,16 @@ Kum rengi kase, orta"
           aria-labelledby="new-batch-question"
           hidden
         >
-          <p id="new-batch-question">Yeni seri için tüm tamamlanma işaretleri temizlensin mi?</p>
+          <p id="new-batch-question">
+            Yeni seri için tüm tamamlanma işaretleri temizlensin mi?
+          </p>
           <div class="actions">
-            <button type="button" id="keep-batch-marks" class="secondary">İşaretleri koru</button>
-            <button type="button" id="clear-batch-marks">İşaretleri temizle</button>
+            <button type="button" id="keep-batch-marks" class="secondary">
+              İşaretleri koru
+            </button>
+            <button type="button" id="clear-batch-marks">
+              İşaretleri temizle
+            </button>
           </div>
         </div>
       </section>
@@ -334,12 +343,15 @@ Kum rengi kase, orta"
         <a
           class="button"
           id="app-link"
+          target="_blank"
+          rel="noopener"
+          aria-describedby="app-link-hint"
           href="https://apps.apple.com/app/apple-store/id6806308907?pt=127358997&amp;ct=scrim_shotplan_202610&amp;mt=8"
           >Scrim’i App Store’da gör</a
         >
-        <p class="hint">
-          İndirmesi ücretsizdir. Uygulama içi abonelik isteğe bağlıdır; yerel
-          koşulları mağazada gör.
+        <p class="hint" id="app-link-hint">
+          Bağlantı ayrı açılır. İndirmesi ücretsizdir. Uygulama içi abonelik
+          isteğe bağlıdır; yerel koşulları mağazada gör.
         </p>
       </section>
     </main>
