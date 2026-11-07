@@ -118,24 +118,36 @@ $("planner").addEventListener("submit", (e) => {
   e.preventDefault();
   try {
     const form = readForm();
-    let next = form;
-    if (plan && matchesForm(form, plan)) {
-      next = plan;
-    } else if (
-      plan &&
-      matchesForm(form, { ...plan, title: form.title, notes: form.notes })
-    ) {
-      // Renaming or editing notes does not change the shots or setup.
-      next = {
-        ...form,
-        title:
-          form.title === inputText(plan.title).trim() ? plan.title : form.title,
-        setup: plan.setup,
-        notes: form.notes === textareaText(plan.notes) ? plan.notes : form.notes,
-        completed: plan.completed,
-      };
-    }
-    accept(next, t("Plan built. Export a file to keep it for your next shoot."));
+    const next = plan
+      ? {
+          ...form,
+          title:
+            form.title === inputText(plan.title).trim()
+              ? plan.title
+              : form.title,
+          setup: Object.fromEntries(
+            FIELDS.map((key) => [
+              key,
+              form.setup[key] === inputText(plan.setup[key])
+                ? plan.setup[key]
+                : form.setup[key],
+            ]),
+          ),
+          notes:
+            form.notes === textareaText(plan.notes) ? plan.notes : form.notes,
+          completed: matchesForm(form, {
+            ...plan,
+            title: form.title,
+            notes: form.notes,
+          })
+            ? plan.completed
+            : form.completed,
+        }
+      : form;
+    accept(
+      plan && matchesForm(form, plan) ? plan : next,
+      t("Plan built. Export a file to keep it for your next shoot."),
+    );
   } catch (error) {
     status(t(error.message), true);
     $("status").focus();
@@ -203,7 +215,10 @@ $("import").addEventListener("change", async () => {
     );
   } catch (error) {
     if (sequence === importSequence) {
-      status(`${t(error.message)} ${t("Current entries are unchanged.")}`, true);
+      status(
+        `${t(error.message)} ${t("Current entries are unchanged.")}`,
+        true,
+      );
     }
   } finally {
     if (sequence === importSequence) $("import").value = "";
