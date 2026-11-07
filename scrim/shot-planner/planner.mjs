@@ -118,10 +118,17 @@ $("planner").addEventListener("submit", (e) => {
   e.preventDefault();
   try {
     const form = readForm();
-    accept(
-      plan && matchesForm(form, plan) ? plan : form,
-      t("Plan built. Export a file to keep it for your next shoot."),
-    );
+    let next = form;
+    if (plan && matchesForm(form, plan)) {
+      next = plan;
+    } else if (
+      plan &&
+      matchesForm(form, { ...plan, title: form.title, notes: form.notes })
+    ) {
+      // Renaming or editing notes does not change the shots or setup.
+      next = { ...form, completed: plan.completed };
+    }
+    accept(next, t("Plan built. Export a file to keep it for your next shoot."));
   } catch (error) {
     status(t(error.message), true);
     $("status").focus();
