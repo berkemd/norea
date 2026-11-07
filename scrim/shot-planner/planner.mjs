@@ -196,8 +196,14 @@ $("import").addEventListener("change", async () => {
   try {
     if (file.size > 32768)
       throw Error(t("Choose a shot plan file smaller than 32 KB."));
-    const text = await file.text();
+    const bytes = await file.arrayBuffer();
     if (sequence !== importSequence) return;
+    let text;
+    try {
+      text = new TextDecoder("utf-8", { fatal: true }).decode(bytes);
+    } catch {
+      throw Error(t("This shot plan is not valid UTF-8."));
+    }
     const candidate = parsePlan(text);
     if (revision !== currentRevision)
       throw Error(
