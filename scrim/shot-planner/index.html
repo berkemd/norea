@@ -216,12 +216,16 @@
               <a
                 class="button"
                 id="result-app-link"
+                target="_blank"
+                rel="noopener"
+                aria-describedby="result-app-link-hint"
                 href="https://apps.apple.com/app/apple-store/id6806308907?pt=127358997&amp;ct=scrim_shotplan_202610&amp;mt=8"
                 >Check the frame with Scrim</a
               >
-              <p class="hint">
-                Free download. Optional in-app subscription; see local terms in
-                the App Store. Export your plan below before leaving this page.
+              <p class="hint" id="result-app-link-hint">
+                The link opens separately. Free download. Optional in-app
+                subscription; see local terms in the App Store. Export your plan
+                below before leaving this page.
               </p>
             </aside>
             <dl id="setup-list"></dl>
@@ -299,9 +303,13 @@
           aria-labelledby="new-batch-question"
           hidden
         >
-          <p id="new-batch-question">Clear all completion marks for a new batch?</p>
+          <p id="new-batch-question">
+            Clear all completion marks for a new batch?
+          </p>
           <div class="actions">
-            <button type="button" id="keep-batch-marks" class="secondary">Keep marks</button>
+            <button type="button" id="keep-batch-marks" class="secondary">
+              Keep marks
+            </button>
             <button type="button" id="clear-batch-marks">Clear marks</button>
           </div>
         </div>
@@ -319,12 +327,15 @@
         <a
           class="button"
           id="app-link"
+          target="_blank"
+          rel="noopener"
+          aria-describedby="app-link-hint"
           href="https://apps.apple.com/app/apple-store/id6806308907?pt=127358997&amp;ct=scrim_shotplan_202610&amp;mt=8"
           >View Scrim on the App Store</a
         >
-        <p class="hint">
-          Free download. Optional in-app subscription; view local terms in the
-          store.
+        <p class="hint" id="app-link-hint">
+          The link opens separately. Free download. Optional in-app
+          subscription; view local terms in the store.
         </p>
       </section>
     </main>
