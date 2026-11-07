@@ -191,8 +191,11 @@ Kum rengi kase, orta"
             </button>
           </div>
           <p class="hint">
-            Değişen bir planı oluşturmak tamamlanma işaretlerini sıfırlar.
-            İşaretleri korumak istiyorsan önce mevcut planını dışa aktar.
+            Yalnızca çekim adını veya notlarını değiştirirsen tamamlanma
+            işaretleri korunur. Ürünleri, çekim türlerini veya kurulumu
+            değiştirip planı yeniden oluşturursan işaretler sıfırlanır.
+            İşaretlerin bir kopyasını saklamak için önce mevcut planı dışa
+            aktar.
           </p>
           <hr />
           <h2>Önceki çekime dön</h2>
@@ -200,7 +203,12 @@ Kum rengi kase, orta"
           ><input id="import" type="file" accept=".json,application/json" />
           <div id="import-preview" hidden>
             <p id="import-description"></p>
-            <button id="apply-import" type="button">Bu planla değiştir</button
+            <button
+              id="apply-import"
+              type="button"
+              aria-describedby="import-description"
+            >
+              Bu planla değiştir</button
             ><button id="cancel-import" type="button" class="secondary">
               İçe aktarmayı iptal et
             </button>

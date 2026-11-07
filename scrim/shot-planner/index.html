@@ -180,8 +180,9 @@
             </button>
           </div>
           <p class="hint">
-            Building a changed plan resets its completion marks. Export your
-            current plan first if you need to keep them.
+            Changing only the name or shoot notes keeps completion marks.
+            Changing products, shot types or setup resets them when you rebuild.
+            Export the current plan first to keep a copy of those marks.
           </p>
           <hr />
           <h2>Return to a previous shoot</h2>
@@ -189,7 +190,11 @@
           ><input id="import" type="file" accept=".json,application/json" />
           <div id="import-preview" hidden>
             <p id="import-description"></p>
-            <button id="apply-import" type="button">
+            <button
+              id="apply-import"
+              type="button"
+              aria-describedby="import-description"
+            >
               Replace with this plan</button
             ><button id="cancel-import" type="button" class="secondary">
               Cancel import
