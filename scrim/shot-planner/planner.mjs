@@ -122,6 +122,9 @@ $("planner").addEventListener("submit", (e) => {
     const next = plan
       ? {
           ...form,
+          shots: sameShotSelection(form.shots, plan.shots)
+            ? plan.shots
+            : form.shots,
           title:
             form.title === inputText(plan.title).trim()
               ? plan.title
@@ -270,7 +273,13 @@ function inputText(value) {
 function textareaText(value) {
   return value.replace(/\r\n?/g, "\n");
 }
+function sameShotSelection(left, right) {
+  return (
+    left.length === right.length && left.every((shot) => right.includes(shot))
+  );
+}
 function matchesForm(form, saved) {
+  if (!sameShotSelection(form.shots, saved.shots)) return false;
   const visiblePlan = {
     ...saved,
     // Compare what the form can display, keeping original imported text intact.
@@ -279,11 +288,10 @@ function matchesForm(form, saved) {
       FIELDS.map((key) => [key, inputText(saved.setup[key])]),
     ),
     notes: textareaText(saved.notes),
-    shots: [...saved.shots].sort(),
   };
   const visibleForm = {
     ...form,
-    shots: [...form.shots].sort(),
+    shots: saved.shots,
     completed: saved.completed,
   };
   return JSON.stringify(visibleForm) === JSON.stringify(visiblePlan);
