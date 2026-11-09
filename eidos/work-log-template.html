@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-itunes-app" content="app-id=6806091249" />
+    <title>Weekly work log template — five minutes on Friday | Eidos</title>
+    <meta name="description" content="A free weekly work log template: four prompts, a sample week, what to leave out and a monthly roll-up that turns notes into review-ready examples." />
+    <link rel="canonical" href="https://berkemd.github.io/norea/eidos/work-log-template.html" />
+    <meta name="theme-color" content="#f8f7f3" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Weekly work log template — five minutes on Friday" />
+    <meta property="og:description" content="A free weekly work log template: four prompts, a sample week, what to leave out and a monthly roll-up that turns notes into review-ready examples." />
+    <meta property="og:url" content="https://berkemd.github.io/norea/eidos/work-log-template.html" />
+    <script type="application/ld+json">
+      {"@context": "https://schema.org", "@type": "HowTo", "name": "How to keep a weekly work log", "totalTime": "PT5M", "step": [{"@type": "HowToStep", "name": "Pick a fixed slot", "text": "Choose five minutes at the same time every week, for example Friday before you close your laptop."}, {"@type": "HowToStep", "name": "Answer four prompts", "text": "Write what you finished, what you unblocked for someone else, what you learned and what proof exists."}, {"@type": "HowToStep", "name": "File each line under a work topic", "text": "Give every entry one topic such as a project, a responsibility or a skill."}, {"@type": "HowToStep", "name": "Roll up once a month", "text": "Keep the one or two strongest examples per topic and note which topics have none."}]}
+    </script>
+    <style>
+      :root {
+        --zemin: #f8f7f3;
+        --murekkep: #1a1916;
+        --soluk: #4d4c46;
+        --cizgi: #e2dfd6;
+        --kart: #f1efe8;
+        --vurgu: #65396f;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background: var(--zemin);
+        color: var(--murekkep);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        line-height: 1.7;
+        margin: 0;
+        -webkit-font-smoothing: antialiased;
+      }
+      .wrap {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 44px 24px 96px;
+      }
+      h1 {
+        font-size: 1.7rem;
+        margin: 0 0 6px;
+        letter-spacing: -0.02em;
+      }
+      h2 {
+        font-size: 1.1rem;
+        color: var(--vurgu);
+        margin: 38px 0 10px;
+        border-top: 1px solid var(--cizgi);
+        padding-top: 24px;
+        letter-spacing: -0.01em;
+      }
+      h3 {
+        font-size: 0.98rem;
+        margin: 22px 0 4px;
+      }
+      p,
+      li {
+        color: var(--soluk);
+        font-size: 0.95rem;
+      }
+      a {
+        color: var(--vurgu);
+      }
+      .tag {
+        color: var(--soluk);
+        opacity: 0.8;
+        font-size: 0.88rem;
+        margin: 0 0 30px;
+      }
+      .nav {
+        margin: 36px 0 0;
+        font-size: 0.9rem;
+        border-top: 1px solid var(--cizgi);
+        padding-top: 20px;
+      }
+      .nav a {
+        margin-right: 16px;
+      }
+      .kutu {
+        background: var(--kart);
+        border: 1px solid var(--cizgi);
+        border-radius: 12px;
+        padding: 16px 18px;
+        margin: 20px 0;
+      }
+      .kutu p:last-child {
+        margin-bottom: 0;
+      }
+      .kutu p:first-child {
+        margin-top: 0;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 18px 0;
+        font-size: 0.9rem;
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 9px 10px;
+        border-bottom: 1px solid var(--cizgi);
+        vertical-align: top;
+      }
+      th {
+        color: var(--murekkep);
+        font-weight: 600;
+      }
+      td {
+        color: var(--soluk);
+      }
+      code {
+        background: var(--kart);
+        border: 1px solid var(--cizgi);
+        border-radius: 5px;
+        padding: 1px 5px;
+        font-size: 0.86em;
+      }
+      .mark {
+        display: block;
+        width: 56px;
+        height: 56px;
+        margin: 0 0 18px;
+      }
+      footer {
+        margin-top: 56px;
+        color: var(--soluk);
+        opacity: 0.7;
+        font-size: 0.84rem;
+      }
+    
+      .once { color: var(--soluk); opacity: 0.85; }
+      .sonra { color: var(--murekkep); }
+      .ornek { border-left: 3px solid var(--vurgu); padding: 2px 0 2px 14px; margin: 16px 0; }
+      .ornek p { margin: 6px 0; }
+      .rehber a { display: block; margin: 6px 0; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <svg class="mark" viewBox="0 0 1024 1024" role="img" aria-label="Eidos">
+        <g fill="none" stroke="#65396F" stroke-opacity=".34" stroke-width="16">
+          <circle cx="512" cy="398" r="380" />
+          <circle cx="610.73" cy="569" r="380" />
+          <circle cx="413.27" cy="569" r="380" />
+        </g>
+        <path
+          d="M 512 202.05 A 380 380 0 0 1 780.43 666.98 A 380 380 0 0 1 243.57 666.98 A 380 380 0 0 1 512 202.05 Z"
+          fill="none"
+          stroke="#65396F"
+          stroke-width="42"
+          stroke-linejoin="round"
+        />
+      </svg>
+      <h1>Weekly work log template</h1>
+      <p class="tag">A free guide from Eidos · the five-minute habit that makes review season easy</p>
+
+      <p>
+        By December most people can remember the last six weeks of their
+        year. A work log fixes that. It is the raw material for a brag
+        document, a self-review or an interview answer: a few lines a week,
+        written while the details are still fresh.
+      </p>
+
+      <h2>The five-minute Friday template</h2>
+      <p>Answer the prompts that apply. One line each is enough.</p>
+      <div class="kutu">
+        <p><strong>Finished:</strong> what did I complete or move forward this week?</p>
+        <p><strong>Unblocked:</strong> who did I help, and what could they do afterwards?</p>
+        <p><strong>Learned:</strong> what do I know or do now that I did not last week?</p>
+        <p><strong>Proof:</strong> where can this be seen: a document, ticket, message or number?</p>
+        <p><strong>Topic:</strong> which area of my work does each line belong to?</p>
+      </div>
+
+      <h2>A sample week</h2>
+      <table>
+        <tr><th>Prompt</th><th>Entry</th><th>Topic</th></tr>
+        <tr><td>Finished</td><td>Sent the revised supplier schedule; both sides signed off on Thursday.</td><td>Supplier management</td></tr>
+        <tr><td>Unblocked</td><td>Showed the new analyst how the monthly report is built; she ran it alone.</td><td>Mentoring</td></tr>
+        <tr><td>Learned</td><td>How the forecasting sheet handles returns; fixed a formula on the way.</td><td>Reporting</td></tr>
+        <tr><td>Proof</td><td>Signed schedule (PDF), the analyst's first report, the corrected sheet.</td><td></td></tr>
+      </table>
+
+      <h2>What makes an entry useful later</h2>
+      <ul>
+        <li><strong>Your part, not only the team's.</strong> "We launched" tells a reviewer nothing about you. Add the sentence that starts with "I".</li>
+        <li><strong>A date.</strong> Month and year is enough, and the log supplies it for free.</li>
+        <li><strong>A source.</strong> A link or file name now saves an hour of searching in December.</li>
+        <li><strong>The unglamorous work.</strong> Clean-up, documentation and covering for a colleague are exactly what nobody remembers at review time.</li>
+      </ul>
+
+      <h2>What to leave out</h2>
+      <ul>
+        <li>Client names, personal data and anything under a confidentiality agreement. Describe the kind of work instead.</li>
+        <li>Company documents you are not allowed to keep on a personal device. Note where they live, not what they contain.</li>
+        <li>Complaints about colleagues. A log is a record of your work.</li>
+      </ul>
+
+      <h2>The monthly roll-up</h2>
+      <ol>
+        <li>Read the month's entries and group them by topic.</li>
+        <li>Under each topic keep the one or two strongest examples and write them out in full: situation, your contribution, outcome, source.</li>
+        <li>Note the topics that have no example. That is next month's question for your manager, or a sign the topic no longer describes your job.</li>
+        <li>Delete nothing. Weak entries often become the answer to an unexpected interview question.</li>
+      </ol>
+
+      <h2>When the review form arrives</h2>
+      <p>
+        Match the form's questions to your topics, pick the examples each
+        question needs and rewrite them for the reader. The
+        <a href="brag-document-template.html">brag document template</a>
+        covers the structure, and
+        <a href="self-review-examples.html">self-review examples</a> shows
+        how a vague sentence becomes a specific one.
+      </p>
+
+      <h2>Keep it without a spreadsheet</h2>
+      <div class="kutu">
+        <p>
+          <strong>Eidos</strong> is a brag book app for iPhone and iPad built on
+          this structure: work topics, examples with your contribution, links and
+          PDFs, a Preparation view showing which claims have examples, and a
+          summary where you choose exactly which fields to share. No account;
+          your records stay on your device.
+        </p>
+        <p><a href="https://apps.apple.com/app/id6806091249">Get Eidos on the App Store</a> · free download, optional Eidos Pro</p>
+        <p>Prefer the browser? Draft two examples in the <a href="worksheet.html">free worksheet</a> or <a href="work-example-template.txt" download>download the text template</a>.</p>
+      </div>
+
+      <h2>More free guides</h2>
+      <div class="rehber">
+        <a href="brag-document-template.html">Brag document template</a>
+        <a href="self-review-examples.html">Self-review examples with evidence</a>
+        <a href="star-method-examples.html">STAR method examples from your work log</a>
+      </div>
+
+      <div class="nav">
+        <a href="index.html">Eidos</a> <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+      <footer>
+        Norea Studio ·
+        <a href="mailto:brkekahraman@icloud.com">brkekahraman@icloud.com</a>
+      </footer>
+    </div>
+  </body>
+</html>
