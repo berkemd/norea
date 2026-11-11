@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VoxWhisper — Privacy Policy</title>
+<meta name="description" content="VoxWhisper captures thoughts on your wrist — tap, speak, saved. Notes sync through your own iCloud; audio stays on the watch. Privacy policy.">
+<link rel="canonical" href="https://berkemd.github.io/norea/voxwhisper/privacy.html">
+<meta name="theme-color" content="#0b0b14">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VoxWhisper">
+<meta property="og:title" content="VoxWhisper — Privacy Policy">
+<meta property="og:url" content="https://berkemd.github.io/norea/voxwhisper/privacy.html">
+<meta property="og:description" content="VoxWhisper captures thoughts on your wrist — tap, speak, saved. Notes sync through your own iCloud; audio stays on the watch. Privacy policy.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="VoxWhisper — Privacy Policy">
+<meta name="twitter:description" content="VoxWhisper captures thoughts on your wrist — tap, speak, saved. Notes sync through your own iCloud; audio stays on the watch. Privacy policy.">
+<style>
+body{background:#0b0b14;color:#f3f0ea;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.7;margin:0}
+.wrap{max-width:680px;margin:0 auto;padding:44px 24px 80px}
+h1{font-size:1.6rem;margin:0 0 4px}
+h2{font-size:1.15rem;color:#c084f0;margin:34px 0 10px;border-top:1px solid #23203a;padding-top:22px}
+h3{font-size:1rem;color:#e6e2f2;margin:20px 0 4px}
+p,li{color:#b9b5c8;font-size:.95rem}
+a{color:#c084f0}
+.back{font-size:.85rem}
+.sum{background:#14131f;border:1px solid #2a2740;border-left:3px solid #c084f0;border-radius:12px;padding:14px 18px;margin:18px 0}
+.sum p{margin:0 0 8px} .sum p:last-child{margin:0}
+.addr{background:#14131f;border:1px solid #2a2740;border-radius:12px;padding:12px 16px;font-size:.9rem;color:#d6d2e4}
+.lang{font-size:.85rem;color:#6f6a80;margin:0 0 18px}
+code{background:#1b1a29;padding:1px 5px;border-radius:5px;font-size:.85em;color:#d6d2e4}
+.foot{margin-top:38px;color:#6f6a80;font-size:.8rem;border-top:1px solid #23203a;padding-top:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="back"><a href="https://berkemd.github.io/wristsuite/voxwhisper/index.html">← VoxWhisper</a></p>
+  <h1>Privacy Policy / Gizlilik Politikası</h1>
+  <p class="lang"><em>Last updated / Son güncelleme: November 12, 2026 · 12 Kasım 2026</em><br>
+  English below, Türkçesi aşağıda, Deutsch weiter unten, 日本語は最後にあります。
+  All four versions say the same thing; if they ever differ, the English text is
+  the reference. /
+  Dört sürüm aynı şeyi söyler; bir farklılık olursa İngilizce metin esas alınır. /
+  Alle vier Fassungen sagen dasselbe; sollten sie je voneinander abweichen, ist
+  der englische Text maßgeblich. /
+  4つの版は同じ内容です。相違が生じた場合は英語版を基準とします。</p>
+
+  <h2 id="en" style="border-top:none;padding-top:0">English</h2>
+  <div class="sum">
+  <p><strong>VoxWhisper collects no data. None — we run no server and have no account system. Your text notes do sync, through your own iCloud, which we cannot read. Audio memos never go to iCloud or to us — with the iPhone app they are copied directly from your watch to your own iPhone.</strong></p>
+  </div>
+
+  <h3>Two kinds of capture, treated differently</h3>
+  <p>VoxWhisper does two things, and it is important that you know they are not
+  handled the same way.</p>
+  <h3>1. Dictated text notes — these sync through <em>your</em> iCloud</h3>
+  <p>Text notes are saved on the watch and <strong>also mirrored into your own
+  iCloud key-value store</strong> (<code>NSUbiquitousKeyValueStore</code>), so
+  they appear on your other devices signed in to the same Apple Account. That
+  means note text <strong>does leave the watch</strong>: it goes to Apple's
+  iCloud, under your Apple Account and Apple's privacy terms, and nowhere else.
+  <strong>We have no access to it.</strong> There is no server of ours in the
+  chain, no key we hold and no way for us to read, list or recover your notes.
+  If you sign out of iCloud, notes stay on the watch and simply stop syncing.
+  Deleting a note also publishes a deletion marker, so it does not come back
+  from another device.</p>
+  <h3>2. Audio voice memos — never to iCloud, never to us</h3>
+  <p>Voice recordings are written as files into the app's own folder on the
+  watch. They are <strong>never</strong> uploaded to iCloud, never sent to us,
+  never shared and never transcribed on any server. If you also install the
+  VoxWhisper iPhone app (version 1.8 or later), each memo is copied
+  <strong>directly from your watch to your paired iPhone</strong> over Apple's
+  WatchConnectivity link, so you can listen to it on the phone. That copy goes
+  device to device; no server of ours or anyone else's is involved. Deleting a
+  memo on the iPhone removes only the iPhone copy. Without the iPhone app, memos
+  stay on the watch until you delete them or delete the app.</p>
+  <h3>Turning a memo into text — on your iPhone (version 1.9 or later)</h3>
+  <p>From version 1.9, the iPhone app can turn a voice memo into text. This uses
+  Apple's Speech framework (<code>SpeechAnalyzer</code>) <strong>running on your
+  iPhone</strong>: iOS downloads the recognition model and the audio is processed
+  on the device. Neither the audio nor the text is sent to us or to any server of
+  ours. The text is saved next to the memo in the app's own folder on your iPhone
+  and is deleted together with the memo. It becomes part of your synced notes
+  only if you tap <em>Save as note</em>. Nothing is transcribed until you tap
+  <em>Transcribe</em> for the first time; that is also when iOS asks for Speech
+  Recognition permission. Requires iOS 26 or later. From version 2.0, a memo
+  that arrives after you have allowed Speech Recognition is transcribed without a
+  further tap. Transcripts are part of VoxWhisper Pro; the first three recordings
+  you make on the iPhone include them for free.</p>
+  <h3>Recording on iPhone (version 2.0 or later)</h3>
+  <p>From version 2.0 the iPhone app can record as well. A recording made on
+  the iPhone is a file in the app's own folder on that iPhone. It is
+  <strong>not uploaded to iCloud and not sent to us</strong>. It stays until
+  you delete it or delete the app.</p>
+
+  <h3>Summaries and action items — on your iPhone (version 2.0 or later)</h3>
+  <p>From a transcript, the app makes a title, a short summary and a list of
+  things to do. On an iPhone with Apple Intelligence turned on, the wording is
+  written by Apple's language model through the Foundation Models framework,
+  <strong>running on your iPhone</strong>. On other iPhones, and in languages
+  that model does not support, the app picks the speaker's own sentences with
+  fixed rules, also on the iPhone. In both cases neither the transcript nor
+  the result is sent to us or to any server of ours. Summaries are saved in the
+  app's own folder and are removed when the memo is deleted. The same rules
+  suggest action items for a text note when you open it.</p>
+
+  <h3>Reminders (version 2.0 or later)</h3>
+  <p>An action item becomes a reminder <strong>only when you tap <em>Add to
+  Reminders</em></strong>. The app then writes that one reminder (its title,
+  the date you confirmed and a line saying it came from VoxWhisper) to your
+  default Reminders list through Apple's EventKit, and removes that same
+  reminder if you tap <em>Undo</em>. iOS offers only full access for
+  Reminders, so the system prompt says the app can access your reminders;
+  VoxWhisper does not read, copy, change or send anywhere any other reminder.
+  Whether your Reminders sync, for example through iCloud, depends on your own
+  account settings, not on us.</p>
+
+  <h3>Dictation</h3>
+  <p>Speech-to-text is performed by <strong>watchOS itself</strong>, through the
+  system text-input controller. The watch app contains no speech-recognition code
+  and never receives or stores the audio from dictation. How that system service
+  handles your speech is described in
+  <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>.</p>
+  <h3>What VoxWhisper asks for</h3>
+  <ul>
+    <li><strong>Microphone</strong>
+    (<code>NSMicrophoneUsageDescription</code>), only when you record an audio
+    memo. Dictated text notes do not need the app to have microphone access —
+    the system controller handles that.</li>
+    <li><strong>Speech Recognition</strong>
+    (<code>NSSpeechRecognitionUsageDescription</code>), iPhone app 1.9 or later,
+    only when you tap <em>Transcribe</em> on a memo.</li>
+    <li><strong>Reminders</strong>
+    (<code>NSRemindersFullAccessUsageDescription</code>), iPhone app 2.0 or
+    later, only when you first tap <em>Add to Reminders</em>. You can turn it
+    off at any time in Settings; everything else keeps working.</li>
+    <li><strong>Nothing else.</strong> No location, no HealthKit, no motion, no
+    contacts, no camera.</li>
+  </ul>
+  <h3>What the watch face is told</h3>
+  <p>The complication runs in a separate process and is drawn on an always-on
+  display that anyone standing next to you can read. It is therefore given
+  <strong>counts only</strong> — how many notes and memos you have, how much
+  space the memos use, and when the last capture was. <strong>Never the
+  text.</strong></p>
+  <h3>Network use</h3>
+  <p>VoxWhisper contains no HTTP client, no sockets, no analytics and no
+  third-party SDK. The single mechanism that moves anything off the watch is the
+  iCloud key-value sync of text notes described above, and it is Apple's, not
+  ours. Audio memos copied to your iPhone travel over Apple's direct
+  watch-to-iPhone link, which is also Apple's and never touches the internet
+  through us.</p>
+
+
+  <h2 id="who-en">Who is responsible</h2>
+  <p><strong>Berke Kahraman</strong> — an individual sole trader registered in
+  Türkiye (<em>şahıs firması</em>) — develops and publishes VoxWhisper. He is the
+  <em>data controller</em> for the purposes of the EU/UK General Data Protection
+  Regulation and the <em>veri sorumlusu</em> under Turkish Law No. 6698 on the
+  Protection of Personal Data (KVKK).</p>
+  <p class="addr">Berke Kahraman<br>Ayvalı Mah. Afra Cad. No: 3F, İç Kapı No: 104<br>06010 Keçiören / Ankara, Türkiye<br><a href="mailto:brkekahraman@icloud.com">brkekahraman@icloud.com</a></p>
+  <p>This is a one-person business, so there is no data protection officer and
+  no EU representative; privacy mail is read and answered by the developer
+  personally, usually within a few days.</p>
+
+  <h2 id="basis-en">Legal basis for anything that happens</h2>
+  <ul>
+    <li><strong>Whatever VoxWhisper keeps on your watch</strong> — we are not
+    processing it, because it never reaches us. It sits in your device, under
+    your control, and is gone when you delete the app. There is no legal basis
+    to state for us, because there is no processing by us.</li>
+    <li><strong>Microphone permission</strong> — granted by you in the system
+    prompt, revocable at any time in Settings; consent, GDPR Art. 6(1)(a) /
+    KVKK Art. 5(1). Recordings stay on your watch and, if you use the iPhone
+    app, your iPhone, so we do not process them.</li>
+    <li><strong>Speech Recognition permission</strong> (iPhone app 1.9 or later)
+    — consent, granted and revocable the same way. Transcription runs on your
+    iPhone; we do not receive or process the audio or the text.</li>
+    <li><strong>iCloud sync of text notes</strong> — this is your own iCloud
+    storage under your own Apple Account, provided to you by Apple. Apple is the
+    controller for that service; we are not, because we have no access to it and
+    receive nothing from it. Turning off iCloud for VoxWhisper (or signing out)
+    stops the sync and keeps the notes on the watch.</li>
+    <li><strong>If you email us</strong> — we process your address and whatever
+    you write, in order to answer you. Legal basis: GDPR Art. 6(1)(b) (steps
+    taken at your request) and Art. 6(1)(f) (our legitimate interest in
+    supporting the people who bought the app). Under KVKK, Art. 5(2)(c) and
+    5(2)(f).</li>
+    <li><strong>Your purchase</strong> — the sale is a contract between you and
+    Apple. Apple is the merchant of record and its own controller; we receive
+    no name, address, email or payment detail from it, only anonymous sales
+    totals in App Store Connect.</li>
+  </ul>
+  <p>There is no automated decision-making and no profiling of any kind, in the
+  sense of GDPR Art. 22 or KVKK Art. 11(g).</p>
+
+  <h2 id="rights-en">Your rights</h2>
+  <p>Under the GDPR (Articles 15–22) and KVKK (Article 11) you have the right
+  to ask us for: <strong>access</strong> to any personal data we hold about you;
+  <strong>rectification</strong> of anything inaccurate; <strong>erasure</strong>;
+  <strong>restriction</strong> of processing; <strong>portability</strong> of data
+  you gave us, in a machine-readable form; and to <strong>object</strong> to
+  processing based on legitimate interests. Where you gave consent — for example
+  a permission prompt — you can <strong>withdraw it at any time</strong>, without
+  affecting anything done before. KVKK Art. 11 additionally gives you the right
+  to learn whether your data is processed, to be told the purpose, to learn the
+  third parties it is transferred to, and to claim compensation for damage
+  caused by unlawful processing.</p>
+  <p><strong>How to exercise them:</strong> email
+  <a href="mailto:brkekahraman@icloud.com">brkekahraman@icloud.com</a> and say what you want. We reply within one
+  month (GDPR Art. 12(3)); KVKK applications are answered within 30 days under
+  the Communiqué on the Procedures and Principles of Application to the Data
+  Controller. There is no charge.</p>
+  <p><strong>In practice, for most of it you do not need us.</strong> The data
+  VoxWhisper works with lives on your watch. Delete it in the app, revoke a
+  permission in Settings, or delete the app — and it is gone. We could not
+  retrieve, restore or hand it over even if you asked us to, because we never
+  had a copy.</p>
+
+  <h2 id="complain-en">Complaining about us</h2>
+  <p>Tell us first if you can — it is usually faster. But you do not have to,
+  and you always have the right to complain to a supervisory authority:</p>
+  <ul>
+    <li><strong>Türkiye:</strong> Kişisel Verileri Koruma Kurumu / Kurulu —
+    <a href="https://www.kvkk.gov.tr/">kvkk.gov.tr</a></li>
+    <li><strong>EU / EEA:</strong> the data protection authority of the country
+    where you live, work, or where you think the problem happened — the list is
+    at <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en">edpb.europa.eu</a></li>
+    <li><strong>United Kingdom:</strong> the Information Commissioner's Office —
+    <a href="https://ico.org.uk/">ico.org.uk</a></li>
+  </ul>
+
+  <h2 id="retention-en">How long anything is kept</h2>
+  <ul>
+    <li><strong>On your watch:</strong> for as long as you keep it there. VoxWhisper
+    does not expire or auto-delete your content; deleting the app removes its
+    container and everything in it.</li>
+    <li><strong>Support email:</strong> kept only as long as we need it to deal
+    with your message, and deleted within 12 months at the latest — unless a law
+    requires us to keep a specific record longer (for example Turkish tax and
+    commercial bookkeeping rules, if your message relates to a purchase).</li>
+    <li><strong>Everything else:</strong> nothing, because there is nothing. We
+    run no database, keep no backup of your content, and write no log file that
+    contains your data.</li>
+  </ul>
+
+  <h2 id="transfer-en">International transfers</h2>
+  <ul>
+    <li>We do not transfer your data anywhere, because we do not receive it.</li>
+    <li><strong>Email is the one exception.</strong> If you write to us, your
+    message reaches us in <strong>Türkiye</strong> — outside the EEA and the UK,
+    and Türkiye has no EU adequacy decision. That transfer happens because you
+    chose to contact us and is necessary to answer you (GDPR Art. 49(1)(b)). We
+    use it for nothing else and pass it to nobody.</li>
+    <li><strong>The iCloud sync of your text notes</strong> is Apple's service
+    on Apple's infrastructure, wherever Apple operates it, under
+    <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>
+    and Apple's own transfer safeguards. We are not a party to it, hold no key
+    and receive no copy.</li>
+  </ul>
+
+  <h2 id="children-en">Children</h2>
+  <p>VoxWhisper is rated 4+ and is not directed at children in particular. It
+  collects nothing from anyone, children included, so no parental consent
+  mechanism is needed or offered.</p>
+
+  <h2 id="changes-en">Changes to this policy</h2>
+  <p>If this policy changes, the new version is published at this address
+  <em>before</em> it takes effect, and the date at the top changes with it. We
+  do not change it retroactively.</p>
+
+  <h2 id="contact-en">Contact</h2>
+  <p class="addr">Berke Kahraman<br>Ayvalı Mah. Afra Cad. No: 3F, İç Kapı No: 104<br>06010 Keçiören / Ankara, Türkiye<br><a href="mailto:brkekahraman@icloud.com">brkekahraman@icloud.com</a></p>
+
+  <h2 id="tr">Türkçe</h2>
+  <div class="sum">
+  <p><strong>VoxWhisper hiçbir veri toplamaz. Hiç — sunucumuz da hesap sistemimiz de yoktur. Metin notların, okuyamadığımız kendi iCloud'un üzerinden eşitlenir. Sesli notlar asla iCloud'a ya da bize gitmez — iPhone uygulamasıyla doğrudan saatinden kendi iPhone'una kopyalanır.</strong></p>
+  </div>
+
+  <h3>İki tür yakalama, iki ayrı muamele</h3>
+  <p>VoxWhisper iki iş yapar ve ikisinin aynı şekilde ele alınmadığını bilmen
+  önemlidir.</p>
+  <h3>1. Dikte edilen metin notlar — bunlar <em>senin</em> iCloud'un üzerinden eşitlenir</h3>
+  <p>Metin notlar saate kaydedilir ve <strong>ayrıca kendi iCloud anahtar-değer
+  deponda</strong> (<code>NSUbiquitousKeyValueStore</code>) yansıtılır; böylece
+  aynı Apple Hesabıyla giriş yaptığın diğer cihazlarında da görünürler. Yani not
+  metni <strong>saatten çıkar</strong>: senin Apple Hesabın ve Apple'ın gizlilik
+  koşulları kapsamında Apple'ın iCloud'una gider, başka hiçbir yere değil.
+  <strong>Bizim erişimimiz yoktur.</strong> Zincirde bize ait bir sunucu, elimizde
+  bir anahtar ve notlarını okuma, listeleme ya da geri getirme imkânımız
+  bulunmaz. iCloud'dan çıkarsan notlar saatte kalır, yalnızca eşitleme durur. Bir
+  notu sildiğinde bir silme işareti de yayımlanır; böylece başka bir cihazdan
+  geri gelmez.</p>
+  <h3>2. Sesli notlar — asla iCloud'a, asla bize</h3>
+  <p>Ses kayıtları saatteki kendi klasörüne dosya olarak yazılır.
+  <strong>Asla</strong> iCloud'a yüklenmez, bize gönderilmez, paylaşılmaz ve
+  hiçbir sunucuda metne çevrilmez. VoxWhisper iPhone uygulamasını
+  da (1.8 veya sonrası) kurarsan her sesli not, telefonda dinleyebilmen için
+  Apple'ın WatchConnectivity bağlantısıyla <strong>doğrudan saatinden eşli
+  iPhone'una</strong> kopyalanır. Bu kopya cihazdan cihaza gider; arada bizim ya
+  da bir başkasının sunucusu yoktur. iPhone'da bir sesli notu silmek yalnızca
+  iPhone'daki kopyayı siler. iPhone uygulaması yoksa sesli notlar, sen silene ya
+  da uygulamayı kaldırana kadar saatte kalır.</p>
+  <h3>Sesli notu yazıya çevirmek — iPhone'unda (1.9 ve sonrası)</h3>
+  <p>1.9 sürümünden itibaren iPhone uygulaması bir sesli notu yazıya
+  çevirebilir. Bunun için Apple'ın Speech çatısı (<code>SpeechAnalyzer</code>)
+  <strong>iPhone'unda çalışır</strong>: tanıma modelini iOS indirir, ses cihazda
+  işlenir. Ne ses ne metin bize ya da bize ait bir sunucuya gönderilir. Metin,
+  iPhone'unda uygulamanın kendi klasöründe sesli notun yanına kaydedilir ve notla
+  birlikte silinir. Ancak <em>Not olarak kaydet</em>'e dokunursan eşitlenen
+  notlarının parçası olur. İlk kez <em>Yazıya çevir</em>'e dokunana kadar hiçbir
+  şey çevrilmez; iOS konuşma tanıma iznini de o an sorar. iOS 26 ve sonrası
+  gerekir. 2.0 sürümünden itibaren, konuşma tanımaya izin verdikten sonra gelen
+  bir sesli not ayrıca dokunmadan yazıya çevrilir. Dökümler VoxWhisper Pro’ya
+  dahildir; iPhone’da yaptığın ilk üç kayıtta ücretsizdir.</p>
+  <h3>iPhone’da kayıt (2.0 ve sonrası)</h3>
+  <p>2.0 sürümünden itibaren iPhone uygulaması da kayıt yapabilir. iPhone’da
+  yapılan kayıt, o iPhone’da uygulamanın kendi klasöründe bir dosyadır.
+  <strong>iCloud’a yüklenmez ve bize gönderilmez.</strong> Sen silene ya da
+  uygulamayı kaldırana kadar durur.</p>
+
+  <h3>Özetler ve yapılacaklar — iPhone’unda (2.0 ve sonrası)</h3>
+  <p>Uygulama bir dökümden başlık, kısa bir özet ve yapılacaklar listesi
+  çıkarır. Apple Intelligence açık olan iPhone’larda metni, Foundation Models
+  çatısı üzerinden Apple’ın dil modeli <strong>iPhone’unda çalışarak</strong>
+  yazar. Diğer iPhone’larda ve o modelin desteklemediği dillerde uygulama,
+  konuşanın kendi cümlelerini sabit kurallarla seçer; bu da iPhone’da yapılır.
+  İki durumda da ne döküm ne sonuç bize ya da bize ait bir sunucuya gönderilir.
+  Özetler uygulamanın kendi klasörüne kaydedilir ve sesli not silinince
+  kaldırılır. Aynı kurallar, bir metin notunu açtığında o not için yapılacak
+  önerir.</p>
+
+  <h3>Anımsatıcılar (2.0 ve sonrası)</h3>
+  <p>Bir yapılacak, <strong>yalnızca <em>Anımsatıcılar’a ekle</em>’ye
+  dokunduğunda</strong> anımsatıcı olur. Uygulama o tek anımsatıcıyı (başlığı,
+  onayladığın tarih ve VoxWhisper’dan geldiğini söyleyen bir satır) Apple’ın
+  EventKit’i üzerinden varsayılan Anımsatıcılar listene yazar;
+  <em>Geri al</em>’a dokunursan aynı anımsatıcıyı kaldırır. iOS Anımsatıcılar
+  için yalnızca tam erişim sunduğundan sistem istemi uygulamanın
+  anımsatıcılarına erişebileceğini söyler; VoxWhisper başka hiçbir anımsatıcıyı
+  okumaz, kopyalamaz, değiştirmez ya da bir yere göndermez. Anımsatıcılarının
+  örneğin iCloud üzerinden eşitlenip eşitlenmediği bizim değil, kendi hesap
+  ayarlarının konusudur.</p>
+
+  <h3>Dikte</h3>
+  <p>Konuşmayı metne çevirme işini sistem metin girişi denetleyicisi üzerinden
+  <strong>watchOS'un kendisi</strong> yapar. Saat uygulamasında konuşma tanıma
+  kodu yoktur; dikteden gelen sesi almaz ve saklamaz. O sistem servisinin konuşmanı
+  nasıl işlediği <a href="https://www.apple.com/legal/privacy/">Apple'ın gizlilik
+  politikasında</a> anlatılır.</p>
+  <h3>VoxWhisper ne istiyor</h3>
+  <ul>
+    <li><strong>Mikrofon</strong> (<code>NSMicrophoneUsageDescription</code>) —
+    yalnız sesli not kaydettiğinde. Dikte edilen metin notlar için uygulamanın
+    mikrofon erişimine ihtiyacı yoktur; onu sistem denetleyicisi halleder.</li>
+    <li><strong>Konuşma tanıma</strong>
+    (<code>NSSpeechRecognitionUsageDescription</code>) — iPhone uygulaması 1.9
+    ve sonrası, yalnız bir sesli notta <em>Yazıya çevir</em>'e dokunduğunda.</li>
+    <li><strong>Anımsatıcılar</strong>
+    (<code>NSRemindersFullAccessUsageDescription</code>) — iPhone uygulaması 2.0
+    ve sonrası, yalnız ilk kez <em>Anımsatıcılar’a ekle</em>’ye dokunduğunda.
+    Ayarlar’dan istediğin an kapatabilirsin; geri kalan her şey çalışmaya devam
+    eder.</li>
+    <li><strong>Başka hiçbir şey.</strong> Konum yok, HealthKit yok, hareket
+    yok, kişiler yok, kamera yok.</li>
+  </ul>
+  <h3>Kadrana ne söyleniyor</h3>
+  <p>Komplikasyon ayrı bir süreçte çalışır ve yanındaki herkesin okuyabileceği
+  sürekli açık bir ekrana çizilir. Bu yüzden ona <strong>yalnız sayılar</strong>
+  verilir: kaç notun ve kaç sesli notun var, sesli notlar ne kadar yer kaplıyor
+  ve son yakalama ne zamandı. <strong>Metin asla.</strong></p>
+  <h3>Ağ kullanımı</h3>
+  <p>VoxWhisper'da HTTP istemcisi, soket, analitik ve üçüncü taraf SDK yoktur.
+  Saatten bir şey çıkaran tek mekanizma, yukarıda anlatılan metin notların
+  iCloud anahtar-değer eşitlemesidir; o da Apple'ındır, bizim değil. iPhone'una
+  kopyalanan sesli notlar Apple'ın saat–iPhone arasındaki doğrudan bağlantısını
+  kullanır; o da Apple'ındır ve bizim üzerimizden internete çıkmaz.</p>
+
+
+  <h2 id="who-tr">Veri sorumlusu kim</h2>
+  <p>VoxWhisper uygulamasını <strong>Berke Kahraman</strong> — Türkiye'de kayıtlı bir
+  <em>şahıs firması</em> — geliştirir ve yayımlar. 6698 sayılı Kişisel Verilerin
+  Korunması Kanunu (KVKK) anlamında <em>veri sorumlusu</em>, AB/BK Genel Veri
+  Koruma Tüzüğü (GDPR) anlamında <em>veri denetleyicisi</em> odur. Bu metin aynı
+  zamanda KVKK m.10 kapsamındaki aydınlatma yükümlülüğünü yerine getirir.</p>
+  <p class="addr">Berke Kahraman<br>Ayvalı Mah. Afra Cad. No: 3F, İç Kapı No: 104<br>06010 Keçiören / Ankara, Türkiye<br><a href="mailto:brkekahraman@icloud.com">brkekahraman@icloud.com</a></p>
+  <p>Tek kişilik bir işletme olduğu için veri koruma görevlisi ve AB temsilcisi
+  yoktur; gizlilik yazışmalarını geliştirici bizzat okur ve genellikle birkaç
+  gün içinde yanıtlar.</p>
+
+  <h2 id="basis-tr">Hukuki dayanak</h2>
+  <ul>
+    <li><strong>VoxWhisper'in saatinde tuttuğu her şey</strong> — bunu biz
+    <em>işlemiyoruz</em>, çünkü bize hiç ulaşmıyor. Veri senin cihazında, senin
+    denetiminde durur ve uygulamayı sildiğinde gider. Bizim tarafımızda bir
+    işleme olmadığı için belirtilecek bir hukuki sebep de yoktur.</li>
+    <li><strong>Mikrofon izni</strong> — sistem isteminde sen verirsin,
+    Ayarlar'dan istediğin an geri alırsın; bu rızadır (KVKK m.5/1, GDPR
+    m.6(1)(a)). Kayıtlar saatinde ve iPhone uygulamasını kullanıyorsan
+    iPhone'unda kalır, dolayısıyla onları biz işlemeyiz.</li>
+    <li><strong>Konuşma tanıma izni</strong> (iPhone uygulaması 1.9 ve sonrası)
+    — aynı şekilde verilen ve geri alınabilen rıza. Yazıya çevirme iPhone'unda
+    yapılır; sesi de metni de biz almayız, işlemeyiz.</li>
+    <li><strong>Metin notların iCloud eşitlemesi</strong> — bu, kendi Apple
+    Hesabın altındaki, Apple'ın sana sunduğu kendi iCloud alanındır. O servisin
+    veri sorumlusu Apple'dır; biz değiliz, çünkü erişimimiz yok ve oradan bize
+    hiçbir şey gelmiyor. VoxWhisper için iCloud'u kapatmak (ya da hesaptan
+    çıkmak) eşitlemeyi durdurur, notlar saatte kalır.</li>
+    <li><strong>Bize e-posta yazarsan</strong> — sana yanıt verebilmek için
+    adresini ve yazdıklarını işleriz. Dayanak: KVKK m.5/2-(c) (sözleşmenin
+    kurulması veya ifasıyla doğrudan ilgili olma) ve m.5/2-(f) (meşru menfaat);
+    GDPR karşılığı m.6(1)(b) ve m.6(1)(f).</li>
+    <li><strong>Satın alman</strong> — satış sözleşmesi seninle Apple
+    arasındadır. Kayıtlı satıcı Apple'dır ve kendi veri sorumlusudur; bize adın,
+    adresin, e-postan ya da ödeme bilgin ulaşmaz — App Store Connect'te yalnız
+    kimliksiz satış toplamlarını görürüz.</li>
+  </ul>
+  <p>Hiçbir otomatik karar verme ve hiçbir profilleme yoktur (KVKK m.11/1-(g),
+  GDPR m.22).</p>
+
+  <h2 id="rights-tr">İlgili kişi olarak haklarım</h2>
+  <p>KVKK m.11 ve GDPR m.15–22 uyarınca şunları isteyebilirsin: kişisel
+  verinin <strong>işlenip işlenmediğini öğrenme</strong> ve işlenmişse buna
+  ilişkin <strong>bilgi talep etme</strong>; işlenme <strong>amacını</strong> ve
+  amacına uygun kullanılıp kullanılmadığını öğrenme; yurt içinde veya yurt
+  dışında verinin <strong>aktarıldığı üçüncü kişileri</strong> bilme; eksik veya
+  yanlış işlenmişse <strong>düzeltilmesini</strong>; şartları oluşmuşsa
+  <strong>silinmesini veya yok edilmesini</strong>; işlemenin
+  <strong>kısıtlanmasını</strong>; verdiğin verilerin makine tarafından
+  okunabilir biçimde sana ya da başka bir sorumluya
+  <strong>taşınmasını</strong>; meşru menfaate dayalı işlemeye
+  <strong>itiraz etmeyi</strong>; ve kanuna aykırı işleme sebebiyle zarara
+  uğradıysan <strong>zararın giderilmesini</strong>. Rızaya dayanan bir şey
+  varsa — örneğin bir izin ekranı — rızanı <strong>istediğin an geri
+  alabilirsin</strong>; bu, öncesinde yapılanları etkilemez.</p>
+  <p><strong>Nasıl kullanılır:</strong> <a href="mailto:brkekahraman@icloud.com">brkekahraman@icloud.com</a>
+  adresine ne istediğini yaz. Başvuruna, Veri Sorumlusuna Başvuru Usul ve
+  Esasları Hakkında Tebliğ uyarınca en geç <strong>30 gün</strong> içinde
+  (GDPR kapsamında en geç bir ay içinde) ücretsiz olarak yanıt veririz.</p>
+  <p><strong>Aslında çoğu için bize ihtiyacın yok.</strong> VoxWhisper'in çalıştığı
+  veri saatinin üzerindedir. Uygulama içinden sil, Ayarlar'dan izni geri al ya
+  da uygulamayı kaldır — gider. İstesen bile geri getiremeyiz, veremeyiz;
+  çünkü bir kopyası bizde hiç olmadı.</p>
+
+  <h2 id="complain-tr">Şikâyet hakkı</h2>
+  <p>Mümkünse önce bize yaz — genelde en hızlısı budur. Ama zorunlu değildir;
+  her zaman bir denetim makamına şikâyette bulunma hakkın vardır:</p>
+  <ul>
+    <li><strong>Türkiye:</strong> Kişisel Verileri Koruma Kurumu / Kurulu —
+    <a href="https://www.kvkk.gov.tr/">kvkk.gov.tr</a> (KVKK m.14: önce veri
+    sorumlusuna başvurulur, yanıt yetersizse ya da 30 gün içinde yanıt
+    verilmezse Kurul'a şikâyet edilir)</li>
+    <li><strong>AB / AEA:</strong> yaşadığın, çalıştığın ya da sorunun
+    yaşandığını düşündüğün ülkenin veri koruma otoritesi — liste:
+    <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en">edpb.europa.eu</a></li>
+    <li><strong>Birleşik Krallık:</strong> Information Commissioner's Office —
+    <a href="https://ico.org.uk/">ico.org.uk</a></li>
+  </ul>
+
+  <h2 id="retention-tr">Saklama süreleri</h2>
+  <ul>
+    <li><strong>Saatinde:</strong> sen orada tuttuğun sürece. VoxWhisper içeriğini
+    kendiliğinden silmez; uygulamayı kaldırdığında konteyneri ve içindeki her
+    şey birlikte silinir.</li>
+    <li><strong>Destek e-postası:</strong> yalnız mesajını sonuçlandırmak için
+    gereken süre boyunca saklanır ve en geç <strong>12 ay</strong> içinde
+    silinir — bir kanun daha uzun saklamayı zorunlu kılmadıkça (örneğin mesajın
+    bir satın almayla ilgiliyse vergi ve ticari defter mevzuatı).</li>
+    <li><strong>Geri kalan her şey:</strong> yok, çünkü hiçbir şey yok.
+    Veritabanı çalıştırmıyoruz, içeriğinin yedeğini tutmuyoruz ve içinde verin
+    geçen bir günlük dosyası yazmıyoruz.</li>
+  </ul>
+
+  <h2 id="transfer-tr">Yurt dışına aktarım</h2>
+  <ul>
+    <li>Verini hiçbir yere aktarmıyoruz, çünkü bize hiç ulaşmıyor.</li>
+    <li><strong>Tek istisna e-postadır.</strong> Bize yazarsan mesajın
+    <strong>Türkiye'ye</strong> ulaşır; Türkiye AEA ve BK dışındadır ve AB
+    yeterlilik kararı yoktur. Bu aktarım, sen bizimle iletişim kurmayı seçtiğin
+    için gerçekleşir ve sana yanıt verebilmek için gereklidir (GDPR m.49(1)(b);
+    KVKK m.9 kapsamında açık rızana dayanan aktarım). Başka hiçbir amaçla
+    kullanılmaz, kimseye verilmez.</li>
+    <li><strong>Metin notlarının iCloud eşitlemesi</strong>, Apple'ın
+    servisidir ve Apple'ın altyapısında — Apple nerede işletiyorsa orada —
+    <a href="https://www.apple.com/legal/privacy/">Apple'ın gizlilik
+    politikası</a> ve Apple'ın kendi aktarım güvenceleri altında çalışır. Biz
+    tarafı değiliz, elimizde anahtar yok, bize kopya gelmiyor.</li>
+  </ul>
+
+  <h2 id="children-tr">Çocuklar</h2>
+  <p>VoxWhisper 4+ yaş derecelidir ve özellikle çocuklara yönelik değildir. Çocuklar
+  dahil hiç kimseden veri toplamadığı için ebeveyn onayı mekanizması ne gerekir
+  ne de sunulur.</p>
+
+  <h2 id="changes-tr">Politika değişirse</h2>
+  <p>Bu politika değişirse yeni sürüm, yürürlüğe girmeden <em>önce</em> bu
+  adreste yayımlanır ve yukarıdaki tarih güncellenir. Geriye dönük değişiklik
+  yapılmaz.</p>
+
+  <h2 id="contact-tr">İletişim</h2>
+  <p class="addr">Berke Kahraman<br>Ayvalı Mah. Afra Cad. No: 3F, İç Kapı No: 104<br>06010 Keçiören / Ankara, Türkiye<br><a href="mailto:brkekahraman@icloud.com">brkekahraman@icloud.com</a></p>
+
+  <h2 id="de">Deutsch</h2>
+  <div class="sum">
+  <p><strong>VoxWhisper erfasst keine Daten. Keine — wir betreiben keinen Server und haben kein Konto-System. Ihre Textnotizen werden allerdings synchronisiert, und zwar über Ihre eigene iCloud, die wir nicht lesen können. Sprachnotizen gelangen nie in iCloud oder zu uns — mit der iPhone-App werden sie direkt von Ihrer Uhr auf Ihr eigenes iPhone kopiert.</strong></p>
+  </div>
+
+  <h3>Zwei Arten der Erfassung, unterschiedlich behandelt</h3>
+  <p>VoxWhisper tut zwei Dinge, und es ist wichtig, dass Sie wissen: Sie werden
+  nicht gleich behandelt.</p>
+  <h3>1. Diktierte Textnotizen — diese synchronisieren über <em>Ihre</em> iCloud</h3>
+  <p>Textnotizen werden auf der Uhr gespeichert und <strong>zusätzlich in Ihren
+  eigenen iCloud-Schlüssel-Wert-Speicher gespiegelt</strong>
+  (<code>NSUbiquitousKeyValueStore</code>), damit sie auf Ihren anderen Geräten
+  mit demselben Apple-Account erscheinen. Das heißt: Notiztext
+  <strong>verlässt die Uhr</strong>. Er geht zu Apples iCloud, unter Ihrem
+  Apple-Account und Apples Datenschutzbedingungen, und sonst nirgendwohin.
+  <strong>Wir haben keinen Zugriff darauf.</strong> In der Kette steht kein
+  Server von uns, wir halten keinen Schlüssel, und wir haben keine Möglichkeit,
+  Ihre Notizen zu lesen, aufzulisten oder wiederherzustellen. Wenn Sie sich von
+  iCloud abmelden, bleiben die Notizen auf der Uhr und werden einfach nicht mehr
+  synchronisiert. Beim Löschen einer Notiz wird zusätzlich eine Löschmarkierung
+  veröffentlicht, damit sie nicht von einem anderen Gerät zurückkommt.</p>
+  <h3>2. Sprachnotizen — nie in iCloud, nie zu uns</h3>
+  <p>Sprachaufnahmen werden als Dateien im eigenen Ordner der App auf der Uhr
+  abgelegt. Sie werden <strong>nie</strong> in iCloud hochgeladen, nie an uns
+  gesendet, nie geteilt und auf keinem Server transkribiert. Wenn Sie
+  zusätzlich die VoxWhisper-App fürs iPhone (ab Version 1.8) installieren, wird
+  jede Sprachnotiz über Apples WatchConnectivity-Verbindung <strong>direkt von
+  Ihrer Uhr auf Ihr gekoppeltes iPhone</strong> kopiert, damit Sie sie dort
+  anhören können. Diese Kopie geht von Gerät zu Gerät; kein Server von uns oder
+  von anderen ist beteiligt. Das Löschen auf dem iPhone entfernt nur die Kopie
+  auf dem iPhone. Ohne die iPhone-App bleiben Sprachnotizen auf der Uhr, bis Sie
+  sie löschen oder die App löschen.</p>
+  <h3>Sprachnotiz in Text umwandeln — auf Ihrem iPhone (ab Version 1.9)</h3>
+  <p>Ab Version 1.9 kann die iPhone-App eine Sprachnotiz in Text umwandeln. Dafür
+  läuft Apples Speech-Framework (<code>SpeechAnalyzer</code>) <strong>auf Ihrem
+  iPhone</strong>: iOS lädt das Erkennungsmodell, das Audio wird auf dem Gerät
+  verarbeitet. Weder Audio noch Text werden an uns oder an einen Server von uns
+  gesendet. Der Text wird neben der Sprachnotiz im eigenen Ordner der App auf
+  Ihrem iPhone gespeichert und mit ihr gelöscht. Teil Ihrer synchronisierten
+  Notizen wird er nur, wenn Sie <em>Als Notiz sichern</em> tippen. Nichts wird
+  transkribiert, bevor Sie zum ersten Mal <em>Transkribieren</em> tippen; dann
+  fragt iOS auch nach der Berechtigung zur Spracherkennung. Erfordert iOS 26
+  oder neuer. Ab Version 2.0 wird eine Sprachnotiz, die eintrifft, nachdem Sie
+  die Spracherkennung erlaubt haben, ohne weiteres Tippen transkribiert.
+  Transkripte gehören zu VoxWhisper Pro; bei den ersten drei Aufnahmen auf dem
+  iPhone sind sie kostenlos enthalten.</p>
+  <h3>Aufnahme auf dem iPhone (ab Version 2.0)</h3>
+  <p>Ab Version 2.0 kann auch die iPhone-App aufnehmen. Eine auf dem iPhone
+  gemachte Aufnahme ist eine Datei im eigenen Ordner der App auf diesem iPhone.
+  Sie wird <strong>nicht in iCloud hochgeladen und nicht an uns
+  gesendet</strong>. Sie bleibt, bis Sie sie löschen oder die App löschen.</p>
+
+  <h3>Zusammenfassungen und Aufgaben — auf Ihrem iPhone (ab Version 2.0)</h3>
+  <p>Aus einem Transkript erstellt die App einen Titel, eine kurze
+  Zusammenfassung und eine Liste von Aufgaben. Auf einem iPhone mit aktivierter
+  Apple Intelligence schreibt Apples Sprachmodell den Text über das Framework
+  Foundation Models, <strong>und zwar auf Ihrem iPhone</strong>. Auf anderen
+  iPhones und in Sprachen, die dieses Modell nicht unterstützt, wählt die App
+  nach festen Regeln die eigenen Sätze der sprechenden Person aus, ebenfalls
+  auf dem iPhone. In beiden Fällen werden weder das Transkript noch das
+  Ergebnis an uns oder an einen Server von uns gesendet. Zusammenfassungen
+  werden im eigenen Ordner der App gespeichert und mit der Sprachnotiz
+  entfernt. Dieselben Regeln schlagen Aufgaben für eine Textnotiz vor, wenn Sie
+  sie öffnen.</p>
+
+  <h3>Erinnerungen (ab Version 2.0)</h3>
+  <p>Aus einer Aufgabe wird <strong>nur dann eine Erinnerung, wenn Sie auf
+  <em>Zu Erinnerungen hinzufügen</em> tippen</strong>. Die App schreibt dann
+  diese eine Erinnerung (ihren Titel, das von Ihnen bestätigte Datum und eine
+  Zeile, dass sie aus VoxWhisper stammt) über Apples EventKit in Ihre
+  Standardliste und entfernt genau diese Erinnerung wieder, wenn Sie auf
+  <em>Widerrufen</em> tippen. iOS bietet für Erinnerungen nur den Vollzugriff
+  an; der Systemdialog sagt deshalb, die App könne auf Ihre Erinnerungen
+  zugreifen. VoxWhisper liest, kopiert, ändert oder versendet keine andere
+  Erinnerung. Ob Ihre Erinnerungen synchronisiert werden, etwa über iCloud,
+  hängt von Ihren eigenen Accounteinstellungen ab, nicht von uns.</p>
+
+  <h3>Diktat</h3>
+  <p>Die Umwandlung von Sprache in Text übernimmt <strong>watchOS
+  selbst</strong>, über den Texteingabe-Controller des Systems. Die Uhr-App
+  enthält keinen Spracherkennungscode und erhält oder speichert das Audio des
+  Diktats nie. Wie dieser Systemdienst mit Ihrer Sprache umgeht, beschreibt
+  <a href="https://www.apple.com/legal/privacy/">Apples
+  Datenschutzrichtlinie</a>.</p>
+  <h3>Worum VoxWhisper bittet</h3>
+  <ul>
+    <li><strong>Mikrofon</strong>
+    (<code>NSMicrophoneUsageDescription</code>), nur wenn Sie eine Sprachnotiz
+    aufnehmen. Für diktierte Textnotizen braucht die App keinen
+    Mikrofonzugriff — das übernimmt der Controller des Systems.</li>
+    <li><strong>Spracherkennung</strong>
+    (<code>NSSpeechRecognitionUsageDescription</code>), iPhone-App ab 1.9, nur
+    wenn Sie bei einer Sprachnotiz <em>Transkribieren</em> tippen.</li>
+    <li><strong>Erinnerungen</strong>
+    (<code>NSRemindersFullAccessUsageDescription</code>), iPhone-App ab 2.0, nur
+    wenn Sie zum ersten Mal auf <em>Zu Erinnerungen hinzufügen</em> tippen. Sie
+    können den Zugriff jederzeit in den Einstellungen ausschalten; alles andere
+    funktioniert weiter.</li>
+    <li><strong>Sonst nichts.</strong> Kein Standort, kein HealthKit, keine
+    Bewegungsdaten, keine Kontakte, keine Kamera.</li>
+  </ul>
+  <h3>Was das Zifferblatt erfährt</h3>
+  <p>Die Komplikation läuft in einem eigenen Prozess und wird auf einem
+  Always-On-Display gezeichnet, das jede Person neben Ihnen mitlesen kann. Sie
+  erhält deshalb <strong>nur Zählwerte</strong> — wie viele Notizen und
+  Sprachnotizen Sie haben, wie viel Platz die Sprachnotizen belegen und wann die
+  letzte Erfassung war. <strong>Nie den Text.</strong></p>
+  <h3>Netzwerknutzung</h3>
+  <p>VoxWhisper enthält keinen HTTP-Client, keine Sockets, keine Analyse und
+  kein SDK von Dritten. Der einzige Mechanismus, der überhaupt etwas von der Uhr
+  bewegt, ist die oben beschriebene iCloud-Schlüssel-Wert-Synchronisierung der
+  Textnotizen — und die gehört Apple, nicht uns. Sprachnotizen, die auf Ihr
+  iPhone kopiert werden, laufen über Apples direkte Verbindung zwischen Uhr und
+  iPhone, die ebenfalls Apple gehört und nie über uns ins Internet geht.</p>
+
+  <h2 id="who-de">Wer ist verantwortlich</h2>
+  <p><strong>Berke Kahraman</strong> — ein in der Türkei eingetragener
+  Einzelunternehmer (<em>şahıs firması</em>) — entwickelt und veröffentlicht
+  VoxWhisper. Er ist der <em>Verantwortliche</em> im Sinne der
+  Datenschutz-Grundverordnung der EU und des Vereinigten Königreichs (DSGVO) und
+  <em>veri sorumlusu</em> nach dem türkischen Gesetz Nr. 6698 zum Schutz
+  personenbezogener Daten (KVKK).</p>
+  <p class="addr">Berke Kahraman<br>Ayvalı Mah. Afra Cad. No: 3F, İç Kapı No: 104<br>06010 Keçiören / Ankara, Türkiye<br><a href="mailto:brkekahraman@icloud.com">brkekahraman@icloud.com</a></p>
+  <p>Dies ist ein Ein-Personen-Unternehmen; es gibt daher weder einen
+  Datenschutzbeauftragten noch einen Vertreter in der EU. Datenschutzpost liest
+  und beantwortet der Entwickler persönlich, in der Regel innerhalb weniger
+  Tage.</p>
+
+  <h2 id="basis-de">Rechtsgrundlage für alles, was geschieht</h2>
+  <ul>
+    <li><strong>Alles, was VoxWhisper auf Ihrer Uhr behält</strong> — wir
+    verarbeiten es nicht, denn es erreicht uns nie. Es liegt auf Ihrem Gerät,
+    unter Ihrer Kontrolle, und ist fort, sobald Sie die App löschen. Für uns ist
+    keine Rechtsgrundlage anzugeben, weil bei uns keine Verarbeitung
+    stattfindet.</li>
+    <li><strong>Mikrofonberechtigung</strong> — von Ihnen im Systemdialog
+    erteilt, jederzeit in den Einstellungen widerrufbar; Einwilligung,
+    Art. 6 Abs. 1 lit. a DSGVO / KVKK Art. 5 Abs. 1. Die Aufnahmen bleiben auf
+    Ihrer Uhr und, wenn Sie die iPhone-App nutzen, auf Ihrem iPhone; wir
+    verarbeiten sie also nicht.</li>
+    <li><strong>Berechtigung zur Spracherkennung</strong> (iPhone-App ab 1.9) —
+    Einwilligung, ebenso erteilt und widerrufbar. Die Transkription läuft auf
+    Ihrem iPhone; wir erhalten und verarbeiten weder Audio noch Text.</li>
+    <li><strong>iCloud-Synchronisierung der Textnotizen</strong> — das ist Ihr
+    eigener iCloud-Speicher unter Ihrem eigenen Apple-Account, den Apple Ihnen
+    bereitstellt. Für diesen Dienst ist Apple der Verantwortliche; wir sind es
+    nicht, denn wir haben keinen Zugriff darauf und erhalten nichts daraus.
+    Schalten Sie iCloud für VoxWhisper aus (oder melden Sie sich ab), endet die
+    Synchronisierung, und die Notizen bleiben auf der Uhr.</li>
+    <li><strong>Wenn Sie uns schreiben</strong> — dann verarbeiten wir Ihre
+    Adresse und das, was Sie schreiben, um Ihnen zu antworten. Rechtsgrundlage:
+    Art. 6 Abs. 1 lit. b DSGVO (Maßnahmen auf Ihre Anfrage hin) und
+    Art. 6 Abs. 1 lit. f DSGVO (unser berechtigtes Interesse, die Menschen zu
+    unterstützen, die die App gekauft haben). Nach KVKK Art. 5 Abs. 2 lit. c und
+    lit. f.</li>
+    <li><strong>Ihr Kauf</strong> — der Kaufvertrag besteht zwischen Ihnen und
+    Apple. Apple ist Händler (merchant of record) und eigener Verantwortlicher;
+    wir erhalten von Apple weder Namen noch Anschrift, E-Mail-Adresse oder
+    Zahlungsdaten, sondern in App Store Connect nur anonyme Verkaufssummen.</li>
+  </ul>
+  <p>Es findet keine automatisierte Entscheidungsfindung und kein Profiling
+  statt, im Sinne von Art. 22 DSGVO oder KVKK Art. 11 lit. g.</p>
+
+  <h2 id="rights-de">Ihre Rechte</h2>
+  <p>Nach der DSGVO (Art. 15–22) und dem KVKK (Art. 11) haben Sie uns gegenüber
+  das Recht auf: <strong>Auskunft</strong> über die personenbezogenen Daten, die
+  wir über Sie verarbeiten; <strong>Berichtigung</strong> unrichtiger Daten;
+  <strong>Löschung</strong>; <strong>Einschränkung der Verarbeitung</strong>;
+  <strong>Datenübertragbarkeit</strong> der von Ihnen bereitgestellten Daten in
+  einem maschinenlesbaren Format; und auf <strong>Widerspruch</strong> gegen
+  eine Verarbeitung, die auf berechtigten Interessen beruht. Soweit Sie eine
+  Einwilligung erteilt haben — etwa in einem Berechtigungsdialog —, können Sie
+  diese <strong>jederzeit widerrufen</strong>, ohne dass die Rechtmäßigkeit der
+  bis dahin erfolgten Verarbeitung berührt wird. KVKK Art. 11 gibt Ihnen
+  zusätzlich das Recht, zu erfahren, ob Ihre Daten verarbeitet werden, den Zweck
+  zu erfahren, die Dritten zu erfahren, an die sie übermittelt werden, und
+  Ersatz für Schäden aus einer rechtswidrigen Verarbeitung zu verlangen.</p>
+  <p><strong>So üben Sie sie aus:</strong> Schreiben Sie an
+  <a href="mailto:brkekahraman@icloud.com">brkekahraman@icloud.com</a> und sagen Sie, was Sie möchten. Wir
+  antworten innerhalb eines Monats (Art. 12 Abs. 3 DSGVO); KVKK-Anträge werden
+  nach dem Kommuniqué über die Verfahren und Grundsätze der Antragstellung beim
+  Verantwortlichen innerhalb von 30 Tagen beantwortet. Es entstehen Ihnen keine
+  Kosten.</p>
+  <p><strong>In der Praxis brauchen Sie uns für das meiste davon nicht.</strong>
+  Die Daten, mit denen VoxWhisper arbeitet, liegen auf Ihrer Uhr. Löschen Sie sie in
+  der App, widerrufen Sie eine Berechtigung in den Einstellungen, oder löschen
+  Sie die App — und sie sind fort. Wir könnten sie selbst auf Ihre Bitte hin
+  weder abrufen noch wiederherstellen oder herausgeben, weil wir nie eine Kopie
+  hatten.</p>
+
+  <h2 id="complain-de">Beschwerde über uns</h2>
+  <p>Sagen Sie es möglichst zuerst uns — das geht meistens schneller. Sie müssen
+  das aber nicht, und Sie haben jederzeit das <strong>Beschwerderecht bei einer
+  Aufsichtsbehörde</strong>:</p>
+  <ul>
+    <li><strong>EU / EWR:</strong> die Datenschutz-Aufsichtsbehörde des Landes,
+    in dem Sie leben oder arbeiten oder in dem der mutmaßliche Verstoß
+    stattgefunden hat — in Deutschland die oder der Landesbeauftragte für den
+    Datenschutz Ihres Bundeslandes, in Österreich die Datenschutzbehörde. Die
+    vollständige Liste steht bei
+    <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en">edpb.europa.eu</a></li>
+    <li><strong>Vereinigtes Königreich:</strong> das Information Commissioner's
+    Office — <a href="https://ico.org.uk/">ico.org.uk</a></li>
+    <li><strong>Türkei:</strong> Kişisel Verileri Koruma Kurumu / Kurulu —
+    <a href="https://www.kvkk.gov.tr/">kvkk.gov.tr</a></li>
+  </ul>
+
+  <h2 id="retention-de">Wie lange etwas aufbewahrt wird</h2>
+  <ul>
+    <li><strong>Auf Ihrer Uhr:</strong> so lange, wie Sie es dort behalten.
+    VoxWhisper lässt Ihre Inhalte nicht verfallen und löscht sie nicht von selbst;
+    beim Löschen der App verschwindet ihr Container mit allem darin.</li>
+    <li><strong>Support-E-Mail:</strong> nur so lange, wie wir sie zur
+    Bearbeitung Ihrer Nachricht brauchen, und spätestens nach
+    <strong>12 Monaten</strong> gelöscht — es sei denn, ein Gesetz verpflichtet
+    uns, einen bestimmten Beleg länger aufzubewahren (etwa das türkische Steuer-
+    und Handelsbuchführungsrecht, wenn Ihre Nachricht einen Kauf betrifft).</li>
+    <li><strong>Alles andere:</strong> nichts, weil es nichts gibt. Wir
+    betreiben keine Datenbank, führen keine Sicherung Ihrer Inhalte und
+    schreiben keine Protokolldatei, in der Ihre Daten vorkommen.</li>
+  </ul>
+
+  <h2 id="transfer-de">Übermittlungen in Drittländer</h2>
+  <ul>
+    <li>Wir übermitteln Ihre Daten nirgendwohin, weil wir sie nicht
+    erhalten.</li>
+    <li><strong>Die einzige Ausnahme ist E-Mail.</strong> Wenn Sie uns
+    schreiben, erreicht Ihre Nachricht uns in der <strong>Türkei</strong> —
+    außerhalb des EWR und des Vereinigten Königreichs, und für die Türkei gibt
+    es keinen EU-Angemessenheitsbeschluss. Diese Übermittlung findet statt, weil
+    Sie sich entschieden haben, uns zu kontaktieren, und sie ist erforderlich,
+    um Ihnen zu antworten (Art. 49 Abs. 1 lit. b DSGVO). Wir verwenden sie für
+    nichts anderes und geben sie an niemanden weiter.</li>
+    <li><strong>Die iCloud-Synchronisierung Ihrer Textnotizen</strong> ist
+    Apples Dienst auf Apples Infrastruktur, wo immer Apple sie betreibt, nach
+    <a href="https://www.apple.com/legal/privacy/">Apples
+    Datenschutzrichtlinie</a> und Apples eigenen Garantien für Übermittlungen.
+    Wir sind daran nicht beteiligt, halten keinen Schlüssel und erhalten keine
+    Kopie.</li>
+  </ul>
+
+  <h2 id="children-de">Kinder</h2>
+  <p>VoxWhisper ist mit 4+ eingestuft und richtet sich nicht besonders an Kinder. Die
+  App erfasst von niemandem etwas, Kinder eingeschlossen, sodass kein
+  Mechanismus für eine elterliche Einwilligung nötig ist oder angeboten
+  wird.</p>
+
+  <h2 id="changes-de">Änderungen dieser Erklärung</h2>
+  <p>Ändert sich diese Datenschutzerklärung, wird die neue Fassung
+  <em>vor</em> ihrem Inkrafttreten unter dieser Adresse veröffentlicht, und das
+  Datum oben ändert sich mit. Rückwirkend wird nichts geändert.</p>
+
+  <h2 id="contact-de">Kontakt</h2>
+  <p class="addr">Berke Kahraman<br>Ayvalı Mah. Afra Cad. No: 3F, İç Kapı No: 104<br>06010 Keçiören / Ankara, Türkiye<br><a href="mailto:brkekahraman@icloud.com">brkekahraman@icloud.com</a></p>
+
+    <h2 id="ja">日本語</h2>
+  <div class="sum">
+  <p><strong>VoxWhisperは個人情報を一切収集しません。ひとつもです — 当方はサーバーを運用しておらず、アカウントの仕組みも持っていません。テキストメモはご自身のiCloudを通じて同期されますが、当方はそれを読むことができません。ボイスメモがiCloudや当方に送られることはありません。iPhoneアプリをお使いの場合は、時計からご自身のiPhoneへ直接コピーされます。</strong></p>
+  </div>
+
+  <h3>2種類の記録は、扱いが異なります</h3>
+  <p>VoxWhisperは2つのことを行います。そしてこの2つが同じ扱いではないことを、
+  知っておいていただくことが大切です。</p>
+  <h3>1. 音声入力したテキストメモ — これは<em>ご自身の</em>iCloudを通じて同期されます</h3>
+  <p>テキストメモは時計に保存され、<strong>同時にご自身のiCloudキー値ストアにも
+  複製されます</strong>（<code>NSUbiquitousKeyValueStore</code>）。同じApple Accountで
+  サインインしている他の端末にも表示されるようにするためです。つまり、メモの本文は
+  <strong>時計の外に出ます</strong>。行き先はご自身のApple Accountのもと、Appleの
+  プライバシー条件に従うAppleのiCloudであり、それ以外のどこでもありません。
+  <strong>当方はそこにアクセスできません。</strong>この経路に当方のサーバーはなく、
+  当方が持つ鍵もなく、あなたのメモを読む・一覧する・復元する手段もありません。iCloudから
+  サインアウトすると、メモは時計に残ったまま、同期だけが止まります。メモを削除すると
+  削除マーカーも公開されるため、他の端末から復活することはありません。</p>
+  <h3>2. ボイスメモ — iCloudにも当方にも送られません</h3>
+  <p>録音は、時計上のアプリ自身のフォルダにファイルとして書き込まれます。iCloudに
+  アップロードされることは<strong>決してなく</strong>、当方に送られることも、共有される
+  ことも、いかなるサーバーで文字起こしされることもありません。VoxWhisperのiPhoneアプリ
+  （バージョン1.8以降）もインストールした場合、各ボイスメモはiPhoneで再生できるよう、
+  AppleのWatchConnectivity接続を通じて<strong>時計からペアリング済みのiPhoneへ直接</strong>
+  コピーされます。このコピーは端末から端末へ直接届き、当方や第三者のサーバーは介在しません。
+  iPhoneでボイスメモを削除しても、消えるのはiPhone上のコピーだけです。iPhoneアプリが
+  ない場合、ボイスメモはあなたが削除するか、アプリを削除するまで時計の中に留まります。</p>
+  <h3>ボイスメモの文字起こし — iPhone上で（バージョン1.9以降）</h3>
+  <p>バージョン1.9以降、iPhoneアプリはボイスメモをテキストにできます。これには
+  AppleのSpeechフレームワーク（<code>SpeechAnalyzer</code>）が<strong>お使いのiPhone上で</strong>
+  動作します。認識モデルはiOSがダウンロードし、音声は端末内で処理されます。音声もテキストも、
+  当方や当方のサーバーに送られることはありません。テキストはiPhone上のアプリ自身のフォルダに
+  ボイスメモと並べて保存され、ボイスメモと一緒に削除されます。「メモとして保存」をタップした
+  場合にのみ、同期されるメモの一部になります。初めて「文字起こし」をタップするまで何も
+  文字起こしされず、そのときにiOSが音声認識の許可を求めます。iOS 26以降が必要です。
+  バージョン2.0以降、音声認識を許可したあとに届いたボイスメモは、追加のタップなしで
+  文字起こしされます。文字起こしはVoxWhisper Proの機能で、iPhoneで録音した最初の3件には
+  無料で含まれます。</p>
+  <h3>iPhoneでの録音（バージョン2.0以降）</h3>
+  <p>バージョン2.0以降、iPhoneアプリでも録音できます。iPhoneで行った録音は、そのiPhone上の
+  アプリ自身のフォルダにあるファイルです。<strong>iCloudにアップロードされることも、当方に
+  送られることもありません。</strong>お客様が削除するか、アプリを削除するまで残ります。</p>
+
+  <h3>要約とやること — iPhone上で（バージョン2.0以降）</h3>
+  <p>アプリは文字起こしから、タイトル、短い要約、やることの一覧を作ります。Apple Intelligenceが
+  オンのiPhoneでは、Foundation Modelsフレームワークを通じてAppleの言語モデルが
+  <strong>お使いのiPhone上で</strong>文章を作成します。それ以外のiPhoneや、そのモデルが
+  対応していない言語では、アプリが決まったルールで話し手自身の文を選びます。これもiPhone上で
+  行われます。いずれの場合も、文字起こしも結果も、当方や当方のサーバーに送られることは
+  ありません。要約はアプリ自身のフォルダに保存され、ボイスメモを削除すると一緒に削除されます。
+  同じルールで、テキストメモを開いたときにやることの候補を示します。</p>
+
+  <h3>リマインダー（バージョン2.0以降）</h3>
+  <p>やることがリマインダーになるのは、<strong>「リマインダーに追加」をタップしたときだけ</strong>
+  です。アプリはその1件のリマインダー（タイトル、お客様が確認した日付、VoxWhisperからのものである
+  ことを示す1行）を、AppleのEventKitを通じてデフォルトのリマインダーリストに書き込み、
+  「取り消す」をタップすると同じリマインダーを削除します。iOSはリマインダーについてフルアクセス
+  しか提供していないため、システムの確認画面にはアプリがリマインダーにアクセスできると表示されますが、
+  VoxWhisperがほかのリマインダーを読んだり、コピーしたり、変更したり、どこかへ送ったりすることは
+  ありません。リマインダーがiCloudなどで同期されるかどうかは、当方ではなくお客様ご自身の
+  アカウント設定によります。</p>
+
+  <h3>音声入力について</h3>
+  <p>音声からテキストへの変換は、システムのテキスト入力コントローラを通じて
+  <strong>watchOS自身</strong>が行います。時計アプリには音声認識のコードがなく、
+  音声入力の音声を受け取ることも保存することもありません。そのシステムサービスが
+  あなたの音声をどのように取り扱うかは
+  <a href="https://www.apple.com/legal/privacy/">Appleのプライバシーポリシー</a>に
+  記載されています。</p>
+  <h3>VoxWhisperが求める許可</h3>
+  <ul>
+    <li><strong>マイク</strong>
+    （<code>NSMicrophoneUsageDescription</code>）。ボイスメモを録音するときだけです。
+    音声入力によるテキストメモには、アプリ側のマイクへのアクセスは必要ありません
+    — システムのコントローラが処理します。</li>
+    <li><strong>音声認識</strong>
+    （<code>NSSpeechRecognitionUsageDescription</code>）。iPhoneアプリ1.9以降で、
+    ボイスメモの「文字起こし」をタップしたときだけです。</li>
+    <li><strong>リマインダー</strong>
+    （<code>NSRemindersFullAccessUsageDescription</code>）。iPhoneアプリ2.0以降で、
+    初めて「リマインダーに追加」をタップしたときだけです。「設定」でいつでもオフにでき、
+    ほかの機能はそのまま使えます。</li>
+    <li><strong>それ以外は何も求めません。</strong>位置情報も、HealthKitも、モーションも、
+    連絡先も、カメラもです。</li>
+  </ul>
+  <h3>文字盤に伝えられること</h3>
+  <p>コンプリケーションは別のプロセスで動き、隣に立った人にも読める常時表示のディスプレイに
+  描画されます。そのため、伝えられるのは<strong>件数などの数値だけ</strong>です
+  — メモとボイスメモの件数、ボイスメモが使っている容量、最後に記録した時刻。
+  <strong>本文は決して渡しません。</strong></p>
+  <h3>ネットワークの利用</h3>
+  <p>VoxWhisperにはHTTPクライアントも、ソケットも、解析も、第三者のSDKもありません。
+  時計の外へ何かを動かす仕組みは、上に書いたテキストメモのiCloudキー値同期ただひとつで、
+  それはAppleのものであって当方のものではありません。iPhoneへコピーされるボイスメモは、
+  時計とiPhoneを直接結ぶAppleの接続を使います。これもAppleのものであり、当方を経由して
+  インターネットに出ることはありません。</p>
+
+  <h2 id="who-ja">個人情報取扱事業者（管理者）</h2>
+  <p>VoxWhisperを開発・提供しているのは<strong>Berke Kahraman</strong>（トルコで登録された
+  個人事業主／<em>şahıs firması</em>）です。EU・英国の一般データ保護規則（GDPR）にいう
+  <em>管理者</em>、トルコ個人情報保護法第6698号（KVKK）にいう<em>veri sorumlusu</em>、
+  そして日本の個人情報の保護に関する法律（個人情報保護法・APPI）にいう
+  <strong>個人情報取扱事業者</strong>に当たります。日本にお住まいの方に対してVoxWhisperを
+  提供するにあたって取得する個人情報については、同法の域外適用の対象となり得るため、
+  本項以下では同法が求める事項もあわせて記載しています。</p>
+  <p class="addr">Berke Kahraman<br>Ayvalı Mah. Afra Cad. No: 3F, İç Kapı No: 104<br>06010 Keçiören / Ankara, Türkiye<br><a href="mailto:brkekahraman@icloud.com">brkekahraman@icloud.com</a></p>
+  <p>一人の事業者であるため、データ保護責任者もEU域内の代理人もいません。プライバシーに
+  関するお問い合わせは開発者本人が読み、通常は数日以内に返信します。</p>
+
+  <h2 id="basis-ja">利用目的と法的根拠</h2>
+  <p>個人情報保護法第17条・第21条に基づき、取得する情報とその<strong>利用目的</strong>は
+  次のとおりです。目的外の利用は行いません。</p>
+  <ul>
+    <li><strong>VoxWhisperがお使いの時計に保持するもの</strong> — 当方はこれを取り扱って
+    いません。当方に届かないからです。それはお客様の端末の中に、お客様の管理のもとにあり、
+    アプリを削除すれば消えます。当方の側に取扱いがないため、当方について述べるべき法的根拠も
+    ありません。</li>
+    <li><strong>マイクの許可</strong> — システムのダイアログでお客様が与えるもので、
+    「設定」からいつでも取り消せます。これは同意（GDPR第6条1項(a)／KVKK第5条1項）に
+    当たります。録音はお客様の時計と、iPhoneアプリをお使いの場合はお客様のiPhoneに留まるため、
+    当方がこれを取り扱うことはありません。</li>
+    <li><strong>音声認識の許可</strong>（iPhoneアプリ1.9以降） — 同じようにお客様が与え、
+    いつでも取り消せる同意です。文字起こしはお客様のiPhone上で行われ、当方は音声もテキストも
+    受け取らず、取り扱いません。</li>
+    <li><strong>テキストメモのiCloud同期</strong> — これはお客様ご自身のApple Accountの
+    もとでAppleがお客様に提供する、お客様ご自身のiCloudストレージです。このサービスに
+    ついての管理者はAppleであって当方ではありません。当方はそこにアクセスできず、そこから
+    何も受け取らないからです。VoxWhisperのiCloudをオフにする（またはサインアウトする）と
+    同期は終わり、メモは時計に残ります。日本の個人情報保護法との関係でも、これは当方による
+    <strong>第三者提供</strong>ではありません。当方が保有していないものを提供することは
+    できないからです。</li>
+    <li><strong>当方にメールをお送りいただいた場合</strong> — 返信するために、お客様の
+    アドレスとお書きになった内容を取り扱います。利用目的はお問い合わせへの対応のみです。
+    法的根拠：GDPR第6条1項(b)（お客様の求めに応じた措置）および第6条1項(f)（アプリを
+    購入された方を支援するという正当な利益）。KVKKでは第5条2項(c)および(f)。個人情報保護法
+    では、この利用目的の範囲でのみ取り扱います。</li>
+    <li><strong>お客様の購入</strong> — 販売の契約はお客様とAppleとの間のものです。Apple
+    が販売者（merchant of record）であり、Apple自身が管理者です。当方は氏名・住所・
+    メールアドレス・支払情報のいずれも受け取らず、App Store Connectで匿名の販売合計を
+    見るだけです。</li>
+  </ul>
+  <p>GDPR第22条・KVKK第11条(g)にいう自動化された意思決定も、いかなるプロファイリングも
+  行いません。</p>
+  <p><strong>第三者提供</strong>（個人情報保護法第27条）は行いません。個人データを第三者に
+  提供したり、共同利用したり、取扱いを外部に委託したりしていません。</p>
+
+  <h2 id="rights-ja">お客様の権利</h2>
+  <p>GDPR（第15条〜第22条）およびKVKK（第11条）に基づき、当方が保有するお客様の個人
+  データについて、<strong>アクセス</strong>、正確でないものの<strong>訂正</strong>、
+  <strong>消去</strong>、取扱いの<strong>制限</strong>、機械可読な形式での
+  <strong>データポータビリティ</strong>、正当な利益に基づく取扱いへの<strong>異議</strong>を
+  求めることができます。同意に基づくもの — たとえば許可のダイアログ — については、
+  <strong>いつでも同意を撤回</strong>でき、撤回前に行われたことの適法性は影響を受けません。</p>
+  <p>日本の個人情報保護法に基づき、お客様は当方が保有する保有個人データについて、
+  <strong>利用目的の通知</strong>（第32条3項）、<strong>開示請求</strong>（第33条）、
+  内容が事実でない場合の<strong>訂正・追加・削除</strong>（第34条）、法令違反がある場合の
+  <strong>利用停止・消去</strong>および<strong>第三者提供の停止</strong>（第35条）を
+  請求することができます。</p>
+  <p><strong>手続き：</strong>
+  <a href="mailto:brkekahraman@icloud.com">brkekahraman@icloud.com</a>宛てに、ご希望の
+  内容をお書きください。ご本人であることを確認できる範囲で、遅滞なく、原則として
+  <strong>30日以内</strong>に対応します（GDPRでは1か月以内）。手数料はいただきません。</p>
+  <p><strong>ただし、実際にはそのほとんどに当方は必要ありません。</strong>VoxWhisperが扱う
+  データはお使いの時計の中にあります。アプリの中で削除する、「設定」で許可を取り消す、
+  あるいはアプリを削除する — それで消えます。お求めいただいても、当方はそれを取り出すことも、
+  復元することも、お渡しすることもできません。複製を一度も持ったことがないからです。</p>
+
+  <h2 id="complain-ja">苦情の申し立て</h2>
+  <p>できればまず当方にお知らせください。たいていはそれが一番早い方法です。ただしその義務は
+  なく、監督機関に苦情を申し立てる権利はいつでもあります。</p>
+  <ul>
+    <li><strong>日本：</strong>個人情報保護委員会 —
+    <a href="https://www.ppc.go.jp/">ppc.go.jp</a>（個人情報保護法第40条に基づき、
+    当方も苦情の適切かつ迅速な処理に努めます）</li>
+    <li><strong>EU／EEA：</strong>お住まいの国、お勤めの国、または問題が起きたと考えられる
+    国のデータ保護機関 — 一覧は
+    <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en">edpb.europa.eu</a></li>
+    <li><strong>英国：</strong>Information Commissioner's Office —
+    <a href="https://ico.org.uk/">ico.org.uk</a></li>
+    <li><strong>トルコ：</strong>Kişisel Verileri Koruma Kurumu / Kurulu —
+    <a href="https://www.kvkk.gov.tr/">kvkk.gov.tr</a></li>
+  </ul>
+
+  <h2 id="retention-ja">保有期間</h2>
+  <ul>
+    <li><strong>お使いの時計の中：</strong>お客様がそこに置いておく限りです。VoxWhisperは
+    お客様の内容を期限切れにしたり自動的に削除したりしません。アプリを削除すると、その
+    コンテナと中身がすべて消えます。</li>
+    <li><strong>サポートのメール：</strong>お客様のご連絡に対応するために必要な期間だけ
+    保管し、遅くとも<strong>12か月</strong>以内に削除します。ただし、特定の記録をより長く
+    保存することを法令が求める場合を除きます（たとえば、ご連絡が購入に関するものである
+    場合のトルコの税務・商業帳簿の規定）。</li>
+    <li><strong>それ以外のすべて：</strong>ありません。何もないからです。データベースを
+    運用しておらず、お客様の内容のバックアップも取らず、お客様のデータが含まれるログ
+    ファイルも書いていません。</li>
+  </ul>
+
+  <h2 id="transfer-ja">外国にある第三者への提供</h2>
+  <ul>
+    <li>当方はお客様のデータをどこにも移転していません。そもそも受け取っていないからです。</li>
+    <li><strong>唯一の例外はメールです。</strong>当方にお書きになると、そのメッセージは
+    <strong>トルコ</strong>にいる当方に届きます。トルコはEEAと英国の外にあり、EUの十分性
+    認定もありません。この移転は、お客様が当方に連絡することを選ばれたために生じるもので、
+    返信のために必要です（GDPR第49条1項(b)）。ほかの目的には使わず、誰にも渡しません。
+    なお日本の個人情報保護法との関係では、これは「外国にある<em>第三者</em>への提供」
+    （第28条）ではありません。トルコに所在する当方自身が個人情報取扱事業者であり、
+    受け取っているのが当方自身だからです。</li>
+    <li><strong>テキストメモのiCloud同期</strong>は、Appleが運用する場所がどこであれ、
+    Appleのインフラ上のAppleのサービスであり、
+    <a href="https://www.apple.com/legal/privacy/">Appleのプライバシーポリシー</a>と
+    Apple自身の移転に関する保護措置に従います。当方はこれに関与せず、鍵も持たず、
+    複製も受け取りません。</li>
+  </ul>
+
+  <h2 id="children-ja">お子様について</h2>
+  <p>VoxWhisperの年齢制限は4+で、特にお子様に向けたものではありません。お子様を含め、
+  誰からも何も収集しないため、保護者の同意を得る仕組みは必要でも提供されるものでも
+  ありません。</p>
+
+  <h2 id="changes-ja">本ポリシーの変更</h2>
+  <p>本ポリシーを変更する場合は、効力が生じる<em>前</em>に新しい版をこのアドレスで公開し、
+  冒頭の日付も同時に更新します。遡って変更することはありません。</p>
+
+  <h2 id="contact-ja">お問い合わせ</h2>
+  <p class="addr">Berke Kahraman<br>Ayvalı Mah. Afra Cad. No: 3F, İç Kapı No: 104<br>06010 Keçiören / Ankara, Türkiye<br><a href="mailto:brkekahraman@icloud.com">brkekahraman@icloud.com</a></p>
+
+  <p class="foot">© 2026 Berke Kahraman · Ayvalı Mah. Afra Cad. No: 3F,
+  İç Kapı No: 104, 06010 Keçiören / Ankara, Türkiye ·
+  <a href="mailto:brkekahraman@icloud.com">brkekahraman@icloud.com</a></p>
+</div>
+</body>
+</html>
