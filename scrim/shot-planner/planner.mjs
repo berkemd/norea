@@ -31,6 +31,17 @@ function status(message, error = false) {
   $("status").textContent = t(message);
   $("status").classList.toggle("error", error);
 }
+function dismissStaleImport() {
+  if (!pending) return false;
+  pending = null;
+  $("import-preview").hidden = true;
+  return true;
+}
+function reselectFileMessage() {
+  return t(
+    "The plan changed while the file was opening. Choose the file again.",
+  );
+}
 function readForm() {
   return validate({
     version: 1,
@@ -99,6 +110,7 @@ function render() {
         ? [...plan.completed, c.id]
         : plan.completed.filter((x) => x !== c.id);
       revision++;
+      if (dismissStaleImport()) status(reselectFileMessage(), true);
       showBatchConfirmation(false);
       progress();
     });
@@ -258,13 +270,8 @@ $("cancel-import").addEventListener("click", () => {
 });
 $("planner").addEventListener("input", () => {
   revision++;
-  if (pending) {
-    pending = null;
-    $("import-preview").hidden = true;
-    status(
-      t("The plan changed while the file was opening. Choose the file again."),
-      true,
-    );
+  if (dismissStaleImport()) {
+    status(reselectFileMessage(), true);
     return;
   }
   if (plan)
@@ -378,7 +385,12 @@ $("clear-batch-marks").addEventListener("click", () => {
   revision++;
   render();
   $("plan-heading").focus();
-  status(t("Completion marks cleared. The shot list and setup are unchanged."));
+  const cleared = t(
+    "Completion marks cleared. The shot list and setup are unchanged.",
+  );
+  status(
+    dismissStaleImport() ? `${cleared} ${reselectFileMessage()}` : cleared,
+  );
 });
 window.addEventListener("beforeprint", () => {
   let warning = "";
