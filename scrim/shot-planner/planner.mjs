@@ -261,6 +261,11 @@ $("planner").addEventListener("input", () => {
   if (pending) {
     pending = null;
     $("import-preview").hidden = true;
+    status(
+      t("The plan changed while the file was opening. Choose the file again."),
+      true,
+    );
+    return;
   }
   if (plan)
     status(
