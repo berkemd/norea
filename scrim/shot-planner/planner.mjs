@@ -204,7 +204,8 @@ $("example").addEventListener("click", () => {
 });
 $("import").addEventListener("change", async () => {
   const sequence = ++importSequence;
-  const file = $("import").files[0];
+  const field = $("import");
+  const file = field.files[0];
   pending = null;
   $("import-preview").hidden = true;
   if (!file) return;
@@ -235,12 +236,14 @@ $("import").addEventListener("change", async () => {
         "Saved plan checked. Confirm below the file field to replace your entries.",
       ),
     );
+    if (document.activeElement === field) $("import-description").focus();
   } catch (error) {
     if (sequence === importSequence) {
       status(
         `${t(error.message)} ${t("Current entries are unchanged.")}`,
         true,
       );
+      if (document.activeElement === field) $("status").focus();
     }
   } finally {
     if (sequence === importSequence) $("import").value = "";
