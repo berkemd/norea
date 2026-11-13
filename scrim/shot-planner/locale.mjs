@@ -222,19 +222,22 @@ export function createLocale(language) {
       "Scrim’in ücretsiz çekim planlayıcısı: https://berkemd.github.io/norea/scrim/shot-planner/tr/",
     ].join("\n");
   };
+  const progress = (done, total) =>
+    turkish
+      ? `${total} çekimin ${done} tanesi tamamlandı.`
+      : `${done} of ${total} shots marked complete.`;
   return {
     t,
     cards: viewCards,
     summary: viewSummary,
-    progress: (done, total) =>
-      turkish
-        ? `${total} çekimin ${done} tanesi tamamlandı.`
-        : `${done} of ${total} shots marked complete.`,
+    progress,
     notes: (value) =>
       turkish ? `Çekim notları: ${value}` : `Shoot notes: ${value}`,
-    importDescription: (p) =>
-      turkish
-        ? `“${p.title}” açılsın mı? ${p.products.length} ürün, ${cards(p).length} çekim. Mevcut girdiler yalnızca onayladığında değişir.`
-        : `Open “${p.title}”: ${p.products.length} products, ${cards(p).length} shots. Your current entries will be replaced only when you confirm.`,
+    importDescription: (p) => {
+      const savedProgress = progress(p.completed.length, cards(p).length);
+      return turkish
+        ? `“${p.title}” açılsın mı? ${p.products.length} ürün. ${savedProgress} Mevcut girdiler yalnızca onayladığında değişir.`
+        : `Open “${p.title}”: ${p.products.length} products. ${savedProgress} Your current entries will be replaced only when you confirm.`;
+    },
   };
 }
