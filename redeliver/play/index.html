@@ -6,11 +6,43 @@
 <meta name="theme-color" content="#0b0f1a">
 <meta name="description" content="RE:DELIVER: a puzzle game about a courier on a short loop, working alongside every earlier self.">
 <title>RE:DELIVER</title>
-  <script type="module" crossorigin src="./assets/index-DkzoMgAH.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-D3zOoUJi.css">
+  <script type="module" crossorigin src="./assets/index-BY6cvwEu.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DJ3R2mdG.css">
 </head>
 <body>
 <!--page-->
+<svg id="icons" aria-hidden="true" width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+    <symbol id="i-next" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h9M19 7h1M4 17h1M11 17h9"/><circle cx="16" cy="7" r="2.6"/><circle cx="8" cy="17" r="2.6"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6"/></symbol>
+    <symbol id="i-loop" viewBox="0 0 24 24"><path d="M19.5 12a7.5 7.5 0 1 1-2.4-5.5"/><path d="M19.5 4v4.6h-4.6"/></symbol>
+    <symbol id="i-step" viewBox="0 0 24 24"><path d="M8.5 5L4 9.5 8.5 14"/><path d="M4 9.5h10a5 5 0 0 1 0 10h-3"/></symbol>
+    <symbol id="i-hint" viewBox="0 0 24 24"><path d="M9.5 18h5M10.5 21h3"/><path d="M12 3a6 6 0 0 0-4.1 10.4c.8.8 1.3 1.6 1.4 2.6h5.4c.1-1 .6-1.8 1.4-2.6A6 6 0 0 0 12 3z"/></symbol>
+    <symbol id="i-restart" viewBox="0 0 24 24"><path d="M6 5v14"/><path d="M19 6.2L10 12l9 5.8z"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><circle cx="10" cy="8" r="3.6"/><path d="M3.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16.5 9.5h5"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+    <symbol id="i-wait" viewBox="0 0 24 24"><path d="M9.5 8v8M14.5 8v8"/></symbol>
+    <symbol id="i-parcel" viewBox="0 0 24 24"><path d="M4 8l8-4 8 4v8l-8 4-8-4z"/><path d="M4 8l8 4 8-4M12 12v8"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2.4"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" stroke-width="1.2" d="M12 3.6l2.6 5.2 5.8.9-4.2 4.1 1 5.7L12 16.8l-5.2 2.7 1-5.7-4.2-4.1 5.8-.9z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5l11 6.5-11 6.5z"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><path d="M12 15V4M8 8l4-4 4 4"/><path d="M5 13v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 6l-3 12"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path fill="currentColor" stroke-width="1.2" d="M13.5 3L5 13.5h5.5L10 21l8.5-10.5H13z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4L7 17M17 7l1.4-1.4"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 3c.5 3.5 5 5.5 5 10.5a5 5 0 0 1-10 0c0-1.8.7-3 1.8-4 .2 1.6 1 2.5 2 2.5C11.5 9 10.5 6 12 3z"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 21V4"/><path d="M6 5h11l-2.5 4 2.5 4H6"/></symbol>
+    <symbol id="i-badge" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.5L7 21l5-2.5 5 2.5-1.5-7.5"/></symbol>
+  </defs>
+</svg>
 <canvas id="backdrop" aria-hidden="true"></canvas>
 <div id="veil" aria-hidden="true"></div>
 <main id="app" data-screen="title">
@@ -20,61 +52,88 @@
       <svg class="loop" viewBox="0 0 64 64" aria-hidden="true">
         <path d="M50 20a22 22 0 1 0 4 20" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
         <path d="M40 8l14 10-14 10z" fill="currentColor"/>
-        <rect x="22" y="23" width="20" height="18" rx="3" fill="#e3a763"/>
-        <rect x="30" y="23" width="4" height="18" fill="#f8e6bf"/>
+        <g class="parcel"><rect x="22" y="23" width="20" height="18" rx="3" fill="#e3a763"/><rect x="30" y="23" width="4" height="18" fill="#f8e6bf"/></g>
       </svg>
       <h1><span>RE:</span>DELIVER</h1>
       <p class="tag" data-t="tag"></p>
     </div>
-    <div class="menu">
-      <button id="start" class="primary" type="button"></button>
-      <button id="to-rooms" type="button" data-t="rooms"></button>
-      <button id="title-settings" type="button" data-t="settings"></button>
+    <div class="title-foot">
+      <button id="rank-row" class="rankrow" type="button">
+        <span class="rank-badge"><svg class="ic" aria-hidden="true"><use href="#i-badge"/></svg></span>
+        <span class="rank-words"><b id="rank-name"></b><small id="progress-line"></small></span>
+        <span class="meter" id="title-meter"><span class="track"><i id="title-fill"></i></span></span>
+      </button>
+      <button id="daily-card" class="dailycard" type="button">
+        <span class="daily-sun"><svg class="ic" aria-hidden="true"><use href="#i-sun"/></svg></span>
+        <span class="daily-words"><b id="daily-title"></b><small id="daily-line"></small></span>
+        <span id="daily-streak" class="streak" hidden><svg class="ic" aria-hidden="true"><use href="#i-flame"/></svg><b id="daily-streak-n"></b></span>
+      </button>
+      <button id="start" class="primary big" type="button"><span id="start-label"></span><svg class="ic" aria-hidden="true"><use href="#i-next"/></svg></button>
+      <div class="duo three">
+        <button id="to-rooms" type="button"><svg class="ic" aria-hidden="true"><use href="#i-grid"/></svg><span data-t="rooms"></span></button>
+        <button id="to-record" type="button"><svg class="ic" aria-hidden="true"><use href="#i-badge"/></svg><span data-t="record"></span></button>
+        <button id="title-settings" type="button"><svg class="ic" aria-hidden="true"><use href="#i-sliders"/></svg><span data-t="settings"></span></button>
+      </div>
     </div>
-    <p class="fine" id="progress-line"></p>
   </section>
 
   <section id="map" aria-label="Rooms" hidden>
     <header class="bar">
-      <button id="map-back" class="ghost" type="button" aria-label="Back">←</button>
-      <h2 data-t="rooms"></h2>
-      <p id="map-progress" class="fine"></p>
-      <button id="map-code" class="ghost" type="button" data-t="playCode"></button>
+      <button id="map-back" class="icon" type="button" data-l="goBack"><svg class="ic" aria-hidden="true"><use href="#i-back"/></svg></button>
+      <div class="where">
+        <h2 data-t="rooms"></h2>
+      </div>
+      <button id="map-code" class="chip" type="button"><svg class="ic" aria-hidden="true"><use href="#i-code"/></svg><span data-t="playCode"></span></button>
     </header>
+    <div class="meter" id="map-meter"><div class="track"><i id="map-fill"></i></div></div>
+    <p id="map-progress" class="over"></p>
     <div id="chapters"></div>
   </section>
 
   <section id="play" aria-label="The room" hidden>
     <header class="bar">
-      <button id="to-map" class="ghost" type="button" aria-label="Rooms">←</button>
+      <button id="to-map" class="icon" type="button" data-l="rooms"><svg class="ic" aria-hidden="true"><use href="#i-back"/></svg></button>
       <div class="where">
-        <p id="room-number" class="fine"></p>
+        <p id="room-number" class="over"></p>
         <h2 id="room-name"></h2>
       </div>
-      <div id="pips" aria-hidden="true"></div>
-      <button id="play-settings" class="ghost" type="button" aria-label="Settings">⚙</button>
+      <button id="play-settings" class="icon" type="button" data-l="settings"><svg class="ic" aria-hidden="true"><use href="#i-sliders"/></svg></button>
     </header>
-    <p id="status" aria-live="polite"></p>
-    <div id="clock" role="presentation"><div id="clock-fill"></div></div>
+    <div id="hud" aria-hidden="true">
+      <div id="pips"></div>
+      <p id="steps"><b id="steps-n"></b><span id="steps-word"></span></p>
+      <div id="clock" role="presentation"><div id="clock-fill"></div></div>
+    </div>
+    <p id="status" class="sr" aria-live="polite"></p>
     <p id="banner" aria-live="assertive" hidden></p>
     <div id="stage">
       <canvas id="room" aria-label="The room"></canvas>
       <div id="card" aria-hidden="true" hidden><p id="card-number"></p><h3 id="card-name"></h3></div>
+      <div id="assist" hidden>
+        <button id="assist-gift" class="chip amber" type="button" hidden><svg class="ic" aria-hidden="true"><use href="#i-hint"/></svg><span data-t="assistGift"></span></button>
+        <button id="assist-skip" class="chip" type="button" hidden><span data-t="assistSkip"></span><svg class="ic" aria-hidden="true"><use href="#i-next"/></svg></button>
+      </div>
     </div>
-    <div id="commands">
-      <button id="again" class="primary" type="button"><span data-t="again"></span> <kbd>L</kbd></button>
-      <button id="back" type="button"><span data-t="back"></span> <kbd>B</kbd></button>
-      <button id="hint" type="button"><span data-t="hint"></span> <span id="hint-count" class="count"></span> <kbd>H</kbd></button>
-      <button id="restart" type="button"><span data-t="restart"></span> <kbd>R</kbd></button>
-      <button id="undo" type="button"><span data-t="undo"></span> <kbd>Z</kbd></button>
-    </div>
-    <div id="pad" aria-label="Touch controls">
-      <button type="button" data-input="U" aria-label="Up">▲</button>
-      <button type="button" data-input="L" aria-label="Left">◀</button>
-      <button type="button" data-input="." aria-label="Wait" class="wait">·</button>
-      <button type="button" data-input="R" aria-label="Right">▶</button>
-      <button type="button" data-input="D" aria-label="Down">▼</button>
-      <button type="button" data-input="A" aria-label="Action" class="act">●</button>
+    <div id="deck">
+      <div id="commands">
+        <button id="back" type="button"><svg class="ic" aria-hidden="true"><use href="#i-step"/></svg><span data-t="back"></span><kbd>B</kbd></button>
+        <button id="hint" type="button"><svg class="ic" aria-hidden="true"><use href="#i-hint"/></svg><span data-t="hint"></span><span id="hint-count" class="count"></span><kbd>H</kbd></button>
+        <button id="restart" type="button"><svg class="ic" aria-hidden="true"><use href="#i-restart"/></svg><span data-t="restart"></span><kbd>R</kbd></button>
+        <button id="undo" type="button"><svg class="ic" aria-hidden="true"><use href="#i-copy"/></svg><span data-t="undo"></span><kbd>Z</kbd></button>
+      </div>
+      <div id="controls">
+        <div id="pad" aria-label="Touch controls">
+          <button type="button" data-input="U" aria-label="Up"><svg class="ic" aria-hidden="true"><use href="#i-up"/></svg></button>
+          <button type="button" data-input="L" aria-label="Left"><svg class="ic" aria-hidden="true"><use href="#i-left"/></svg></button>
+          <button type="button" data-input="." aria-label="Wait" class="wait"><svg class="ic" aria-hidden="true"><use href="#i-wait"/></svg></button>
+          <button type="button" data-input="R" aria-label="Right"><svg class="ic" aria-hidden="true"><use href="#i-right"/></svg></button>
+          <button type="button" data-input="D" aria-label="Down"><svg class="ic" aria-hidden="true"><use href="#i-down"/></svg></button>
+        </div>
+        <div id="primary">
+          <button id="again" class="primary" type="button"><svg class="ic" aria-hidden="true"><use href="#i-loop"/></svg><span data-t="again"></span><kbd>L</kbd></button>
+          <button type="button" data-input="A" aria-label="Action" class="act"><svg class="ic" aria-hidden="true"><use href="#i-parcel"/></svg></button>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -83,51 +142,76 @@
     <h3 id="result-title"></h3>
     <p id="result-line"></p>
     <p id="result-note" class="fine"></p>
-    <div class="row">
-      <button id="next" class="primary" type="button" hidden><span data-t="next"></span> <kbd>N</kbd></button>
-      <button id="watch" type="button"><span data-t="watch"></span> <kbd>W</kbd></button>
-      <button id="result-map" type="button" data-t="rooms"></button>
-      <button id="share" type="button" hidden data-t="share"></button>
+    <div id="result-extra"></div>
+    <button id="next" class="primary big" type="button" hidden><span data-t="next"></span><kbd>N</kbd><svg class="ic" aria-hidden="true"><use href="#i-next"/></svg></button>
+    <div class="trio">
+      <button id="watch" type="button"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg><span data-t="watch"></span><kbd>W</kbd></button>
+      <button id="result-map" type="button"><svg class="ic" aria-hidden="true"><use href="#i-grid"/></svg><span data-t="rooms"></span></button>
+      <button id="share" type="button" hidden><svg class="ic" aria-hidden="true"><use href="#i-share"/></svg><span id="share-label"></span></button>
     </div>
   </div>
 
-  <dialog id="settings" aria-labelledby="settings-title">
-    <h3 id="settings-title" data-t="settings"></h3>
-    <label class="switch"><input id="effects" type="checkbox" checked> <span data-t="effects"></span></label>
-    <label class="switch"><input id="music" type="checkbox" checked> <span data-t="music"></span> <span class="fine" data-t="musicNote"></span></label>
-    <label class="switch"><input id="step" type="checkbox" checked> <span data-t="stepMode"></span> <span class="fine" data-t="stepNote"></span></label>
-    <label class="switch"><input id="still" type="checkbox"> <span data-t="still"></span></label>
-    <label class="switch"><span data-t="language"></span> <select id="lang"></select></label>
-    <details>
-      <summary data-t="how"></summary>
+  <dialog id="settings" class="sheet" aria-labelledby="settings-title">
+    <header class="sheet-head">
+      <h3 id="settings-title" tabindex="-1" autofocus data-t="settings"></h3>
+      <button id="settings-close" class="textbtn" type="button" data-t="done"></button>
+    </header>
+    <div class="group">
+      <label class="rowi"><span class="lab"><b data-t="effects"></b></span><input id="effects" class="tog" type="checkbox" checked></label>
+      <label class="rowi"><span class="lab"><b data-t="music"></b><small data-t="musicNote"></small></span><input id="music" class="tog" type="checkbox" checked></label>
+      <label class="rowi"><span class="lab"><b data-t="stepMode"></b><small data-t="stepNote"></small></span><input id="step" class="tog" type="checkbox" checked></label>
+      <label class="rowi"><span class="lab"><b data-t="still"></b></span><input id="still" class="tog" type="checkbox"></label>
+      <label class="rowi"><span class="lab"><b data-t="language"></b></span><span class="pick"><select id="lang"></select><svg class="ic" aria-hidden="true"><use href="#i-chevron"/></svg></span></label>
+    </div>
+    <details class="group">
+      <summary><span data-t="how"></span><svg class="ic" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
       <p data-t="how1"></p>
       <p data-t="how2"></p>
     </details>
-    <div class="row">
-      <button id="settings-restore" type="button" data-t="restore" hidden></button>
-      <button id="settings-close" class="primary" type="button" data-t="done"></button>
-    </div>
+    <button id="settings-restore" class="link" type="button" data-t="restore" hidden></button>
   </dialog>
 
-  <dialog id="challenge" aria-labelledby="challenge-title">
-    <h3 id="challenge-title" data-t="codeTitle"></h3>
+  <dialog id="challenge" class="sheet" aria-labelledby="challenge-title">
+    <header class="sheet-head">
+      <h3 id="challenge-title" tabindex="-1" autofocus data-t="codeTitle"></h3>
+      <button id="challenge-close" class="icon" type="button" data-l="close"><svg class="ic" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </header>
     <p id="code-note" class="fine" data-t="codeNote"></p>
     <textarea id="code" rows="4" spellcheck="false" aria-label="Challenge code"></textarea>
-    <div class="row">
-      <button id="play-code" class="primary" type="button" data-t="codePlay"></button>
-      <button id="challenge-close" type="button" data-t="close"></button>
-    </div>
+    <button id="play-code" class="primary big" type="button" data-t="codePlay"></button>
+    <button id="share-link" class="link" type="button" hidden><svg class="ic" aria-hidden="true"><use href="#i-share"/></svg><span data-t="shareResult"></span></button>
   </dialog>
 
-  <dialog id="unlock" aria-labelledby="unlock-title">
-    <h3 id="unlock-title" data-t="unlockTitle"></h3>
-    <p id="unlock-body"></p>
-    <p id="unlock-note" class="fine" aria-live="polite"></p>
-    <div class="row">
-      <button id="buy" class="primary" type="button"></button>
-      <button id="restore" type="button" data-t="restore"></button>
-      <button id="unlock-close" type="button" data-t="close"></button>
+  <dialog id="record" class="sheet" aria-labelledby="record-title">
+    <header class="sheet-head">
+      <h3 id="record-title" tabindex="-1" autofocus data-t="record"></h3>
+      <button id="record-close" class="icon" type="button" data-l="close"><svg class="ic" aria-hidden="true"><use href="#i-close"/></svg></button>
+    </header>
+    <div class="rank-card">
+      <span class="rank-badge big"><svg class="ic" aria-hidden="true"><use href="#i-badge"/></svg></span>
+      <div class="rank-words"><b id="record-rank"></b><small id="record-next"></small></div>
+      <span id="record-stars" class="starcount"><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><b id="record-stars-n"></b></span>
+      <span class="meter" id="record-meter"><span class="track"><i id="record-fill"></i></span></span>
     </div>
+    <p class="over" data-t="uniform"></p>
+    <div id="uniforms" class="swatches"></div>
+    <p class="over" data-t="stamps"></p>
+    <div id="stamps" class="stamps"></div>
+  </dialog>
+
+  <dialog id="unlock" class="sheet" aria-labelledby="unlock-title">
+    <button id="unlock-close" class="icon corner" type="button" data-l="close"><svg class="ic" aria-hidden="true"><use href="#i-close"/></svg></button>
+    <div class="unlock-art" aria-hidden="true"><svg class="loop still" viewBox="0 0 64 64" aria-hidden="true">
+        <path d="M50 20a22 22 0 1 0 4 20" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+        <path d="M40 8l14 10-14 10z" fill="currentColor"/>
+        <g class="parcel"><rect x="22" y="23" width="20" height="18" rx="3" fill="#e3a763"/><rect x="30" y="23" width="4" height="18" fill="#f8e6bf"/></g>
+      </svg></div>
+    <h3 id="unlock-title" tabindex="-1" autofocus data-t="unlockTitle"></h3>
+    <p id="unlock-body"></p>
+    <p id="unlock-rank" class="fine"></p>
+    <button id="buy" class="primary big" type="button"></button>
+    <button id="restore" class="link" type="button" data-t="restore"></button>
+    <p id="unlock-note" class="fine" aria-live="polite"></p>
     <p class="fine links"><a id="terms" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" data-t="terms"></a> · <a id="privacy" href="https://berkemd.github.io/norea/redeliver/privacy.html" data-t="privacy"></a></p>
   </dialog>
 </main>
