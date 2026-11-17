@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#0b0f1a">
+<meta name="description" content="RE:DELIVER: a puzzle game about a courier on a short loop, working alongside every earlier self.">
+<title>RE:DELIVER</title>
+  <script type="module" crossorigin src="./assets/index-DkzoMgAH.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-D3zOoUJi.css">
+</head>
+<body>
+<!--page-->
+<canvas id="backdrop" aria-hidden="true"></canvas>
+<div id="veil" aria-hidden="true"></div>
+<main id="app" data-screen="title">
+
+  <section id="title" aria-label="RE:DELIVER">
+    <div class="brand">
+      <svg class="loop" viewBox="0 0 64 64" aria-hidden="true">
+        <path d="M50 20a22 22 0 1 0 4 20" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+        <path d="M40 8l14 10-14 10z" fill="currentColor"/>
+        <rect x="22" y="23" width="20" height="18" rx="3" fill="#e3a763"/>
+        <rect x="30" y="23" width="4" height="18" fill="#f8e6bf"/>
+      </svg>
+      <h1><span>RE:</span>DELIVER</h1>
+      <p class="tag" data-t="tag"></p>
+    </div>
+    <div class="menu">
+      <button id="start" class="primary" type="button"></button>
+      <button id="to-rooms" type="button" data-t="rooms"></button>
+      <button id="title-settings" type="button" data-t="settings"></button>
+    </div>
+    <p class="fine" id="progress-line"></p>
+  </section>
+
+  <section id="map" aria-label="Rooms" hidden>
+    <header class="bar">
+      <button id="map-back" class="ghost" type="button" aria-label="Back">←</button>
+      <h2 data-t="rooms"></h2>
+      <p id="map-progress" class="fine"></p>
+      <button id="map-code" class="ghost" type="button" data-t="playCode"></button>
+    </header>
+    <div id="chapters"></div>
+  </section>
+
+  <section id="play" aria-label="The room" hidden>
+    <header class="bar">
+      <button id="to-map" class="ghost" type="button" aria-label="Rooms">←</button>
+      <div class="where">
+        <p id="room-number" class="fine"></p>
+        <h2 id="room-name"></h2>
+      </div>
+      <div id="pips" aria-hidden="true"></div>
+      <button id="play-settings" class="ghost" type="button" aria-label="Settings">⚙</button>
+    </header>
+    <p id="status" aria-live="polite"></p>
+    <div id="clock" role="presentation"><div id="clock-fill"></div></div>
+    <p id="banner" aria-live="assertive" hidden></p>
+    <div id="stage">
+      <canvas id="room" aria-label="The room"></canvas>
+      <div id="card" aria-hidden="true" hidden><p id="card-number"></p><h3 id="card-name"></h3></div>
+    </div>
+    <div id="commands">
+      <button id="again" class="primary" type="button"><span data-t="again"></span> <kbd>L</kbd></button>
+      <button id="back" type="button"><span data-t="back"></span> <kbd>B</kbd></button>
+      <button id="hint" type="button"><span data-t="hint"></span> <span id="hint-count" class="count"></span> <kbd>H</kbd></button>
+      <button id="restart" type="button"><span data-t="restart"></span> <kbd>R</kbd></button>
+      <button id="undo" type="button"><span data-t="undo"></span> <kbd>Z</kbd></button>
+    </div>
+    <div id="pad" aria-label="Touch controls">
+      <button type="button" data-input="U" aria-label="Up">▲</button>
+      <button type="button" data-input="L" aria-label="Left">◀</button>
+      <button type="button" data-input="." aria-label="Wait" class="wait">·</button>
+      <button type="button" data-input="R" aria-label="Right">▶</button>
+      <button type="button" data-input="D" aria-label="Down">▼</button>
+      <button type="button" data-input="A" aria-label="Action" class="act">●</button>
+    </div>
+  </section>
+
+  <div id="result" hidden>
+    <div class="medal" id="medal" aria-hidden="true"></div>
+    <h3 id="result-title"></h3>
+    <p id="result-line"></p>
+    <p id="result-note" class="fine"></p>
+    <div class="row">
+      <button id="next" class="primary" type="button" hidden><span data-t="next"></span> <kbd>N</kbd></button>
+      <button id="watch" type="button"><span data-t="watch"></span> <kbd>W</kbd></button>
+      <button id="result-map" type="button" data-t="rooms"></button>
+      <button id="share" type="button" hidden data-t="share"></button>
+    </div>
+  </div>
+
+  <dialog id="settings" aria-labelledby="settings-title">
+    <h3 id="settings-title" data-t="settings"></h3>
+    <label class="switch"><input id="effects" type="checkbox" checked> <span data-t="effects"></span></label>
+    <label class="switch"><input id="music" type="checkbox" checked> <span data-t="music"></span> <span class="fine" data-t="musicNote"></span></label>
+    <label class="switch"><input id="step" type="checkbox" checked> <span data-t="stepMode"></span> <span class="fine" data-t="stepNote"></span></label>
+    <label class="switch"><input id="still" type="checkbox"> <span data-t="still"></span></label>
+    <label class="switch"><span data-t="language"></span> <select id="lang"></select></label>
+    <details>
+      <summary data-t="how"></summary>
+      <p data-t="how1"></p>
+      <p data-t="how2"></p>
+    </details>
+    <div class="row">
+      <button id="settings-restore" type="button" data-t="restore" hidden></button>
+      <button id="settings-close" class="primary" type="button" data-t="done"></button>
+    </div>
+  </dialog>
+
+  <dialog id="challenge" aria-labelledby="challenge-title">
+    <h3 id="challenge-title" data-t="codeTitle"></h3>
+    <p id="code-note" class="fine" data-t="codeNote"></p>
+    <textarea id="code" rows="4" spellcheck="false" aria-label="Challenge code"></textarea>
+    <div class="row">
+      <button id="play-code" class="primary" type="button" data-t="codePlay"></button>
+      <button id="challenge-close" type="button" data-t="close"></button>
+    </div>
+  </dialog>
+
+  <dialog id="unlock" aria-labelledby="unlock-title">
+    <h3 id="unlock-title" data-t="unlockTitle"></h3>
+    <p id="unlock-body"></p>
+    <p id="unlock-note" class="fine" aria-live="polite"></p>
+    <div class="row">
+      <button id="buy" class="primary" type="button"></button>
+      <button id="restore" type="button" data-t="restore"></button>
+      <button id="unlock-close" type="button" data-t="close"></button>
+    </div>
+    <p class="fine links"><a id="terms" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" data-t="terms"></a> · <a id="privacy" href="https://berkemd.github.io/norea/redeliver/privacy.html" data-t="privacy"></a></p>
+  </dialog>
+</main>
+<!--/page-->
+</body>
+</html>
