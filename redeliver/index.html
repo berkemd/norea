@@ -7,7 +7,7 @@
     <meta name="description" content="RE:DELIVER is a puzzle game for iPhone and iPad. Play a loop, then loop again: your earlier self repeats every step while you take new ones. 61 rooms, no ads. Play the first two chapters in your browser." />
     <link rel="canonical" href="https://berkemd.github.io/norea/redeliver/" />
     <link rel="icon" href="icon.png" />
-    <meta name="theme-color" content="#0b0f1a" />
+    <meta name="theme-color" content="#121110" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="RE:DELIVER" />
     <meta property="og:title" content="RE:DELIVER — a puzzle game about working with your past selves" />
@@ -16,26 +16,30 @@
     <meta property="og:description" content="RE:DELIVER is a puzzle game for iPhone and iPad. Play a loop, then loop again: your earlier self repeats every step while you take new ones. 61 rooms, no ads. Play the first two chapters in your browser." />
     <meta name="twitter:card" content="summary" />
     <style>
-      :root { --zemin:#0b0f1a; --murekkep:#eef1ff; --soluk:#a4adcf; --cizgi:#303a5c; --kart:#1a2138; --vurgu:#4fdccb; --amber:#ffb347; }
+      @font-face { font-family: "Depot"; font-weight: 100 900; font-display: swap; src: url("fonts/bsd-latin.woff2") format("woff2-variations"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+2000-206F, U+20AC, U+2122; }
+      @font-face { font-family: "Depot"; font-weight: 100 900; font-display: swap; src: url("fonts/bsd-latin-ext.woff2") format("woff2-variations"); unicode-range: U+0100-02BA, U+1E00-1E9F; }
+      :root { --zemin:#121110; --murekkep:#f4eddd; --soluk:#b6ad9a; --cizgi:#3a362d; --kart:#1c1a17; --vurgu:#ffd21f; --amber:#ffb347; }
       * { box-sizing: border-box; }
-      body { background: var(--zemin); color: var(--murekkep); font-family: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.65; margin: 0; -webkit-font-smoothing: antialiased; }
+      body { background: var(--zemin); color: var(--murekkep); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.65; margin: 0; -webkit-font-smoothing: antialiased; }
       .wrap { max-width: 680px; margin: 0 auto; padding: 44px 24px 96px; }
-      .mast { font-weight: 800; letter-spacing: 0.02em; font-size: 1.5rem; margin: 0; }
+      .mast { font: 900 2.4rem/0.9 "Depot", "Arial Narrow", sans-serif; letter-spacing: 0.01em; margin: 0; }
       .mast span { color: var(--vurgu); }
-      .rule { height: 3px; background: var(--vurgu); margin: 10px 0 8px; border-radius: 2px; }
+      .rule { height: 9px; background: repeating-linear-gradient(-45deg, var(--vurgu) 0 9px, #16140f 9px 18px); margin: 12px 0 10px; }
       .slug { font-size: 0.78rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--soluk); margin: 0 0 34px; }
-      h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 12px; }
-      h2 { font-size: 1.15rem; margin: 36px 0 8px; border-top: 1px solid var(--cizgi); padding-top: 22px; }
+      h1 { font: 800 2.5rem/1 "Depot", "Arial Narrow", sans-serif; text-transform: uppercase; letter-spacing: 0.01em; margin: 0 0 12px; }
+      h2 { font: 800 1.7rem/1 "Depot", "Arial Narrow", sans-serif; text-transform: uppercase; letter-spacing: 0.03em; margin: 36px 0 8px; border-top: 1.5px solid var(--cizgi); padding-top: 22px; }
       p, li { color: var(--soluk); font-size: 1rem; }
       strong { color: var(--murekkep); }
       a { color: var(--vurgu); }
-      .kutu { background: var(--kart); border: 1px solid var(--cizgi); border-radius: 12px; padding: 4px 20px; margin: 22px 0; }
+      .kutu { background: var(--kart); border: 1.5px solid var(--cizgi); border-radius: 5px; padding: 4px 20px; margin: 22px 0; }
       .hero { display: flex; gap: 20px; align-items: center; margin: 0 0 22px; }
-      .hero img { width: 96px; height: 96px; border-radius: 22px; flex: none; box-shadow: 0 10px 30px rgba(0,0,0,.5); }
-      .play { display: inline-block; background: linear-gradient(#5fe6d5, #2bb9ab); color: #06231f; font-weight: 800; text-decoration: none; padding: 13px 22px; border-radius: 14px; margin: 6px 0 4px; }
+      .hero img { width: 96px; height: 96px; border-radius: 22px; flex: none; }
+      .play { display: inline-block; background: var(--vurgu); color: #16140f; font: 800 1.35rem/1 "Depot", "Arial Narrow", sans-serif; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; padding: 15px 22px; border: 1.5px solid #16140f; border-radius: 5px; box-shadow: 0 4px 0 #b38f00; margin: 6px 0 8px; }
       table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
       th, td { text-align: left; padding: 8px 10px 8px 0; border-bottom: 1px solid var(--cizgi); color: var(--soluk); vertical-align: top; }
       th { color: var(--murekkep); font-size: 0.74rem; letter-spacing: 0.05em; text-transform: uppercase; }
+      .studio { margin: 28px 0 0; opacity: 0.9; }
+      .studio svg { display: block; }
       .foot { margin-top: 48px; font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--soluk); }
     </style>
   </head>
@@ -59,7 +63,7 @@
         <li><strong>Step by step.</strong> Nothing moves until you do. Step back one move, or take a whole loop back.</li>
         <li><strong>A new room every day.</strong> The daily delivery is the same for everyone and free. Keep a streak and share your result.</li>
         <li><strong>Hints that come back.</strong> They show the next step and refill every day. After a few tries at a room the game offers one on the house, and then a way round.</li>
-        <li><strong>Something to earn.</strong> Stars, swift marks, seven ranks with uniforms, twenty stamps.</li>
+        <li><strong>Something to earn.</strong> Stars, swift marks, seven ranks with uniforms, nineteen stamps. A week of daily deliveries earns a day off, so one missed day does not end a streak.</li>
         <li>English, T&uuml;rk&ccedil;e, Deutsch, Fran&ccedil;ais, Espa&ntilde;ol and &#26085;&#26412;&#35486;. Plays offline. No account.</li>
       </ul>
 
@@ -80,6 +84,7 @@
       <p><strong>Where is my progress kept?</strong> On your device only. Deleting the app deletes it.</p>
 
       <p class="foot"><a href="./">About &amp; support</a> &middot; <a href="play/">Play the first chapters</a> &middot; <a href="privacy.html">Privacy</a></p>
+      <p class="studio"><svg height="30" xmlns="http://www.w3.org/2000/svg" viewBox="-4 -4 295.4 48" role="img" aria-label="Berke Kahraman Studios"><title>Berke Kahraman Studios</title><path fill="none" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke="#f3efe6" d="M0 0V40M0 0H10.8A10 10 0 0 1 10.8 20H0M0 20H13.2A10 10 0 0 1 13.2 40H0"/><path fill="none" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke="#f3efe6" d="M36 0V40"/><path fill="none" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke="#e8a33d" d="M60 0L43.5 20L60 40"/><path fill="none" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke="#f3efe6" d="M90.39 5.31A11.2 10 0 1 0 80.5 20A11.2 10 0 1 1 70.61 34.69"/><g transform="translate(116 14)"><path fill="#f3efe6" d="M1.11 0H5.54C8.06 0 9.29 -1.28 9.29 -3C9.29 -4.66 8.11 -5.63 6.95 -5.69V-5.8C8.02 -6.05 8.87 -6.81 8.87 -8.14C8.87 -9.77 7.69 -11 5.32 -11H1.11ZM3.08 -1.65V-4.89H5.3C6.53 -4.89 7.29 -4.13 7.29 -3.14C7.29 -2.27 6.69 -1.65 5.23 -1.65ZM3.08 -6.31V-9.36H5.11C6.29 -9.36 6.9 -8.74 6.9 -7.89C6.9 -6.92 6.11 -6.31 5.06 -6.31ZM13.27 0H20.45V-1.66H15.24V-4.73H20.04V-6.37H15.24V-9.34H20.42V-11H13.27ZM24.63 0H26.6V-4.04H28.65L30.81 0H33.02L30.64 -4.37C31.94 -4.89 32.62 -5.99 32.62 -7.48C32.62 -9.58 31.27 -11 28.74 -11H24.63ZM26.6 -5.67V-9.35H28.44C29.94 -9.35 30.6 -8.65 30.6 -7.48C30.6 -6.31 29.94 -5.67 28.45 -5.67ZM36.69 0H38.66V-3.3L40.16 -4.93L43.5 0H45.82L41.53 -6.24L45.75 -11H43.3L40.41 -7.71C39.69 -6.87 39.15 -6.17 38.63 -5.38L38.66 -7.74V-11H36.69ZM49.52 0H56.7V-1.66H51.49V-4.73H56.28V-6.37H51.49V-9.34H56.67V-11H49.52ZM66.89 0H68.86V-3.3L70.36 -4.93L73.69 0H76.02L71.72 -6.24L75.94 -11H73.49L70.61 -7.71C69.88 -6.87 69.34 -6.17 68.83 -5.38L68.86 -7.74V-11H66.89ZM78.98 0H81.13L82.03 -2.72H86.15L87.08 0H89.25L85.32 -11H82.82ZM82.56 -4.31 83.02 -5.71C83.33 -6.7 83.66 -7.93 84.05 -9.46C84.46 -7.94 84.8 -6.73 85.13 -5.71L85.61 -4.31ZM92.92 0H94.89V-4.79H100V0H101.98V-11H100V-6.45H94.89V-11H92.92ZM106.39 0H108.36V-4.04H110.41L112.58 0H114.78L112.4 -4.37C113.7 -4.89 114.38 -5.99 114.38 -7.48C114.38 -9.58 113.03 -11 110.5 -11H106.39ZM108.36 -5.67V-9.35H110.2C111.7 -9.35 112.36 -8.65 112.36 -7.48C112.36 -6.31 111.7 -5.67 110.21 -5.67ZM117.71 0H119.87L120.77 -2.72H124.88L125.82 0H127.98L124.06 -11H121.55ZM121.3 -4.31 121.76 -5.71C122.06 -6.7 122.4 -7.93 122.79 -9.46C123.19 -7.94 123.54 -6.73 123.86 -5.71L124.34 -4.31ZM131.65 0H133.59V-5.55C133.59 -6.39 133.54 -7.91 133.51 -9.15C133.92 -7.74 134.36 -6.27 134.62 -5.55L136.68 0H138.36L140.39 -5.55C140.64 -6.29 141.11 -7.8 141.49 -9.21C141.46 -7.91 141.42 -6.37 141.42 -5.55V0H143.38V-11H140.41L138.34 -5.32C138.13 -4.67 137.79 -3.31 137.53 -2.22C137.28 -3.32 136.93 -4.67 136.71 -5.32L134.62 -11H131.65ZM147.06 0H149.22L150.12 -2.72H154.23L155.17 0H157.33L153.4 -11H150.9ZM150.64 -4.31 151.11 -5.71C151.41 -6.7 151.74 -7.93 152.13 -9.46C152.54 -7.94 152.89 -6.73 153.21 -5.71L153.69 -4.31ZM161 0H163.01V-5.46C163.01 -6.08 162.94 -7.23 162.87 -8.59C163.6 -7.16 164.02 -6.38 164.59 -5.46L168.03 0H170.26V-11H168.26V-5.23C168.26 -4.56 168.31 -3.44 168.38 -2.38C167.9 -3.48 167.42 -4.31 167.03 -4.94L163.23 -11H161Z"/></g><g transform="translate(116 37)"><path fill="#a9adb8" d="M4.97 0.17C7.6 0.17 9.13 -1.15 9.13 -3.09C9.13 -5.01 7.53 -5.85 5.9 -6.25L4.87 -6.51C3.98 -6.73 3 -7.1 3 -8.02C3 -8.86 3.75 -9.47 4.99 -9.47C6.18 -9.47 6.98 -8.93 7.07 -7.99H8.98C8.93 -9.83 7.37 -11.15 5.02 -11.15C2.72 -11.15 1 -9.85 1 -7.91C1 -6.36 2.09 -5.43 3.93 -4.95L5.18 -4.63C6.36 -4.32 7.16 -3.96 7.16 -3.1C7.16 -2.16 6.25 -1.51 4.95 -1.51C3.71 -1.51 2.73 -2.07 2.64 -3.23H0.7C0.79 -1.06 2.41 0.17 4.97 0.17ZM12.65 -9.34H16.04V0H18.01V-9.34H21.4V-11H12.65ZM29.78 0.16C32.46 0.16 34.24 -1.46 34.24 -3.82V-11H32.27V-3.98C32.27 -2.6 31.3 -1.6 29.78 -1.6C28.26 -1.6 27.29 -2.6 27.29 -3.98V-11H25.32V-3.82C25.32 -1.46 27.09 0.16 29.78 0.16ZM42.37 0C45.72 0 47.69 -2.07 47.69 -5.51C47.69 -8.93 45.72 -11 42.44 -11H38.65V0ZM40.62 -1.71V-9.29H42.32C44.58 -9.29 45.75 -8.03 45.75 -5.51C45.75 -2.98 44.58 -1.71 42.27 -1.71ZM53.74 -11H51.77V0H53.74ZM62.86 0.15C65.74 0.15 67.9 -1.94 67.9 -5.49C67.9 -9.05 65.74 -11.15 62.86 -11.15C59.98 -11.15 57.81 -9.05 57.81 -5.49C57.81 -1.95 59.98 0.15 62.86 0.15ZM62.86 -1.62C61.06 -1.62 59.78 -2.99 59.78 -5.49C59.78 -8.01 61.06 -9.38 62.86 -9.38C64.65 -9.38 65.92 -8.02 65.92 -5.49C65.92 -2.98 64.65 -1.62 62.86 -1.62ZM75.83 0.17C78.46 0.17 80 -1.15 80 -3.09C80 -5.01 78.4 -5.85 76.76 -6.25L75.74 -6.51C74.84 -6.73 73.86 -7.1 73.86 -8.02C73.86 -8.86 74.62 -9.47 75.86 -9.47C77.04 -9.47 77.84 -8.93 77.94 -7.99H79.85C79.8 -9.83 78.23 -11.15 75.89 -11.15C73.58 -11.15 71.87 -9.85 71.87 -7.91C71.87 -6.36 72.95 -5.43 74.79 -4.95L76.04 -4.63C77.23 -4.32 78.03 -3.96 78.03 -3.1C78.03 -2.16 77.12 -1.51 75.82 -1.51C74.58 -1.51 73.6 -2.07 73.51 -3.23H71.57C71.66 -1.06 73.27 0.17 75.83 0.17Z"/></g></svg></p>
     </div>
   </body>
 </html>

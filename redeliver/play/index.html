@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
-<meta name="theme-color" content="#0b0f1a">
+<meta name="theme-color" content="#121110">
 <meta name="description" content="RE:DELIVER: a puzzle game about a courier on a short loop, working alongside every earlier self.">
 <title>RE:DELIVER</title>
-  <script type="module" crossorigin src="./assets/index-BY6cvwEu.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DJ3R2mdG.css">
+  <script type="module" crossorigin src="./assets/index-ByFCnx5o.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CzCEMs3x.css">
 </head>
 <body>
 <!--page-->
@@ -40,6 +40,7 @@
     <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4L7 17M17 7l1.4-1.4"/></symbol>
     <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 3c.5 3.5 5 5.5 5 10.5a5 5 0 0 1-10 0c0-1.8.7-3 1.8-4 .2 1.6 1 2.5 2 2.5C11.5 9 10.5 6 12 3z"/></symbol>
     <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 21V4"/><path d="M6 5h11l-2.5 4 2.5 4H6"/></symbol>
+    <symbol id="i-studio" viewBox="-4 -4 101 48"><path fill="none" stroke="currentColor" stroke-width="6.4" stroke-linecap="round" stroke-linejoin="round" d="M0 0V40M0 0H10.8A10 10 0 0 1 10.8 20H0M0 20H13.2A10 10 0 0 1 13.2 40H0M36 0V40M61.5 0L46.5 20L61.5 40M91.39 5.31A11.2 10 0 1 0 81.5 20A11.2 10 0 1 1 71.61 34.69"/></symbol>
     <symbol id="i-badge" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.5L7 21l5-2.5 5 2.5-1.5-7.5"/></symbol>
   </defs>
 </svg>
@@ -50,9 +51,9 @@
   <section id="title" aria-label="RE:DELIVER">
     <div class="brand">
       <svg class="loop" viewBox="0 0 64 64" aria-hidden="true">
-        <path d="M50 20a22 22 0 1 0 4 20" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
-        <path d="M40 8l14 10-14 10z" fill="currentColor"/>
-        <g class="parcel"><rect x="22" y="23" width="20" height="18" rx="3" fill="#e3a763"/><rect x="30" y="23" width="4" height="18" fill="#f8e6bf"/></g>
+        <path d="M50 20a22 22 0 1 0 4 20" fill="none" stroke="currentColor" stroke-width="7.6"/>
+        <path d="M41 6.4l15.6 11.6-15.6 11.6z" fill="currentColor"/>
+        <g class="parcel"><g transform="translate(31.2 32.6) rotate(-8) translate(-32 -32)"><rect x="22.2" y="23.2" width="19.6" height="17.6" rx="1.6" fill="#c8894a"/><rect x="29.8" y="23.2" width="4.4" height="17.6" fill="#efe6d2"/></g></g>
       </svg>
       <h1><span>RE:</span>DELIVER</h1>
       <p class="tag" data-t="tag"></p>
@@ -74,6 +75,7 @@
         <button id="to-record" type="button"><svg class="ic" aria-hidden="true"><use href="#i-badge"/></svg><span data-t="record"></span></button>
         <button id="title-settings" type="button"><svg class="ic" aria-hidden="true"><use href="#i-sliders"/></svg><span data-t="settings"></span></button>
       </div>
+      <p class="studio" translate="no" lang="en"><svg viewBox="-4 -4 101 48" aria-hidden="true"><use href="#i-studio"/></svg><span>Berke Kahraman Studios</span></p>
     </div>
   </section>
 
@@ -95,7 +97,7 @@
       <button id="to-map" class="icon" type="button" data-l="rooms"><svg class="ic" aria-hidden="true"><use href="#i-back"/></svg></button>
       <div class="where">
         <p id="room-number" class="over"></p>
-        <h2 id="room-name"></h2>
+        <h2 id="room-name" lang="en"></h2>
       </div>
       <button id="play-settings" class="icon" type="button" data-l="settings"><svg class="ic" aria-hidden="true"><use href="#i-sliders"/></svg></button>
     </header>
@@ -108,7 +110,7 @@
     <p id="banner" aria-live="assertive" hidden></p>
     <div id="stage">
       <canvas id="room" aria-label="The room"></canvas>
-      <div id="card" aria-hidden="true" hidden><p id="card-number"></p><h3 id="card-name"></h3></div>
+      <div id="card" aria-hidden="true" hidden><p id="card-number"></p><h3 id="card-name" lang="en"></h3></div>
       <div id="assist" hidden>
         <button id="assist-gift" class="chip amber" type="button" hidden><svg class="ic" aria-hidden="true"><use href="#i-hint"/></svg><span data-t="assistGift"></span></button>
         <button id="assist-skip" class="chip" type="button" hidden><span data-t="assistSkip"></span><svg class="ic" aria-hidden="true"><use href="#i-next"/></svg></button>
@@ -169,6 +171,7 @@
       <p data-t="how2"></p>
     </details>
     <button id="settings-restore" class="link" type="button" data-t="restore" hidden></button>
+    <p class="studio" translate="no" lang="en"><svg viewBox="-4 -4 101 48" aria-hidden="true"><use href="#i-studio"/></svg><span>Berke Kahraman Studios</span></p>
   </dialog>
 
   <dialog id="challenge" class="sheet" aria-labelledby="challenge-title">
@@ -179,6 +182,7 @@
     <p id="code-note" class="fine" data-t="codeNote"></p>
     <textarea id="code" rows="4" spellcheck="false" aria-label="Challenge code"></textarea>
     <button id="play-code" class="primary big" type="button" data-t="codePlay"></button>
+    <a id="code-get" class="link" target="_blank" rel="noopener" hidden><svg class="ic" aria-hidden="true"><use href="#i-next"/></svg><span data-t="getApp"></span></a>
     <button id="share-link" class="link" type="button" hidden><svg class="ic" aria-hidden="true"><use href="#i-share"/></svg><span data-t="shareResult"></span></button>
   </dialog>
 
@@ -197,14 +201,15 @@
     <div id="uniforms" class="swatches"></div>
     <p class="over" data-t="stamps"></p>
     <div id="stamps" class="stamps"></div>
+    <p class="studio" translate="no" lang="en"><svg viewBox="-4 -4 101 48" aria-hidden="true"><use href="#i-studio"/></svg><span>Berke Kahraman Studios</span></p>
   </dialog>
 
   <dialog id="unlock" class="sheet" aria-labelledby="unlock-title">
     <button id="unlock-close" class="icon corner" type="button" data-l="close"><svg class="ic" aria-hidden="true"><use href="#i-close"/></svg></button>
     <div class="unlock-art" aria-hidden="true"><svg class="loop still" viewBox="0 0 64 64" aria-hidden="true">
-        <path d="M50 20a22 22 0 1 0 4 20" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
-        <path d="M40 8l14 10-14 10z" fill="currentColor"/>
-        <g class="parcel"><rect x="22" y="23" width="20" height="18" rx="3" fill="#e3a763"/><rect x="30" y="23" width="4" height="18" fill="#f8e6bf"/></g>
+        <path d="M50 20a22 22 0 1 0 4 20" fill="none" stroke="currentColor" stroke-width="7.6"/>
+        <path d="M41 6.4l15.6 11.6-15.6 11.6z" fill="currentColor"/>
+        <g class="parcel"><g transform="translate(31.2 32.6) rotate(-8) translate(-32 -32)"><rect x="22.2" y="23.2" width="19.6" height="17.6" rx="1.6" fill="#c8894a"/><rect x="29.8" y="23.2" width="4.4" height="17.6" fill="#efe6d2"/></g></g>
       </svg></div>
     <h3 id="unlock-title" tabindex="-1" autofocus data-t="unlockTitle"></h3>
     <p id="unlock-body"></p>
@@ -213,6 +218,7 @@
     <button id="restore" class="link" type="button" data-t="restore"></button>
     <p id="unlock-note" class="fine" aria-live="polite"></p>
     <p class="fine links"><a id="terms" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" data-t="terms"></a> · <a id="privacy" href="https://berkemd.github.io/norea/redeliver/privacy.html" data-t="privacy"></a></p>
+    <p class="studio" translate="no" lang="en"><svg viewBox="-4 -4 101 48" aria-hidden="true"><use href="#i-studio"/></svg><span>Berke Kahraman Studios</span></p>
   </dialog>
 </main>
 <!--/page-->
