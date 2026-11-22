@@ -14,6 +14,45 @@ let pending = null;
 let revision = 0;
 let importSequence = 0;
 let feedbackSequence = 0;
+const fieldError = document.createElement("p");
+fieldError.id = "field-error";
+fieldError.className = "hint";
+const invalidControls = new Map();
+
+function clearFieldError() {
+  for (const [control, description] of invalidControls) {
+    control.removeAttribute("aria-invalid");
+    if (description === null) control.removeAttribute("aria-describedby");
+    else control.setAttribute("aria-describedby", description);
+  }
+  invalidControls.clear();
+  fieldError.remove();
+}
+function focusFieldError(error) {
+  clearFieldError();
+  const controls =
+    error.field === "shots"
+      ? [...document.querySelectorAll("[name=shot]")]
+      : [$(error.field)];
+  const first = controls[0];
+  const details = first.closest("details");
+  if (details) details.open = true;
+  fieldError.textContent = t(error.message);
+  const group = first.closest("fieldset");
+  if (group) group.append(fieldError);
+  else first.after(fieldError);
+  for (const control of controls) {
+    const description = control.getAttribute("aria-describedby");
+    invalidControls.set(control, description);
+    control.setAttribute("aria-invalid", "true");
+    control.setAttribute(
+      "aria-describedby",
+      [description, fieldError.id].filter(Boolean).join(" "),
+    );
+  }
+  status("");
+  first.focus();
+}
 
 function hasDraft() {
   return (
@@ -118,6 +157,7 @@ function render() {
   progress();
 }
 function accept(p, message) {
+  clearFieldError();
   showBatchConfirmation(false);
   pending = null;
   $("import-preview").hidden = true;
@@ -165,8 +205,11 @@ $("planner").addEventListener("submit", (e) => {
       t("Plan built. Export a file to keep it for your next shoot."),
     );
   } catch (error) {
-    status(t(error.message), true);
-    $("status").focus();
+    if (error.field) focusFieldError(error);
+    else {
+      status(t(error.message), true);
+      $("status").focus();
+    }
   }
 });
 $("example").addEventListener("click", () => {
@@ -271,7 +314,8 @@ $("cancel-import").addEventListener("click", () => {
   status(t("Import cancelled. Current entries are unchanged."));
   $("import").focus();
 });
-$("planner").addEventListener("input", () => {
+$("planner").addEventListener("input", (event) => {
+  if (invalidControls.has(event.target)) clearFieldError();
   revision++;
   if (dismissStaleImport()) {
     status(reselectFileMessage(), true);
