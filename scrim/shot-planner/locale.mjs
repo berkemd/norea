@@ -162,6 +162,8 @@ const TR = {
     "İçe aktarma iptal edildi. Mevcut girdiler değişmedi.",
   "Entries changed. Build the plan again before exporting these edits.":
     "Girdiler değişti. Bu değişiklikleri indirmeden önce planı yeniden oluştur.",
+  "Entries changed. Build the plan again before printing.":
+    "Girdiler değişti. Yazdırmadan önce planı yeniden oluştur.",
   "Build a plan first.": "Önce bir plan oluştur.",
   "Download prepared. Keep the JSON file with your reference image for next time.":
     "İndirme hazırlandı. JSON dosyasını sonraki çekim için referans fotoğrafınla sakla.",

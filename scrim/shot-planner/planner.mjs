@@ -5,7 +5,7 @@ import {
   FIELDS,
   LABELS,
 } from "./model.mjs";
-import { createLocale } from "./locale.mjs";
+import { createLocale } from "./locale.mjs?v=3";
 const {
   t,
   cards,
@@ -352,12 +352,13 @@ function matchesForm(form, saved) {
   };
   return JSON.stringify(visibleForm) === JSON.stringify(visiblePlan);
 }
-function requireCurrent() {
+const stalePrintMessage =
+  "Entries changed. Build the plan again before printing.";
+function requireCurrent(
+  staleMessage = "Entries changed. Build the plan again before exporting these edits.",
+) {
   if (!plan) throw Error(t("Build a plan first."));
-  if (!matchesForm(readForm(), plan))
-    throw Error(
-      t("Entries changed. Build the plan again before exporting these edits."),
-    );
+  if (!matchesForm(readForm(), plan)) throw Error(t(staleMessage));
 }
 $("export").addEventListener("click", () => {
   try {
@@ -403,7 +404,7 @@ $("copy").addEventListener("click", async () => {
 });
 $("print").addEventListener("click", () => {
   try {
-    requireCurrent();
+    requireCurrent(stalePrintMessage);
     window.print();
   } catch (e) {
     status(t(e.message), true);
@@ -439,7 +440,7 @@ $("clear-batch-marks").addEventListener("click", () => {
 window.addEventListener("beforeprint", () => {
   let warning = "";
   try {
-    requireCurrent();
+    requireCurrent(stalePrintMessage);
   } catch (error) {
     warning = error.message;
   }
