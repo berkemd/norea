@@ -70,19 +70,16 @@
           kaydedilmez. Kapatmadan önce dosyanı dışa aktar.
         </p>
       </section>
-      <noscript
-        ><p class="notice">
-          Plan oluşturmak ve dışa aktarmak için JavaScript’i etkinleştir.
-          Aşağıdaki tekrar çekim rehberi JavaScript olmadan da okunabilir.
-        </p></noscript
-      >
-      <div class="workspace">
+      <p class="notice" id="planner-unavailable">
+        Planlayıcı açılmazsa JavaScript’i etkinleştirip sayfayı yenile veya
+        <a href="#how">tekrar çekim rehberini</a> kullan.
+      </p>
+      <div id="planner-workspace" class="workspace" hidden>
         <form id="planner" novalidate>
           <h2>1. Çekim listesini oluştur</h2>
           <label for="title">Çekim adı</label
           ><input
             id="title"
-            name="title"
             maxlength="100"
             required
             placeholder="Ekim seramik kataloğu"
@@ -105,22 +102,26 @@ Kum rengi kase, orta"
             <legend>Her ürün için gereken çekimler</legend>
             <div class="choices">
               <label
-                ><input type="checkbox" name="shot" value="hero" checked />Ana
-                görünüm</label
+                ><input
+                  type="checkbox"
+                  data-shot-choice
+                  value="hero"
+                  checked
+                />Ana görünüm</label
               ><label
                 ><input
                   type="checkbox"
-                  name="shot"
+                  data-shot-choice
                   value="detail"
                   checked
                 />Ayrıntı</label
               ><label
-                ><input type="checkbox" name="shot" value="scale" />Boyut
+                ><input type="checkbox" data-shot-choice value="scale" />Boyut
                 karşılaştırması</label
               ><label
                 ><input
                   type="checkbox"
-                  name="shot"
+                  data-shot-choice
                   value="packaging"
                 />Ambalaj</label
               >
@@ -373,6 +374,6 @@ Kum rengi kase, orta"
         >Uygulama gizliliği (İngilizce)</a
       >· Bu araç analiz hizmeti, çerez veya fotoğraf yükleme kullanmaz.
     </footer>
-    <script type="module" src="../planner.mjs"></script>
+    <script type="module" src="../planner.mjs?v=2"></script>
   </body>
 </html>

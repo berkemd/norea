@@ -70,19 +70,16 @@
           automatically. Export a file before closing.
         </p>
       </section>
-      <noscript
-        ><p class="notice">
-          Enable JavaScript to build and export a plan. The repeat-shoot guide
-          below also works without JavaScript.
-        </p></noscript
-      >
-      <div class="workspace">
+      <p class="notice" id="planner-unavailable">
+        If the planner does not open, enable JavaScript and reload, or use the
+        <a href="#how">repeat-shoot guide</a>.
+      </p>
+      <div id="planner-workspace" class="workspace" hidden>
         <form id="planner" novalidate>
           <h2>1. Build the shot list</h2>
           <label for="title">Shoot name</label
           ><input
             id="title"
-            name="title"
             maxlength="100"
             required
             placeholder="October ceramics catalogue"
@@ -103,16 +100,21 @@
             <legend>Shots needed for each product</legend>
             <div class="choices">
               <label
-                ><input type="checkbox" name="shot" value="hero" checked />
+                ><input type="checkbox" data-shot-choice value="hero" checked />
                 Hero</label
               ><label
-                ><input type="checkbox" name="shot" value="detail" checked />
+                ><input
+                  type="checkbox"
+                  data-shot-choice
+                  value="detail"
+                  checked
+                />
                 Detail</label
               ><label
-                ><input type="checkbox" name="shot" value="scale" />
+                ><input type="checkbox" data-shot-choice value="scale" />
                 Scale</label
               ><label
-                ><input type="checkbox" name="shot" value="packaging" />
+                ><input type="checkbox" data-shot-choice value="packaging" />
                 Packaging</label
               >
             </div>
@@ -355,6 +357,6 @@
       <a href="../privacy.html">App privacy</a> · This tool uses no analytics,
       cookies or photo uploads.
     </footer>
-    <script type="module" src="planner.mjs"></script>
+    <script type="module" src="planner.mjs?v=2"></script>
   </body>
 </html>
