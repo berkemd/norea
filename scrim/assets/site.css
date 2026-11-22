@@ -155,7 +155,8 @@ summary {
   font-weight: 650;
   cursor: pointer;
 }
-details p {
+details p,
+.pro-plans p {
   max-width: 850px;
 }
 footer {
@@ -176,7 +177,8 @@ footer {
   top: 8px;
 }
 a:focus-visible,
-summary:focus-visible {
+summary:focus-visible,
+#pro-plans:focus-visible {
   outline: 3px solid #b14f24;
   outline-offset: 5px;
 }
