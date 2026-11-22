@@ -1,4 +1,5 @@
 import test from "node:test";
+import { readFileSync } from "node:fs";
 import assert from "node:assert/strict";
 import {
   validate,
@@ -106,6 +107,16 @@ test("reject zero/21 products, duplicate SKU, empty and multiline product", () =
     ["x".repeat(81)],
   ])
     assert.throws(() => validate({ ...seed(), products, completed: [] }));
+});
+test("both editors deliver the full product list to validation", () => {
+  for (const file of ["index.html", "tr/index.html"]) {
+    const page = new URL(`../scrim/shot-planner/${file}`, import.meta.url);
+    const html = readFileSync(page, "utf8");
+    const field = html.match(/<textarea\b[^>]*\bid="products"[^>]*>/i);
+    assert.ok(field, file);
+    // A native maxlength silently discards pasted SKUs before validation.
+    assert.doesNotMatch(field[0], /\bmaxlength\s*=/i, file);
+  }
 });
 test("20 products times four types fits export and roundtrip", () => {
   const p = validate({
