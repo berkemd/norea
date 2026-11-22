@@ -1,4 +1,10 @@
-import { validate, parsePlan, FIELDS, LABELS } from "./model.mjs";
+import {
+  validate,
+  parsePlan,
+  retainedCompletions,
+  FIELDS,
+  LABELS,
+} from "./model.mjs";
 import { createLocale } from "./locale.mjs";
 const {
   t,
@@ -191,17 +197,11 @@ $("planner").addEventListener("submit", (e) => {
           ),
           notes:
             form.notes === textareaText(plan.notes) ? plan.notes : form.notes,
-          completed: matchesForm(form, {
-            ...plan,
-            title: form.title,
-            notes: form.notes,
-          })
-            ? plan.completed
-            : form.completed,
         }
       : form;
+    if (plan) next.completed = retainedCompletions(plan, next);
     accept(
-      plan && matchesForm(form, plan) ? plan : next,
+      next,
       t("Plan built. Export a file to keep it for your next shoot."),
     );
   } catch (error) {

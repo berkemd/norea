@@ -132,6 +132,22 @@ export function cards(plan) {
     })),
   );
 }
+export function retainedCompletions(previous, next) {
+  if (FIELDS.some((key) => previous.setup[key] !== next.setup[key])) return [];
+
+  // Version 1 files identify a shot by position. On edit, match the product
+  // name first so a moved row cannot inherit a different product's progress.
+  const positions = new Map(next.products.map((name, index) => [name, index]));
+  const completed = [];
+  for (const id of previous.completed) {
+    const [oldPosition, type] = id.split(":");
+    const position = positions.get(previous.products[Number(oldPosition)]);
+    if (position !== undefined && next.shots.includes(type)) {
+      completed.push(`${position}:${type}`);
+    }
+  }
+  return completed;
+}
 export function summary(plan) {
   const p = validate(plan);
   return [
