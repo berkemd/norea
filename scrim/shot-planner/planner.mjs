@@ -15,6 +15,10 @@ const {
   importDescription,
 } = createLocale(document.documentElement.lang);
 const $ = (id) => document.getElementById(id);
+// Previously cached pages identify these controls by name.
+const shotChoices = [
+  ...$("planner").querySelectorAll('[data-shot-choice], input[name="shot"]'),
+];
 let plan = null;
 let pending = null;
 let revision = 0;
@@ -36,10 +40,7 @@ function clearFieldError() {
 }
 function focusFieldError(error) {
   clearFieldError();
-  const controls =
-    error.field === "shots"
-      ? [...document.querySelectorAll("[name=shot]")]
-      : [$(error.field)];
+  const controls = error.field === "shots" ? shotChoices : [$(error.field)];
   const first = controls[0];
   const details = first.closest("details");
   if (details) details.open = true;
@@ -66,9 +67,7 @@ function hasDraft() {
     ["title", "products", "notes", ...FIELDS].some(
       (id) => $(id).value !== $(id).defaultValue,
     ) ||
-    [...document.querySelectorAll("[name=shot]")].some(
-      (shot) => shot.checked !== shot.defaultChecked,
-    )
+    shotChoices.some((shot) => shot.checked !== shot.defaultChecked)
   );
 }
 function status(message, error = false) {
@@ -95,9 +94,7 @@ function readForm() {
       .value.split(/\r?\n/)
       .map((s) => s.trim())
       .filter(Boolean),
-    shots: [...document.querySelectorAll("[name=shot]:checked")].map(
-      (x) => x.value,
-    ),
+    shots: shotChoices.filter((shot) => shot.checked).map((shot) => shot.value),
     setup: Object.fromEntries(FIELDS.map((k) => [k, $(k).value])),
     notes: $("notes").value,
     completed: [],
@@ -106,7 +103,7 @@ function readForm() {
 function fill(p) {
   $("title").value = p.title;
   $("products").value = p.products.join("\n");
-  document.querySelectorAll("[name=shot]").forEach((x) => {
+  shotChoices.forEach((x) => {
     x.checked = p.shots.includes(x.value);
   });
   FIELDS.forEach((k) => {
@@ -455,3 +452,6 @@ window.addEventListener("beforeunload", (e) => {
     e.returnValue = "";
   }
 });
+
+$("planner-workspace")?.removeAttribute("hidden");
+$("planner-unavailable")?.setAttribute("hidden", "");
