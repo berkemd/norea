@@ -29,6 +29,7 @@
     </style>
     <style>
       .dugme { display: inline-block; margin: 6px 10px 6px 0; padding: 12px 18px; border-radius: 10px; text-decoration: none; font-weight: 600; }
+      .dugme[hidden] { display: none; }
       .ana { background: var(--murekkep); color: var(--zemin); }
       .yan { border: 1px solid var(--cizgi); color: var(--murekkep); }
     </style>
@@ -42,27 +43,53 @@
       <p id="aciklama">Someone shared a dispatch with you from Wireroom, the reader for institutions' own releases and open-licensed newsrooms.</p>
       <p>
         <a class="dugme ana" id="ac" href="https://apps.apple.com/app/id6833553075">Get Wireroom on the App Store</a>
-        <a class="dugme yan" id="asil" href="../" hidden>Read it at the source</a>
+        <a class="dugme yan" id="indir" hidden>Get Wireroom</a>
+        <a class="dugme yan" id="asil" hidden>Read it at the source</a>
       </p>
       <p id="not" hidden>If Wireroom is installed, "Open in Wireroom" opens this dispatch in the app. The address of the dispatch is in the part of this link after "#", which your browser does not send to this site.</p>
       <p class="foot"><a href="../">About Wireroom</a> &middot; <a href="../privacy.html">Privacy</a></p>
     </div>
     <script>
       (function () {
-        var parts = new URLSearchParams(location.hash.slice(1));
-        var address = parts.get("u") || "", link = null;
-        try { link = new URL(address); } catch (e) { link = null; }
-        if (!link || link.protocol !== "https:") return;
-        var title = (parts.get("t") || "").slice(0, 220), source = (parts.get("s") || link.hostname).slice(0, 120);
-        if (title) { document.getElementById("baslik").textContent = title; document.title = title + " · Wireroom"; }
-        document.getElementById("kaynak").textContent = source + " · shared from Wireroom";
-        var open = document.getElementById("ac");
-        open.textContent = "Open in Wireroom"; open.href = "wireroom://open" + location.hash;
-        var get = document.createElement("a");
-        get.className = "dugme yan"; get.href = "https://apps.apple.com/app/id6833553075"; get.textContent = "Get Wireroom";
-        open.parentNode.insertBefore(get, open.nextSibling); open.parentNode.insertBefore(document.createTextNode(" "), get);
-        var own = document.getElementById("asil"); own.href = link.href; own.hidden = false;
-        document.getElementById("not").hidden = false;
+        const heading = document.getElementById("baslik");
+        const byline = document.getElementById("kaynak");
+        const open = document.getElementById("ac");
+        const store = document.getElementById("indir");
+        const original = document.getElementById("asil");
+        const note = document.getElementById("not");
+        const defaultTitle = document.title;
+        const defaultHeading = heading.textContent;
+        const defaultByline = byline.textContent;
+        const defaultAction = open.textContent;
+        store.href = open.href;
+
+        function renderDispatch() {
+          const parts = new URLSearchParams(location.hash.slice(1));
+          let link;
+          try {
+            link = new URL(parts.get("u"));
+            if (link.protocol !== "https:") link = null;
+          } catch {
+            link = null;
+          }
+          const title = link && (parts.get("t") || "").slice(0, 220);
+          document.title = title ? title + " · Wireroom" : defaultTitle;
+          heading.textContent = title || defaultHeading;
+          byline.textContent = link
+            ? (parts.get("s") || link.hostname).slice(0, 120) +
+              " · shared from Wireroom"
+            : defaultByline;
+          open.textContent = link ? "Open in Wireroom" : defaultAction;
+          open.href = link ? "wireroom://open" + location.hash : store.href;
+          if (link) original.href = link.href;
+          else original.removeAttribute("href");
+          original.hidden = !link;
+          store.hidden = !link;
+          note.hidden = !link;
+        }
+
+        window.addEventListener("hashchange", renderDispatch);
+        renderDispatch();
       })();
     </script>
   </body>
