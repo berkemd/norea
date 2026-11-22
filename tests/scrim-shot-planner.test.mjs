@@ -110,3 +110,17 @@ test("copy checklist includes actual setup and explicit missing values", () => {
 });
 test("oversized import rejected before parsing", () =>
   assert.throws(() => parsePlan(" ".repeat(32769)), /32 KB/));
+
+test("form validation identifies the first field the photographer can correct", () => {
+  const p = seed();
+  for (const [change, field] of [
+    [{ title: "", products: [] }, "title"],
+    [{ products: [] }, "products"],
+    [{ products: [" A ", "a"] }, "products"],
+    [{ shots: [] }, "shots"],
+    ...FIELDS.map((key) => [{ setup: { ...p.setup, [key]: 42 } }, key]),
+    [{ notes: "n".repeat(601) }, "notes"],
+  ]) {
+    assert.throws(() => validate({ ...p, ...change }), { field });
+  }
+});

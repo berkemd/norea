@@ -207,7 +207,8 @@ hr {
   white-space: pre-wrap;
   overflow-wrap: anywhere;
 }
-#status.error {
+#status.error,
+#field-error {
   border-left: 4px solid #9c2917;
   padding-left: 14px;
   color: #802012;

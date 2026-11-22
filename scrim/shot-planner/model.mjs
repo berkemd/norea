@@ -35,6 +35,11 @@ export const LABELS = [
   "Exposure notes",
   "Delivery crop & size",
 ];
+function fieldError(field, message) {
+  const error = new Error(message);
+  error.field = field;
+  return error;
+}
 export function validate(value) {
   if (
     !value ||
@@ -48,19 +53,22 @@ export function validate(value) {
     s.length <= limit &&
     !/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/.test(s);
   if (!text(value.title, 100) || !value.title.trim())
-    throw Error("Give the shoot a name (up to 100 characters).");
+    throw fieldError("title", "Give the shoot a name (up to 100 characters).");
   if (
     !Array.isArray(value.products) ||
     value.products.length < 1 ||
     value.products.length > 20 ||
     value.products.some((p) => !text(p, 80) || !p.trim() || /[\r\n]/.test(p))
   )
-    throw Error("Add 1–20 product names, up to 80 characters each.");
+    throw fieldError(
+      "products",
+      "Add 1–20 product names, up to 80 characters each.",
+    );
   if (
     new Set(value.products.map((p) => p.trim().toLowerCase())).size !==
     value.products.length
   )
-    throw Error("Give each product a different name or SKU.");
+    throw fieldError("products", "Give each product a different name or SKU.");
   if (
     !Array.isArray(value.shots) ||
     !value.shots.length ||
@@ -70,15 +78,20 @@ export function validate(value) {
     ) ||
     new Set(value.shots).size !== value.shots.length
   )
-    throw Error("Choose at least one of the four shot types.");
-  if (
-    !value.setup ||
-    typeof value.setup !== "object" ||
-    FIELDS.some((k) => !text(value.setup[k], 200))
-  )
-    throw Error("Setup notes must be text, up to 200 characters per field.");
+    throw fieldError("shots", "Choose at least one of the four shot types.");
+  const invalidSetupField = FIELDS.find(
+    (key) => typeof value.setup !== "object" || !text(value.setup?.[key], 200),
+  );
+  if (invalidSetupField)
+    throw fieldError(
+      invalidSetupField,
+      "Setup notes must be text, up to 200 characters per field.",
+    );
   if (!text(value.notes, 600))
-    throw Error("Shoot notes must be text, up to 600 characters.");
+    throw fieldError(
+      "notes",
+      "Shoot notes must be text, up to 600 characters.",
+    );
   const ids = new Set(
     value.products.flatMap((_, i) => value.shots.map((s) => `${i}:${s}`)),
   );
