@@ -5,6 +5,7 @@ import {
   parsePlan,
   cards,
   summary,
+  retainedCompletions,
   FIELDS,
 } from "../scrim/shot-planner/model.mjs";
 const seed = () => ({
@@ -30,6 +31,36 @@ test("export/import retains setup, completion and multilingual punctuation", () 
   p.products = ["İzmir fincanı", "Tasse — groß"];
   p.setup.light = "Window at left, reflector 30 cm";
   assert.deepEqual(parsePlan(JSON.stringify(p)), p);
+});
+test("rebuilding a checklist follows the exact product and shot across edits", () => {
+  const old = validate({
+    ...seed(),
+    products: ["Kupa", "Bowl B", "Tray"],
+    completed: ["0:hero", "1:detail", "2:hero"],
+  });
+  const rebuild = (changes) => {
+    const next = validate({ ...old, ...changes, completed: [] });
+    next.completed = retainedCompletions(old, next);
+    return parsePlan(JSON.stringify(next)).completed;
+  };
+  assert.deepEqual(
+    rebuild({
+      products: ["New", "Bowl B", "Kupa"],
+      shots: ["detail", "scale", "hero"],
+    }),
+    ["2:hero", "1:detail"],
+  );
+  assert.deepEqual(rebuild({ products: ["Tray", "kupa"], shots: ["hero"] }), [
+    "0:hero",
+  ]);
+  assert.deepEqual(
+    rebuild({ title: "Batch", notes: "Updated notes" }),
+    old.completed,
+  );
+  assert.deepEqual(
+    rebuild({ setup: { ...old.setup, light: "New angle" } }),
+    [],
+  );
 });
 test("invalid import leaves existing input object untouched", () => {
   const p = seed(),
